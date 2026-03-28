@@ -23,11 +23,17 @@ export default function RootLayout({
     <html lang="fr">
       <head>
         <Script
-          defer
-          data-domain="productcopilot.fr"
-          src="https://plausible.io/js/script.js"
+          src="https://www.googletagmanager.com/gtag/js?id=G-945QXLGP50"
           strategy="afterInteractive"
         />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-945QXLGP50');
+          `}
+        </Script>
       </head>
       <body className={`${inter.variable} font-sans`}>{children}</body>
     </html>
