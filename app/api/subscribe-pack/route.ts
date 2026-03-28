@@ -2,10 +2,11 @@ import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   const apiKey = process.env.LOOPS_API_KEY;
-  const mailingListId = process.env.LOOPS_PACK_LIST_ID;
+  const newsletterListId = process.env.LOOPS_PACK_LIST_ID;
+  const packInterestedListId = process.env.LOOPS_PACK_INTERESTED_LIST_ID;
 
-  if (!apiKey || !mailingListId) {
-    console.warn("[subscribe-pack] Missing LOOPS_API_KEY or LOOPS_PACK_LIST_ID");
+  if (!apiKey || !newsletterListId || !packInterestedListId) {
+    console.warn("[subscribe-pack] Missing LOOPS_API_KEY, LOOPS_PACK_LIST_ID, or LOOPS_PACK_INTERESTED_LIST_ID");
     return NextResponse.json({ error: "Configuration manquante." }, { status: 500 });
   }
 
@@ -18,6 +19,8 @@ export async function POST(request: Request) {
 
   const email = body.email?.trim();
   const source = body.source === "pack-systeme-interest" ? "pack-systeme-interest" : "pack-discovery";
+  const mailingListId = source === "pack-systeme-interest" ? packInterestedListId : newsletterListId;
+
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json({ error: "Email invalide." }, { status: 400 });
   }
