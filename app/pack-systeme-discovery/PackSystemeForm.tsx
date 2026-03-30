@@ -23,13 +23,8 @@ export default function PackSystemeForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: email.trim(), source: "pack-systeme-interest" }),
       });
-
       const data = await response.json().catch(() => ({}));
-
-      if (!response.ok) {
-        throw new Error(data?.error || "Impossible de s'inscrire pour le moment.");
-      }
-
+      if (!response.ok) throw new Error(data?.error || "Impossible de s'inscrire.");
       setStatus("success");
     } catch (error: any) {
       setStatus("error");
@@ -39,14 +34,14 @@ export default function PackSystemeForm() {
 
   if (status === "success") {
     return (
-      <div className="p-6 rounded-xl border border-[#E8FF8B]/30 bg-[#141414] space-y-3">
-        <p className="text-[#E8FF8B] font-semibold">
+      <div className="card-glass p-5 space-y-2 text-center animate-in">
+        <p className="text-[#E8FF8B] font-semibold text-sm">
           Tu seras prévenu(e) dès le lancement du Pack Système.
         </p>
-        <p className="text-sm text-[#A3A3A3]">
-          En attendant, explore les 10 prompts gratuits :{" "}
+        <p className="text-xs text-[#A3A3A3]">
+          En attendant,{" "}
           <Link href="/pack-discovery" className="text-[#E8FF8B] underline underline-offset-2 hover:opacity-90">
-            Voir les prompts
+            explore les 10 prompts gratuits
           </Link>
         </p>
       </div>
@@ -54,27 +49,27 @@ export default function PackSystemeForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
-      <label htmlFor="pack-systeme-email" className="sr-only">Adresse email</label>
-      <input
-        id="pack-systeme-email"
-        type="email"
-        required
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="ton@email.com"
-        className="flex-1 px-4 py-3 bg-[#141414] border border-[#1F1F1F] rounded-md text-[#F5F5F5] placeholder:text-[#A3A3A3] focus:outline-none focus:border-[#E8FF8B]/60"
-      />
-      <button
-        type="submit"
-        disabled={!emailIsValid || status === "loading"}
-        className="px-6 py-3 bg-[#E8FF8B] text-[#0F0F0F] font-bold rounded-md hover:opacity-90 transition-opacity disabled:opacity-50 whitespace-nowrap"
-      >
-        {status === "loading" ? "..." : "Être prévenu du lancement"}
-      </button>
-      {status === "error" && (
-        <p className="mt-2 text-sm text-red-400 sm:col-span-2">{errorMessage}</p>
-      )}
-    </form>
+    <div>
+      <form onSubmit={handleSubmit} className="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+        <label htmlFor="pack-systeme-email" className="sr-only">Adresse email</label>
+        <input
+          id="pack-systeme-email"
+          type="email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="ton@email.com"
+          className="flex-1 px-4 py-3 bg-[#0A0A0A] border border-[#1F1F1F] rounded-xl text-[#F5F5F5] placeholder:text-[#666666] focus:outline-none focus:ring-2 focus:ring-[#E8FF8B]/20 focus:border-[#E8FF8B]/40 transition-all"
+        />
+        <button
+          type="submit"
+          disabled={!emailIsValid || status === "loading"}
+          className="btn-glow px-6 py-3 bg-[#E8FF8B] text-[#0F0F0F] font-bold rounded-xl disabled:opacity-50 whitespace-nowrap"
+        >
+          {status === "loading" ? "..." : "Être prévenu"}
+        </button>
+      </form>
+      {status === "error" && <p className="mt-3 text-sm text-red-400 text-center">{errorMessage}</p>}
+    </div>
   );
 }

@@ -11,7 +11,7 @@ type FormulaireLoopsProps = {
 export default function FormulaireLoops({
   centered = false,
   source = "landing-page",
-  buttonText = "Recevoir la newsletter",
+  buttonText = "S'abonner",
 }: FormulaireLoopsProps) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -24,9 +24,7 @@ export default function FormulaireLoops({
     try {
       const response = await fetch("/api/loops/subscribe", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, source }),
       });
 
@@ -44,11 +42,7 @@ export default function FormulaireLoops({
 
   if (status === "success") {
     return (
-      <div
-        className={`py-4 text-[#E8FF8B] font-medium transition-all duration-500 animate-pulse ${
-          centered ? "text-center" : ""
-        }`}
-      >
+      <div className={`py-4 text-[#E8FF8B] font-medium text-sm transition-all duration-500 ${centered ? "text-center" : ""}`}>
         C&apos;est noté. Bienvenue dans le système.
       </div>
     );
@@ -63,7 +57,7 @@ export default function FormulaireLoops({
           type="email"
           placeholder="ton@email.com"
           required
-          className="flex-1 px-4 py-3 bg-[#1A1A1A] border border-white/10 rounded-md text-[#F5F5F5] placeholder:text-[#A3A3A3] focus:outline-none focus:border-[#E8FF8B]/50 transition-all"
+          className="flex-1 px-4 py-3 bg-[#0A0A0A] border border-[#1F1F1F] rounded-xl text-[#F5F5F5] placeholder:text-[#666666] focus:outline-none focus:ring-2 focus:ring-[#E8FF8B]/20 focus:border-[#E8FF8B]/40 transition-all"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           disabled={status === "loading"}
@@ -71,7 +65,7 @@ export default function FormulaireLoops({
         <button
           type="submit"
           disabled={status === "loading"}
-          className="px-6 py-3 bg-[#E8FF8B] text-[#0F0F0F] font-semibold rounded-md hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 whitespace-nowrap"
+          className="btn-glow px-6 py-3 bg-[#E8FF8B] text-[#0F0F0F] font-bold rounded-xl disabled:opacity-50 whitespace-nowrap"
         >
           {status === "loading" ? "..." : buttonText}
         </button>

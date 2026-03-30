@@ -10,11 +10,6 @@ const nextConfig: NextConfig = {
       destination: "/pack-discovery",
       permanent: false,
     },
-    {
-      source: "/pack-systeme-discovery",
-      destination: "/pack-discovery",
-      permanent: false,
-    },
   ],
 };
 

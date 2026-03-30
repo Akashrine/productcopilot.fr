@@ -1,54 +1,46 @@
-import type { Metadata } from 'next'
-import Generator from '@/components/Generator'
-import { TOOL_CONFIGS } from '@/lib/tool-config'
+import type { Metadata } from "next";
+import Link from "next/link";
+import Generator from "@/components/Generator";
+import { TOOL_CONFIGS } from "@/lib/tool-config";
 
-const config = TOOL_CONFIGS['user-stories']
+const config = TOOL_CONFIGS["user-stories"];
 
 export const metadata: Metadata = {
-  title: 'Générateur de User Stories IA — Product Copilot',
+  title: "Générateur de User Stories IA — Product Copilot",
   description:
-    'Transforme une description de feature en user stories structurées avec critères d\'acceptation Given/When/Then et estimation T-shirt. Gratuit.',
-  keywords: [
-    'générateur user story',
-    'user story ia',
-    'user story generator',
-    'critères acceptation',
-    'product management ia',
-    'backlog ia',
-  ],
-  alternates: {
-    canonical: 'https://productcopilot.fr/tools/user-stories',
-  },
+    "Transforme une description de feature en user stories structurées avec critères d'acceptation Given/When/Then et estimation T-shirt. Gratuit.",
+  keywords: ["générateur user story", "user story ia", "user story generator", "critères acceptation", "product management ia", "backlog ia"],
+  alternates: { canonical: "https://productcopilot.fr/tools/user-stories" },
   openGraph: {
-    title: 'Générateur de User Stories IA — Product Copilot',
-    description:
-      'Transforme une description de feature en user stories structurées. Gratuit et illimité.',
-    type: 'website',
-    locale: 'fr_FR',
-    url: 'https://productcopilot.fr/tools/user-stories',
+    title: "Générateur de User Stories IA — Product Copilot",
+    description: "Transforme une description de feature en user stories structurées. Gratuit et illimité.",
+    type: "website",
+    locale: "fr_FR",
+    url: "https://productcopilot.fr/tools/user-stories",
   },
-}
+};
 
 export default function UserStoriesPage() {
   return (
     <main className="min-h-screen bg-[#0F0F0F] text-[#F5F5F5] font-sans antialiased selection:bg-[#E8FF8B] selection:text-[#0F0F0F]">
-      {/* Header */}
-      <header className="px-5 sm:px-6 py-6 sm:py-8 max-w-4xl mx-auto">
-        <div className="flex items-center gap-3 text-sm text-[#A3A3A3]">
-          <a href="/" className="font-bold text-[#F5F5F5] hover:text-[#E8FF8B] transition-colors tracking-tight uppercase text-xs border-b border-[#E8FF8B]">
-            Product Copilot
-          </a>
-          <span className="text-[#333]">/</span>
-          <span>Outils</span>
-          <span className="text-[#333]">/</span>
-          <span className="text-[#F5F5F5]">{config.name}</span>
+      {/* Nav */}
+      <nav className="sticky top-0 z-40 bg-[#0F0F0F]/80 backdrop-blur-xl border-b border-white/5">
+        <div className="max-w-4xl mx-auto flex items-center justify-between px-5 sm:px-6 h-14">
+          <div className="flex items-center gap-2 text-sm">
+            <Link href="/" className="font-bold tracking-tight hover:text-[#E8FF8B] transition-colors">Product Copilot</Link>
+            <span className="text-[#666666]">/</span>
+            <span className="text-[#A3A3A3]">{config.name}</span>
+          </div>
+          <Link href="/pack-discovery" className="text-xs font-semibold px-4 py-2 rounded-full bg-[#E8FF8B] text-[#0F0F0F] hover:opacity-90 transition-opacity">
+            Voir les prompts
+          </Link>
         </div>
-      </header>
+      </nav>
 
       {/* Hero */}
-      <section className="px-5 sm:px-6 pb-12 max-w-4xl mx-auto">
-        <div className="inline-block px-3 py-1 bg-[#E8FF8B]/10 text-[#E8FF8B] rounded text-[10px] font-bold uppercase tracking-widest mb-4">
-          Gratuit — illimité
+      <section className="px-5 sm:px-6 pt-12 pb-10 max-w-4xl mx-auto">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#E8FF8B]/20 bg-[#E8FF8B]/5 text-[#E8FF8B] text-xs font-semibold mb-4">
+          Gratuit &middot; illimité
         </div>
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.1] tracking-tighter mb-4">
           {config.headline}
@@ -59,64 +51,47 @@ export default function UserStoriesPage() {
       </section>
 
       {/* Generator */}
-      <section id="generator" className="px-5 sm:px-6 pb-16 md:pb-24 max-w-4xl mx-auto">
+      <section className="px-5 sm:px-6 pb-16 md:pb-24 max-w-4xl mx-auto">
         <Generator config={config} />
       </section>
 
+      <div className="divider-shimmer max-w-4xl mx-auto" />
+
       {/* How it works */}
-      <section className="px-5 sm:px-6 py-16 md:py-20 border-t border-white/5 bg-[#141414]">
+      <section className="px-5 sm:px-6 py-16 md:py-20">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold tracking-tight mb-8">Comment ça marche</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="space-y-2">
-              <span className="text-[10px] font-bold text-[#E8FF8B] uppercase tracking-widest">01</span>
-              <h3 className="font-semibold">Décris ta feature</h3>
-              <p className="text-sm text-[#A3A3A3] leading-relaxed">
-                Colle ta description en langage naturel. Le contexte, le problème, ce que ça doit faire.
-              </p>
-            </div>
-            <div className="space-y-2">
-              <span className="text-[10px] font-bold text-[#E8FF8B] uppercase tracking-widest">02</span>
-              <h3 className="font-semibold">Copie le prompt généré</h3>
-              <p className="text-sm text-[#A3A3A3] leading-relaxed">
-                L&apos;outil génère un prompt expert calibré avec ton contexte. Copie-le en un clic.
-              </p>
-            </div>
-            <div className="space-y-2">
-              <span className="text-[10px] font-bold text-[#E8FF8B] uppercase tracking-widest">03</span>
-              <h3 className="font-semibold">Colle dans Claude ou ChatGPT</h3>
-              <p className="text-sm text-[#A3A3A3] leading-relaxed">
-                Récupère tes user stories structurées avec critères d&apos;acceptation, T-shirt sizing, dépendances.
-              </p>
-            </div>
+            {[
+              { n: "01", title: "Décris ta feature", desc: "Colle ta description en langage naturel. Le contexte, le problème, ce que ça doit faire." },
+              { n: "02", title: "Copie le prompt généré", desc: "L'outil génère un prompt expert calibré avec ton contexte. Copie-le en un clic." },
+              { n: "03", title: "Colle dans Claude ou ChatGPT", desc: "Récupère tes user stories structurées avec critères d'acceptation, T-shirt sizing, dépendances." },
+            ].map((step) => (
+              <div key={step.n} className="card-glass p-5">
+                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full border border-[#E8FF8B]/30 text-[#E8FF8B] text-[10px] font-bold mb-3">
+                  {step.n}
+                </span>
+                <h3 className="font-semibold mb-1 text-sm">{step.title}</h3>
+                <p className="text-sm text-[#A3A3A3] leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Back to home */}
-      <section className="px-5 sm:px-6 py-12 max-w-4xl mx-auto">
-        <a
-          href="/"
-          className="text-sm text-[#A3A3A3] hover:text-[#E8FF8B] transition-colors"
-        >
-          ← Retour à Product Copilot
-        </a>
-      </section>
-
       {/* Footer */}
-      <footer className="px-5 sm:px-6 py-10 border-t border-white/5">
+      <footer className="border-t border-white/5 px-5 sm:px-6 py-10">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-start gap-6">
           <div>
-            <span className="text-sm font-bold tracking-tighter">Product Copilot</span>
-            <p className="text-[10px] text-[#A3A3A3] mt-1">Des outils IA pour les PMs qui construisent.</p>
+            <span className="text-sm font-bold tracking-tight text-gradient-lime">Product Copilot</span>
+            <p className="text-[10px] text-[#666666] mt-1">Des outils IA pour les PMs qui construisent.</p>
           </div>
           <div className="flex gap-6 text-xs text-[#A3A3A3]">
-            <a href="https://linkedin.com/in/julienbrionne" className="hover:text-[#E8FF8B] transition-colors">
-              LinkedIn
-            </a>
+            <a href="https://linkedin.com/in/julienbrionne" target="_blank" rel="noopener noreferrer" className="hover:text-[#F5F5F5] transition-colors">LinkedIn</a>
+            <Link href="/mentions-legales" className="hover:text-[#F5F5F5] transition-colors">Mentions légales</Link>
           </div>
         </div>
       </footer>
     </main>
-  )
+  );
 }

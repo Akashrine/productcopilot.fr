@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"console.log\\(''next:'', require\\(''./node_modules/next/package.json''\\).version\\); console.log\\(''tailwindcss:'', require\\(''./node_modules/tailwindcss/package.json''\\).version\\); console.log\\(''@tailwindcss/postcss:'', require\\(''./node_modules/@tailwindcss/postcss/package.json''\\).version\\);\")",
+      "Bash(ls /Users/akashrine/Projects/productcopilot.fr/package.json /Users/akashrine/Projects/productcopilot.fr/next.config.* /Users/akashrine/Projects/productcopilot.fr/postcss.config.* /Users/akashrine/Projects/productcopilot.fr/tailwind.config.*)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "Bash(npm run:*)",
+      "Bash(find /Users/akashrine/Projects/productcopilot.fr -name favicon* -o -name icon* -o -name apple-icon*)",
+      "Bash(grep -r \"structured\\\\|schema\\\\|json-ld\\\\|ld+json\" /Users/akashrine/Projects/productcopilot.fr/app --include=*.tsx --include=*.ts)",
+      "Bash(grep -r \"alt=\\\\|aria-label\\\\|role=\" /Users/akashrine/Projects/productcopilot.fr/app/page.tsx /Users/akashrine/Projects/productcopilot.fr/components/*.tsx)",
+      "Bash(grep -r \"aria-hidden\" /Users/akashrine/Projects/productcopilot.fr/components/*.tsx)",
+      "Bash(git -C /Users/akashrine/Projects/productcopilot.fr ls-files .env.local)",
+      "Bash(git init:*)",
+      "Bash(git branch:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git remote:*)",
+      "Bash(git push:*)",
+      "Bash(xargs cat:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npx tsc:*)",
+      "Bash(ls /Users/akashrine/Projects/productcopilot.fr/tailwind* /Users/akashrine/Projects/productcopilot.fr/postcss*)",
+      "Bash(npx next:*)"
+    ]
+  }
+}
