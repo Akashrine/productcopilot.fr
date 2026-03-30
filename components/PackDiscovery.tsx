@@ -357,7 +357,7 @@ export default function PackDiscovery() {
                   </p>
                 </div>
                 <a
-                  href="https://app.lemical.com/@productcopilot/decouverte"
+                  href="https://app.lemcal.com/@productcopilot/decouverte"
                   className="inline-flex items-center justify-center px-6 py-3 rounded-md bg-[#E8FF8B] text-[#0F0F0F] font-bold hover:opacity-90 transition-opacity whitespace-nowrap"
                 >
                   Réserver un créneau
