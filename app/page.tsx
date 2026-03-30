@@ -472,12 +472,6 @@ export default function Page() {
             </div>
             <div className="space-y-4">
               <h6 className="text-[10px] font-bold uppercase tracking-widest opacity-40">Legal</h6>
-              <a
-                href="/mentions-legales"
-                className="block text-sm opacity-40 hover:opacity-100 transition-all"
-              >
-                Mentions légales
-              </a>
               <p className="text-[10px] opacity-20">© {new Date().getFullYear()} Product Copilot</p>
             </div>
           </div>

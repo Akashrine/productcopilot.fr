@@ -114,9 +114,6 @@ export default function UserStoriesPage() {
             <a href="https://linkedin.com/in/julienbrionne" className="hover:text-[#E8FF8B] transition-colors">
               LinkedIn
             </a>
-            <a href="/mentions-legales" className="hover:text-[#F5F5F5] transition-colors">
-              Mentions légales
-            </a>
           </div>
         </div>
       </footer>
