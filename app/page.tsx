@@ -443,17 +443,7 @@ export default function Page() {
         générateur PRD IA, user research AI tools, product discovery AI, AI workflow, PRD généré par IA
       </div>
 
-      <div className="px-5 sm:px-6 pb-10 md:pb-12 max-w-6xl mx-auto">
-        <p className="text-xs text-[#A3A3A3] text-center">
-          Si ça t&apos;aide, laisse une note d&apos;appréciation :{" "}
-          <a
-            href="https://humanhacks.club"
-            className="text-[#E8FF8B] underline underline-offset-2 hover:opacity-90 transition-opacity"
-          >
-            humanhacks.club
-          </a>
-        </p>
-      </div>
+      {/* Note volontairement supprimée: CTA externe (humanhacks.club) */}
 
       {/* 8. FOOTER */}
       <footer className="px-5 sm:px-6 py-14 md:py-16 text-left">
