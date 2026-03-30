@@ -257,7 +257,7 @@ export default function Page() {
         </div>
 
         <div className="mb-10 max-w-3xl">
-          <h3 className="text-2xl font-bold tracking-tight mb-4">Features (optimisées SEO)</h3>
+          <h3 className="text-2xl font-bold tracking-tight mb-4">Features</h3>
           <ul className="space-y-3 text-[#A3A3A3] leading-relaxed">
             <li>
               <span className="text-[#E8FF8B] font-bold">🔍</span> Extraction intelligente de signaux utilisateurs
