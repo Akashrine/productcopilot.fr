@@ -250,6 +250,57 @@ export default function Page() {
         </div>
       </section>
 
+      {/* 5b. OUTILS IA */}
+      <section className="px-5 sm:px-6 py-16 md:py-24 max-w-6xl mx-auto">
+        <div className="space-y-4 mb-8">
+          <div className="inline-block px-3 py-1 bg-[#E8FF8B]/10 text-[#E8FF8B] rounded text-[10px] font-bold uppercase tracking-widest">
+            Nouveau
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">
+            Outils IA pour Product Managers
+          </h2>
+          <p className="text-[#A3A3A3] max-w-2xl text-lg leading-relaxed">
+            Des outils spécialisés qui produisent des sorties structurées. Pas du texte brut. Du contenu prêt pour ton backlog.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <a
+            href="/tools/user-stories"
+            className="group p-6 rounded-xl bg-[#141414] border border-[#1F1F1F] hover:border-[#E8FF8B]/40 transition-colors"
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <span className="px-2 py-0.5 text-[10px] font-bold bg-[#E8FF8B]/10 text-[#E8FF8B] rounded">
+                Live
+              </span>
+              <h3 className="font-bold group-hover:text-[#E8FF8B] transition-colors">
+                Générateur de User Stories
+              </h3>
+            </div>
+            <p className="text-sm text-[#A3A3A3] leading-relaxed">
+              Transforme une description de feature en user stories structurées avec critères d&apos;acceptation et estimation T-shirt.
+            </p>
+            <span className="inline-block mt-4 text-xs font-bold text-[#E8FF8B] opacity-0 group-hover:opacity-100 transition-opacity">
+              Essayer gratuitement →
+            </span>
+          </a>
+
+          <div className="p-6 rounded-xl bg-[#141414] border border-[#1F1F1F] opacity-50">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="px-2 py-0.5 text-[10px] font-bold bg-[#333] text-[#A3A3A3] rounded">
+                Bientôt
+              </span>
+              <h3 className="font-bold text-[#A3A3A3]">
+                Générateur de Critères d&apos;Acceptation
+              </h3>
+            </div>
+            <p className="text-sm text-[#555] leading-relaxed">
+              Transforme une user story brute en critères Given/When/Then testables.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* 6. TEASER PACK SYSTÈME */}
       <section className="px-5 sm:px-6 py-16 md:py-24 bg-[#141414] border-y border-white/5">
         <div className="max-w-3xl mx-auto space-y-6">
