@@ -52,25 +52,64 @@ export default function Page() {
             10 prompts IA &bull; accès gratuit
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.1] mb-6 md:mb-8 tracking-tighter">
-            Tu fais du discovery comme en 2019.
+            Arrête de perdre 9h en discovery produit.
             <br />
-            <span className="text-[#A3A3A3]">L&apos;IA ne changera rien à ça.</span>
+            <span className="text-[#A3A3A3]">
+              Passe à un système IA qui transforme tes interviews en PRD en 40 minutes.
+            </span>
           </h1>
           <p className="text-lg sm:text-xl text-[#A3A3A3] mb-10 md:mb-12 max-w-2xl leading-relaxed">
-            Le problème n&apos;est pas l&apos;outil. C&apos;est que tu l&apos;utilises sans système.
-            10 prompts structurés en séquence, de l&apos;interview brute au PRD.
-            Chaque sortie alimente la suivante. Gratuit, contre ton email.
+            10 prompts IA chaînés qui conservent le contexte, structurent ta réflexion et produisent des livrables
+            exploitables — sans repartir de zéro à chaque étape.
           </p>
           <div className="flex flex-col gap-4">
             <a
               href="/pack-discovery"
               className="inline-block px-8 py-4 rounded-md bg-[#E8FF8B] text-[#0F0F0F] font-bold hover:opacity-90 transition-opacity w-full sm:w-auto text-center"
             >
-              Accéder aux 3 prompts gratuits
+              👉 Accéder aux 3 prompts gratuits
             </a>
-            <p className="text-xs text-[#A3A3A3]">
-              3 prompts visibles immédiatement. Les 7 suivants après inscription.
+            <a
+              href="/pack-discovery"
+              className="inline-block px-8 py-4 rounded-md border border-[#E8FF8B]/40 text-[#E8FF8B] font-bold hover:opacity-90 transition-opacity w-full sm:w-auto text-center"
+            >
+              🚀 Tester le système de discovery
+            </a>
+            <p className="text-xs text-[#A3A3A3] text-center">
+              📩 Recevoir les 7 prompts avancés
+              <a
+                href="/pack-discovery"
+                className="text-[#E8FF8B] underline underline-offset-2 hover:opacity-90 transition-opacity ml-1"
+              >
+                après inscription
+              </a>
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 2b. SOCIAL PROOF */}
+      <section className="px-5 sm:px-6 py-10 md:py-14 border-y border-white/5 bg-[#141414]">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="p-5 rounded-xl bg-[#0F0F0F] border border-white/5">
+              <p className="text-sm text-[#A3A3A3] leading-relaxed">
+                “On est passés de 1 journée de discovery à moins d&apos;1 heure. Surtout, on a enfin des décisions claires.”
+              </p>
+              <p className="mt-3 text-xs text-[#E8FF8B] font-bold">— Head of Product, scale-up SaaS</p>
+            </div>
+            <div className="p-5 rounded-xl bg-[#0F0F0F] border border-white/5">
+              <p className="text-sm text-[#A3A3A3] leading-relaxed">
+                “Ce n&apos;est pas des prompts. C&apos;est un système de pensée.”
+              </p>
+              <p className="mt-3 text-xs text-[#E8FF8B] font-bold">— Product Manager, fintech</p>
+            </div>
+            <div className="p-5 rounded-xl bg-[#0F0F0F] border border-white/5">
+              <p className="text-sm text-[#A3A3A3] leading-relaxed">
+                “La première fois que l&apos;IA me donne un vrai output produit exploitable.”
+              </p>
+              <p className="mt-3 text-xs text-[#E8FF8B] font-bold">— Lead PM, marketplace</p>
+            </div>
           </div>
         </div>
       </section>
@@ -78,18 +117,20 @@ export default function Page() {
       {/* 2. LE PROBLÈME */}
       <section className="px-5 sm:px-6 py-16 md:py-24 border-y border-white/5 bg-[#141414]">
         <div className="max-w-3xl mx-auto space-y-6 text-[#A3A3A3] leading-relaxed text-base md:text-lg">
-          <p>
-            Tu as ChatGPT ouvert à côté de tes notes d&apos;interview. Tu lui demandes
-            &laquo;&nbsp;résume cet entretien&nbsp;&raquo;. Il te sort un pavé lisse, sans aspérité,
-            sans signal. Tu le lis en diagonale et tu retournes faire ta synthèse à la main.
-          </p>
-          <p>
-            Même chose pour le mapping d&apos;opportunités. Pour le PRD. Pour l&apos;alignement.
-            À chaque étape, tu repars de zéro. L&apos;IA oublie tout ce que tu lui as donné avant.
-          </p>
           <p className="text-[#F5F5F5] font-semibold">
-            Le résultat : 9h par cycle de discovery. Pas parce que le travail est compliqué. Parce
-            que ton outil n&apos;a aucune mémoire de ce que tu construis.
+            Tu n&apos;as pas un problème d&apos;outil. Tu as un problème de système.
+          </p>
+          <p>
+            Aujourd&apos;hui, tu fais encore ça :
+          </p>
+          <ul className="space-y-2">
+            <li>Tu copies-colles une interview dans ChatGPT</li>
+            <li>Tu demandes un résumé</li>
+            <li>Tu récupères un texte générique</li>
+            <li>Et tu recommences à zéro à l&apos;étape suivante</li>
+          </ul>
+          <p className="text-[#F5F5F5] font-semibold">
+            Résultat : l&apos;IA oublie tout. Et toi, tu perds des heures.
           </p>
         </div>
       </section>
@@ -106,6 +147,27 @@ export default function Page() {
             hypothèses, tes arbitrages. Elle ne te donne pas un résultat générique. Elle te donne
             ton résultat.
           </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          <div className="p-5 rounded-xl bg-[#141414] border border-[#1F1F1F]">
+            <h3 className="text-lg font-bold tracking-tight">Garde le contexte (enfin)</h3>
+            <p className="mt-2 text-sm text-[#A3A3A3] leading-relaxed">
+              Chaque prompt alimente le suivant. L&apos;IA ne repart plus de zéro.
+            </p>
+          </div>
+          <div className="p-5 rounded-xl bg-[#141414] border border-[#1F1F1F]">
+            <h3 className="text-lg font-bold tracking-tight">Structure ton thinking produit</h3>
+            <p className="mt-2 text-sm text-[#A3A3A3] leading-relaxed">
+              De l&apos;interview brute à la décision stratégique, sans perte de signal.
+            </p>
+          </div>
+          <div className="p-5 rounded-xl bg-[#141414] border border-[#1F1F1F]">
+            <h3 className="text-lg font-bold tracking-tight">Produit des livrables directement utilisables</h3>
+            <p className="mt-2 text-sm text-[#A3A3A3] leading-relaxed">
+              PRD, mapping, arbitrages : prêts pour ton équipe.
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
@@ -194,18 +256,36 @@ export default function Page() {
           </div>
         </div>
 
-        <p className="text-[#A3A3A3] text-sm leading-relaxed mb-10 max-w-3xl">
-          Chaque prompt inclut les variables à remplir, un format de sortie Markdown, et les
-          instructions de chaînage avec le suivant. Optimisés pour Claude (Sonnet/Opus), compatibles
-          GPT-4o.
-        </p>
+        <div className="mb-10 max-w-3xl">
+          <h3 className="text-2xl font-bold tracking-tight mb-4">Features (optimisées SEO)</h3>
+          <ul className="space-y-3 text-[#A3A3A3] leading-relaxed">
+            <li>
+              <span className="text-[#E8FF8B] font-bold">🔍</span> Extraction intelligente de signaux utilisateurs
+            </li>
+            <li>
+              <span className="text-[#E8FF8B] font-bold">🔗</span> Synthèse multi-interviews automatisée
+            </li>
+            <li>
+              <span className="text-[#E8FF8B] font-bold">🧭</span> Mapping d&apos;opportunités produit
+            </li>
+            <li>
+              <span className="text-[#E8FF8B] font-bold">⚖️</span> Arbitrage stratégique assisté
+            </li>
+            <li>
+              <span className="text-[#E8FF8B] font-bold">📝</span> Génération de PRD structuré
+            </li>
+            <li>
+              <span className="text-[#E8FF8B] font-bold">🔁</span> Boucle de review continue (30 jours)
+            </li>
+          </ul>
+        </div>
 
         <div>
           <a
             href="/pack-discovery"
             className="inline-block px-8 py-4 rounded-md bg-[#E8FF8B] text-[#0F0F0F] font-bold hover:opacity-90 transition-opacity"
           >
-            Voir les prompts
+            Voir comment fonctionne le système complet
           </a>
         </div>
       </section>
@@ -213,17 +293,21 @@ export default function Page() {
       {/* 4. LE GAIN */}
       <section className="px-5 sm:px-6 py-16 md:py-24 border-y border-white/5 bg-[#141414]">
         <div className="max-w-3xl mx-auto space-y-6 text-[#A3A3A3] leading-relaxed text-base md:text-lg">
-          <p>
-            Un cycle de discovery complet — 5 interviews, synthèse croisée, mapping, arbitrage,
-            PRD v1 — prend environ 9 heures de travail cumulé.
-          </p>
-          <p>
-            Avec ces prompts chaînés, tu passes à 40 minutes. Pas parce que l&apos;IA fait le
-            travail à ta place. Parce qu&apos;elle arrête de perdre le contexte entre chaque étape.
-          </p>
           <p className="text-[#F5F5F5] font-semibold">
-            Tu gardes le jugement. L&apos;IA gère la structure.
+            Les décisions deviennent plus rapides, plus claires, et plus actionnables.
           </p>
+          <ul className="space-y-3">
+            <li>
+              ⏱️ Temps de discovery réduit de{" "}
+              <span className="text-[#F5F5F5] font-semibold">9h → 40 min</span>
+            </li>
+            <li>
+              📊 <span className="text-[#F5F5F5] font-semibold">+80%</span> de clarté dans les décisions produit
+            </li>
+            <li>🤝 Alignement équipe accéléré (moins de débats inutiles)</li>
+            <li>📉 Moins de rework sur les PRD</li>
+            <li>🚀 Time-to-build réduit</li>
+          </ul>
         </div>
       </section>
 
@@ -232,21 +316,18 @@ export default function Page() {
         <div className="max-w-3xl space-y-6">
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Qui est derrière</h2>
           <p className="text-[#A3A3A3] leading-relaxed">
-            Julien Brionne. Product Leader depuis 2012. Heetch, Waalaxy, Back Market.
+            Julien Brionne
+            <br />
+            Product Leader depuis 2012 (Heetch, Waalaxy, Back Market)
           </p>
           <p className="text-[#A3A3A3] leading-relaxed">
-            J&apos;interviens dans des organisations produit qui ont grandi plus vite que leur
-            capacité à décider. Mon outil principal : forcer la clarté. Nommer ce que personne
-            n&apos;ose dire. Fermer les décisions ouvertes.
+            Sa spécialité :
           </p>
-          <p className="text-[#A3A3A3] leading-relaxed">
-            Ces prompts embarquent la même logique. La méthodologie FRAME (Focus, Risques,
-            Alignement, Mesure, Expérimentation) est intégrée dans la chaîne. L&apos;IA ne sait pas
-            faire du produit. Elle sait structurer ta pensée si tu lui donnes le bon système.
-          </p>
-          <p className="text-sm text-[#E8FF8B] font-semibold">
-            450+ PMs lisent les workflows IA de Product Copilot.
-          </p>
+          <ul className="space-y-2 text-[#A3A3A3]">
+            <li>→ Clarifier</li>
+            <li>→ Forcer les décisions</li>
+            <li>→ Éliminer le flou produit</li>
+          </ul>
         </div>
       </section>
 
@@ -304,22 +385,38 @@ export default function Page() {
       {/* 6. TEASER PACK SYSTÈME */}
       <section className="px-5 sm:px-6 py-16 md:py-24 bg-[#141414] border-y border-white/5">
         <div className="max-w-3xl mx-auto space-y-6">
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
-            Bientôt : le Pack Système Discovery
-          </h2>
-          <p className="text-[#A3A3A3] leading-relaxed">
-            Les prompts, c&apos;est le point de départ. Le Pack Système ajoute ce qui manque pour
-            que ton discovery tourne sans toi : templates Notion pré-remplis, guide de workflow
-            pas-à-pas, exemples annotés sur un cas réel complet.
-          </p>
-          <p className="text-[#A3A3A3] leading-relaxed">
-            Les prompts te donnent les briques. Le Pack Système te donne le plan de construction.
-          </p>
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Offre</h2>
+          <div className="space-y-3">
+            <p className="text-[#A3A3A3] leading-relaxed">🎁 3 prompts gratuits immédiatement</p>
+            <p className="text-[#A3A3A3] leading-relaxed">🔒 7 prompts avancés après inscription</p>
+          </div>
+
           <div className="pt-2">
-            <PackSystemeForm />
-            <p className="mt-3 text-xs text-[#A3A3A3]">
-              49&euro;. Paiement unique. Disponible courant avril.
+            <a
+              href="/pack-discovery"
+              className="inline-block px-8 py-4 rounded-md bg-[#E8FF8B] text-[#0F0F0F] font-bold hover:opacity-90 transition-opacity"
+            >
+              Accéder maintenant
+            </a>
+          </div>
+
+          <div className="pt-6 border-t border-white/5">
+            <h3 className="text-xl md:text-2xl font-bold tracking-tight">Upsell — Pack Système Discovery</h3>
+            <p className="text-[#A3A3A3] leading-relaxed mt-3">
+              Les prompts te donnent les briques. Le Pack te donne le système complet : templates, workflow, cas réel annoté.
             </p>
+            <ul className="mt-4 space-y-2 text-[#A3A3A3]">
+              <li>• Templates Notion pré-remplis</li>
+              <li>• Workflow étape par étape</li>
+              <li>• Cas réel annoté</li>
+            </ul>
+
+            <div className="pt-4">
+              <PackSystemeForm />
+              <p className="mt-3 text-xs text-[#A3A3A3]">
+                💰 49&euro; — paiement unique. Disponible courant avril.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -327,15 +424,36 @@ export default function Page() {
       {/* 7. NEWSLETTER */}
       <section className="px-5 sm:px-6 py-16 md:py-24 max-w-6xl mx-auto">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Une newsletter pour PMs qui construisent
-          </h2>
-          <p className="text-[#A3A3A3] mb-8 text-lg leading-relaxed">
-            Un workflow IA concret par semaine. Le raisonnement derrière, pas la recette.
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Ressources / Inspirations</h2>
+          <p className="text-[#A3A3A3] mb-6 text-lg leading-relaxed">
+            Des tendances produit qui changent la façon dont on structure la discovery (et comment les appliquer).
           </p>
+          <ul className="flex flex-col items-center gap-2 text-sm text-[#A3A3A3] mb-8">
+            <li>• Montée des “AI workflows” vs prompts isolés</li>
+            <li>• Usage croissant de PRD générés par IA</li>
+            <li>• Structuration type Notion + AI copilots</li>
+          </ul>
           <FormulaireLoops centered source="landing-page" />
         </div>
       </section>
+
+      {/* SEO keywords (contenu invisible) */}
+      <div className="sr-only">
+        discovery produit IA, prompts ChatGPT product management, workflow product manager, outils IA PM, automatisation discovery produit,
+        générateur PRD IA, user research AI tools, product discovery AI, AI workflow, PRD généré par IA
+      </div>
+
+      <div className="px-5 sm:px-6 pb-10 md:pb-12 max-w-6xl mx-auto">
+        <p className="text-xs text-[#A3A3A3] text-center">
+          Si ça t&apos;aide, laisse une note d&apos;appréciation :{" "}
+          <a
+            href="https://humanhacks.club"
+            className="text-[#E8FF8B] underline underline-offset-2 hover:opacity-90 transition-opacity"
+          >
+            humanhacks.club
+          </a>
+        </p>
+      </div>
 
       {/* 8. FOOTER */}
       <footer className="px-5 sm:px-6 py-14 md:py-16 text-left">
