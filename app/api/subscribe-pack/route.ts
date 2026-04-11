@@ -18,7 +18,11 @@ export async function POST(request: Request) {
   }
 
   const email = body.email?.trim();
-  const source = body.source === "pack-systeme-interest" ? "pack-systeme-interest" : "pack-discovery";
+  const VALID_SOURCES = ["pack-discovery", "pack-systeme-interest", "template-prd-ia"] as const;
+  type ValidSource = (typeof VALID_SOURCES)[number];
+  const source: ValidSource = VALID_SOURCES.includes(body.source as ValidSource)
+    ? (body.source as ValidSource)
+    : "pack-discovery";
   const mailingListId = source === "pack-systeme-interest" ? packInterestedListId : newsletterListId;
 
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {

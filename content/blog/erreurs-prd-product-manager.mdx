@@ -1,0 +1,82 @@
+---
+title: "Les 5 erreurs qui tuent tes PRDs (et comment les corriger)"
+description: "Ton PRD est envoyé, personne ne le lit. Voici les 5 pièges classiques des product managers et comment les éviter pour écrire des PRDs que l'équipe consulte vraiment."
+date: "2026-04-09"
+slug: "erreurs-prd-product-manager"
+readingTime: "6 min"
+tags: ["PRD", "Product Management", "Bonnes pratiques"]
+---
+
+Tu as envoyé ton PRD lundi. Vendredi, personne ne l'a lu.
+
+Tu relances sur Slack. Un dev répond "je regarderai". Le designer dit "c'est où déjà ?". Le lead envoie un pouce. Deux semaines plus tard, au milieu du sprint, quelqu'un te demande "attends, c'est quoi le scope ?"
+
+Le PRD n'a pas rempli son rôle. Pas parce que tu l'as mal écrit. Parce que tu es tombé dans un piège classique.
+
+Voici les 5 erreurs les plus fréquentes. Et comment les éviter.
+
+## Erreur 1 : Le PRD-roman
+
+Tu décris tout. Chaque écran. Chaque état. Chaque edge case. Chaque scénario d'erreur. Le document fait 12 pages. Il couvre des détails que personne n'a demandés.
+
+Pourquoi c'est un problème : personne ne lit 12 pages. L'information importante est noyée dans le bruit. L'équipe survole, rate les décisions clés, et te pose des questions auxquelles tu as déjà répondu dans le doc.
+
+Comment corriger : un PRD tient sur une page. 7 sections. 2-3 phrases par section. Si tu dépasses une page, tu mets trop de détails d'exécution dans un document stratégique. Déplace les specs UX dans un doc séparé. Déplace les specs techniques dans un ticket.
+
+Le test : si tu ne peux pas lire ton PRD en 5 minutes, il est trop long.
+
+## Erreur 2 : Pas de métriques
+
+Ton PRD décrit le problème. Il propose une solution. Il liste les risques. Mais nulle part tu ne dis comment tu sauras si ça a fonctionné.
+
+Pourquoi c'est un problème : sans métrique, tu ne peux pas évaluer le succès. Le projet se termine quand le code est déployé, pas quand l'impact est mesuré. Tu livres des features. Tu ne livres pas de résultats.
+
+Comment corriger : ajoute deux métriques. Un leading indicator que tu mesures dès le lancement. Un lagging indicator que tu mesures à 4-8 semaines. Définis un seuil : "+5 points d'activation" est une métrique. "Améliorer l'activation" n'en est pas une.
+
+Le test : si tu ne peux pas dire "cette initiative est un succès si [X]", tes métriques sont absentes ou floues.
+
+## Erreur 3 : Pas de non-goals
+
+Tu décris ce que tu fais. Tu ne décris pas ce que tu ne fais pas.
+
+Pourquoi c'est un problème : chaque personne qui lit ton PRD imagine un scope différent. Le designer ajoute une feature. Le dev commence à refactorer un module voisin. Le PM d'une autre squad pense que tu couvres son sujet. Le scope explose en silence.
+
+Comment corriger : ajoute 3-5 non-goals explicites. Chaque non-goal est une phrase qui commence par "On ne fait pas [X] dans cette initiative." Sois spécifique. "On ne refait pas le design du dashboard" est un bon non-goal. "On reste focalisés" n'en est pas un.
+
+Le test : montre ton PRD à quelqu'un qui ne connaît pas le projet. Demande-lui ce qu'il pense être inclus dans le scope. Si sa réponse ne correspond pas à la tienne, tes non-goals sont absents.
+
+## Erreur 4 : Le PRD figé
+
+Tu écris le PRD en début de projet. Tu ne le touches plus.
+
+Pourquoi c'est un problème : les hypothèses changent pendant la discovery. Les contraintes techniques apparaissent pendant le dev. Les métriques s'affinent après les premiers tests. Un PRD figé devient obsolète en deux semaines. L'équipe arrête de le consulter.
+
+Comment corriger : mets à jour le PRD à 3 moments clés. Après la discovery (hypothèses validées ou invalidées). Après le kick-off technique (contraintes identifiées). Après le lancement (résultats vs métriques). Ajoute une date de dernière mise à jour visible en haut du document.
+
+Le test : ouvre ton dernier PRD. La dernière modification date de quand ? Si c'est le jour de création, le PRD est mort.
+
+## Erreur 5 : Généré par IA, non relu
+
+Tu ouvres ChatGPT. Tu colles ton sujet. Tu copies la réponse dans Notion. Tu envoies le lien.
+
+Le PRD est bien structuré. Les phrases sont propres. Il a l'air professionnel. Mais les métriques sont génériques ("améliorer l'engagement"). Les risques sont des platitudes ("résistance au changement"). L'hypothèse est une reformulation du problème.
+
+Pourquoi c'est un problème : l'IA génère des documents plausibles, pas des documents vrais. Elle ne connaît pas ton contexte, tes données, tes contraintes techniques, ton historique produit. Un PRD qui sonne bien mais qui ne reflète pas la réalité est pire qu'un brouillon moche mais honnête.
+
+Comment corriger : utilise l'IA pour le brouillon. Relis chaque section en te posant une question : "Est-ce que c'est vrai pour MON produit, MON équipe, MON contexte ?" Remplace chaque affirmation générique par une donnée ou un fait spécifique à ta situation.
+
+Le test : supprime le nom de ton produit du PRD. Est-ce que le document pourrait s'appliquer à n'importe quel produit ? Si oui, il n'est pas assez spécifique.
+
+## Le PRD est un outil, pas un exercice de style
+
+Un bon PRD n'est pas un document bien écrit. C'est un document qui remplit sa fonction : aligner l'équipe sur le problème, la solution, et les critères de succès.
+
+Corrige ces 5 erreurs et ton PRD passera de "un doc que personne ne lit" à "la référence du projet".
+
+## Passe à l'action
+
+Tu veux un système qui structure ta discovery et génère un PRD que l'équipe va vraiment lire ?
+
+Le Pack Discovery : 10 prompts chaînés, de l'interview brute au document final. Gratuit.
+
+[Accéder au Pack Discovery →](/pack-discovery)

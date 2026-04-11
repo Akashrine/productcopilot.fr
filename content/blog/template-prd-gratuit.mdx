@@ -1,0 +1,129 @@
+---
+title: "Template PRD gratuit : la structure en 7 sections qui fonctionne"
+description: "Un template PRD conçu pour être rempli en 30 minutes et lu en 5. 7 sections. Pas plus. Avec des exemples concrets pour chaque section."
+date: "2026-04-05"
+slug: "template-prd-gratuit"
+readingTime: "6 min"
+tags: ["PRD", "Templates", "Product Management"]
+---
+
+Tu cherches un template PRD. Tu tombes sur des modèles Confluence de 2019 avec 25 sections, des tableaux RACI, et un historique de versions.
+
+Tu remplis trois sections. Tu abandonnes les 22 autres. Le doc finit dans un dossier "Templates" que personne ne rouvre.
+
+Le problème n'est pas que tu manques de discipline. Le problème, c'est que ces templates sont conçus pour documenter, pas pour aligner.
+
+Voici un template conçu pour être rempli en 30 minutes et lu en 5.
+
+## Pourquoi la plupart des templates PRD ne fonctionnent pas
+
+Trois raisons.
+
+Premièrement, ils sont trop longs. Un template avec 15+ sections crée une charge cognitive qui décourage la rédaction et la lecture. Résultat : des PRDs incomplets ou ignorés.
+
+Deuxièmement, ils mélangent stratégie et exécution. Un PRD n'est pas une spec technique. Il ne décrit pas les endpoints API ou les maquettes Figma. Il cadre le problème, l'hypothèse, et les critères de succès.
+
+Troisièmement, ils ne sont pas connectés aux objectifs. La section "contexte" parle du projet en isolation. Elle ne dit pas comment cette initiative sert les OKRs du trimestre.
+
+## Le template PRD en 7 sections
+
+Voici la structure. Chaque section tient en 2-3 phrases. Le PRD complet tient sur une page.
+
+### Section 1 : Problème
+
+Décris le problème utilisateur en une phrase. Ajoute 1-2 données qui prouvent que c'est un vrai problème (métrique produit, verbatim client, donnée support).
+
+Exemple :
+"Les nouveaux utilisateurs ne complètent pas le onboarding. 62% abandonnent avant l'étape 3/5. Les tickets support montrent que la valeur du produit n'est pas comprise avant la première action clé."
+
+### Section 2 : Opportunité
+
+Pourquoi résoudre ce problème maintenant ? Quel impact si tu le résous ? Quel impact si tu ne fais rien ?
+
+Exemple :
+"Chaque point d'amélioration du taux de complétion onboarding représente ~200 utilisateurs actifs supplémentaires par mois. Ne rien faire maintient un coût d'acquisition élevé car les utilisateurs acquis ne sont pas activés."
+
+### Section 3 : Hypothèse de solution
+
+Ce que tu penses construire et pourquoi. Pas le détail UX. La direction.
+
+Exemple :
+"On pense que réduire le onboarding de 5 étapes à 2 (création de compte + première action clé) va augmenter le taux de complétion de 38% à 60%. On supprime les étapes de personnalisation qui apportent peu de valeur perçue."
+
+### Section 4 : Non-goals
+
+Ce que cette initiative ne couvre pas. Sois explicite.
+
+Exemple :
+"On ne refait pas le design du dashboard post-onboarding. On ne modifie pas le flow d'inscription (email/SSO). On ne travaille pas sur la rétention J+30, on se concentre sur l'activation J+1."
+
+### Section 5 : Success metrics
+
+Un leading indicator (mesurable dès le lancement) et un lagging indicator (mesurable à 4-8 semaines). Avec un seuil de succès.
+
+Exemple :
+"Leading : taux de complétion onboarding passe de 38% à 55% sur la cohorte test (2 semaines). Lagging : activation J+7 (utilisateur ayant fait 3+ actions clés) passe de 22% à 30% (8 semaines)."
+
+### Section 6 : Plan d'expérimentation
+
+Comment tu valides. A/B test, feature flag, rollout progressif.
+
+Exemple :
+"A/B test sur 20% du trafic pendant 2 semaines. Si le leading indicator atteint 50%+, rollout à 50%. Si confirmé à 4 semaines, rollout 100%."
+
+### Section 7 : Dépendances et risques
+
+Qui est impliqué. Quels risques. Comment tu les adresses.
+
+Exemple :
+"Dépendance : l'équipe data doit instrumenter le nouveau flow avant le lancement. Risque : la suppression des étapes de personnalisation réduit la qualité des recommandations post-onboarding. Mitigation : on monitore le taux de clic sur les recommandations pendant 4 semaines."
+
+## Comment utiliser ce template
+
+**Au kick-off.** Tu remplis le brouillon avant la réunion. Tu le partages à l'équipe. La discussion porte sur le contenu, pas sur la forme.
+
+**Pendant la discovery.** Les hypothèses changent. Les données arrivent. Tu mets à jour le PRD. C'est un document vivant, pas un livrable figé.
+
+**Pendant le delivery.** Un dev demande "pourquoi on fait ça ?" Tu pointes vers le PRD. La réponse est dans la section Problème + Hypothèse.
+
+**Au post-launch.** Tu rouvres la section Success metrics. Tu compares les résultats réels aux seuils définis. Tu documentes ce que tu as appris.
+
+## Connecte ton PRD à ta stratégie
+
+Un PRD isolé est un PRD fragile. Il faut le connecter aux objectifs.
+
+Ajoute une ligne en haut du document : "OKR concerné : [O] + [KR]". Cette ligne force la question : est-ce que cette initiative sert un objectif du trimestre ? Si la réponse est non, la priorité est à revoir.
+
+## Le template en version texte
+
+Voici la structure à copier :
+
+---
+
+Titre de l'initiative : [Nom]
+
+OKR concerné : [Objectif / Key Result]
+
+1. Problème : [1-2 phrases + données]
+
+2. Opportunité : [Pourquoi maintenant + impact]
+
+3. Hypothèse de solution : [Direction + raisonnement]
+
+4. Non-goals : [3-5 items]
+
+5. Success metrics : [Leading + Lagging + seuils]
+
+6. Plan d'expérimentation : [Méthode + timeline]
+
+7. Dépendances et risques : [Qui + quoi + mitigation]
+
+---
+
+## Accélère avec l'IA
+
+Ce template fonctionne encore mieux avec un LLM. Tu réponds aux 7 questions, l'IA structure les réponses, tu relis et tu ajustes.
+
+Le Pack Discovery automatise ce workflow avec 10 prompts chaînés, du brain dump au PRD final. Gratuit.
+
+[Accéder au Pack Discovery →](/pack-discovery)
