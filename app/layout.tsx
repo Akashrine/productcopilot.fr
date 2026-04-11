@@ -10,8 +10,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://productcopilot.fr"),
-  title: "Product Copilot",
-  description: "Newsletter IA pour Product Management.",
+  title: "Product Copilot — Outils IA pour Product Managers",
+  description: "Templates, prompts et workflows pour les PMs qui construisent. Outils gratuits, packs thématiques, articles pratiques.",
 };
 
 export default function RootLayout({

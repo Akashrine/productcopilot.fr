@@ -10,8 +10,9 @@ type Props = ComponentProps<typeof Link> & {
 
 export default function TrackLink({ event, eventProps, onClick, ...props }: Props) {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (typeof window !== "undefined" && (window as any).plausible) {
-      (window as any).plausible(event, { props: eventProps });
+    if (typeof window !== "undefined") {
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      (window as any).dataLayer.push({ event, ...eventProps });
     }
     onClick?.(e);
   };

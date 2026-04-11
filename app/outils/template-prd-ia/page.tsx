@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import NavMain from "@/components/NavMain";
 import PRDGenerator from "@/components/PRDGenerator";
 
 export const metadata: Metadata = {
@@ -48,28 +49,7 @@ function ArrowRight() {
 export default function TemplatePRDIAPage() {
   return (
     <main className="min-h-screen bg-[#0F0F0F] text-[#F5F5F5] font-sans antialiased selection:bg-[#E8FF8B] selection:text-[#0F0F0F]">
-      {/* NAV */}
-      <nav className="sticky top-0 z-40 bg-[#0F0F0F]/80 backdrop-blur-xl border-b border-white/5">
-        <div className="max-w-4xl mx-auto flex items-center justify-between px-5 sm:px-6 h-14">
-          <div className="flex items-center gap-2 text-sm">
-            <Link href="/" className="font-bold tracking-tight hover:text-[#E8FF8B] transition-colors">
-              Product Copilot
-            </Link>
-            <span className="text-[#666666]">/</span>
-            <Link href="/blog" className="text-[#666666] hover:text-[#A3A3A3] transition-colors">
-              Blog
-            </Link>
-            <span className="text-[#666666]">/</span>
-            <span className="text-[#A3A3A3]">Template PRD IA</span>
-          </div>
-          <Link
-            href="/pack-discovery"
-            className="text-xs font-semibold px-4 py-2 rounded-full bg-[#E8FF8B] text-[#0F0F0F] hover:opacity-90 transition-opacity"
-          >
-            Voir les prompts
-          </Link>
-        </div>
-      </nav>
+      <NavMain variant="sticky" cta={{ label: "Accéder aux prompts", href: "/pack-discovery" }} />
 
       {/* HERO */}
       <section className="px-5 sm:px-6 pt-12 pb-10 max-w-4xl mx-auto">

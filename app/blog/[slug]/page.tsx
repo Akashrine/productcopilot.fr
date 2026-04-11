@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import NavMain from "../../../components/NavMain";
 import { getPostBySlug, getAllSlugs } from "../../../lib/blog";
 
 type Props = {
@@ -164,48 +165,33 @@ export default async function BlogPostPage({ params }: Props) {
 
   if (!post) notFound();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    datePublished: post.date,
+    url: `https://productcopilot.fr/blog/${post.slug}`,
+    author: {
+      "@type": "Person",
+      name: "Julien Brionne",
+      url: "https://productcopilot.fr/a-propos",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Product Copilot",
+      url: "https://productcopilot.fr",
+    },
+  };
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     <main className="min-h-screen bg-[#0F0F0F] text-[#F5F5F5] font-sans antialiased selection:bg-[#E8FF8B] selection:text-[#0F0F0F]">
-      {/* NAV */}
-      <nav className="fixed top-0 inset-x-0 z-50 bg-[#0F0F0F]/80 backdrop-blur-xl border-b border-white/5">
-        <div className="max-w-6xl mx-auto flex items-center justify-between px-5 sm:px-6 h-14">
-          <Link href="/" className="text-sm font-bold tracking-tight">
-            Product Copilot
-          </Link>
-          <div className="hidden sm:flex items-center gap-6 text-sm text-[#A3A3A3]">
-            <Link
-              href="/blog"
-              className="hover:text-[#F5F5F5] transition-colors"
-            >
-              Blog
-            </Link>
-            <Link
-              href="/pack-discovery"
-              className="hover:text-[#F5F5F5] transition-colors"
-            >
-              Prompts
-            </Link>
-            <Link
-              href="/tools/user-stories"
-              className="hover:text-[#F5F5F5] transition-colors"
-            >
-              Outils
-            </Link>
-            <Link
-              href="/pack-systeme-discovery"
-              className="hover:text-[#F5F5F5] transition-colors"
-            >
-              Pack Système
-            </Link>
-          </div>
-          <Link
-            href="/pack-discovery"
-            className="text-xs font-semibold px-4 py-2 rounded-full bg-[#E8FF8B] text-[#0F0F0F] hover:opacity-90 transition-opacity"
-          >
-            Accéder aux prompts
-          </Link>
-        </div>
-      </nav>
+      <NavMain cta={{ label: "Accéder aux prompts", href: "/pack-discovery" }} />
 
       {/* ARTICLE */}
       <article className="pt-28 pb-20 md:pt-40 md:pb-28 px-5 sm:px-6">
@@ -347,11 +333,12 @@ export default async function BlogPostPage({ params }: Props) {
               </Link>
             </div>
           </div>
-          <p className="text-[10px] text-[#666666]/40 md:self-end">
+          <p className="text-[10px] text-[#666666] md:self-end">
             &copy; {new Date().getFullYear()} Product Copilot
           </p>
         </div>
       </footer>
     </main>
+    </>
   );
 }

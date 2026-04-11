@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import NavMain from "../../components/NavMain";
 import PackSystemeForm from "./PackSystemeForm";
 
 export const metadata: Metadata = {
@@ -14,6 +15,11 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://productcopilot.fr/pack-systeme-discovery",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pack Système Discovery — Product Copilot",
+    description: "Le workflow complet : 10 prompts chaînés + templates Notion + guide pas-à-pas + exemples annotés.",
   },
 };
 
@@ -34,15 +40,7 @@ const faqItems = [
 export default function PackSystemeDiscoveryPage() {
   return (
     <main className="min-h-screen bg-[#0F0F0F] text-[#F5F5F5] font-sans antialiased selection:bg-[#E8FF8B] selection:text-[#0F0F0F]">
-      {/* Nav */}
-      <nav className="sticky top-0 z-40 bg-[#0F0F0F]/80 backdrop-blur-xl border-b border-white/5">
-        <div className="max-w-5xl mx-auto flex items-center justify-between px-5 sm:px-6 h-14">
-          <Link href="/" className="text-sm font-bold tracking-tight">Product Copilot</Link>
-          <Link href="/pack-discovery" className="text-xs font-semibold px-4 py-2 rounded-full bg-[#E8FF8B] text-[#0F0F0F] hover:opacity-90 transition-opacity">
-            Voir les prompts
-          </Link>
-        </div>
-      </nav>
+      <NavMain variant="sticky" cta={{ label: "Accéder aux prompts", href: "/pack-discovery" }} />
 
       {/* Hero */}
       <section className="relative px-5 sm:px-6 pt-16 pb-16 md:pt-24 md:pb-20 overflow-hidden">

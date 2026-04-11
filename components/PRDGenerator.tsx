@@ -97,25 +97,33 @@ export default function PRDGenerator() {
     inputs.contexteProduit.trim() &&
     inputs.metriqueCible.trim();
 
+  const pushEvent = (eventName: string, props?: Record<string, string>) => {
+    if (typeof window !== "undefined") {
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      (window as any).dataLayer.push({ event: eventName, ...props });
+    }
+  };
+
   const handleGenerate = () => {
     if (!requiredFilled) return;
     const built = buildPRDPrompt(inputs);
     setPrompt(built);
-    // Plausible
-    if (typeof window !== "undefined" && (window as any).plausible) {
-      (window as any).plausible("prd_tool_generate");
-    }
+    pushEvent("prd_tool_generate");
   };
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubStatus("loading");
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 8000);
     try {
       const res = await fetch("/api/subscribe-pack", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: email.trim(), source: "template-prd-ia" }),
+        signal: controller.signal,
       });
+      clearTimeout(timeout);
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
         throw new Error(data.error || "Erreur lors de l'inscription.");
@@ -123,25 +131,44 @@ export default function PRDGenerator() {
       localStorage.setItem(UNLOCK_KEY, "1");
       setUnlocked(true);
       setSubStatus("success");
-      // Plausible
-      if (typeof window !== "undefined" && (window as any).plausible) {
-        (window as any).plausible("prd_tool_email");
-      }
+      pushEvent("prd_tool_email");
     } catch (err: any) {
+      clearTimeout(timeout);
       setSubStatus("error");
-      setSubError(err.message || "Impossible de s'inscrire pour le moment.");
+      setSubError(
+        err.name === "AbortError"
+          ? "La requête a expiré. Réessaie."
+          : err.message || "Impossible de s'inscrire pour le moment."
+      );
     }
   };
 
   const handleCopy = useCallback(() => {
     if (!prompt) return;
-    navigator.clipboard.writeText(prompt);
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(prompt).catch(() => {
+        const el = document.createElement("textarea");
+        el.value = prompt;
+        el.style.position = "fixed";
+        el.style.opacity = "0";
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand("copy");
+        document.body.removeChild(el);
+      });
+    } else {
+      const el = document.createElement("textarea");
+      el.value = prompt;
+      el.style.position = "fixed";
+      el.style.opacity = "0";
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand("copy");
+      document.body.removeChild(el);
+    }
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
-    // Plausible
-    if (typeof window !== "undefined" && (window as any).plausible) {
-      (window as any).plausible("prd_tool_copy");
-    }
+    pushEvent("prd_tool_copy");
   }, [prompt]);
 
   // Split prompt for preview/gate
