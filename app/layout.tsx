@@ -11,7 +11,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://productcopilot.fr"),
   title: "Product Copilot — Outils IA pour Product Managers",
-  description: "Templates, prompts et workflows pour les PMs qui construisent. Outils gratuits, packs thématiques, articles pratiques.",
+  description: "Prompts, templates et workflows pour Product Managers. Pack Vibe Coding for PMs : 12 prompts chaînés pour passer de l'idée au produit. 29 €.",
 };
 
 export default function RootLayout({

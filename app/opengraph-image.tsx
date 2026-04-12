@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Product Copilot — 10 prompts IA pour ton discovery produit";
+export const alt = "Product Copilot — Pack Vibe Coding for PMs";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -35,14 +35,14 @@ export default function OGImage() {
         <div
           style={{
             display: "flex",
-            fontSize: 56,
+            fontSize: 52,
             fontWeight: 700,
             color: "#F5F5F5",
             lineHeight: 1.15,
             marginBottom: 24,
           }}
         >
-          10 prompts IA pour structurer ton discovery produit
+          Pack Vibe Coding for PMs
         </div>
         <div
           style={{
@@ -52,7 +52,7 @@ export default function OGImage() {
             lineHeight: 1.4,
           }}
         >
-          De l&apos;interview brute au PRD. Gratuit, contre ton email.
+          12 prompts chaînés. De l&apos;idée au produit en prod. 29 €.
         </div>
       </div>
     ),

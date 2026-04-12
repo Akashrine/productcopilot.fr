@@ -5,32 +5,35 @@ import NavMain from "../components/NavMain";
 import FooterMain from "../components/FooterMain";
 import { getAllPosts } from "../lib/blog";
 
+const TITLE = "Product Copilot — Outils IA pour Product Managers";
+const DESCRIPTION =
+  "Prompts, templates et workflows pour Product Managers. Pack Vibe Coding for PMs : 12 prompts chaînés pour passer de l'idée au produit. 29 €.";
+
 export const metadata: Metadata = {
-  title: "Product Copilot — Outils IA pour Product Managers",
-  description:
-    "Prompts, templates et workflows pour les Product Managers qui veulent shipper plus vite. Pack Vibe Coding for PMs : 12 prompts, 4 phases, 29 €.",
+  title: TITLE,
+  description: DESCRIPTION,
   keywords: [
     "outils product manager",
     "templates PM",
     "prompts ia product management",
     "prd template gratuit",
     "vibe coding product manager",
+    "pack vibe coding",
   ],
   alternates: { canonical: "https://productcopilot.fr" },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Product Copilot — Outils IA pour Product Managers",
-    description:
-      "Prompts, templates et workflows pour les Product Managers qui veulent shipper plus vite.",
+    title: TITLE,
+    description: DESCRIPTION,
+    siteName: "Product Copilot",
     type: "website",
     locale: "fr_FR",
     url: "https://productcopilot.fr",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Product Copilot — Outils IA pour Product Managers",
-    description:
-      "Prompts, templates et workflows pour les Product Managers qui veulent shipper plus vite.",
+    title: TITLE,
+    description: DESCRIPTION,
   },
 };
 
