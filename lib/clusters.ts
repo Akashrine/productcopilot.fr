@@ -36,18 +36,18 @@ export const clusters: Cluster[] = [
   },
   {
     id: "prd",
-    name: "PRD",
-    description: "Ecris des PRDs clairs en 10 min.",
+    name: "PRD & Vibe Coding",
+    description: "De l'idée au produit qui tourne.",
     badgeClasses: "text-blue-400 bg-blue-400/10",
     tool: {
       label: "Template PRD IA",
       href: "/outils/template-prd-ia",
     },
     pack: {
-      label: "Pack PRD + IA",
-      price: "39 €",
-      href: "/packs/prd-ia",
-      status: "coming",
+      label: "Pack Vibe Coding for PMs",
+      price: "29 €",
+      href: "/packs/vibe-coding-pm",
+      status: "live",
     },
   },
   {

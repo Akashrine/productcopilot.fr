@@ -244,7 +244,7 @@ export default async function BlogPostPage({ params }: Props) {
 
       <div className="divider-shimmer max-w-5xl mx-auto" />
 
-      {/* CTA */}
+      {/* CTA outil gratuit */}
       <section className="px-5 sm:px-6 py-16 md:py-20">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-2xl font-bold tracking-tighter mb-3">
@@ -268,6 +268,32 @@ export default async function BlogPostPage({ params }: Props) {
             >
               Lire d&apos;autres articles
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <div className="divider-shimmer max-w-5xl mx-auto" />
+
+      {/* CTA pack payant */}
+      <section className="px-5 sm:px-6 py-12 md:py-16">
+        <div className="max-w-2xl mx-auto">
+          <div className="card-glass p-6 sm:p-8">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#E8FF8B]/70 mb-3">
+              Pack Vibe Coding for PMs
+            </p>
+            <p className="text-sm text-[#A3A3A3] leading-relaxed mb-5">
+              Tu veux le système complet ? 12 prompts chaînés pour passer du PRD au produit en prod.
+              Clarifier, Designer, Construire, Vérifier — 4 phases, accès immédiat.
+            </p>
+            <div className="flex flex-col sm:flex-row items-start gap-3">
+              <Link
+                href="/packs/vibe-coding-pm"
+                className="btn-glow inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#E8FF8B] text-[#0F0F0F] font-bold text-sm"
+              >
+                Voir le pack — 29 €
+                <ArrowRight />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

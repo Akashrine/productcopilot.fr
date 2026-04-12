@@ -20,11 +20,11 @@ export const packs: Pack[] = [
     status: "live",
   },
   {
-    slug: "pack-prd-ia",
-    title: "Pack PRD + IA",
-    description: "5 prompts, 3 templates Notion et un workflow step-by-step pour des PRDs clairs.",
-    price: "39 €",
-    href: "/packs/prd-ia",
-    status: "coming",
+    slug: "vibe-coding-pm",
+    title: "Pack Vibe Coding for PMs",
+    description: "12 prompts. 4 phases. De l'idée au produit qui tourne.",
+    price: "29 €",
+    href: "/packs/vibe-coding-pm",
+    status: "live",
   },
 ];

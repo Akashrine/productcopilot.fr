@@ -53,11 +53,11 @@ const packDetails: Record<string, string[]> = {
     "Guide de workflow pas-à-pas",
     "Cas réel annoté (transcript → PRD)",
   ],
-  "pack-prd-ia": [
-    "5 prompts PRD experts",
-    "3 templates Notion (PRD, kick-off, post-launch)",
-    "Workflow step-by-step",
-    "Checklist de revue PRD",
+  "vibe-coding-pm": [
+    "12 prompts chaînés en 4 phases (Clarifier, Designer, Construire, Vérifier)",
+    "1 workflow complet (3 flows, 7 règles, cas réel)",
+    "2 cheatsheets PDF (système + design)",
+    "3 templates markdown (CLAUDE.md, Spec de page, Audit technique)",
   ],
 };
 

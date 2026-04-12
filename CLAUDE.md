@@ -32,12 +32,12 @@ Everything on the site connects to a cluster. Articles feed tools. Tools feed pa
 
 ### Cluster map
 
-| Cluster     | Articles SEO         | Outil gratuit           | Pack payant              | Status     |
-|-------------|----------------------|-------------------------|--------------------------|------------|
-| Discovery   | 5 articles (to write)| Pack Discovery prompts  | Pack Système Discovery   | LIVE       |
-| PRD         | 5 articles (written) | Template PRD IA         | Pack PRD + IA (39 EUR)   | TO BUILD   |
-| OKRs        | 5 articles (to write)| Générateur OKR express  | Pack OKRs (29 EUR)       | BACKLOG    |
-| Alignement  | 5 articles (to write)| Clarity Map express     | Pack Alignement (39 EUR) | BACKLOG    |
+| Cluster     | Articles SEO         | Outil gratuit           | Pack payant                    | Status     |
+|-------------|----------------------|-------------------------|--------------------------------|------------|
+| Discovery   | 5 articles (to write)| Pack Discovery prompts  | Pack Système Discovery (49 EUR)| LIVE       |
+| PRD         | 5 articles (written) | Template PRD IA         | Pack Vibe Coding for PMs (29 EUR) | LIVE    |
+| OKRs        | 5 articles (to write)| Générateur OKR express  | Pack OKRs (29 EUR)             | BACKLOG    |
+| Alignement  | 5 articles (to write)| Clarity Map express     | Pack Alignement (39 EUR)       | BACKLOG    |
 
 ### Bundles (cross-cluster)
 - Bundle "PM Toolkit" (89 EUR) : PRD + Discovery + OKRs
@@ -134,7 +134,8 @@ Not a pitch for one product. A vitrine for the whole system.
 - `components/TrackLink.tsx` — Next.js Link wrapper with Plausible event tracking
 - `lib/clusters.ts` — 4 cluster definitions (id, name, tool, pack, badge)
 - `lib/tools.ts` — tool catalog data
-- `lib/packs.ts` — pack catalog data
+- `lib/packs.ts` — pack catalog data (pack-systeme-discovery + vibe-coding-pm)
+- `app/packs/vibe-coding-pm/page.tsx` — Pack Vibe Coding for PMs sales page (live, 29 EUR)
 - `content/blog/` — 5 MDX articles (PRD cluster), with frontmatter
 - `app/pack-discovery/` — Discovery prompt explorer
 - `app/pack-systeme-discovery/` — Pack Système announcement + PackSystemeForm.tsx
@@ -178,9 +179,9 @@ Not a pitch for one product. A vitrine for the whole system.
 9. Create /packs listing page (include existing packs)
 
 ### Phase 2: PRD pack + optimization
-10. Build /packs/prd-ia sales page
-11. Create Pack PRD + IA on LemonSqueezy
-12. Build Loops sequence for PRD cluster (tag: prd-cluster)
+10. ✅ Build /packs/vibe-coding-pm sales page (Pack Vibe Coding for PMs, 29 EUR, live)
+11. ✅ LemonSqueezy product created (link: https://productcopilot.lemonsqueezy.com/checkout/buy/81d43207-7c71-422f-904c-54daf2cc439b)
+12. Build Loops sequence for PRD cluster (tag: prd-cluster) — 7 emails sur 18 jours, spec dans docs/
 13. Add email capture to /tools/user-stories
 14. Write 5 Discovery cluster articles
 
