@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import NavMain from "../../../components/NavMain";
+import FooterMain from "../../../components/FooterMain";
+import ArticleCTA from "../../../components/ArticleCTA";
 import { getPostBySlug, getAllSlugs } from "../../../lib/blog";
 
 type Props = {
@@ -42,33 +44,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 function ArrowLeft() {
   return (
-    <svg
-      viewBox="0 0 16 16"
-      fill="none"
-      className="w-4 h-4"
-      aria-hidden="true"
-    >
+    <svg viewBox="0 0 16 16" fill="none" className="w-4 h-4" aria-hidden="true">
       <path
         d="M13 8H3m0 0l4-4M3 8l4 4"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function ArrowRight() {
-  return (
-    <svg
-      viewBox="0 0 16 16"
-      fill="none"
-      className="w-4 h-4"
-      aria-hidden="true"
-    >
-      <path
-        d="M3 8h10m0 0L9 4m4 4L9 12"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
@@ -158,6 +136,23 @@ const mdxComponents = {
       />
     );
   },
+  table: (props: React.HTMLAttributes<HTMLTableElement>) => (
+    <div className="overflow-x-auto mb-6">
+      <table className="w-full text-sm border-collapse" {...props} />
+    </div>
+  ),
+  th: (props: React.HTMLAttributes<HTMLTableCellElement>) => (
+    <th
+      className="text-left px-3 py-2 border border-white/10 font-semibold text-[#F5F5F5] bg-white/5"
+      {...props}
+    />
+  ),
+  td: (props: React.HTMLAttributes<HTMLTableCellElement>) => (
+    <td
+      className="px-3 py-2 border border-white/10 text-[#A3A3A3]"
+      {...props}
+    />
+  ),
 };
 
 export default async function BlogPostPage({ params }: Props) {
@@ -165,6 +160,8 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getPostBySlug(slug);
 
   if (!post) notFound();
+
+  const cluster = (post.cluster === "vibe-coding" ? "vibe-coding" : "prd") as "prd" | "vibe-coding";
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -191,181 +188,77 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-    <main className="min-h-screen bg-[#0F0F0F] text-[#F5F5F5] font-sans antialiased selection:bg-[#E8FF8B] selection:text-[#0F0F0F]">
-      <NavMain cta={{ label: "Accéder aux prompts", href: "/pack-discovery" }} />
+      <main className="min-h-screen bg-[#0F0F0F] text-[#F5F5F5] font-sans antialiased selection:bg-[#E8FF8B] selection:text-[#0F0F0F]">
+        <NavMain />
 
-      {/* ARTICLE */}
-      <article className="pt-28 pb-20 md:pt-40 md:pb-28 px-5 sm:px-6">
-        <div className="max-w-2xl mx-auto">
-          {/* Back link */}
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 text-sm text-[#666666] hover:text-[#A3A3A3] transition-colors mb-10"
-          >
-            <ArrowLeft />
-            Tous les articles
-          </Link>
-
-          {/* Meta */}
-          <div className="flex items-center gap-3 mb-6">
-            <time dateTime={post.date} className="text-xs text-[#666666]">
-              {formatDate(post.date)}
-            </time>
-            <span className="text-[#333333]">·</span>
-            <span className="text-xs text-[#666666]">{post.readingTime}</span>
-          </div>
-
-          {/* Title */}
-          <h1 className="text-3xl sm:text-4xl font-bold tracking-tighter leading-[1.1] mb-6">
-            {post.title}
-          </h1>
-
-          {/* Tags */}
-          {post.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2 mb-10">
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-2.5 py-1 rounded-full text-[10px] font-semibold bg-white/5 text-[#666666] border border-white/5"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
-
-          <div className="divider-shimmer mb-10" />
-
-          {/* MDX Content */}
-          <div className="prose-custom">
-            <MDXRemote source={post.content} components={mdxComponents} />
-          </div>
-        </div>
-      </article>
-
-      <div className="divider-shimmer max-w-5xl mx-auto" />
-
-      {/* CTA outil gratuit */}
-      <section className="px-5 sm:px-6 py-16 md:py-20">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl font-bold tracking-tighter mb-3">
-            Passe au système complet
-          </h2>
-          <p className="text-[#A3A3A3] mb-8 text-sm leading-relaxed">
-            Le Pack Discovery : 10 prompts chaînés pour transformer tes
-            interviews en PRD en 40 minutes. Gratuit.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link
-              href="/pack-discovery"
-              className="btn-glow inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#E8FF8B] text-[#0F0F0F] font-bold text-sm"
-            >
-              Accéder aux 10 prompts
-              <ArrowRight />
-            </Link>
+        {/* ARTICLE */}
+        <article className="pt-28 pb-20 md:pt-40 md:pb-28 px-5 sm:px-6">
+          <div className="max-w-2xl mx-auto">
+            {/* Back link */}
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/10 text-[#A3A3A3] font-semibold text-sm hover:border-white/20 hover:text-[#F5F5F5] transition-all"
+              className="inline-flex items-center gap-2 text-sm text-[#666666] hover:text-[#A3A3A3] transition-colors mb-10"
             >
-              Lire d&apos;autres articles
+              <ArrowLeft />
+              Tous les articles
             </Link>
-          </div>
-        </div>
-      </section>
 
-      <div className="divider-shimmer max-w-5xl mx-auto" />
+            {/* Meta */}
+            <div className="flex items-center gap-3 mb-6">
+              <time dateTime={post.date} className="text-xs text-[#666666]">
+                {formatDate(post.date)}
+              </time>
+              <span className="text-[#333333]">·</span>
+              <span className="text-xs text-[#666666]">{post.readingTime}</span>
+            </div>
 
-      {/* CTA pack payant */}
-      <section className="px-5 sm:px-6 py-12 md:py-16">
-        <div className="max-w-2xl mx-auto">
-          <div className="card-glass p-6 sm:p-8">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#E8FF8B]/70 mb-3">
-              Pack Vibe Coding for PMs
-            </p>
-            <p className="text-sm text-[#A3A3A3] leading-relaxed mb-5">
-              Tu veux le système complet ? 12 prompts chaînés pour passer du PRD au produit en prod.
-              Clarifier, Designer, Construire, Vérifier — 4 phases, accès immédiat.
-            </p>
-            <div className="flex flex-col sm:flex-row items-start gap-3">
-              <Link
-                href="/packs/vibe-coding-pm"
-                className="btn-glow inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#E8FF8B] text-[#0F0F0F] font-bold text-sm"
-              >
-                Voir le pack — 29 €
-                <ArrowRight />
-              </Link>
+            {/* Title */}
+            <h1 className="text-3xl sm:text-4xl font-bold tracking-tighter leading-[1.1] mb-6">
+              {post.title}
+            </h1>
+
+            {/* Tags */}
+            {post.tags.length > 0 && (
+              <div className="flex flex-wrap gap-2 mb-10">
+                {post.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-2.5 py-1 rounded-full text-[10px] font-semibold bg-white/5 text-[#666666] border border-white/5"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            <div className="divider-shimmer mb-10" />
+
+            {/* MDX Content */}
+            <div className="prose-custom">
+              <MDXRemote source={post.content} components={mdxComponents} />
             </div>
           </div>
-        </div>
-      </section>
+        </article>
 
-      {/* FOOTER */}
-      <footer className="border-t border-white/5 px-5 sm:px-6 py-12 md:py-14">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-start gap-10 md:gap-12">
-          <div className="max-w-xs space-y-2">
-            <span className="text-base font-bold tracking-tight text-gradient-lime">
-              Product Copilot
-            </span>
-            <p className="text-xs text-[#666666] leading-relaxed">
-              Des systèmes IA pour les PMs qui construisent.
-            </p>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-12 sm:gap-20">
-            <div className="space-y-2.5">
-              <h6 className="text-[10px] font-bold uppercase tracking-widest text-[#666666]">
-                Produit
-              </h6>
-              <Link
-                href="/pack-discovery"
-                className="block text-sm text-[#A3A3A3] hover:text-[#F5F5F5] transition-colors"
-              >
-                Pack Discovery
-              </Link>
-              <Link
-                href="/pack-systeme-discovery"
-                className="block text-sm text-[#A3A3A3] hover:text-[#F5F5F5] transition-colors"
-              >
-                Pack Système
-              </Link>
-              <Link
-                href="/tools/user-stories"
-                className="block text-sm text-[#A3A3A3] hover:text-[#F5F5F5] transition-colors"
-              >
-                User Stories
-              </Link>
-            </div>
-            <div className="space-y-2.5">
-              <h6 className="text-[10px] font-bold uppercase tracking-widest text-[#666666]">
-                Liens
-              </h6>
+        <div className="divider-shimmer max-w-5xl mx-auto" />
+
+        {/* ArticleCTA */}
+        <section className="px-5 sm:px-6 py-12 md:py-16">
+          <div className="max-w-2xl mx-auto">
+            <ArticleCTA cluster={cluster} />
+            <div className="mt-6 text-center">
               <Link
                 href="/blog"
-                className="block text-sm text-[#A3A3A3] hover:text-[#F5F5F5] transition-colors"
+                className="text-sm text-[#666666] hover:text-[#A3A3A3] transition-colors"
               >
-                Blog
-              </Link>
-              <a
-                href="https://linkedin.com/in/julienbrionne"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-sm text-[#A3A3A3] hover:text-[#F5F5F5] transition-colors"
-              >
-                LinkedIn
-              </a>
-              <Link
-                href="/mentions-legales"
-                className="block text-sm text-[#A3A3A3] hover:text-[#F5F5F5] transition-colors"
-              >
-                Mentions légales
+                ← Lire d&apos;autres articles
               </Link>
             </div>
           </div>
-          <p className="text-[10px] text-[#666666] md:self-end">
-            &copy; {new Date().getFullYear()} Product Copilot
-          </p>
-        </div>
-      </footer>
-    </main>
+        </section>
+
+        <FooterMain />
+      </main>
     </>
   );
 }

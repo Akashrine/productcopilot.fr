@@ -1,25 +1,25 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import NavMain from "../../components/NavMain";
-import { tools } from "../../lib/tools";
+import FooterMain from "../../components/FooterMain";
 
 export const metadata: Metadata = {
-  title: "Outils gratuits — Product Copilot",
+  title: "Outils PM gratuits — Product Copilot",
   description:
-    "Des générateurs IA spécialisés pour product managers. Pas de compte, pas de carte bleue. Template PRD, user stories, prompts discovery.",
+    "Des outils gratuits pour les Product Managers. Prompts, templates, générateurs.",
   alternates: { canonical: "https://productcopilot.fr/outils" },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Outils gratuits — Product Copilot",
-    description: "Des générateurs IA spécialisés pour product managers. Gratuit.",
+    title: "Outils PM gratuits — Product Copilot",
+    description: "Des outils gratuits pour les Product Managers. Prompts, templates, générateurs.",
     type: "website",
     locale: "fr_FR",
     url: "https://productcopilot.fr/outils",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Outils gratuits — Product Copilot",
-    description: "Des générateurs IA spécialisés pour product managers. Gratuit.",
+    title: "Outils PM gratuits — Product Copilot",
+    description: "Des outils gratuits pour les Product Managers. Prompts, templates, générateurs.",
   },
 };
 
@@ -37,10 +37,25 @@ function ArrowRight() {
   );
 }
 
+const TOOLS = [
+  {
+    slug: "template-prd-ia",
+    title: "Template PRD IA",
+    description: "Réponds à 7 questions. Récupère un prompt qui génère un PRD structuré.",
+    href: "/outils/template-prd-ia",
+  },
+  {
+    slug: "pack-discovery",
+    title: "10 Prompts Discovery",
+    description: "Les prompts de discovery product. Interview, synthèse, décision.",
+    href: "/pack-discovery",
+  },
+];
+
 export default function OutilsPage() {
   return (
     <main className="min-h-screen bg-[#0F0F0F] text-[#F5F5F5] font-sans antialiased selection:bg-[#E8FF8B] selection:text-[#0F0F0F]">
-      <NavMain cta={{ label: "Accéder aux prompts", href: "/pack-discovery" }} />
+      <NavMain />
 
       {/* HERO */}
       <section className="pt-32 pb-12 md:pt-44 md:pb-16 px-5 sm:px-6">
@@ -61,8 +76,8 @@ export default function OutilsPage() {
 
       {/* TOOLS GRID */}
       <section className="px-5 sm:px-6 py-12 md:py-16">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {tools.map((tool) => (
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {TOOLS.map((tool) => (
             <Link
               key={tool.slug}
               href={tool.href}
@@ -87,40 +102,23 @@ export default function OutilsPage() {
 
       <div className="divider-shimmer max-w-5xl mx-auto" />
 
-      {/* CTA PACKS */}
+      {/* CTA PACK */}
       <section className="px-5 sm:px-6 py-16 md:py-20">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl font-bold tracking-tighter mb-3">
-            Tu veux aller plus loin ?
-          </h2>
-          <p className="text-[#A3A3A3] mb-8 text-sm leading-relaxed">
-            Les packs combinent outils, templates Notion et workflows complets. Achat unique.
+          <p className="text-[#A3A3A3] mb-6 text-sm leading-relaxed">
+            Tu veux aller plus loin ? Le Pack Vibe Coding for PMs contient 12 prompts chaînés. 29 €.
           </p>
           <Link
-            href="/packs"
+            href="/packs/vibe-coding-pm"
             className="btn-glow inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#E8FF8B] text-[#0F0F0F] font-bold text-sm"
           >
-            Voir les packs
+            Découvrir le Pack Vibe Coding for PMs
             <ArrowRight />
           </Link>
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="border-t border-white/5 px-5 sm:px-6 py-12">
-        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-start gap-6">
-          <div>
-            <span className="text-sm font-bold tracking-tight text-gradient-lime">Product Copilot</span>
-            <p className="text-[10px] text-[#666666] mt-1">Des outils IA pour les PMs qui construisent.</p>
-          </div>
-          <div className="flex gap-6 text-xs text-[#A3A3A3]">
-            <Link href="/blog" className="hover:text-[#F5F5F5] transition-colors">Blog</Link>
-            <Link href="/packs" className="hover:text-[#F5F5F5] transition-colors">Packs</Link>
-            <Link href="/a-propos" className="hover:text-[#F5F5F5] transition-colors">À propos</Link>
-            <Link href="/mentions-legales" className="hover:text-[#F5F5F5] transition-colors">Mentions légales</Link>
-          </div>
-        </div>
-      </footer>
+      <FooterMain />
     </main>
   );
 }

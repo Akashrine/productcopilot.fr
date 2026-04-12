@@ -2,11 +2,9 @@ import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   const apiKey = process.env.LOOPS_API_KEY;
-  const newsletterListId = process.env.LOOPS_PACK_LIST_ID;
-  const packInterestedListId = process.env.LOOPS_PACK_INTERESTED_LIST_ID;
 
-  if (!apiKey || !newsletterListId || !packInterestedListId) {
-    console.warn("[subscribe-pack] Missing LOOPS_API_KEY, LOOPS_PACK_LIST_ID, or LOOPS_PACK_INTERESTED_LIST_ID");
+  if (!apiKey) {
+    console.warn("[subscribe-pack] Missing LOOPS_API_KEY");
     return NextResponse.json({ error: "Configuration manquante." }, { status: 500 });
   }
 
@@ -18,19 +16,21 @@ export async function POST(request: Request) {
   }
 
   const email = body.email?.trim();
-  const VALID_SOURCES = ["pack-discovery", "pack-systeme-interest", "template-prd-ia"] as const;
-  type ValidSource = (typeof VALID_SOURCES)[number];
-  const source: ValidSource = VALID_SOURCES.includes(body.source as ValidSource)
-    ? (body.source as ValidSource)
-    : "pack-discovery";
-  const mailingListId = source === "pack-systeme-interest" ? packInterestedListId : newsletterListId;
+  const source = body.source?.trim();
 
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  if (!email || !source) {
+    return NextResponse.json({ error: "Email et source requis." }, { status: 400 });
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json({ error: "Email invalide." }, { status: 400 });
   }
 
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 5000);
+
   try {
-    const loopsResponse = await fetch("https://app.loops.so/api/v1/contacts/create", {
+    const loopsResponse = await fetch("https://app.loops.so/api/v1/events/send", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${apiKey}`,
@@ -38,31 +38,28 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         email,
-        source,
-        mailingLists: {
-          [mailingListId]: true,
-        },
+        eventName: "tool_signup",
+        eventProperties: { source },
       }),
+      signal: controller.signal,
     });
 
+    clearTimeout(timeoutId);
+
     if (!loopsResponse.ok) {
-      console.warn(`[subscribe-pack] Loops response not OK (status=${loopsResponse.status})`);
-      let msg = "Erreur lors de l'inscription.";
-      try {
-        const data = await loopsResponse.json();
-        if (typeof data?.message === "string" && data.message.length > 0) msg = data.message;
-      } catch {
-        // keep fallback
-      }
-      return NextResponse.json({ error: msg }, { status: loopsResponse.status });
+      const data = await loopsResponse.json().catch(() => ({}));
+      console.warn(`[subscribe-pack] Loops error (status=${loopsResponse.status})`, data);
+      return NextResponse.json({ error: "Erreur lors de l'inscription." }, { status: 500 });
     }
 
     return NextResponse.json({ success: true }, { status: 200 });
-  } catch {
-    console.warn("[subscribe-pack] Network error while calling Loops");
-    return NextResponse.json(
-      { error: "Impossible de contacter le service d'inscription." },
-      { status: 502 },
-    );
+  } catch (err) {
+    clearTimeout(timeoutId);
+    if ((err as Error).name === "AbortError") {
+      console.warn("[subscribe-pack] Loops request timed out");
+    } else {
+      console.warn("[subscribe-pack] Network error", err);
+    }
+    return NextResponse.json({ error: "Erreur lors de l'inscription." }, { status: 500 });
   }
 }

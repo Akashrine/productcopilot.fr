@@ -12,6 +12,7 @@ export type PostMeta = {
   readingTime: string;
   tags: string[];
   keywords?: string[];
+  cluster?: string;
 };
 
 export type Post = PostMeta & {

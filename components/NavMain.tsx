@@ -19,7 +19,7 @@ const NAV_LINKS = [
 
 export default function NavMain({
   variant = "fixed",
-  cta = { label: "Voir les outils", href: "/outils" },
+  cta = { label: "Pack Vibe Coding — 29 €", href: "/packs/vibe-coding-pm" },
 }: Props) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
