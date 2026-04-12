@@ -1,0 +1,93 @@
+---
+title: "Vibe Design : pourquoi designer avant de coder change tout"
+description: "Google Stitch génère un design system complet en markdown. Tu le déposes dans ton projet, et ton IA de code le lit pour respecter le style. Fini le AI slop."
+date: "2026-04-12"
+slug: "vibe-design-google-stitch"
+readingTime: "7 min"
+tags: ["Vibe Coding", "Design", "Google Stitch", "Product Management"]
+keywords: ["vibe design google stitch", "alternative gratuite figma ia", "designer avec ia", "stitch 2.0 tutorial", "google stitch pm", "design system ia"]
+---
+
+Tu ouvres Claude Code. Tu décris ta landing page en 5 lignes. Tu appuies sur Entrée.
+
+Le résultat : un site qui fonctionne. Navigation, formulaire, footer. Tout est là. Sauf que ça ressemble à tous les autres sites générés par IA. Même layout. Même palette de gris. Même absence de personnalité.
+
+C'est ce que l'industrie appelle le "AI slop". Du code propre avec un design générique.
+
+Le problème n'est pas l'IA. Le problème, c'est l'ordre dans lequel tu fais les choses.
+
+## Le design d'abord. Le code ensuite.
+
+Les PMs et les développeurs solos qui livrent des produits avec une identité visuelle forte suivent tous le même workflow. Ils ne demandent jamais à Claude Code de designer une interface.
+
+Ils designent d'abord dans un outil dédié. Puis ils donnent le design à l'IA de code pour qu'elle l'implémente.
+
+La raison est simple. Les modèles IA spécialisés dans le code (Claude, GPT) sont mauvais en design frontend natif. Ils produisent du code fonctionnel mais visuellement plat. Les modèles spécialisés dans le design (Gemini, via Google Stitch) produisent des interfaces belles mais pas de code de production.
+
+La solution : combiner les deux. Stitch pour le design. Claude Code pour le code. Et un PRD structuré pour que l'IA sache quoi coder — on y revient dans [Le PRD à l'ère du vibe coding](/blog/prd-vibe-coding-anti-bug-loop).
+
+## Google Stitch : ce que c'est et comment ça marche
+
+Stitch est un outil de Google qui utilise Gemini pour générer des interfaces web à partir de références visuelles, de descriptions textuelles, ou d'URLs de sites existants.
+
+Tu lui donnes 2-3 screenshots de sites qui ont le style que tu veux. Tu décris ce que ta page doit contenir. Stitch génère une maquette interactive.
+
+Ce qui rend Stitch différent d'un simple générateur d'images : il produit deux outputs.
+
+Le premier est une maquette HTML interactive. Tu peux cliquer, naviguer, voir le responsive. C'est un prototype fonctionnel, pas une image statique.
+
+Le deuxième est un fichier appelé `design.md`. C'est ton design system en markdown : les couleurs (hex codes), les polices, les tailles, les espacements, les border-radius, la description des composants. C'est le plan d'architecte de ton site.
+
+Ce fichier `design.md` est la pièce qui change tout. Tu le déposes dans ton projet, et ton IA de code le lit pour respecter le style. Plus de design générique.
+
+## Le workflow complet en 5 étapes
+
+**Étape 1 : Trouve tes références.** Va sur Dribbble, Godly, ou les sites de tes concurrents. Screenshot 2-3 pages qui ont le style que tu veux. Pas besoin de 10. 2-3 suffisent pour capturer une vibe.
+
+**Étape 2 : Génère dans Stitch.** Upload tes screenshots comme références. Ajoute un prompt qui décrit le contenu de ta page (titres, sous-titres, CTAs, sections). Donne du vrai contenu, pas du lorem ipsum. Le design change avec la longueur du texte.
+
+**Étape 3 : Itère.** Clic droit sur une section, "Reimagine" pour une nouvelle version, "Custom" pour une modification ciblée. Demande les variantes desktop et mobile. 80% de satisfaction suffit. Claude Code ajustera le reste.
+
+**Étape 4 : Exporte.** Récupère le `design.md` (ton design system) et le HTML de chaque page (ta référence visuelle). Dépose le `design.md` dans ton projet (`docs/design.md`).
+
+**Étape 5 : Code.** Donne le HTML à Claude Code avec l'instruction "transforme en React/Tailwind en respectant le design system de `docs/design.md`." L'IA code. Le résultat ressemble au design.
+
+## Pourquoi ça remplace Figma pour les développeurs solos
+
+Figma est un outil de design collaboratif conçu pour les équipes (designers + développeurs). Il fait bien son travail. Mais pour un PM ou un développeur solo qui construit un produit, Figma a trois problèmes.
+
+Le premier est la courbe d'apprentissage. Maîtriser Figma prend des semaines. Apprendre à produire un design cohérent prend des mois. Si tu n'es pas designer, tu vas produire des maquettes médiocres.
+
+Le deuxième est le coût. Figma Pro coûte 15 EUR/mois par utilisateur. Une agence qui te crée une charte graphique et un site coûte entre 5 000 et 15 000 EUR. Le budget n'est pas le même quand tu es solo.
+
+Le troisième est le workflow. Avec Figma, tu designs, puis tu traduis manuellement le design en code (ou tu utilises un plugin d'export qui génère du code moyen). Avec Stitch, le design ET le code sortent du même outil.
+
+Stitch ne remplace pas Figma pour une équipe de 20 personnes avec un design system mature. Mais pour un PM qui veut construire un site ou un outil en solo, c'est le bon choix. Pour un comparatif des outils de vibe coding (Claude Code, Cursor, Bolt), voir [cet article](/blog/claude-code-vs-cursor-vs-bolt).
+
+## Les astuces qui changent le résultat
+
+**L'URL directe.** Tu n'as pas de screenshots ? Colle l'URL d'un site dans Stitch. Il extrait les couleurs, la typo et la vibe instantanément.
+
+**Le redesign.** Tu as un prototype moche ? Screenshot chaque page, upload dans Stitch avec le prompt "redesigne dans un style professionnel." Nouveau `design.md` en 15 minutes.
+
+**Le prompt vocal.** Stitch accepte la dictée vocale. Décris ce que tu veux à voix haute. C'est plus naturel pour exprimer une "vibe" qu'un texte tapé.
+
+**Les composants prêts-à-porter.** Pour les sections complexes (testimonials, pricing, dashboard), ne demande ni à Stitch ni à Claude Code de les créer de zéro. Va sur 21st.dev, copie un composant React, et demande à Claude de l'intégrer avec ton design system.
+
+## La vérification : le Sub-Agent UI
+
+Le problème récurrent : Claude Code respecte le design system au début, puis dérive. Les couleurs changent. Les spacings s'approximent. Le `design.md` est oublié.
+
+La solution : après avoir codé toutes les pages, colle ce prompt dans Claude Code.
+
+> "Relis docs/design.md. Compare chaque composant React du projet avec les tokens du design system. Liste les écarts. N'applique rien, liste d'abord."
+
+Claude produit un rapport d'incohérences. Tu approuves les corrections. Le design est cohérent.
+
+## Passe à l'action
+
+Le `design.md` est le fichier qui fait la différence entre un prototype AI slop et un produit avec une identité.
+
+Tu veux le système complet pour passer de l'idée au produit ? 12 prompts chaînés, du PRD au design au code à l'audit.
+
+[Découvre le Pack Vibe Coding for PMs →](/packs/vibe-coding-pm)

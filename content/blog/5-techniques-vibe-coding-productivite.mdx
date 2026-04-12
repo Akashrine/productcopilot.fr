@@ -1,0 +1,111 @@
+---
+title: "5 techniques avancées pour coder 10x plus vite avec l'IA"
+description: "Dictée vocale, Plan Mode, audit visuel automatique, test-driven vibe coding, composants prêts-à-porter. Les méthodes des développeurs solos qui livrent des produits complets en quelques jours."
+date: "2026-04-12"
+slug: "5-techniques-vibe-coding-productivite"
+readingTime: "8 min"
+tags: ["Vibe Coding", "Claude Code", "Productivité", "Cursor"]
+keywords: ["astuces vibe coding productivité", "10x developer ai", "hacks claude code", "productivité cursor", "whisper flow vibe coding", "plan mode cursor"]
+---
+
+Tu sais utiliser Claude Code. Tu sais écrire un prompt. Tu sais débugger.
+
+Mais tu passes encore 60% de ton temps à corriger des erreurs, à reformuler des instructions, et à vérifier que l'IA n'a pas cassé autre chose.
+
+Ces 5 techniques ne sont pas des bases. Ce sont les méthodes utilisées par les développeurs solos qui livrent des produits complets en quelques jours. Chacune cible un goulot d'étranglement spécifique.
+
+## 1. La dictée vocale (Whisper Flow)
+
+**Le goulot : tes prompts sont trop courts.**
+
+Tu tapes "ajoute un formulaire de contact." L'IA ajoute un formulaire basique. Il manque la validation, les états d'erreur, le design, le feedback visuel. Tu corriges en 3-4 messages. 15 minutes perdues.
+
+**La technique : dicte tes prompts au lieu de les taper.**
+
+Quand tu parles, tu es naturellement plus détaillé. Tu décris le contexte, le parcours utilisateur, les cas d'erreur, le style visuel. Un prompt dicté fait 200 mots. Un prompt tapé fait 20 mots. La différence de qualité du code est massive.
+
+> "Je veux un formulaire de contact sur la page /contact. Deux champs : email (required, validation format) et message (required, minimum 10 caractères). Bouton 'Envoyer' avec la couleur accent du design system. Quatre états : idle (le formulaire vide), loading (bouton désactivé, texte 'Envoi...'), success (le formulaire disparait, message 'Message envoyé' en vert), error (message d'erreur sous le bouton en rouge). Le formulaire POST vers /api/contact. Sur mobile, les champs sont empilés. Le focus ring utilise la couleur accent."
+
+Ce prompt produit un formulaire complet du premier coup. Il faudrait 5-6 messages pour arriver au même résultat avec des prompts tapés courts.
+
+Outils : Whisper Flow (Mac), SuperWhisper, ou la dictée native de ton OS.
+
+## 2. Le Plan Mode obligatoire
+
+**Le goulot : l'IA code avant de réfléchir.**
+
+Tu demandes une modification. L'IA modifie 4 fichiers immédiatement. Deux marchent. Deux cassent autre chose. Tu debug.
+
+**La technique : toujours demander un plan avant l'exécution.**
+
+Dans Cursor : Shift+Tab active le Plan Mode. L'IA analyse le projet, identifie les fichiers concernés, et propose une stratégie AVANT de modifier quoi que ce soit. Tu valides le plan, puis elle exécute.
+
+Dans Claude Code : commence ton prompt par "Analyse d'abord. Liste les fichiers que tu vas modifier et ce que tu vas changer dans chacun. Attends mon OK avant de coder."
+
+Le Plan Mode augmente la qualité de l'output de 20% minimum. C'est le ratio temps investi / bugs évités le plus favorable de toute la liste.
+
+La règle : si la modification touche plus de 2 fichiers, Plan Mode obligatoire. Sans exception.
+
+## 3. Le Sub-Agent UI Expert
+
+**Le goulot : l'IA respecte le design au début, puis dérive.**
+
+Tu codes 5 pages. Les premières respectent le `design.md`. La cinquième utilise des couleurs différentes, des spacings approximatifs, et des border-radius inconsistants.
+
+**La technique : après avoir codé toutes les pages, lance un audit visuel automatique.** (Le `design.md` est généré avec Google Stitch — [voir le workflow complet](/blog/vibe-design-google-stitch).)
+
+Colle ce prompt dans Claude Code :
+
+> "Relis docs/design.md. Compare chaque composant React du projet avec les tokens du design system. Pour chaque écart, liste : le fichier, le token attendu (depuis design.md) vs la valeur utilisée dans le code. N'applique rien. Liste d'abord."
+
+Claude produit un rapport. Tu approuves les corrections. 5 minutes pour un site visuellement cohérent.
+
+Ce n'est pas un "sous-agent" au sens technique. C'est un prompt d'audit. Mais l'effet est le même : un garde-fou qui vérifie la conformité visuelle après le coding.
+
+## 4. Le Test-Driven Vibe Coding
+
+**Le goulot : tu ne sais pas si le code marche avant de le tester manuellement.**
+
+Tu codes un formulaire. Tu ouvres le navigateur. Tu tapes un email. Tu cliques Envoyer. Ça marche. Tu tapes un email invalide. Ça casse. Tu retournes dans Claude Code. Tu corriges. Tu retestes. 5 minutes par cycle.
+
+**La technique : demande à l'IA d'écrire les tests AVANT le code.**
+
+> "Écris les tests pour le formulaire de contact. Les tests doivent couvrir : soumission avec données valides (200 OK), soumission avec email invalide (erreur affichée), soumission avec message trop court (erreur affichée), soumission quand l'API est down (message d'erreur générique). Écris les tests. Vérifie qu'ils échouent. Puis implémente le code pour les valider."
+
+L'IA écrit les tests, vérifie qu'ils échouent (le code n'existe pas encore), puis code le formulaire pour satisfaire les tests. Résultat : le code gère tous les cas d'erreur dès la première version.
+
+Cette technique demande un framework de test configuré (Vitest, Jest, Playwright). Si ton projet n'en a pas, demande à Claude Code de l'installer d'abord. Le setup prend 5 minutes. Le gain de temps sur le reste du projet est de plusieurs heures.
+
+## 5. Les composants prêts-à-porter (Lego Building)
+
+**Le goulot : l'IA génère des composants UI médiocres de zéro.**
+
+Tu demandes une section de témoignages. L'IA génère 3 cards avec du texte en gris sur fond blanc. Aucune personnalité. Aucun détail (avatar, rôle, étoiles, animation).
+
+**La technique : ne jamais demander à l'IA de créer un composant UI complexe de zéro.**
+
+Va sur 21st.dev (bibliothèque de composants React/Tailwind gratuits). Trouve le composant qui correspond à ton besoin. Copie le code. Donne-le à Claude Code :
+
+> "Intègre ce composant dans mon projet. Adapte les couleurs et le contenu au design system de docs/design.md. Remplace le contenu placeholder par [ton contenu réel]."
+
+L'IA est une excellente intégratrice. Elle adapte un composant existant mieux qu'elle n'en crée un. Le résultat est professionnel parce que la base est professionnelle.
+
+Les sections qui bénéficient le plus de cette technique : testimonials, pricing tables, feature grids, hero sections avec animations, dashboards avec graphiques.
+
+## La technique bonus : le CLAUDE.md vivant
+
+Le `CLAUDE.md` et le PRD structuré vont de pair — si tu ne sais pas encore comment construire ce PRD pour le vibe coding, lis [cet article](/blog/prd-vibe-coding-anti-bug-loop) d'abord.
+
+La plupart des PMs créent un `CLAUDE.md` au début du projet et ne le touchent plus. 3 jours plus tard, le fichier est obsolète. L'IA travaille avec un contexte périmé.
+
+La règle : après chaque session de coding (pas chaque commit, chaque session), mets à jour le `CLAUDE.md`. Ajoute les nouvelles routes, les nouveaux composants, les nouvelles règles apprises ("ne pas utiliser X parce que ça casse Y").
+
+Le `CLAUDE.md` vivant est la technique la plus sous-estimée. Un fichier de contexte à jour fait plus de différence que le choix entre Claude Code et Cursor.
+
+## Passe à l'action
+
+Ces techniques fonctionnent avec n'importe quel outil de vibe coding. Le système complet (PRD → design → code → audit) est documenté dans le Pack Vibe Coding for PMs.
+
+[Accède au Template PRD IA — Gratuit →](/outils/template-prd-ia)
+
+[Pack Vibe Coding for PMs — 12 prompts, 4 phases — 29 € →](/packs/vibe-coding-pm)

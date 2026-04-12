@@ -1,0 +1,107 @@
+---
+title: "MCP pour les PMs : connecter Claude Code à Stitch, Supabase et le reste"
+description: "Le MCP (Model Context Protocol) donne des mains à Claude Code. Stitch MCP pour le design auto, Context7 pour la doc à jour, Supabase MCP pour la base de données. Guide pratique."
+date: "2026-04-12"
+slug: "mcp-claude-code-stitch-supabase"
+readingTime: "7 min"
+tags: ["Vibe Coding", "Claude Code", "MCP", "Supabase"]
+keywords: ["MCP claude code tutorial", "google stitch MCP", "connecter API claude code", "model context protocol guide", "supabase MCP", "context7 claude code"]
+---
+
+Claude Code sait coder. Il ne sait pas lire ton design Stitch. Il ne sait pas déployer ta base Supabase. Il ne sait pas vérifier la doc d'une librairie.
+
+Du moins, pas tout seul.
+
+Le MCP (Model Context Protocol) lui donne des mains. Au lieu de copier-coller du HTML depuis Stitch, Claude Code va le chercher lui-même. Au lieu de lire la doc d'une librairie dans sa mémoire (souvent obsolète), il consulte la version actuelle.
+
+C'est le protocole qui transforme Claude Code d'un outil de coding en un agent connecté.
+
+## Ce qu'est le MCP (en 30 secondes)
+
+Le MCP est un protocole qui permet à Claude Code (ou Cursor) de se connecter à des services externes via des "serveurs MCP". Chaque serveur MCP expose des outils que l'IA appelle quand elle en a besoin.
+
+Exemple : le serveur MCP de Stitch expose un outil "télécharger le HTML d'une page". Quand tu dis à Claude Code "utilise Stitch pour récupérer le design de ma home", Claude appelle cet outil, récupère le HTML, et l'utilise comme référence pour coder.
+
+Tu ne codes pas le MCP. Tu l'installes. C'est une commande dans le terminal + une clé API.
+
+## Les 3 serveurs MCP qui changent tout pour un PM
+
+### 1. Stitch MCP — Le design automatique
+
+Sans MCP : tu exportes le HTML de Stitch manuellement (View Code → copier → coller dans Claude Code). Ça fonctionne mais c'est du copier-coller répétitif.
+
+Avec MCP : tu dis "utilise les outils Stitch pour télécharger le HTML de ma page home et convertis en React/Tailwind." Claude Code fait tout seul.
+
+L'avantage n'est pas juste le gain de temps. Le HTML téléchargé via MCP contient des métadonnées sur le layout, les espacements et les animations qui sont invisibles sur un screenshot. Claude Code produit un code plus fidèle au design.
+
+Le MCP Stitch est aussi bidirectionnel. Si tu modifies ton code, tu demandes à Claude de repousser les changements vers Stitch pour garder le fichier design à jour.
+
+Si tu n'as pas encore utilisé Stitch, commence par [ce guide sur le workflow vibe design](/blog/vibe-design-google-stitch) — le MCP est l'étape suivante une fois le process manuel maîtrisé.
+
+**Configuration :**
+1. Dans Stitch, va dans les paramètres, génère une clé API
+2. Dans ton terminal, lance la commande d'installation MCP (fournie par Stitch)
+3. Claude Code a maintenant accès aux outils Stitch
+
+### 2. Context7 — La doc à jour
+
+Le problème : Claude Code a été entraîné sur des données qui ont quelques mois. Quand tu utilises une librairie récente (ou une version récente d'une librairie), l'IA génère du code basé sur l'ancienne API. Ça compile pas. Ou pire : ça compile mais ça fait la mauvaise chose.
+
+Context7 est un serveur MCP gratuit qui donne à Claude Code l'accès aux documentations officielles à jour de milliers de librairies.
+
+Tu dis "utilise Context7 pour vérifier l'API actuelle de Supabase Auth." Claude Code consulte la doc en temps réel et génère du code qui utilise la bonne syntaxe.
+
+C'est le serveur MCP qui élimine les hallucinations techniques. L'IA ne devine plus la syntaxe d'une librairie. Elle la lit.
+
+### 3. Supabase MCP — La base de données pilotée par l'IA
+
+Sans MCP : tu crées tes tables dans le dashboard Supabase. Tu configures les Row Level Security (RLS) rules à la main. Tu copies les types dans ton code.
+
+Avec MCP : tu dis "crée une table users avec id, email, created_at. Ajoute les RLS rules pour que chaque user ne voie que ses données. Génère les types TypeScript." Claude Code exécute tout dans Supabase directement depuis le terminal.
+
+Le Supabase MCP est le plus puissant des trois pour les PMs qui construisent des apps avec auth et données. Il élimine la couche manuelle entre "je sais ce que je veux dans la base" et "la base est configurée."
+
+## Comment installer un serveur MCP
+
+L'installation est la même pour tous les serveurs MCP.
+
+**Étape 1 :** Trouve la commande d'installation. Chaque serveur MCP a sa page avec la commande. Stitch la fournit dans ses paramètres. Context7 et Supabase ont des repos GitHub avec les instructions.
+
+**Étape 2 :** Lance la commande dans ton terminal. C'est une ligne. Elle installe le serveur et le configure pour Claude Code.
+
+**Étape 3 :** Vérifie. Demande à Claude Code "quels outils MCP sont disponibles ?" Il liste les serveurs connectés et leurs outils.
+
+C'est tout. Pas de code à écrire. Pas de fichier de config à maintenir.
+
+## Quand utiliser le MCP (et quand s'en passer)
+
+Le MCP ajoute de la puissance mais aussi de la complexité. Pour un premier projet, la méthode manuelle (copier-coller le HTML, lire la doc soi-même, configurer Supabase dans le dashboard) fonctionne très bien.
+
+Le MCP devient utile quand :
+
+- Tu construis plusieurs pages et le copier-coller Stitch devient répétitif
+- Tu utilises des librairies qui changent souvent (l'IA hallucine les anciennes APIs)
+- Tu configures une base Supabase complexe (10+ tables, RLS rules, triggers)
+- Tu itères vite et tu veux un workflow sans friction
+
+Pour une landing page simple ou un outil sans base de données, le MCP est overkill.
+
+## Les limites du MCP
+
+Le MCP n'est pas magique. Trois limites à connaître.
+
+**Première : la fenêtre de contexte.** Chaque appel MCP injecte des données dans le contexte de Claude Code. Si tu télécharges 5 pages HTML de Stitch d'un coup, la fenêtre de contexte sature. L'IA perd le fil. Page par page.
+
+**Deuxième : la fiabilité.** Les serveurs MCP sont des services tiers. Ils peuvent être lents, avoir des bugs, ou changer leur API. La méthode manuelle est le fallback.
+
+**Troisième : la configuration initiale.** Chaque serveur MCP demande une clé API et une commande d'installation. Ce n'est pas compliqué, mais c'est une friction supplémentaire.
+
+## Passe à l'action
+
+Pour choisir entre Claude Code, Cursor et Bolt avant de configurer ton MCP : [comparatif des outils de vibe coding](/blog/claude-code-vs-cursor-vs-bolt).
+
+Le MCP est un accélérateur, pas un prérequis. Le système de prompts du Pack Vibe Coding for PMs fonctionne avec ou sans MCP. La méthode manuelle est décrite dans chaque prompt comme l'option par défaut. Le MCP est l'option avancée.
+
+[Accède au Template PRD IA — Gratuit →](/outils/template-prd-ia)
+
+[Pack Vibe Coding for PMs — 12 prompts, 4 phases — 29 € →](/packs/vibe-coding-pm)

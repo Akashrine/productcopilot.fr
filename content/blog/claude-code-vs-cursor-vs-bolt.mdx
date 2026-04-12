@@ -1,0 +1,113 @@
+---
+title: "Claude Code vs Cursor vs Bolt : quel outil de vibe coding choisir en 2026"
+description: "Claude Code excelle en frontend, Cursor en architecture, Bolt en prototypage rapide. Le bon choix dépend de ce que tu construis — pas de l'outil le plus populaire."
+date: "2026-04-12"
+slug: "claude-code-vs-cursor-vs-bolt"
+readingTime: "8 min"
+tags: ["Vibe Coding", "Claude Code", "Cursor", "Outils IA"]
+keywords: ["claude code vs cursor", "meilleur outil vibe coding", "bolt.new avis", "cursor vs claude code 2026", "vibe coding tools comparatif", "claude code ou cursor"]
+---
+
+Trois outils. Trois approches. Aucun ne fait tout bien.
+
+Si tu cherches "le meilleur outil de vibe coding", tu ne trouveras pas de réponse simple. Parce que la bonne question n'est pas "lequel est le meilleur" mais "lequel utiliser pour quoi."
+
+Voici ce que 6 mois de vibe coding sur des projets réels (pas des demos) m'ont appris.
+
+## Claude Code : l'agent terminal
+
+Claude Code tourne dans ton terminal. Pas d'interface graphique. Pas d'éditeur de texte. Tu lui parles, il code, il crée des fichiers, il lance des commandes.
+
+**Ce qu'il fait le mieux : le design frontend et les interactions UI.** Quand tu lui donnes un HTML de référence (exporté de Stitch) et un `design.md`, il produit un code React/Tailwind qui respecte le design au pixel près. C'est le meilleur outil pour transformer un design en code.
+
+**Sa force cachée : il lit le fichier `CLAUDE.md` à la racine de ton projet automatiquement.** Ce fichier contient le contexte (stack, routes, composants, fichiers à ne pas toucher). L'IA comprend ton projet dès la première commande. Pas besoin de re-expliquer à chaque chat.
+
+Son mode UltraThink le force à réfléchir plus longtemps sur les bugs complexes au lieu de proposer un fix rapide qui casse autre chose. Tu l'actives quand le bug est subtil.
+
+Il tourne aussi des serveurs en arrière-plan et lit les logs d'erreurs en direct. Quand tu codes une API, il voit les erreurs 500 en temps réel et les corrige sans que tu aies besoin de copier-coller le message d'erreur.
+
+**Ce qu'il fait mal : les problèmes d'architecture complexes.** Quand tu dois refactorer un projet entier ou repenser la structure de fichiers, Claude Code a tendance à proposer des solutions locales au lieu de repenser le système.
+
+Prix : payant (abonnement Claude Pro ou API).
+
+## Cursor : l'éditeur intelligent
+
+Cursor est un éditeur de code (fork de VS Code) avec de l'IA intégrée. Tu codes dans l'éditeur. L'IA complète, suggère, modifie.
+
+**Ce qu'il fait le mieux : les problèmes d'architecture.** Son "Plan Mode" (Shift+Tab) produit une analyse détaillée avant de coder. Il lit l'ensemble du projet, identifie les dépendances, et propose une stratégie de modification. Pour les refactorisations complexes et les changements multi-fichiers, il est meilleur que Claude Code.
+
+**Sa force : le choix du modèle.** Tu peux utiliser GPT-4.1, Claude Sonnet, ou d'autres modèles selon la tâche. GPT-4.1 est particulièrement bon pour les problèmes d'architecture. Claude Sonnet pour le frontend.
+
+**Ce qu'il fait mal : le design.** Comme Claude Code, il produit du CSS générique quand tu ne lui donnes pas de design system. La différence : Cursor ne lit pas un fichier de contexte automatiquement. Tu dois pointer vers les fichiers manuellement (avec `@fichier`).
+
+Prix : freemium (version gratuite limitée, Pro à ~20 USD/mois).
+
+## Bolt : le tout-en-un
+
+Bolt.new (et Lovable, son concurrent) est un outil web. Tu décris ce que tu veux, il génère une app complète dans le navigateur. Pas de terminal. Pas d'éditeur. Tout se passe dans une interface web.
+
+**Ce qu'il fait le mieux : le prototypage rapide.** En 10 minutes, tu as une app qui tourne avec un design correct. C'est l'outil le plus rapide pour aller de "j'ai une idée" à "j'ai un truc qui marche."
+
+**Ce qu'il fait mal : la production.** Le code généré par Bolt est difficile à maintenir. La structure de fichiers est souvent chaotique. Les dépendances sont mal gérées. Dès que tu veux modifier le code généré, tu te retrouves dans la Bug Doom Loop.
+
+Son usage idéal : les prototypes jetables. Tu veux valider une idée en 2 heures ? Bolt. Tu veux construire un produit que tu maintiens sur 6 mois ? Claude Code ou Cursor.
+
+Prix : freemium (tokens limités en gratuit, abonnement pour plus de tokens).
+
+## Le setup hybride (le secret des top vibe-coders)
+
+Le setup le plus productif n'est pas un seul outil. C'est la combinaison de deux.
+
+Tu ouvres Cursor comme éditeur principal. Tu ouvres le terminal intégré de Cursor. Tu lances Claude Code dans ce terminal.
+
+Résultat : tu as Cursor pour naviguer dans le code, utiliser le Plan Mode, et faire des refactorisations complexes. Et tu as Claude Code dans le même environnement pour les tâches frontend, le design, et les commandes terminal.
+
+Tu alternes entre les deux selon la tâche :
+
+- Architecture, refactoring, changement multi-fichiers → Cursor (Plan Mode)
+- Frontend, design system, composant UI → Claude Code
+- Bug complexe → Claude Code (UltraThink)
+- Prototype rapide à jeter → Bolt
+
+## Le rôle de Stitch dans tout ça
+
+Aucun de ces trois outils ne fait du design. C'est le point aveugle du vibe coding.
+
+Google Stitch comble ce trou. Tu designes dans Stitch (Phase 2), puis tu codes dans Claude Code ou Cursor (Phase 3). Le `design.md` fait le pont. Pour comprendre le workflow Stitch en détail : [Vibe Design — pourquoi designer avant de coder change tout](/blog/vibe-design-google-stitch).
+
+Le workflow complet :
+
+1. Stitch → `design.md` + HTML (le design)
+2. Claude Code → conversion HTML en React/Tailwind (le code frontend)
+3. Cursor → architecture, API, refactoring (le code backend)
+
+## Tableau comparatif
+
+|  | Claude Code | Cursor | Bolt |
+|---|---|---|---|
+| Type | Agent terminal | Éditeur IDE | App web |
+| Force | Frontend, design, UX | Architecture, refactoring | Prototypage rapide |
+| Faiblesse | Archi complexe | Design, contexte auto | Maintenabilité |
+| Fichier contexte | CLAUDE.md (auto) | @fichier (manuel) | Prompt système |
+| Modèles | Claude uniquement | Multi-modèle (GPT, Claude) | Modèle interne |
+| Pour qui | PM qui code, dev solo | Dev, PM technique | Non-tech, prototype |
+| Prix | Payant | Freemium | Freemium |
+| Stitch compatible | Oui (MCP + manuel) | Oui (manuel) | Non |
+
+## Le bon choix selon ton profil
+
+**Tu es PM, tu veux construire un site ou un outil :** Claude Code + Stitch. Le `CLAUDE.md` et le `design.md` te donnent un setup complet sans configuration complexe.
+
+**Tu es PM technique, tu travailles avec des devs :** Cursor. Le Plan Mode produit des specs techniques que tes devs comprennent.
+
+**Tu veux tester une idée en 2 heures :** Bolt. Prototype, valide, jette. Si ça marche, reconstruis proprement avec Claude Code.
+
+**Tu veux le meilleur setup possible :** Cursor (éditeur) + Claude Code (terminal intégré) + Stitch (design). C'est plus de setup mais c'est le plus productif.
+
+## Passe à l'action
+
+Quel que soit l'outil, la qualité du code dépend de la qualité du brief. Un bon `CLAUDE.md`, un bon `design.md`, et un bon PRD font plus de différence que le choix de l'outil.
+
+[Accède au Template PRD IA — Gratuit →](/outils/template-prd-ia)
+
+[Pack Vibe Coding for PMs — 12 prompts, du PRD au code — 29 € →](/packs/vibe-coding-pm)

@@ -11,6 +11,7 @@ export type PostMeta = {
   slug: string;
   readingTime: string;
   tags: string[];
+  keywords?: string[];
 };
 
 export type Post = PostMeta & {

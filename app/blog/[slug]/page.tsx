@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${post.title} — Product Copilot`,
     description: post.description,
+    ...(post.keywords && post.keywords.length > 0 ? { keywords: post.keywords } : {}),
     alternates: { canonical: `https://productcopilot.fr/blog/${post.slug}` },
     robots: { index: true, follow: true },
     openGraph: {
