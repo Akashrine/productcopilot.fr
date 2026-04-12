@@ -148,10 +148,6 @@ const faqItems = [
     q: "C'est quoi un CLAUDE.md ?",
     a: "Un fichier texte à la racine du projet. Claude Code le lit automatiquement à chaque session. Le CLAUDE.md Generator le crée pour toi à partir de ta spec technique.",
   },
-  {
-    q: "Satisfait ou remboursé ?",
-    a: "Oui, 30 jours. Si le pack ne t'aide pas, envoie un email. Remboursement sans question.",
-  },
 ];
 
 function CTAButton({ className = "" }: { className?: string }) {
@@ -202,7 +198,7 @@ export default function VibeCodingPMPage() {
 
         {/* ── HERO ── */}
         <section className="relative px-5 sm:px-6 pt-16 pb-16 md:pt-24 md:pb-20 overflow-hidden">
-          <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[450px] bg-[radial-gradient(ellipse_at_center,_rgba(232,255,139,0.06)_0%,_transparent_70%)]" />
+          <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[450px] bg-[radial-gradient(ellipse_at_center,rgba(232,255,139,0.06)_0%,transparent_70%)]" />
           <div className="relative max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#E8FF8B]/20 bg-[#E8FF8B]/5 text-[#E8FF8B] text-xs font-semibold mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-[#E8FF8B]" />
@@ -423,7 +419,7 @@ export default function VibeCodingPMPage() {
             <p className="text-[#A3A3A3] text-sm mb-8">Paiement unique. Accès immédiat.</p>
             <CTAButton className="w-full mb-3" />
             <p className="text-xs text-[#666666]">
-              Paiement sécurisé via LemonSqueezy. Garantie satisfait ou remboursé 30 jours.
+              Paiement sécurisé via LemonSqueezy. Accès immédiat après paiement.
             </p>
           </div>
         </section>
