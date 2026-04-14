@@ -1,0 +1,92 @@
+---
+title: "Synthétiser des interviews utilisateurs avec l'IA"
+description: "Une méthode pas à pas pour transformer 5 transcriptions d'interviews en une synthèse actionnable en 40 minutes. Prompts inclus."
+date: "2026-04-16"
+slug: "synthese-interview-utilisateur-ia"
+readingTime: "7 min"
+tags: ["Discovery", "IA", "User Research"]
+cluster: "discovery"
+keywords: ["synthèse interview utilisateur", "ia user research", "transcription interview ia", "synthèse discovery", "prompts interview"]
+---
+
+Tu viens de finir 5 interviews utilisateurs. Tu as 5 heures de transcriptions. Tu sais que les insights sont quelque part dans ces 50 000 mots.
+
+Tu ouvres le premier fichier. Tu surlignes. Tu prends des notes. Au bout de 2 heures, tu as traité 2 interviews et tu ne sais plus si le verbatim que tu viens de lire contredit celui du premier participant.
+
+La synthèse d'interviews est le goulot d'étranglement de la discovery. C'est la raison pour laquelle beaucoup de PMs font 3 interviews au lieu de 10. Le problème n'est pas le temps d'interview. C'est le temps de traitement.
+
+Voici une méthode pour passer de 5 transcriptions à une synthèse structurée en 40 minutes.
+
+## Pourquoi la synthèse manuelle ne scale pas
+
+Trois problèmes.
+
+Premier problème : le biais de récence. Quand tu lis 5 interviews séquentiellement, tu surpondères la dernière. Les insights de l'interview 1 sont flous. Ceux de l'interview 5 sont nets. Ta synthèse reflète ce biais.
+
+Deuxième problème : le filtre inconscient. Tu cherches ce qui confirme ton hypothèse. C'est humain. Quand tu surlignes manuellement, tu sélectionnes les verbatims qui vont dans ton sens. Les signaux contradictoires passent à la trappe.
+
+Troisième problème : le format. Chaque PM synthétise différemment. Certains font des mind maps. D'autres des tableaux. D'autres des bullet points dans Notion. Il n'y a pas de format standard, donc les synthèses sont difficiles à comparer d'un cycle de discovery à l'autre.
+
+## La méthode en 4 passes
+
+### Passe 1 : Extraction brute (10 min)
+
+Traite chaque transcription individuellement. Donne une seule transcription à l'IA avec cette consigne :
+
+"Extrais de cette transcription tous les moments où l'utilisateur exprime : une frustration, un besoin, un contournement (workaround), une attente non satisfaite, ou une surprise positive. Pour chaque moment, donne : la citation exacte, le contexte (ce dont il parlait), et une étiquette courte (frustration / besoin / contournement / attente / surprise)."
+
+Répète pour chaque transcription. Tu obtiens 5 listes de signaux bruts.
+
+Pourquoi une par une ? Parce que l'IA perd en granularité quand elle traite trop de texte d'un coup. Elle résume au lieu d'extraire. Tu veux les verbatims exacts, pas des reformulations.
+
+### Passe 2 : Consolidation (10 min)
+
+Donne toutes les extractions à l'IA. Demande-lui de regrouper les signaux par thème.
+
+"Voici les signaux extraits de 5 interviews utilisateurs. Regroupe-les par thème. Pour chaque thème, indique : le nombre d'utilisateurs qui l'ont mentionné (sur 5), les verbatims clés, et une description du thème en une phrase."
+
+Le résultat est un tableau de patterns. Chaque pattern est soutenu par des citations réelles.
+
+### Passe 3 : Priorisation (10 min)
+
+Tous les patterns ne se valent pas. Un pattern mentionné par 5/5 utilisateurs n'a pas le même poids qu'un pattern mentionné par 1/5.
+
+Demande à l'IA de classer les patterns selon trois critères : récurrence (combien d'utilisateurs), intensité (frustration forte vs inconvénient mineur), et lien avec tes hypothèses de départ.
+
+Ce classement est un point de départ. C'est toi qui tranches. L'IA te donne une vue structurée. La décision reste la tienne.
+
+Une fois tes patterns priorisés, l'étape suivante est de les transformer en opportunités actionnables. Voir [Identifier des opportunités produit avec l'IA](/blog/opportunites-produit-ia).
+
+### Passe 4 : Rédaction (10 min)
+
+Demande à l'IA de produire le document de synthèse dans le format de ton équipe.
+
+"Rédige une synthèse de discovery avec : un résumé exécutif (5 lignes), les 3 insights principaux avec verbatims, les signaux secondaires, les questions ouvertes pour le prochain cycle, et les recommandations."
+
+Relis le document. Vérifie que chaque insight est soutenu par des données. Supprime les formulations vagues ("les utilisateurs semblent préférer..."). Remplace-les par des faits ("4/5 utilisateurs ont mentionné...").
+
+## Ce que tu gagnes
+
+En 40 minutes, tu obtiens un document que tu aurais mis 5 à 6 heures à produire manuellement. Le document est structuré, sourcé, et partageable.
+
+Le vrai gain n'est pas le temps. C'est ce que tu fais avec le temps récupéré. Tu fais plus d'interviews. Tu itères plus vite. Tu présentes des synthèses après chaque batch au lieu d'attendre la fin du cycle.
+
+## Les erreurs qui ruinent la synthèse
+
+Ne donne pas les 5 transcriptions en un seul prompt. L'IA va résumer au lieu d'extraire. Tu perds les détails.
+
+Ne demande pas "quels sont les insights principaux ?" sans cadrer le format de sortie. L'IA va produire 3 bullet points génériques qui ne t'apprennent rien.
+
+Ne fais pas confiance aux chiffres que l'IA invente. Si elle écrit "78% des utilisateurs", vérifie. Elle n'a pas fait de calcul statistique. Elle reformule tes données avec des chiffres qui sonnent bien.
+
+Ne saute pas la relecture. Un document bien formaté n'est pas un document juste. Lis chaque pattern. Vérifie chaque citation. Supprime ce qui n'est pas soutenu par les données.
+
+## La synthèse est un livrable, pas une corvée
+
+Beaucoup de PMs traitent la synthèse comme une tâche administrative. C'est le contraire. La synthèse est le moment où tu transformes des conversations en décisions produit.
+
+L'IA rend ce moment plus rapide et plus structuré. La qualité de tes décisions dépend toujours de la qualité de tes interviews et de ta capacité à interpréter les signaux.
+
+Pour les prompts exacts à chaque étape de cette méthode : [Les meilleurs prompts pour le product discovery](/blog/prompts-product-discovery).
+
+Pour voir comment intégrer la synthèse dans ton workflow de discovery complet : [Comment utiliser l'IA pour ta product discovery](/blog/ia-product-discovery-guide).

@@ -1,0 +1,128 @@
+---
+title: "Les meilleurs prompts pour le product discovery"
+description: "Des prompts testés pour chaque étape de la discovery : préparation, extraction, synthèse, priorisation. Avec exemples de résultats."
+date: "2026-04-17"
+slug: "prompts-product-discovery"
+readingTime: "8 min"
+tags: ["Discovery", "IA", "Prompts"]
+cluster: "discovery"
+keywords: ["prompts product discovery", "prompt interview utilisateur", "prompt synthèse discovery", "ia discovery produit", "prompts chatgpt pm"]
+---
+
+Un bon prompt discovery ne commence pas par "Analyse cette interview". Il commence par du contexte.
+
+La différence entre un prompt qui donne un résultat générique et un prompt qui donne un résultat actionnable, c'est la quantité de contexte que tu fournis. Ton marché. Ton hypothèse. Le profil de l'utilisateur. Les métriques que tu observes.
+
+Voici les prompts qui fonctionnent à chaque étape de la discovery, avec des exemples concrets de ce qu'ils produisent.
+
+## Pourquoi les prompts génériques ne fonctionnent pas en discovery
+
+Tu tapes "Analyse cette interview utilisateur et donne-moi les insights clés". L'IA te renvoie 5 bullet points vagues. "L'utilisateur souhaite une meilleure expérience." "Le produit manque de certaines fonctionnalités." Ça ne t'aide pas.
+
+Le problème : l'IA ne sait pas ce que tu cherches. Elle ne connaît pas ton produit, ton marché, ni l'hypothèse que tu testes. Sans ce contexte, elle produit du contenu générique qui s'applique à n'importe quel produit.
+
+Un prompt de discovery a trois composants : le contexte (ton produit, ton marché, ton hypothèse), la tâche (ce que l'IA doit faire avec les données), et le format de sortie (comment tu veux le résultat).
+
+## Prompt 1 : Préparer un guide d'interview
+
+Le contexte :
+
+"Je suis PM sur [produit]. Notre produit aide [audience] à [job-to-be-done]. On observe que [métrique problématique]. Notre hypothèse : [hypothèse à tester]. Je vais interviewer [profil utilisateur]."
+
+La tâche :
+
+"Génère un guide d'interview de 8-10 questions ouvertes qui testent cette hypothèse sans la suggérer. Chaque question doit explorer le comportement actuel de l'utilisateur, pas ses opinions sur une solution."
+
+Le format :
+
+"Pour chaque question, indique : la question, ce qu'elle teste, et un follow-up si la réponse est courte."
+
+Ce que ça donne : un guide structuré en 3 minutes. Tu le relis, tu supprimes 2-3 questions, tu en ajoutes une qui est spécifique à ton contexte. Total : 10 minutes.
+
+## Prompt 2 : Extraire les signaux d'une transcription
+
+Le contexte :
+
+"Voici la transcription d'une interview de 45 minutes avec [profil utilisateur]. Le contexte : [rappel de l'hypothèse et du produit]."
+
+La tâche :
+
+"Extrais tous les moments où l'utilisateur exprime une frustration, un besoin, un contournement, une attente non satisfaite, ou une surprise positive. Ne reformule pas. Garde les mots exacts de l'utilisateur."
+
+Le format :
+
+"Pour chaque signal : citation exacte entre guillemets, contexte en une phrase, étiquette (frustration / besoin / contournement / attente / surprise), intensité (forte / moyenne / faible)."
+
+Ce que ça donne : une liste de 15-25 signaux par interview. Bruts. Pas interprétés. C'est la matière première de ta synthèse.
+
+Pour la méthode complète d'utilisation de ces extractions : [Synthétiser des interviews utilisateurs avec l'IA](/blog/synthese-interview-utilisateur-ia).
+
+## Prompt 3 : Consolider les patterns
+
+Le contexte :
+
+"Voici les signaux extraits de [X] interviews utilisateurs sur [sujet]. Mon hypothèse de départ : [hypothèse]."
+
+La tâche :
+
+"Regroupe ces signaux par thème. Pour chaque thème, indique combien d'utilisateurs l'ont mentionné, les verbatims clés, et si le thème confirme, infirme, ou nuance mon hypothèse."
+
+Le format :
+
+"Tableau : Thème | Récurrence (X/Y) | Verbatims clés | Relation à l'hypothèse (confirme / infirme / nuance)."
+
+Ce que ça donne : un tableau de 5-8 patterns avec des données concrètes. Tu vois en 30 secondes ce qui revient et ce qui surprend.
+
+## Prompt 4 : Identifier les opportunités
+
+Le contexte :
+
+"Voici les patterns identifiés. Mon produit sert [audience]. Notre objectif ce trimestre : [OKR ou objectif]."
+
+La tâche :
+
+"Pour chaque pattern, évalue : l'impact potentiel si on résout ce problème (nombre d'utilisateurs affectés, fréquence), le lien avec notre objectif trimestriel, et les risques si on ne fait rien."
+
+Le format :
+
+"Matrice : Pattern | Impact | Lien OKR | Risque d'inaction | Recommandation (poursuivre / approfondir / ignorer)."
+
+Ce que ça donne : une matrice d'opportunités qui connecte tes insights de terrain à ta stratégie. Tu priorises en 10 minutes.
+
+Pour aller plus loin sur la matrice d'opportunités : [Identifier des opportunités produit avec l'IA](/blog/opportunites-produit-ia).
+
+## Prompt 5 : Rédiger la synthèse discovery
+
+Le contexte :
+
+"Voici les patterns et la matrice d'opportunités de mon cycle de discovery sur [sujet]. J'ai interviewé [X] utilisateurs sur [période]."
+
+La tâche :
+
+"Rédige une synthèse de discovery pour mon équipe produit. Le document sera lu par les PMs, les designers, et les tech leads."
+
+Le format :
+
+"Structure : résumé exécutif (5 lignes max), top 3 insights avec verbatims, signaux secondaires, questions ouvertes pour le prochain cycle, recommandations d'action."
+
+Ce que ça donne : un document partageable en 10 minutes. Tu le relis, tu ajustes les recommandations, tu l'envoies.
+
+## Les règles pour des prompts discovery efficaces
+
+Règle 1 : donne toujours le contexte de ton produit et de ton hypothèse. Sans ça, l'IA produit du contenu générique.
+
+Règle 2 : traite les transcriptions une par une, pas en lot. La qualité d'extraction chute quand tu donnes trop de texte.
+
+Règle 3 : demande des citations exactes, pas des résumés. Les verbatims sont ta preuve. Les résumés sont l'interprétation de l'IA.
+
+Règle 4 : spécifie le format de sortie. Tableau, bullet points, document structuré. L'IA ne devine pas ce dont tu as besoin.
+
+Règle 5 : relis tout. Un prompt ne remplace pas ton jugement. Il accélère le traitement.
+
+## Le prompt n'est pas la discovery
+
+Un bon prompt te fait gagner du temps. Mais le temps gagné ne vaut rien si tes interviews ne posent pas les bonnes questions ou si tu ne parles pas aux bons utilisateurs.
+
+L'IA traite l'information. Toi, tu la collectes et tu la juges. Le prompt est un outil. La discovery est un acte de compréhension.
+
+Pour voir ces prompts dans le contexte d'un workflow complet : [Comment utiliser l'IA pour ta product discovery](/blog/ia-product-discovery-guide).

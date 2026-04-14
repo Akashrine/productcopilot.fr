@@ -171,7 +171,10 @@ export default async function BlogPostPage({ params }: Props) {
 
   if (!post) notFound();
 
-  const cluster = (post.cluster === "vibe-coding" ? "vibe-coding" : "prd") as "prd" | "vibe-coding";
+  const cluster = (
+    post.cluster === "vibe-coding" ? "vibe-coding" :
+    post.cluster === "discovery" ? "discovery" : "prd"
+  ) as "prd" | "vibe-coding" | "discovery";
 
   const jsonLd = {
     "@context": "https://schema.org",

@@ -1,0 +1,112 @@
+---
+title: "Les prompts IA indispensables pour un product manager"
+description: "10 prompts IA testés pour le quotidien d'un PM. Discovery, PRD, user stories, priorisation, stakeholder management. Avec exemples de résultats."
+date: "2026-04-24"
+slug: "prompts-ia-product-manager"
+readingTime: "9 min"
+tags: ["IA", "Prompts", "Product Management"]
+cluster: "discovery"
+keywords: ["prompts ia product manager", "meilleurs prompts pm", "prompt prd ia", "prompt discovery ia", "chatgpt product manager"]
+---
+
+Tu utilises l'IA tous les jours. Tu lui demandes de reformuler un email, de résumer un document, de brainstormer des idées. Ça fonctionne pour les tâches génériques.
+
+Pour le travail PM, les prompts génériques ne suffisent pas. "Aide-moi à prioriser mon backlog" donne un résultat inutilisable. "Voici mes 10 items, mes 3 OKRs, et mes contraintes de capacité. Identifie les incohérences dans mon scoring" donne un résultat actionnable.
+
+Voici 10 prompts testés sur des projets réels. Chacun répond à un besoin spécifique du quotidien d'un PM.
+
+## 1. Extraire les signaux d'une interview utilisateur
+
+"Voici la transcription d'une interview avec [profil]. Contexte : [produit, hypothèse]. Extrais tous les moments où l'utilisateur exprime une frustration, un besoin, un contournement, ou une surprise. Garde les citations exactes. Pour chaque signal : citation, contexte, étiquette (frustration/besoin/contournement/surprise), intensité (forte/moyenne/faible)."
+
+Pourquoi ça marche : tu forces l'IA à extraire au lieu de résumer. Les citations exactes sont ta preuve. L'étiquetage te permet de trier ensuite.
+
+Résultat type : 15-20 signaux par interview de 45 minutes. Temps : 3 minutes par transcription.
+
+Pour la méthode complète de synthèse d'interviews : [Synthétiser des interviews utilisateurs avec l'IA](/blog/synthese-interview-utilisateur-ia).
+
+## 2. Synthétiser un batch d'interviews
+
+"Voici les signaux extraits de [X] interviews. Regroupe-les par thème. Pour chaque thème : nombre d'utilisateurs qui l'ont mentionné (sur X), verbatims clés, description en une phrase, et relation avec notre hypothèse [hypothèse] (confirme/infirme/nuance)."
+
+Pourquoi ça marche : la consolidation par thème révèle les patterns. Le comptage de récurrence te donne un critère objectif de priorisation.
+
+Résultat type : 5-8 thèmes structurés. Temps : 5 minutes pour 5 interviews.
+
+## 3. Rédiger un PRD en partant de notes brutes
+
+"Voici mes notes de cadrage pour une initiative produit : [notes brutes]. Mon produit : [description]. L'OKR associé : [OKR]. Rédige un PRD avec : problème (1 phrase + données), opportunité, hypothèse de solution, non-goals, métriques de succès (1 leading, 1 lagging), et dépendances."
+
+Pourquoi ça marche : le format est contraint. L'IA ne va pas produire un document de 10 pages. Elle va structurer tes notes dans le cadre que tu lui donnes.
+
+Résultat type : un PRD d'une page, prêt à être affiné. Temps : 5 minutes.
+
+Pour aller plus loin : [PRD et IA : le guide pratique](/blog/prd-et-ia-guide-pratique).
+
+## 4. Découper une feature en user stories
+
+"Mon produit : [description]. Feature à découper : [feature]. Personas concernés : [personas]. Découpe cette feature en user stories réalisables en 1-3 jours. Format : En tant que [persona], je veux [action], afin de [bénéfice]. Ajoute 3-5 critères d'acceptation par story. Indique les dépendances entre stories."
+
+Pourquoi ça marche : le cadre persona + action + bénéfice + critères d'acceptation force la précision. Les dépendances anticipent les discussions de refinement.
+
+Résultat type : 5-10 stories structurées. Temps : 5 minutes.
+
+Pour la méthode complète : [Écrire des user stories avec l'IA](/blog/ecrire-user-stories-ia).
+
+## 5. Préparer un argumentaire pour un stakeholder
+
+"Je dois convaincre [rôle du stakeholder] de [décision à prendre]. Son objectif principal : [objectif]. Ses préoccupations connues : [préoccupations]. Les données dont je dispose : [données]. Prépare un argumentaire en 5 points, chacun lié à son objectif. Anticipe 3 objections et prépare les réponses."
+
+Pourquoi ça marche : l'IA cadre l'argumentaire du point de vue du stakeholder, pas du tien. C'est la clé de la persuasion. Tu parles son langage, pas le tien.
+
+Résultat type : un plan de conversation structuré. Temps : 3 minutes.
+
+## 6. Analyser des feedbacks NPS en volume
+
+"Voici [X] commentaires NPS de nos utilisateurs. Notre produit : [description]. Segments : [segments]. Classe chaque commentaire par thème et par segment. Pour chaque thème : nombre de mentions, sentiment (positif/négatif/neutre), verbatims représentatifs. Identifie les 3 thèmes les plus urgents à traiter."
+
+Pourquoi ça marche : le volume de feedbacks NPS est souvent trop important pour une lecture manuelle. L'IA traite 200 commentaires en 2 minutes.
+
+Résultat type : un rapport structuré par thème et segment. Temps : 5 minutes pour 200 commentaires.
+
+## 7. Rédiger un compte rendu de réunion actionnable
+
+"Voici la transcription d'une réunion de [type] de [durée]. Participants : [participants]. Rédige un compte rendu avec : décisions prises (qui a décidé quoi), actions à faire (qui fait quoi pour quand), questions ouvertes (à résoudre avant le prochain point), et sujets reportés."
+
+Pourquoi ça marche : le format décisions/actions/questions ouvertes transforme un compte rendu informatif en document actionnable. Chaque item a un owner et une deadline.
+
+Résultat type : un CR d'une page, prêt à envoyer. Temps : 3 minutes.
+
+## 8. Challenger une hypothèse produit
+
+"Mon hypothèse : [hypothèse]. Les données qui la soutiennent : [données]. Le contexte : [marché, produit, segment]. Joue le rôle d'un contradicteur. Identifie : les biais dans mes données, les hypothèses implicites non testées, les scénarios où mon hypothèse est fausse, et les données manquantes pour la valider."
+
+Pourquoi ça marche : le biais de confirmation est le piège numéro 1 en product management. L'IA n'a pas d'intérêt politique à valider ton hypothèse. Elle challenge les failles logiques.
+
+Résultat type : 3-5 failles identifiées avec des suggestions de validation. Temps : 3 minutes.
+
+## 9. Créer une matrice concurrentielle
+
+"Mon produit : [description]. Concurrents directs : [liste]. Mon segment cible : [segment]. Dimensions de comparaison : [dimensions]. Pour chaque concurrent, évalue chaque dimension (fort/moyen/faible) en te basant sur les informations publiques. Identifie les espaces non couverts et nos avantages défendables."
+
+Pourquoi ça marche : la structure en dimensions (pas en features) force une analyse stratégique au lieu d'un inventaire technique.
+
+Résultat type : une matrice comparative avec angles d'attaque identifiés. Temps : 10 minutes.
+
+## 10. Préparer un kick-off projet
+
+"Voici le PRD de l'initiative [nom]. L'équipe : [composition]. Le sprint démarre [date]. Prépare un agenda de kick-off de 30 minutes avec : rappel du problème (2 min), présentation de la solution retenue (5 min), discussion des risques (10 min), alignement sur les métriques (5 min), et prochaines étapes (5 min). Pour chaque point, indique les questions à poser à l'équipe."
+
+Pourquoi ça marche : un kick-off bien structuré évite 3 semaines de réalignement. L'IA te donne l'agenda et les questions. Toi, tu animes la discussion.
+
+Résultat type : un agenda avec talking points et questions. Temps : 5 minutes.
+
+## Le prompt est un outil. Le jugement reste le tien.
+
+Ces 10 prompts te font gagner du temps sur la partie mécanique du job : structurer, synthétiser, rédiger, comparer.
+
+Ils ne remplacent pas les conversations avec tes utilisateurs, les négociations avec tes stakeholders, ni les arbitrages stratégiques qui définissent ta roadmap.
+
+L'IA est ton assistant de traitement. Toi, tu es le décideur.
+
+Pour des prompts spécifiques à la discovery : [Les meilleurs prompts pour le product discovery](/blog/prompts-product-discovery).

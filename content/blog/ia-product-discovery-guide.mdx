@@ -1,0 +1,94 @@
+---
+title: "Comment utiliser l'IA pour ta product discovery"
+description: "Un guide concret pour intégrer l'IA dans chaque étape de ta discovery. De l'interview à la synthèse, en passant par le mapping d'opportunités."
+date: "2026-04-15"
+slug: "ia-product-discovery-guide"
+readingTime: "8 min"
+tags: ["Discovery", "IA", "Product Management"]
+cluster: "discovery"
+keywords: ["product discovery ia", "ia product management", "synthèse interview ia", "discovery produit", "prompts discovery"]
+---
+
+Tu fais ta discovery à la main. Tu enregistres les interviews. Tu prends des notes dans un Google Doc. Tu relis tout deux jours plus tard et tu essaies de trouver des patterns.
+
+Résultat : tu passes plus de temps à organiser qu'à analyser. Et quand tu présentes tes conclusions en comité produit, on te demande "c'est basé sur combien d'interviews ?" alors que tu en as fait douze.
+
+L'IA change ce ratio. Tu passes moins de temps à traiter l'information et plus de temps à décider.
+
+Voici comment l'intégrer à chaque étape de ta discovery.
+
+## Le vrai problème de la discovery en 2026
+
+Le problème n'est pas le manque de données. Tu as des transcriptions d'interviews, des tickets support, des analytics, des feedbacks NPS. Le problème, c'est le traitement.
+
+Un PM passe en moyenne 4 à 6 heures à synthétiser 5 interviews. C'est du temps passé à reformuler, organiser, chercher des patterns manuellement. L'IA réduit ce temps à 30-40 minutes.
+
+Le gain n'est pas la vitesse. C'est la fréquence. Quand synthétiser prend 5 heures, tu le fais une fois. Quand ça prend 40 minutes, tu le fais après chaque batch d'interviews. Ta discovery devient itérative.
+
+## Étape 1 : Préparer les interviews
+
+Avant l'interview, l'IA t'aide à structurer ton guide.
+
+Donne-lui le contexte de ton produit, ton hypothèse, et le profil de l'utilisateur que tu vas interviewer. Demande-lui de générer des questions ouvertes qui testent ton hypothèse sans la suggérer.
+
+Le piège : accepter le guide tel quel. L'IA produit des questions génériques si tu ne lui donnes pas de contexte spécifique. Ajoute des données réelles. Mentionne les métriques que tu observes. Décris le comportement utilisateur que tu veux comprendre.
+
+Le test : lis chaque question et demande-toi "est-ce que la réponse va m'aider à prendre une décision ?". Si non, supprime la question.
+
+## Étape 2 : Extraire les signaux des transcriptions
+
+Tu as 5 transcriptions de 45 minutes. Ça fait environ 50 000 mots. Personne ne va relire tout ça.
+
+Donne chaque transcription à l'IA avec une consigne précise : "Extrais les verbatims qui expriment une frustration, un besoin non satisfait, ou un contournement. Pour chaque verbatim, note le contexte et le niveau de récurrence."
+
+Ce qui fonctionne : traiter les transcriptions une par une, pas en lot. L'IA perd en précision quand tu lui donnes 5 transcriptions d'un coup. Elle résume au lieu d'extraire.
+
+Ce qui ne fonctionne pas : demander "résume cette interview". Un résumé lisse les détails. Ce que tu veux, ce sont les signaux bruts, les citations exactes, les moments où l'utilisateur décrit un problème avec ses propres mots.
+
+Pour une méthode complète sur cette étape, voir [Synthétiser des interviews utilisateurs avec l'IA](/blog/synthese-interview-utilisateur-ia).
+
+## Étape 3 : Synthétiser les patterns
+
+Tu as maintenant une extraction par interview. L'étape suivante : trouver les patterns qui reviennent.
+
+Donne à l'IA toutes tes extractions et demande-lui de regrouper les signaux par thème. Précise le format de sortie : un tableau avec le thème, le nombre d'occurrences, les verbatims associés, et le niveau de sévérité.
+
+Le résultat est un document de synthèse que tu obtiens en 15 minutes au lieu de 3 heures.
+
+Point important : l'IA va trouver des patterns que tu n'aurais pas vus. Elle va aussi en inventer. Relis chaque pattern et vérifie qu'il est soutenu par au moins 2 verbatims réels. Supprime le reste.
+
+## Étape 4 : Mapper les opportunités
+
+Tu as des patterns. Tu dois maintenant décider lesquels valent la peine d'être adressés.
+
+Demande à l'IA de construire une matrice d'opportunités : chaque pattern croisé avec l'impact potentiel (nombre d'utilisateurs affectés, fréquence du problème) et l'effort estimé.
+
+L'IA ne va pas estimer l'effort technique à ta place. Ce qu'elle fait : structurer la matrice et te forcer à remplir les cases. C'est un outil de cadrage, pas de décision.
+
+Tu peux aussi lui demander de challenger tes hypothèses. "Quels sont les risques si cette opportunité n'est pas un vrai problème mais un biais de sélection ?" L'IA joue le rôle de l'avocat du diable, sans les dynamiques politiques de ton équipe.
+
+Pour aller plus loin sur cette étape : [Identifier des opportunités produit avec l'IA](/blog/opportunites-produit-ia).
+
+## Étape 5 : Produire le livrable
+
+La synthèse, les patterns, la matrice d'opportunités : tout ça alimente ton PRD ou ton brief discovery.
+
+Demande à l'IA de transformer ta matrice en un document structuré. Donne-lui le format exact que ton équipe attend : sections, longueur, niveau de détail.
+
+Le document final n'est pas un copier-coller de ce que l'IA produit. C'est ta lecture des données, mise en forme par l'IA. Tu décides ce qui est prioritaire. L'IA te fait gagner du temps sur la rédaction.
+
+## Les pièges à éviter
+
+L'IA donne l'impression que la discovery est terminée parce que le document est propre. Un doc bien structuré n'est pas une discovery bien faite. Si tes interviews ne testent pas la bonne hypothèse, l'IA va te livrer une synthèse parfaitement formatée d'un problème qui n'existe pas.
+
+Autre piège : la confidentialité. Si tu utilises un LLM public, ne colle pas de données clients identifiables. Anonymise les transcriptions avant de les traiter. Utilise l'API si ta politique interne l'exige.
+
+Dernier piège : sauter des interviews parce que "l'IA a déjà trouvé le pattern". L'IA synthétise ce que tu lui donnes. Si tu arrêtes à 3 interviews, tes patterns reflètent 3 personnes, pas ton marché.
+
+## L'IA accélère la discovery. Elle ne la remplace pas.
+
+La discovery reste un acte de jugement. Tu choisis qui interviewer. Tu décides quelles questions poser. Tu tranches sur les opportunités à poursuivre.
+
+L'IA te rend plus rapide sur la partie mécanique : transcrire, extraire, synthétiser, structurer. Le temps que tu gagnes, tu le réinvestis dans la partie qui compte : la réflexion.
+
+Pour les prompts spécifiques à chaque étape : [Les meilleurs prompts pour le product discovery](/blog/prompts-product-discovery).

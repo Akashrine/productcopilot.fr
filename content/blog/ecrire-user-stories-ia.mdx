@@ -1,0 +1,90 @@
+---
+title: "Écrire des user stories avec l'IA"
+description: "Comment produire des user stories précises et testables avec l'IA. Méthode, prompts, et critères d'une bonne story."
+date: "2026-04-20"
+slug: "ecrire-user-stories-ia"
+readingTime: "6 min"
+tags: ["User Stories", "IA", "Product Management"]
+cluster: "prd"
+keywords: ["écrire user stories ia", "user stories product manager", "critères acceptation ia", "generateur user stories", "user story format"]
+---
+
+Tu écris des user stories. "En tant qu'utilisateur, je veux pouvoir exporter mes données, afin de les partager avec mon équipe."
+
+Le développeur lit ça. Il a 15 questions. Quel format d'export ? Quelles données ? Tout le dataset ou une sélection ? Qui dans l'équipe ? Par quel canal ?
+
+Une user story floue génère des allers-retours. Des allers-retours ralentissent le sprint. Le problème n'est pas le format "En tant que... je veux... afin de...". Le problème, c'est le niveau de détail.
+
+L'IA t'aide à produire des stories précises en quelques minutes. Voici comment.
+
+## Pourquoi les user stories sont souvent trop vagues
+
+Trois raisons.
+
+Tu écris la story du point de vue du PM, pas de l'utilisateur. "En tant qu'utilisateur, je veux un dashboard analytics" n'est pas un besoin utilisateur. C'est une feature que tu as décidé de construire. La story devrait décrire le problème : "En tant que responsable marketing, je veux voir les performances de mes campagnes de la semaine, afin de décider où réallouer mon budget."
+
+Tu regroupes trop de scope dans une seule story. "En tant qu'utilisateur, je veux gérer mes paramètres" couvre la modification du profil, les préférences de notification, la gestion du mot de passe, la suppression de compte. Ce n'est pas une story. C'est une epic.
+
+Tu n'inclus pas les critères d'acceptation. Sans critères, la story est ouverte à l'interprétation. Le développeur implémente ce qu'il comprend. Le designer a une autre vision. Tu passes le sprint à réaligner.
+
+## Comment l'IA produit de meilleures stories
+
+L'IA est forte pour décomposer. Donne-lui une feature ou un objectif large. Elle le découpe en stories unitaires, chacune avec un scope clair.
+
+L'IA est forte pour ajouter de la précision. Donne-lui une story vague. Elle pose les bonnes questions et propose des critères d'acceptation.
+
+L'IA est forte pour varier les personas. Donne-lui le contexte de ton produit et tes segments utilisateurs. Elle génère des stories pour chaque persona avec des besoins différents.
+
+## La méthode en 3 étapes
+
+### Étape 1 : Donner le contexte
+
+"Mon produit est [description]. Les utilisateurs principaux sont [personas]. La feature à découper : [feature ou objectif]."
+
+Sans ce contexte, l'IA produit des stories génériques. Plus tu es précis sur le produit et les utilisateurs, plus les stories sont pertinentes.
+
+### Étape 2 : Demander le découpage
+
+"Découpe cette feature en user stories unitaires. Chaque story doit être réalisable en 1-3 jours de dev. Utilise le format : En tant que [persona], je veux [action], afin de [bénéfice]. Ajoute 3-5 critères d'acceptation par story."
+
+L'IA va produire 5-10 stories. Certaines seront pertinentes. D'autres seront redondantes ou hors scope. Ton travail : filtrer.
+
+### Étape 3 : Raffiner les stories retenues
+
+Prends chaque story retenue et demande à l'IA de la compléter :
+
+"Pour cette story, ajoute : les cas limites à considérer, les dépendances techniques connues, et une suggestion de test fonctionnel."
+
+Le résultat est une story prête à être discutée en refinement. Tu gagnes 30 minutes de préparation par session.
+
+## Anatomie d'une bonne user story
+
+Une story testable a 5 composants :
+
+Le persona. Pas "utilisateur". Un profil spécifique : "responsable marketing", "nouveau compte gratuit", "admin d'équipe de 10 personnes".
+
+L'action. Précise et observable. Pas "gérer" ou "utiliser". Plutôt "filtrer la liste par date" ou "exporter le rapport en PDF".
+
+Le bénéfice. Connecté à un problème réel. Pas "afin d'avoir une meilleure expérience". Plutôt "afin de partager les résultats avec mon directeur avant le comité du vendredi".
+
+Les critères d'acceptation. Des conditions vérifiables. "L'export inclut les colonnes A, B, C. Le fichier est au format CSV. Le téléchargement se lance en moins de 3 secondes pour un dataset de 10 000 lignes."
+
+Le scope exclu. Ce que cette story ne couvre pas. "Cette story ne couvre pas l'export programmé automatique. Ni l'envoi par email."
+
+## Les pièges de l'IA sur les user stories
+
+L'IA invente des personas. Si tu ne lui donnes pas tes vrais segments, elle crée des profils fictifs qui ne correspondent pas à ton produit. Donne-lui toujours tes personas réels.
+
+L'IA sur-découpe. Elle produit 15 stories quand 5 suffisent. Fusionne les stories qui couvrent le même parcours utilisateur. Une story par écran ou par interaction est souvent trop granulaire.
+
+L'IA ne connaît pas tes contraintes techniques. Elle va proposer des stories qui impliquent des choix d'architecture qu'elle ne maîtrise pas. Les critères d'acceptation techniques doivent venir de ton équipe, pas de l'IA.
+
+## Utilise l'IA pour le premier jet. Affine avec ton équipe.
+
+Le meilleur usage de l'IA pour les user stories : produire un premier jet en 5 minutes que tu affines ensuite avec les devs et les designers.
+
+L'IA te libère de la page blanche. Elle te donne une base à critiquer plutôt qu'un vide à remplir. Le refinement est plus productif quand l'équipe réagit à quelque chose de concret.
+
+Pour écrire le PRD qui structure le contexte de tes stories : [PRD vs prototype : quand passer à l'action](/blog/prd-vs-prototype).
+
+Pour les outils IA qui fonctionnent vraiment en product management : [ChatGPT pour product managers : ce qui marche](/blog/chatgpt-product-manager).

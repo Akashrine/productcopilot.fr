@@ -1,0 +1,90 @@
+---
+title: "Identifier des opportunités produit avec l'IA"
+description: "Comment passer d'une pile de feedbacks à une liste d'opportunités priorisées. Méthode, prompts, et erreurs à éviter."
+date: "2026-04-18"
+slug: "opportunites-produit-ia"
+readingTime: "7 min"
+tags: ["Discovery", "IA", "Stratégie Produit"]
+cluster: "discovery"
+keywords: ["opportunités produit ia", "priorisation opportunités", "matrice opportunités", "product discovery", "opportunity scoring"]
+---
+
+Tu as des données. Des transcriptions d'interviews, des tickets support, des feedbacks NPS, des demandes clients relayées par le sales. Le problème n'est pas le manque d'input. C'est le passage de "beaucoup de données" à "3 opportunités claires sur lesquelles ton équipe va travailler ce trimestre".
+
+Ce passage, c'est le moment le plus critique de la discovery. Et c'est celui où la plupart des PMs bloquent.
+
+L'IA ne va pas choisir tes opportunités à ta place. Elle va structurer l'analyse pour que tu prennes de meilleures décisions, plus vite.
+
+## Pourquoi l'identification d'opportunités est si difficile
+
+Tu as 50 signaux différents. Des utilisateurs qui demandent des features. D'autres qui décrivent des frustrations. Le support qui remonte des bugs récurrents. Le sales qui transmet des objections.
+
+Le réflexe naturel : traiter chaque signal comme une opportunité. Tu te retrouves avec une liste de 30 items, sans hiérarchie, sans critère de tri. La roadmap devient un backlog de demandes, pas un plan stratégique.
+
+Le vrai travail, c'est de regrouper ces signaux en thèmes, évaluer chaque thème contre tes objectifs, et éliminer ce qui ne contribue pas à ta stratégie ce trimestre.
+
+## Étape 1 : Consolider les sources
+
+Rassemble tes données dans un format homogène. Ça veut dire transformer tes différentes sources en un format unique que l'IA va traiter.
+
+Pour les transcriptions d'interviews : utilise l'extraction de signaux (frustrations, besoins, contournements). Si tu n'as pas encore de méthode pour cette étape, voir [Synthétiser des interviews utilisateurs avec l'IA](/blog/synthese-interview-utilisateur-ia).
+
+Pour les tickets support : extrais le problème sous-jacent, pas la demande de feature. "L'utilisateur veut un export CSV" cache "l'utilisateur a besoin de partager des données avec son équipe finance".
+
+Pour les feedbacks NPS : isole les commentaires qui décrivent un comportement ou un problème, pas ceux qui donnent juste une note.
+
+Donne tout ça à l'IA dans un prompt : "Voici des signaux issus de [X sources]. Regroupe-les par problème utilisateur sous-jacent. Ignore les demandes de features. Concentre-toi sur les problèmes."
+
+## Étape 2 : Créer la matrice d'opportunités
+
+Tu as des groupes de problèmes. Il faut maintenant les évaluer.
+
+Utilise 4 critères :
+
+La récurrence. Combien d'utilisateurs sont affectés ? Un problème mentionné par 1 utilisateur sur 20 n'a pas le même poids qu'un problème mentionné par 15 sur 20.
+
+L'intensité. Quelle est la gravité du problème ? Un inconvénient mineur vs un bloqueur qui pousse les utilisateurs à quitter le produit.
+
+Le lien stratégique. Ce problème, s'il est résolu, contribue-t-il à ton objectif ce trimestre ? Si ton OKR porte sur la rétention et que le problème concerne l'acquisition, c'est un signal à garder pour plus tard.
+
+L'effort estimé. Pas un chiffrage précis. Une estimation en T-shirt (S/M/L/XL) pour filtrer les opportunités qui demandent 6 mois de dev.
+
+Demande à l'IA de construire cette matrice. Elle va structurer les données. Les estimations d'effort et les jugements stratégiques viennent de toi.
+
+## Étape 3 : Challenger les opportunités
+
+C'est l'étape que la plupart des PMs sautent. Tu as ta liste d'opportunités priorisées. Tu es convaincu. Tu veux passer à l'exécution.
+
+Prends 10 minutes. Demande à l'IA de jouer le rôle d'un contradicteur.
+
+"Pour chaque opportunité dans le top 3, liste les raisons pour lesquelles cette opportunité pourrait être un faux positif. Quels biais pourraient expliquer la récurrence ? Quelles données manquent pour confirmer l'hypothèse ?"
+
+L'IA va te poser des questions que ton équipe ne te posera pas. Pas parce qu'elle est plus intelligente, mais parce qu'elle n'a pas de biais politique.
+
+Un exemple : "Le problème d'onboarding est mentionné par 12/15 utilisateurs. Mais tous les utilisateurs interviewés sont des utilisateurs récents. Les utilisateurs anciens, qui ont survécu à l'onboarding, ne sont pas dans l'échantillon. Le biais de sélection gonfle la récurrence."
+
+Ce type de challenge prend 10 minutes et évite des semaines de travail sur une fausse priorité.
+
+## Étape 4 : Documenter les opportunités
+
+Chaque opportunité retenue a besoin d'une fiche courte. Pas un PRD. Pas une spec. Une fiche d'opportunité.
+
+Format : problème en une phrase, données qui soutiennent le problème (récurrence + verbatims), impact attendu si résolu, risque si non traité, prochaine étape (approfondir la discovery, passer au cadrage, mettre en backlog).
+
+Demande à l'IA de produire ces fiches à partir de ta matrice. Relis chaque fiche. Supprime les formulations vagues. Ajoute les données manquantes.
+
+Une fois tes opportunités documentées, l'étape suivante est de les formaliser dans un PRD. Voir [Comment écrire un PRD en 2026](/blog/comment-ecrire-un-prd-en-2026).
+
+## Les erreurs qui tuent l'identification d'opportunités
+
+Confondre demande de feature et opportunité. "Les utilisateurs veulent un dark mode" n'est pas une opportunité. "Les utilisateurs travaillent tard le soir et la luminosité de l'écran les gêne" est une opportunité. La différence : le problème vs la solution.
+
+Ignorer les signaux contradictoires. Si 10 utilisateurs demandent plus de simplicité et 5 demandent plus de fonctionnalités, le signal n'est pas "les utilisateurs veulent les deux". Le signal est "tu as deux segments avec des besoins différents". L'IA t'aide à voir cette nuance si tu lui demandes.
+
+Prioriser par volume de demandes. Le nombre de tickets n'est pas un critère de priorisation suffisant. Un problème mentionné 100 fois par des utilisateurs gratuits n'a pas le même impact business qu'un problème mentionné 5 fois par tes plus gros comptes.
+
+## L'IA structure. Toi, tu décides.
+
+L'identification d'opportunités est un acte stratégique. L'IA t'aide à traiter le volume de données, structurer l'analyse, et challenger tes conclusions.
+
+La décision finale reste la tienne. C'est toi qui connais le contexte business, les contraintes techniques, et la dynamique de ton équipe.

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import NavMain from "@/components/NavMain";
 import Generator from "@/components/Generator";
+import FormulaireLoops from "@/components/FormulaireLoops";
 import { TOOL_CONFIGS } from "@/lib/tool-config";
 
 const config = TOOL_CONFIGS["user-stories"];
@@ -47,6 +48,24 @@ export default function UserStoriesPage() {
       {/* Generator */}
       <section className="px-5 sm:px-6 pb-16 md:pb-24 max-w-4xl mx-auto">
         <Generator config={config} />
+      </section>
+
+      <div className="divider-shimmer max-w-4xl mx-auto" />
+
+      {/* Email capture */}
+      <section className="px-5 sm:px-6 py-14 md:py-18">
+        <div className="max-w-2xl mx-auto card-glass p-8 space-y-4">
+          <p className="text-xs font-bold uppercase tracking-widest text-[#E8FF8B]/70">
+            Reçois les mises à jour
+          </p>
+          <p className="text-[#F5F5F5] font-semibold text-lg leading-snug">
+            Nouveaux outils, prompts et guides produit — directement par email.
+          </p>
+          <p className="text-sm text-[#A3A3A3]">
+            Pas de newsletter. Uniquement des ressources actionnables pour les PMs qui construisent.
+          </p>
+          <FormulaireLoops source="user-stories" buttonText="Recevoir les ressources" />
+        </div>
       </section>
 
       <div className="divider-shimmer max-w-4xl mx-auto" />

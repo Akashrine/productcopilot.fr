@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 type Props = {
-  cluster: "prd" | "vibe-coding";
+  cluster: "prd" | "vibe-coding" | "discovery";
 };
 
 function ArrowRight() {
@@ -19,6 +19,36 @@ function ArrowRight() {
 }
 
 export default function ArticleCTA({ cluster }: Props) {
+  if (cluster === "discovery") {
+    return (
+      <div className="card-glass p-6 sm:p-8 space-y-5">
+        <div>
+          <p className="text-xs font-bold uppercase tracking-widest text-[#E8FF8B]/70 mb-2">
+            Tu veux passer de tes interviews à une liste d&apos;opportunités ?
+          </p>
+          <p className="text-sm text-[#A3A3A3] leading-relaxed">
+            Le Pack Discovery : 10 prompts chaînés. De l&apos;extraction de signaux à la synthèse finale. Gratuit.
+          </p>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <Link
+            href="/pack-discovery"
+            className="btn-glow inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#E8FF8B] text-[#0F0F0F] font-bold text-sm"
+          >
+            Accéder au Pack Discovery
+            <ArrowRight />
+          </Link>
+          <Link
+            href="/outils/template-prd-ia"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/10 text-[#A3A3A3] text-sm font-semibold hover:border-white/20 hover:text-[#F5F5F5] transition-all"
+          >
+            Essayer le Template PRD IA
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
   if (cluster === "vibe-coding") {
     return (
       <div className="card-glass p-6 sm:p-8 space-y-5">

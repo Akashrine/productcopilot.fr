@@ -1,0 +1,98 @@
+---
+title: "ChatGPT pour product managers : ce qui marche (et ce qui ne marche pas)"
+description: "Les cas d'usage concrets de ChatGPT et Claude pour un PM. Avec les limites à connaître avant de l'intégrer dans ton workflow."
+date: "2026-04-21"
+slug: "chatgpt-product-manager"
+readingTime: "8 min"
+tags: ["IA", "Product Management", "Productivité"]
+cluster: "prd"
+keywords: ["chatgpt product manager", "ia product management", "claude vs chatgpt pm", "workflow ia pm", "cas usage ia pm"]
+---
+
+Tu utilises ChatGPT. Tu lui demandes de rédiger un email, de résumer un doc, de brainstormer des idées. Ça fonctionne.
+
+Mais pour le travail PM, c'est plus nuancé. Certains cas d'usage font gagner des heures. D'autres donnent des résultats inutilisables. La différence tient rarement à l'outil. Elle tient à la façon dont tu l'utilises.
+
+Voici les cas d'usage qui fonctionnent, ceux qui ne fonctionnent pas, et pourquoi.
+
+## Ce qui fonctionne
+
+### Rédaction de documents structurés
+
+PRD, briefs, comptes rendus de réunion, specs fonctionnelles. L'IA est forte pour structurer de l'information que tu possèdes déjà.
+
+Le principe : tu donnes le contenu brut (notes, bullet points, transcriptions), tu spécifies le format de sortie, et l'IA produit un premier jet structuré.
+
+Ce qui fait la différence : la quantité de contexte que tu fournis. "Rédige un PRD pour une feature de recherche" donne un résultat générique. "Rédige un PRD pour l'ajout d'une recherche full-text dans notre app B2B SaaS de gestion de projets. Les utilisateurs ont 500+ projets. Le problème : ils passent 8 minutes en moyenne à trouver un projet spécifique. Voici les verbatims clients..." donne un résultat utilisable.
+
+Pour la méthode complète de rédaction de PRD avec l'IA : [PRD et IA : le guide pratique](/blog/prd-et-ia-guide-pratique).
+
+### Synthèse d'interviews et de feedbacks
+
+Tu as des transcriptions, des tickets support, des feedbacks NPS. L'IA traite ce volume en minutes. Elle extrait les signaux, regroupe par thème, identifie les patterns.
+
+Le gain est considérable. 5 heures de synthèse manuelle deviennent 40 minutes. Le résultat est plus structuré et moins biaisé par la récence.
+
+### Écriture de user stories
+
+Tu décris une feature. L'IA la découpe en stories avec critères d'acceptation. C'est un premier jet que tu affines en refinement. Tu gagnes la préparation de chaque sprint.
+
+Pour la méthode détaillée : [Écrire des user stories avec l'IA](/blog/ecrire-user-stories-ia).
+
+### Challenge d'hypothèses
+
+Tu présentes ton hypothèse à l'IA. Tu lui demandes de jouer le contradicteur. Elle trouve les failles logiques, les biais d'échantillon, les données manquantes. C'est un sparring partner disponible à 3h du matin.
+
+### Analyse concurrentielle
+
+L'IA structure la comparaison. Tu lui donnes les données (features, pricing, positionnement) et elle produit une matrice lisible. Elle identifie aussi les angles morts : "Ton concurrent X ne propose pas Y, ce qui laisse une ouverture sur le segment Z."
+
+## Ce qui ne fonctionne pas
+
+### Stratégie produit
+
+"Quelle devrait être notre stratégie produit pour les 12 prochains mois ?" L'IA va te donner une réponse. Elle sera structurée. Elle aura l'air convaincante. Et elle sera inutilisable.
+
+La stratégie produit dépend de données que l'IA n'a pas : ta position sur le marché, tes contraintes de ressources, la dynamique interne de ton entreprise, tes paris technologiques, les signaux faibles de tes utilisateurs.
+
+L'IA te donne des frameworks génériques. La stratégie demande du jugement contextuel.
+
+### Priorisation
+
+"Priorise mon backlog." L'IA va trier tes items. Elle va même utiliser un scoring RICE si tu le demandes. Mais les scores d'impact et de confiance qu'elle attribue sont des inventions. Elle n'a pas accès à tes métriques, tes coûts de développement, ni ta stratégie.
+
+L'IA structure la priorisation. Elle ne la fait pas.
+
+### Prédictions de métriques
+
+"Si on lance cette feature, quel impact sur la rétention ?" L'IA ne le sait pas. Elle va te donner un chiffre qui a l'air raisonnable. Ce chiffre est inventé. Il n'est basé sur aucune donnée réelle.
+
+### Décisions organisationnelles
+
+"Faut-il fusionner les équipes A et B ?" "Comment gérer le conflit entre le PM et le tech lead ?" L'IA donne des conseils de management génériques. Les décisions organisationnelles dépendent de relations, de contexte, et de politique interne que l'IA ne voit pas.
+
+## Les règles pour tirer le maximum de l'IA en tant que PM
+
+Règle 1 : utilise l'IA pour le traitement, pas pour la décision. Elle structure, synthétise, rédige. Tu choisis, priorises, tranches.
+
+Règle 2 : donne du contexte. Chaque prompt doit inclure : ton produit, ton marché, ton objectif, et le problème spécifique que tu traites. Sans ça, les réponses sont génériques.
+
+Règle 3 : spécifie le format de sortie. Tableau, document structuré, bullet points, matrice de comparaison. L'IA ne devine pas ce dont tu as besoin.
+
+Règle 4 : vérifie les chiffres. L'IA invente des statistiques qui ont l'air réalistes. Si un chiffre te surprend, vérifie la source. Spoiler : il n'y a pas de source.
+
+Règle 5 : itère. Le premier prompt donne rarement le meilleur résultat. Affine le contexte, ajuste la consigne, demande des précisions. 3 itérations valent mieux qu'un prompt parfait.
+
+## ChatGPT vs Claude : lequel choisir ?
+
+Les deux fonctionnent pour le travail PM. Quelques différences pratiques.
+
+Claude (Anthropic) gère mieux les longs contextes. Si tu colles une transcription de 45 minutes, Claude la traite avec plus de précision. Il est aussi plus prudent sur les affirmations non vérifiées.
+
+ChatGPT (OpenAI) a un écosystème de plugins plus large et une intégration web native. Si tu cherches des données en temps réel pendant ton analyse, c'est un avantage.
+
+Pour la rédaction de docs, les deux se valent. Pour le traitement de transcriptions longues, Claude a un avantage. Pour la recherche d'information, ChatGPT avec navigation web est plus pratique.
+
+Le meilleur outil est celui que tu utilises tous les jours. Choisis-en un et deviens bon dessus.
+
+Pour les prompts les plus utiles à intégrer dans ton workflow : [Les prompts IA indispensables pour un product manager](/blog/prompts-ia-product-manager).
