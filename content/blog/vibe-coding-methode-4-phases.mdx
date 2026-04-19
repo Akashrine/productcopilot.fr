@@ -1,0 +1,143 @@
+---
+title: "Vibe coding : la méthode en 4 phases pour passer d'une idée à une app"
+description: "La méthode testée sur YomuShelf. Clarifier, Designer, Construire, Vérifier. 12 prompts chaînés pour transformer une idée en app qui tourne."
+date: "2026-04-20"
+slug: "vibe-coding-methode-4-phases"
+readingTime: "8 min"
+tags: ["Vibe Coding", "AI for PM", "Claude Code"]
+keywords: ["vibe coding méthode", "vibe coding claude code", "passer d'une idée à une app ia", "prompt vibe coding pm", "méthode product manager ia", "construire app sans dev"]
+cluster: "vibe-coding"
+---
+
+Tu ouvres Claude Code. Tu tapes "fais-moi une app de X". Trois heures plus tard, tu as un dossier de fichiers qui bugge, un prompt qui boucle, et zéro idée de quoi corriger.
+
+Le vibe coding sans méthode, c'est ça. De la magie les 20 premières minutes. Un bourbier après.
+
+La méthode qui suit a été testée. Sur YomuShelf, une app de gestion de bibliothèque perso. Sur ce site. Sur une dizaine de prototypes. Elle tient sur 4 phases et 12 prompts chaînés.
+
+## Pourquoi le vibe coding échoue sans structure
+
+Trois raisons.
+
+Premièrement, tu sautes la phase de cadrage. Tu demandes à Claude Code de construire avant d'avoir défini le problème, les utilisateurs, les non-goals. L'IA produit quelque chose. Tu réalises après coup que ce n'est pas ce que tu voulais.
+
+Deuxièmement, tu confonds design et code. Tu demandes à Claude Code de designer ET de coder. Résultat : une interface générique, des composants qui se ressemblent tous, aucune identité visuelle.
+
+Troisièmement, tu ne cadres pas l'IA. Pas de CLAUDE.md à la racine du repo. Pas de design system documenté. L'IA dérive à chaque nouvelle session.
+
+La méthode en 4 phases règle ces trois problèmes.
+
+## Les 4 phases en une vue
+
+```
+PHASE 1 : CLARIFIER
+  L'idée → un brief structuré → un PRD → un PRD challengé
+
+PHASE 2 : DESIGNER
+  Le PRD → un prompt Stitch → un design.md exporté
+
+PHASE 3 : CONSTRUIRE
+  Le PRD → une spec technique → un CLAUDE.md → du code fonctionnel
+
+PHASE 4 : VÉRIFIER
+  Le site → un audit → des corrections → un review post-launch
+```
+
+Chaque phase produit un output exploitable par la phase suivante. Pas de ressaisie. L'information circule.
+
+Sur YomuShelf, le flow complet a pris 12 heures sur 2 semaines. Sans la méthode, j'aurais abandonné au bout de 4 heures.
+
+## Phase 1 : Clarifier
+
+Objectif : transformer une idée vague en PRD validé.
+
+Trois prompts s'enchaînent.
+
+Le Clarifier prend une idée floue ("une app pour gérer ma biblio") et la structure en brief. Problème, utilisateurs cibles, contexte, contraintes. Si l'idée est déjà claire, tu sautes ce prompt.
+
+Le PRD Builder consomme le brief et produit un PRD en 7 sections : problème, opportunité, hypothèse de solution, non-goals, métriques, expérimentation, dépendances. Un PRD conçu pour tenir sur une page.
+
+Le Challenger score le PRD sur 10 et identifie les faiblesses par section. Sur YomuShelf, le premier PRD avait un score de 6/10. Faiblesse principale : aucune métrique de succès définie. Correction, deuxième passe, 8/10. On passe à la Phase 2.
+
+La clé de cette phase : résister à l'envie de coder tout de suite. 1 à 2 heures de cadrage économisent 10 heures de debug.
+
+## Phase 2 : Designer
+
+Objectif : produire un design.md exploitable par Claude Code.
+
+Une règle simple. Stitch designe. Claude code. Jamais l'inverse.
+
+Le Vibe Designer consomme le PRD et produit un prompt Google Stitch prêt à coller. Le prompt inclut le contenu textuel exact extrait du PRD, les états UI (idle, loading, error, success), les contraintes de style, les instructions responsive. Tu le colles dans Stitch avec 2-3 références visuelles. Tu itères jusqu'à 80% de satisfaction.
+
+Tu exportes deux choses : le design.md (couleurs, typos, spacing, composants) et le HTML de chaque page.
+
+Le Design-to-Code prend le HTML de Stitch et produit les prompts Claude Code qui injectent le design system dans ton projet Next.js. Tu ne copies pas le HTML Stitch en brut. Tu fais traduire.
+
+Sur YomuShelf, la Phase 2 a pris 2 heures. Références : Linear, Readwise, Things 3. Design.md exporté : fond sombre, accent corail, typo Geist, border-radius 12px.
+
+## Phase 3 : Construire
+
+Objectif : du code qui tourne, sans que l'IA dérive.
+
+Quatre prompts.
+
+Spec Fondations (06A) consomme le PRD et produit les fondations techniques : user stories, schéma de données en TypeScript, diagramme d'architecture, events analytics. Le schéma de données avant l'interface. Toujours.
+
+Spec Détail (06B) prend les fondations et produit le détail : routes, composants React, endpoints API, plan d'implémentation page par page.
+
+Le CLAUDE.md Generator extrait automatiquement le CLAUDE.md depuis la spec. Tu le colles à la racine du repo. À partir de là, chaque session Claude Code démarre avec le contexte projet, les conventions de code, les fichiers clés à ne pas casser.
+
+Le Debug Companion est le prompt que tu utilises quand ça bloque. Il isole le bug, produit un diagnostic, propose un prompt de correction ciblé sur un seul fichier. Il inclut aussi une règle de rollback : si 2+ indicateurs rouges (historique > 10 messages sur le bug, multi-fichiers touchés, tu ne comprends plus le code), tu annules tout et tu recommences propre.
+
+Le rollback m'a sauvé trois fois sur YomuShelf. Sans cette règle, j'aurais passé des heures à rafistoler du code qui partait en vrille.
+
+## Phase 4 : Vérifier
+
+Objectif : un produit solide, trouvable, amélioré en continu.
+
+Trois prompts.
+
+L'Audit Technique (09) scanne le site sur 6 axes : UX, bugs, performance, accessibilité, sécurité, cohérence. Il produit un rapport priorisé (bloquant / élevé / moyen / bas) avec la correction concrète pour chaque problème.
+
+L'Audit SEO & Growth (09B) couvre 5 dimensions : SEO classique, GEO (citations par les IA), AIO, AEO, SXO. Le SEO classique pèse 40% du score, le GEO 25%. Schema JSON-LD, maillage interne, metadata.
+
+Le PRD Reviewer (10) se lance 4 à 6 semaines après le launch. Il review chaque section du PRD contre les résultats réels : les métriques ont-elles été atteintes, les hypothèses validées, les non-goals tenus. Sortie : des learnings documentés pour le prochain projet.
+
+Beaucoup de PMs s'arrêtent à la Phase 3. La Phase 4 est ce qui transforme une app lancée en une app qui s'améliore.
+
+## Les 2 fichiers qui pilotent tout
+
+Deux fichiers tiennent la méthode.
+
+CLAUDE.md à la racine du repo. Ce que tu construis. Routes, composants, conventions, fichiers clés, intégrations. Généré par le Prompt 07. Mis à jour à chaque changement de structure.
+
+docs/design.md. À quoi ça ressemble. Couleurs, typos, spacing, composants. Généré par Stitch via le Prompt 04. Jamais modifié à la main.
+
+Quand Claude Code dérive visuellement, tu pointes vers design.md. Quand il touche un fichier qu'il ne devrait pas, tu pointes vers CLAUDE.md. Ces deux fichiers sont tes deux contrats avec l'IA.
+
+## Ce que la méthode change pour toi
+
+Avant : tu ouvres Claude Code, tu tapes une instruction, tu pries.
+
+Avec la méthode : tu as un PRD qui cadre le projet, un design.md qui cadre l'interface, un CLAUDE.md qui cadre l'IA, et un workflow qui relie tout.
+
+Les gains concrets, mesurés sur YomuShelf :
+
+- Temps de la première version utilisable : 12 heures au lieu des 40+ heures des tentatives précédentes
+- Nombre de rollbacks complets : 1 au lieu de 5
+- Bugs critiques en prod : 0 au lieu de 3
+- Dérive visuelle entre sessions : nulle, grâce au design.md injecté à chaque prompt
+
+La méthode n'est pas magique. Elle force à faire dans le bon ordre ce que tu ferais de toute façon, en évitant les pièges les plus coûteux.
+
+## Passe à l'action
+
+Tu veux les 12 prompts complets, dans l'ordre, prêts à copier-coller ?
+
+Le Pack Vibe Coding contient les 12 prompts des 4 phases, le workflow détaillé, les arbres de décision, et un cas réel annoté (YomuShelf). 29 €. Paiement unique.
+
+[Accéder au Pack Vibe Coding →](/packs/vibe-coding-pm)
+
+---
+
+*Mots : ~1 600 | Temps de lecture : 8 min | Dernière mise à jour : avril 2026*
