@@ -1,0 +1,142 @@
+---
+title: "OKR et roadmap produit : éviter la déconnexion"
+description: "Ta roadmap et tes OKRs ne parlent pas le même langage. Comment utiliser FRAME pour aligner stratégie et exécution chaque trimestre."
+slug: "okr-roadmap-alignement-produit"
+date: "2026-04-21"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["roadmap okr product manager", "aligner roadmap produit", "okr stratégie produit", "framework FRAME produit", "okr et priorisation"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Stratégie produit"]
+---
+
+Tes OKRs Q2 sont dans Notion. Ta roadmap est dans Linear. Ces deux documents ne s'ouvrent jamais dans la même réunion.
+
+C'est la configuration la plus courante dans les équipes produit. Et c'est ce qui explique pourquoi des équipes passent des trimestres entiers à livrer sans jamais bouger leurs Key Results.
+
+## Le symptôme classique : la roadmap par inertie
+
+Repasse en mémoire comment ta roadmap du dernier trimestre a été construite.
+
+Tu as regardé ce qui restait de Q1. Tu as intégré les demandes qui traînaient dans le backlog depuis deux mois. Tu as ajouté la feature réclamée par le sales depuis la rentrée. Et tu as glissé un peu de dette technique.
+
+Tes OKRs Q2 ? Ouverts dans un autre onglet. Peut-être consultés, peut-être pas.
+
+Ce n'est pas de la mauvaise volonté. C'est la façon dont la plupart des équipes fonctionnent. La roadmap répond à des demandes. Les OKRs décrivent des ambitions. Et personne ne maintient le lien entre les deux.
+
+Le résultat est prévisible : en fin de trimestre, tu as livré beaucoup de choses. Tes KRs n'ont pas bougé. Et tu n'arrives pas à expliquer pourquoi.
+
+La newsletter Refactoring.fm relevait récemment un pattern identique dans l'adoption de l'IA en développement : les équipes qui ne voient aucun résultat de l'IA ont adopté les outils sans changer la structure de leur travail. L'outil amplifie l'existant. Si l'existant est déconnecté, le résultat l'est aussi. Selon leurs données, la moitié inférieure des équipes constatait zéro gain de vitesse, voire des résultats négatifs sur la branche principale (Refactoring.fm, édition #204, avril 2026).
+
+La même logique s'applique aux OKRs. Le framework ne produit rien si la roadmap continue à vivre sa vie.
+
+## Pourquoi la déconnexion s'installe
+
+Il y a trois causes structurelles.
+
+Première cause : les OKRs sont fixés top-down, la roadmap est construite bottom-up. L'équipe dirigeante aligne ses OKRs en décembre. L'équipe produit construit sa roadmap en janvier, souvent sans avoir relu les OKRs. Deux processus parallèles qui ne se croisent jamais.
+
+Deuxième cause : un Key Result ne prescrit aucune solution. "Le churn J30 passe de 18 % à 12 %." Ce KR est correct. Il mesure un résultat. Mais il ne dit pas quoi construire. Et comme il ne dit rien de concret, l'équipe construit ce qu'elle sait construire, ce qu'on lui demande, ce qui est déjà engagé.
+
+Troisième cause : les rituels ne font pas le lien. Les plannings se font par trimestre. Les backlogs se pilotent par sprint. Les OKRs se suivent rarement en temps réel. Il n'y a pas de moment régulier où l'équipe se demande : "est-ce que ce sprint va faire bouger un KR ?"
+
+Le lien n'est pas établi par défaut. Il faut une méthode pour le créer.
+
+## FRAME comme pont entre OKR et roadmap
+
+FRAME est un framework de Product Management en cinq étapes : Focus, Risques, Alignement, Mesure, Experimentation. Appliqué aux OKRs, il traduit chaque Key Result en décisions de roadmap concrètes.
+
+### Focus : quelle est l'opportunité utilisateur derrière ce KR ?
+
+Un KR n'est pas un problème à résoudre. C'est un résultat à atteindre. La dimension Focus force à reformuler le KR en termes de comportement utilisateur.
+
+"Pour que ce KR bouge, quel comportement doit changer dans le produit ?"
+
+"Le churn J30 passe de 18 % à 12 %." Focus : les utilisateurs qui abandonnent dans les 30 premiers jours ne comprennent pas la valeur centrale du produit avant de partir. Le comportement à changer : qu'ils atteignent un premier moment de valeur avant J7.
+
+Cette reformulation donne une direction sans prescrire de solution.
+
+### Risques : qu'est-ce qui peut empêcher ce KR de bouger ?
+
+Avant de planifier, identifie les obstacles. Réaliste, pas pessimiste. Est-ce que la baseline est connue ? L'équipe a-t-elle accès aux données nécessaires pour suivre le KR ? Des dépendances externes peuvent-elles bloquer l'exécution ?
+
+Pour le churn J30 : la baseline est mesurée dans Mixpanel. Mais le parcours d'onboarding dépend de l'équipe design, déjà chargée à 80 %. Risque identifié : le chantier le plus évident ne sera pas livrable ce trimestre.
+
+Ce constat change la stratégie. Au lieu de refondre l'onboarding, l'équipe cherche des leviers à impact rapide : email J3, session d'activation optionnelle, simplification d'une étape clé.
+
+### Alignement : chaque item de roadmap peut-il bouger un KR ?
+
+Pour chaque initiative, une seule question : "si on livre ça, quel KR ça fait bouger ?"
+
+Si la réponse est "aucun", deux options : soit l'initiative n'a pas sa place ce trimestre, soit les OKRs ne reflètent pas la réalité de ce qui compte pour l'équipe. Dans ce cas, il faut le signaler.
+
+Ce filtre est inconfortable. Il force à dire non à des demandes légitimes. Il force à assumer qu'une feature attendue n'est pas prioritaire ce trimestre parce qu'elle ne fait pas bouger les résultats qui comptent.
+
+### Mesure : peux-tu suivre le mouvement du KR en temps réel ?
+
+Pas à la fin du trimestre. Chaque semaine.
+
+Un KR non instrumenté est une ambition, pas un objectif. Avant d'engager une initiative, vérifie que tu as un tableau de bord, une requête SQL, ou une métrique Amplitude qui te donne le chiffre en live. Si ce n'est pas le cas, c'est le premier chantier.
+
+C'est ce que le [premier article de ce cluster](/blog/okr-produit-impact) appelait la "data 0" : la baseline sans laquelle aucun OKR ne tient. La dimension Mesure de FRAME assure que cette baseline existe avant le démarrage.
+
+### Experimentation : quelles solutions candidates explores-tu ?
+
+La roadmap n'est pas une liste de features confirmées. C'est un ensemble de paris. Chaque initiative doit être formulée comme une hypothèse : "si on fait X, alors le KR devrait bouger parce que Y."
+
+Cette formulation a deux effets. Elle garde l'équipe focus sur le résultat, pas sur la livraison. Et elle rend le désengagement d'une initiative moins douloureux : si l'hypothèse est invalidée à mi-parcours, on coupe, on pivote, on teste autre chose.
+
+## Appliquer FRAME sur un OKR réel
+
+Une équipe B2B SaaS, trois personnes dans la squad. OKR Q2 :
+
+Objectif : "Devenir le premier outil ouvert chaque matin par nos utilisateurs actifs."
+
+KR1 : Le DAU/MAU passe de 22 % à 35 % sur les comptes actifs.
+KR2 : 60 % des sessions commencent avant 10 h.
+KR3 : Le NPS des utilisateurs quotidiens passe de 31 à 42.
+
+Application de FRAME sur KR1 :
+
+Focus : les utilisateurs actifs n'ouvrent pas le produit chaque matin parce qu'il n'y a pas de déclencheur qui les ramène. Comportement cible : qu'ils aient une raison concrète d'ouvrir l'app à heure fixe.
+
+Risques : l'équipe n'a pas de système de notifications push. Le mettre en place prend 3 sprints. Risque : le levier le plus évident n'est pas disponible rapidement.
+
+Alignement : trois initiatives en discussion. Notification push quotidienne. Daily digest email. Tableau de bord "métriques du jour" personnalisé. Seule la troisième est livrable rapidement, sans dépendance infra.
+
+Mesure : le ratio DAU/MAU est suivi dans Amplitude. Baseline actuelle : 22 %. Vérification hebdomadaire chaque lundi.
+
+Experimentation : hypothèse 1, un tableau de bord "daily brief" augmente la fréquence d'ouverture matinale de 8 points sur 8 semaines. Si le gain observé après 4 semaines est inférieur à 3 points, on coupe et on lance l'hypothèse 2.
+
+Ce travail prend 90 minutes en début de trimestre. Il remplace des heures de réunions roadmap qui ne produisent aucune décision.
+
+## Le rituel qui maintient l'alignement dans le temps
+
+FRAME structure la planification. Un rituel en trois niveaux maintient le lien pendant l'exécution.
+
+Le check-in hebdomadaire dure 15 minutes. Une seule question par KR : "est-ce que le chiffre a bougé depuis la semaine dernière ?" Si oui, dans quel sens. Si non, pourquoi. Pas de slides. Un tableau partagé avec les chiffres à jour.
+
+La revue mensuelle dure 45 minutes. Mi-trimestre. Chaque KR est évalué : en bonne voie, en danger, hors course. Pour les KRs en danger, une décision : on change de stratégie, on réduit l'ambition, ou on assume le miss et on documente pourquoi.
+
+La rétrospective de fin de cycle dure 1 heure. Pas pour noter les performances de l'équipe. Pour comprendre ce qui a fait bouger les KRs et ce qui n'a rien changé. Les apprentissages alimentent directement le planning OKR suivant.
+
+Ces trois rituels ne nécessitent aucun outil spécifique. Un tableau Notion ou un Google Sheet suffisent. Ce qui compte, c'est la régularité.
+
+## Quand les OKRs de l'entreprise contredisent les demandes stakeholders
+
+Cas fréquent dans les structures moyennes : l'équipe produit reçoit des OKRs company qui entrent en conflit direct avec les demandes des stakeholders.
+
+L'OKR company : "réduire le time-to-value pour les nouveaux clients." Le commercial : "je veux la feature d'import Excel que le client X réclame depuis trois mois."
+
+Ces deux demandes ne sont pas forcément incompatibles. Mais si l'équipe n'a pas tracé le lien entre l'import Excel et le time-to-value, elle ne peut pas argumenter sa position.
+
+FRAME force ce travail. La dimension Alignement demande explicitement : "est-ce que l'import Excel peut faire bouger le KR time-to-value ?" Si la réponse est oui, les nouveaux clients bloquent sur l'import de leurs données existantes et la feature est alignée. L'argument est solide. Si la réponse est non, la feature peut attendre un trimestre où elle figure dans les OKRs.
+
+Ce travail n'est pas politique. Il est analytique. Et il protège l'équipe de l'accusation de ne pas écouter le business.
+
+---
+
+Le Générateur OKR express te guide étape par étape pour écrire des OKRs alignés avec ta stratégie produit, vérifier tes Key Results, et identifier tes initiatives prioritaires pour le trimestre.
+
+[Accéder au Générateur OKR express](/outils/generateur-okr)
