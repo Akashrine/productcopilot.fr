@@ -39,7 +39,7 @@ function ArrowRight() {
 export default function AProposPage() {
   return (
     <main className="min-h-screen bg-[#0F0F0F] text-[#F5F5F5] font-sans antialiased selection:bg-[#E8FF8B] selection:text-[#0F0F0F]">
-      <NavMain cta={{ label: "Voir les outils", href: "/outils" }} />
+      <NavMain />
 
       <section className="pt-32 pb-20 md:pt-44 md:pb-28 px-5 sm:px-6">
         <div className="max-w-2xl mx-auto">
@@ -103,20 +103,22 @@ export default function AProposPage() {
 
           {/* CTA */}
           <div className="flex flex-col sm:flex-row gap-3">
-            <Link
-              href="/outils"
+            <a
+              href="https://julien-brionne.fr/ressources"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-glow inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#E8FF8B] text-[#0F0F0F] font-bold text-sm"
             >
-              Voir les outils gratuits
+              Voir les ressources
               <ArrowRight />
-            </Link>
+            </a>
             <a
-              href="https://linkedin.com/in/julienbrionne"
+              href="https://julien-brionne.fr"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/10 text-[#A3A3A3] font-semibold text-sm hover:border-white/20 hover:text-[#F5F5F5] transition-all"
             >
-              LinkedIn
+              julien-brionne.fr
               <ArrowRight />
             </a>
           </div>
@@ -132,8 +134,7 @@ export default function AProposPage() {
           </div>
           <div className="flex gap-6 text-xs text-[#A3A3A3]">
             <Link href="/blog" className="hover:text-[#F5F5F5] transition-colors">Blog</Link>
-            <Link href="/outils" className="hover:text-[#F5F5F5] transition-colors">Outils</Link>
-            <Link href="/packs" className="hover:text-[#F5F5F5] transition-colors">Packs</Link>
+            <a href="https://julien-brionne.fr/ressources" target="_blank" rel="noopener noreferrer" className="hover:text-[#F5F5F5] transition-colors">Ressources</a>
             <Link href="/mentions-legales" className="hover:text-[#F5F5F5] transition-colors">Mentions légales</Link>
           </div>
         </div>

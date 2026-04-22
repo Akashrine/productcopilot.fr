@@ -8,19 +8,14 @@ type NavVariant = "fixed" | "sticky";
 
 type Props = {
   variant?: NavVariant;
-  cta?: { label: string; href: string };
 };
 
 const NAV_LINKS = [
-  { label: "Blog", href: "/blog" },
-  { label: "Outils", href: "/outils" },
-  { label: "Packs", href: "/packs" },
+  { label: "Blog", href: "/blog", external: false },
+  { label: "Ressources PM", href: "https://julien-brionne.fr/ressources", external: true },
 ];
 
-export default function NavMain({
-  variant = "fixed",
-  cta = { label: "Pack Vibe Coding — 29 €", href: "/packs/vibe-coding-pm" },
-}: Props) {
+export default function NavMain({ variant = "fixed" }: Props) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -50,31 +45,54 @@ export default function NavMain({
       <nav className={`${posClass} bg-[#0F0F0F]/80 backdrop-blur-xl border-b border-white/5`}>
         <div className="max-w-5xl mx-auto flex items-center justify-between px-5 sm:px-6 h-14">
           {/* Logo */}
-          <Link href="/" className="text-sm font-bold tracking-tight hover:text-[#E8FF8B] transition-colors">
-            Product Copilot
-          </Link>
+          <div className="flex items-center gap-2">
+            <Link href="/" className="text-sm font-bold tracking-tight hover:text-[#E8FF8B] transition-colors">
+              Product Copilot
+            </Link>
+            <span className="text-[#333333] text-sm">·</span>
+            <a
+              href="https://julien-brionne.fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-[#666666] hover:text-[#A3A3A3] transition-colors"
+            >
+              by Julien Brionne
+            </a>
+          </div>
 
           {/* Desktop links */}
           <div className="hidden sm:flex items-center gap-6 text-sm text-[#A3A3A3]">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`hover:text-[#F5F5F5] transition-colors ${pathname === link.href || pathname.startsWith(link.href + "/") ? "text-[#F5F5F5]" : ""}`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) =>
+              link.external ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  rel="noopener noreferrer"
+                  className="hover:text-[#F5F5F5] transition-colors"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`hover:text-[#F5F5F5] transition-colors ${pathname === link.href || pathname.startsWith(link.href + "/") ? "text-[#F5F5F5]" : ""}`}
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
           </div>
 
           <div className="flex items-center gap-3">
             {/* CTA */}
-            <Link
-              href={cta.href}
-              className="hidden sm:inline-flex text-xs font-semibold px-4 py-2 rounded-full bg-[#E8FF8B] text-[#0F0F0F] hover:opacity-90 transition-opacity"
+            <a
+              href="https://julien-brionne.fr"
+              rel="noopener noreferrer"
+              className="hidden sm:inline-flex text-xs text-[#666666] hover:text-[#A3A3A3] transition-colors"
             >
-              {cta.label}
-            </Link>
+              Par Julien Brionne
+            </a>
 
             {/* Mobile burger */}
             <button
@@ -106,24 +124,36 @@ export default function NavMain({
           aria-label="Navigation mobile"
         >
           <nav className="flex flex-col px-6 py-8 gap-1 flex-1">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`py-4 text-xl font-semibold tracking-tight border-b border-white/5 transition-colors ${pathname === link.href ? "text-[#E8FF8B]" : "text-[#F5F5F5] hover:text-[#E8FF8B]"}`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) =>
+              link.external ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  rel="noopener noreferrer"
+                  className="py-4 text-xl font-semibold tracking-tight border-b border-white/5 transition-colors text-[#F5F5F5] hover:text-[#E8FF8B]"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`py-4 text-xl font-semibold tracking-tight border-b border-white/5 transition-colors ${pathname === link.href ? "text-[#E8FF8B]" : "text-[#F5F5F5] hover:text-[#E8FF8B]"}`}
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
 
             {/* Mobile CTA */}
             <div className="pt-6">
-              <Link
-                href={cta.href}
-                className="btn-glow inline-flex w-full items-center justify-center px-6 py-4 rounded-xl bg-[#E8FF8B] text-[#0F0F0F] font-bold text-base"
+              <a
+                href="https://julien-brionne.fr"
+                rel="noopener noreferrer"
+                className="inline-flex w-full items-center justify-center px-6 py-4 rounded-xl border border-white/10 text-[#A3A3A3] font-semibold text-base hover:border-white/20 hover:text-[#F5F5F5] transition-all"
               >
-                {cta.label}
-              </Link>
+                julien-brionne.fr
+              </a>
             </div>
           </nav>
         </div>
