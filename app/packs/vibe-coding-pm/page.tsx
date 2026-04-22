@@ -191,10 +191,7 @@ export default function VibeCodingPMPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <main className="min-h-screen bg-[#0F0F0F] text-[#F5F5F5] font-sans antialiased selection:bg-[#E8FF8B] selection:text-[#0F0F0F]">
-        <NavMain
-          variant="sticky"
-          cta={{ label: "Acheter le pack", href: LEMON_URL }}
-        />
+        <NavMain variant="sticky" />
 
         {/* ── HERO ── */}
         <section className="relative px-5 sm:px-6 pt-16 pb-16 md:pt-24 md:pb-20 overflow-hidden">

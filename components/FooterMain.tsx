@@ -15,25 +15,6 @@ export default function FooterMain() {
           </div>
 
           <div className="flex flex-wrap gap-10 sm:gap-16">
-            {/* Outils */}
-            <div className="space-y-2.5">
-              <h6 className="text-[10px] font-bold uppercase tracking-widest text-[#666666]">
-                Outils
-              </h6>
-              <Link
-                href="/outils/template-prd-ia"
-                className="block text-sm text-[#A3A3A3] hover:text-[#F5F5F5] transition-colors"
-              >
-                Template PRD IA
-              </Link>
-              <Link
-                href="/pack-discovery"
-                className="block text-sm text-[#A3A3A3] hover:text-[#F5F5F5] transition-colors"
-              >
-                10 Prompts Discovery
-              </Link>
-            </div>
-
             {/* Blog */}
             <div className="space-y-2.5">
               <h6 className="text-[10px] font-bold uppercase tracking-widest text-[#666666]">
@@ -47,23 +28,19 @@ export default function FooterMain() {
               </Link>
             </div>
 
-            {/* Pack */}
+            {/* Ressources */}
             <div className="space-y-2.5">
               <h6 className="text-[10px] font-bold uppercase tracking-widest text-[#666666]">
-                Pack
+                Ressources
               </h6>
-              <Link
-                href="/packs/vibe-coding-pm"
+              <a
+                href="https://julien-brionne.fr/ressources"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block text-sm text-[#A3A3A3] hover:text-[#F5F5F5] transition-colors"
               >
-                Pack Vibe Coding for PMs
-              </Link>
-              <Link
-                href="/pack-systeme-discovery"
-                className="block text-sm text-[#A3A3A3] hover:text-[#F5F5F5] transition-colors"
-              >
-                Pack Système Discovery
-              </Link>
+                Outils &amp; packs →
+              </a>
             </div>
 
             {/* Légal */}
@@ -83,7 +60,15 @@ export default function FooterMain() {
 
         <div className="border-t border-white/5 pt-6">
           <p className="text-[10px] text-[#666666]">
-            Product Copilot — productcopilot.fr
+            Product Copilot — productcopilot.fr · par{" "}
+            <a
+              href="https://julien-brionne.fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#A3A3A3] transition-colors"
+            >
+              Julien Brionne
+            </a>
           </p>
         </div>
       </div>

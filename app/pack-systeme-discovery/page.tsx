@@ -40,7 +40,7 @@ const faqItems = [
 export default function PackSystemeDiscoveryPage() {
   return (
     <main className="min-h-screen bg-[#0F0F0F] text-[#F5F5F5] font-sans antialiased selection:bg-[#E8FF8B] selection:text-[#0F0F0F]">
-      <NavMain variant="sticky" cta={{ label: "Accéder aux prompts", href: "/pack-discovery" }} />
+      <NavMain variant="sticky" />
 
       {/* Hero */}
       <section className="relative px-5 sm:px-6 pt-16 pb-16 md:pt-24 md:pb-20 overflow-hidden">

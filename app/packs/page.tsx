@@ -64,7 +64,7 @@ const packDetails: Record<string, string[]> = {
 export default function PacksPage() {
   return (
     <main className="min-h-screen bg-[#0F0F0F] text-[#F5F5F5] font-sans antialiased selection:bg-[#E8FF8B] selection:text-[#0F0F0F]">
-      <NavMain cta={{ label: "Outils gratuits", href: "/outils" }} />
+      <NavMain />
 
       {/* HERO */}
       <section className="pt-32 pb-12 md:pt-44 md:pb-16 px-5 sm:px-6">

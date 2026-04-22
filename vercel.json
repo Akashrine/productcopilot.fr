@@ -1,0 +1,11 @@
+{
+  "redirects": [
+    { "source": "/outils/template-prd-ia", "destination": "https://julien-brionne.fr/ressources/generateur-prd", "permanent": true },
+    { "source": "/pack-discovery", "destination": "https://julien-brionne.fr/ressources/prompts-discovery", "permanent": true },
+    { "source": "/packs/vibe-coding-pm", "destination": "https://julien-brionne.fr/ressources/vibe-coding-pm", "permanent": true },
+    { "source": "/pack-systeme-discovery", "destination": "https://julien-brionne.fr/ressources/systeme-discovery", "permanent": true },
+    { "source": "/outils", "destination": "https://julien-brionne.fr/ressources", "permanent": true },
+    { "source": "/packs", "destination": "https://julien-brionne.fr/ressources", "permanent": true },
+    { "source": "/tools/user-stories", "destination": "https://julien-brionne.fr/ressources/user-stories", "permanent": true }
+  ]
+}
