@@ -1,0 +1,133 @@
+---
+title: "Comment générer un plan de discovery avec Claude à partir d'un problème vague"
+description: "Tu as un signal, une plainte, une demande floue. Voilà comment transformer ça en plan de discovery structuré en moins de 20 minutes avec Claude."
+date: "2026-04-22"
+slug: "plan-discovery-claude-probleme-vague"
+readingTime: "7 min"
+tags: ["Discovery", "IA", "Claude", "Product Management"]
+cluster: "discovery"
+keywords: ["plan discovery ia", "discovery produit claude", "cadrer problème produit", "prompts discovery pm", "product discovery structurée"]
+---
+
+Tu as un signal. Pas encore un problème défini. Quelque chose comme : "les utilisateurs abandonnent le setup", "le support remonte des frictions sur l'onboarding", ou encore "le CPO veut qu'on creuse la rétention."
+
+Pas clair. Pas cadré. Pas prêt pour des interviews.
+
+La plupart des PMs partent quand même. Ils improvisent leurs questions d'interviews. Ils collectent des données dans tous les sens. Trois semaines plus tard, ils ont un doc Notion plein de verbatims sans fil directeur.
+
+Claude ne résout pas ton problème à ta place. Mais il te force à cadrer avant d'agir. Et c'est exactement ce dont tu as besoin à ce stade.
+
+Voilà le workflow exact.
+
+---
+
+## Étape 1 : Poser le signal brut
+
+La première chose à faire, c'est écrire le problème tel qu'il est arrivé. Sans le reformuler. Sans le lisser.
+
+Donne à Claude le contexte minimal : ton rôle, le contexte produit, et le signal tel qu'il t'a été communiqué.
+
+**Prompt à copier :**
+
+```
+Tu es un PM senior. Je t'expose un signal produit brut et j'ai besoin que tu m'aides à cadrer un plan de discovery.
+
+Contexte produit : [2-3 phrases sur ton produit, ton marché, tes utilisateurs]
+Signal reçu : [colle la plainte, le verbatim, la demande telle qu'elle est arrivée]
+Source : [support ? stakeholder ? data ? retour terrain ?]
+
+Ne propose rien encore. Pose-moi les 5 questions qui te manquent pour cadrer correctement ce problème.
+```
+
+Ce que tu récupères : une liste de questions de cadrage que tu n'avais probablement pas en tête. Fréquence du problème, segments concernés, données déjà disponibles, tentatives de solutions précédentes.
+
+Tu réponds à ces questions dans le chat. Ça prend 5 minutes. C'est ton vrai brief.
+
+---
+
+## Étape 2 : Générer les hypothèses
+
+Tu as maintenant un problème mieux cadré. L'étape suivante : formuler des hypothèses sur ce qui cause le problème avant d'aller interroger des utilisateurs.
+
+C'est une étape que les PMs sautent souvent. Résultat : des interviews ouvertes à tout, sans capacité à valider ou invalider quoi que ce soit.
+
+**Prompt à copier :**
+
+```
+Sur la base de ce qu'on vient de cadrer, génère 5 à 7 hypothèses sur les causes possibles du problème.
+
+Pour chaque hypothèse :
+- Formule-la en une phrase ("Je suppose que...")
+- Indique ce qui permettrait de la valider (signal qualitatif, signal quantitatif, ou les deux)
+- Note si tu peux la valider avant de faire des interviews (data existante, logs, analytics)
+
+Classe-les par priorité de validation : quelle hypothèse, si fausse, changerait le plus la direction de la discovery ?
+```
+
+Tu récupères une liste ordonnée d'hypothèses. Certaines tu peux les tuer avec tes données internes avant même de faire une interview. C'est du temps économisé directement.
+
+---
+
+## Étape 3 : Structurer le plan
+
+Tu as le problème cadré, tu as les hypothèses. Il te faut maintenant un plan concret : qui interroger, quoi valider, avec quelle méthode, dans quel ordre.
+
+**Prompt à copier :**
+
+```
+Génère un plan de discovery sur 2 semaines pour valider les hypothèses qu'on vient d'identifier.
+
+Le plan doit inclure :
+- Les méthodes à utiliser (interviews, analyse data, test rapide, benchmark...) avec justification
+- Le profil exact des personnes à interviewer (critères de sélection, nombre, pourquoi ce segment)
+- Les questions clés à poser pour valider chaque hypothèse prioritaire
+- Les livrables attendus à J+14 (pas des documents, des décisions)
+- Ce que tu ne feras PAS dans ce cycle (hors scope explicite)
+
+Contraintes : je suis seul sur ce sujet, j'ai 30% de mon temps disponible.
+```
+
+Ajuste la contrainte temps selon ta réalité. Le point important : le livrable attendu à J+14 doit être une décision, pas un document. "On continue ou on stoppe" est un livrable. "Synthèse d'interviews" n'en est pas un.
+
+---
+
+## Étape 4 : Valider la cohérence du plan
+
+Dernière étape avant d'agir : demander à Claude de challenger le plan qu'il vient de produire.
+
+**Prompt à copier :**
+
+```
+Joue le rôle d'un PM senior qui relit mon plan de discovery. Identifie :
+- Les angles morts (ce que le plan ne couvre pas et devrait couvrir)
+- Les biais de confirmation potentiels (est-ce que le plan valide une conclusion déjà décidée ?)
+- Les hypothèses non testables dans ce format
+- Ce que tu changerais si tu avais moitié moins de temps
+```
+
+Ce que tu récupères : une critique utile avant d'investir 2 semaines dans une direction potentiellement mauvaise.
+
+---
+
+## Ce que tu as en 20 minutes
+
+En partant d'un signal vague, tu sors avec :
+
+- Un problème cadré avec les bonnes questions posées
+- 5 à 7 hypothèses ordonnées par priorité de validation
+- Un plan de discovery sur 2 semaines avec méthodes, profils, questions
+- Une critique du plan pour éviter les angles morts
+
+Ce n'est pas Claude qui fait la discovery à ta place. C'est Claude qui te force à cadrer ce que tu aurais cadré de toute façon, mais en trois réunions et une semaine de flottement.
+
+---
+
+## Aller plus loin
+
+Ces 4 prompts sont une base. Le Pack Discovery IA contient 10 prompts chaînés qui couvrent l'intégralité du cycle : de la première interview jusqu'au PRD.
+
+Chaque prompt est construit pour se nourrir du précédent. Tu ne recopies pas le contexte à chaque fois. Tu chaînes.
+
+Le pack est gratuit.
+
+[Accéder au Pack Discovery IA →](/pack-discovery)
