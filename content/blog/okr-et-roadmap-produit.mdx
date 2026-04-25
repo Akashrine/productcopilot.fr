@@ -1,0 +1,142 @@
+---
+title: "OKR et roadmap produit : comment les connecter vraiment"
+description: "Tes OKRs sont dans Notion. Ta roadmap est dans Linear. Les deux ne se parlent pas. Méthode en 4 niveaux pour connecter chaque feature à un Key Result."
+slug: "okr-et-roadmap-produit"
+date: "2026-04-25"
+readingTime: "7 min"
+cluster: "okrs"
+keywords: ["OKR roadmap produit", "aligner OKR roadmap", "roadmap outcome product manager", "connecter OKR features", "planning produit OKR"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Roadmap"]
+---
+
+Tes OKRs sont en place. Ton équipe les a écrits ensemble, en workshop. Tu les as chargés dans Notion ou Confluence.
+
+Deux semaines plus tard, tu es en grooming. Quelqu'un propose une feature. Tu l'estimes. Tu la planifies. Tu la mets dans le sprint.
+
+Personne ne demande : "Quel KR ça sert ?"
+
+C'est le problème le plus courant avec les OKRs produit. Ils existent dans un document séparé et n'influencent pas les décisions du quotidien. La roadmap suit son propre chemin. Les OKRs finissent comme décoration de présentation trimestrielle.
+
+## Les deux tiroirs qui ne se parlent pas
+
+La plupart des équipes produit ont deux artefacts distincts :
+
+- Un document OKR (Notion, Confluence, Google Slides)
+- Une roadmap (Linear, Jira, ProductBoard)
+
+Ces deux documents n'ont aucun lien structurel.
+
+L'OKR dit "augmenter le taux de rétention J30 de 35 % à 50 %". La roadmap dit "refonte onboarding, nouveau dashboard, optimisation notifications".
+
+Est-ce que la refonte onboarding sert le KR rétention J30 ? Peut-être. Mais personne ne l'a formalisé. Quand tu dois couper quelque chose en milieu de trimestre, tu n'as pas de critère objectif pour décider.
+
+C'est ce que Roman Pichler nomme le gap entre "product strategy" et "product roadmap". Les OKRs sont censés être la stratégie. La roadmap est censée être le plan d'exécution. Sans connexion explicite, les deux flottent.
+
+Le résultat concret : des sprints bien remplis, des livraisons régulières, et des KRs à 30 % à la fin du trimestre. L'équipe a travaillé dur. Elle n'a pas travaillé dans la bonne direction.
+
+## La hiérarchie en 4 niveaux
+
+Un système qui fonctionne a quatre niveaux :
+
+**Niveau 1 : Objectif.** La direction qualitative du trimestre.
+"Devenir l'outil de référence pour les PMs qui démarrent avec l'IA."
+
+**Niveau 2 : Key Result.** La mesure concrète du succès.
+"Le taux d'activation à J7 passe de 28 % à 45 %."
+
+**Niveau 3 : Initiative.** La zone de travail qui sert ce KR.
+"Améliorer l'expérience de première utilisation."
+
+**Niveau 4 : Feature.** L'action concrète dans la roadmap.
+- "Réduire le formulaire d'inscription de 8 à 3 champs."
+- "Envoyer un email de rappel à J+3 si pas de première session."
+- "Ajouter un tooltip contextuel sur la première action clé."
+
+Chaque feature pointe vers une initiative. Chaque initiative pointe vers un KR. Chaque KR pointe vers un objectif.
+
+Quand ce lien n'existe pas, ta roadmap n'est pas connectée à ta stratégie. Tu travailles beaucoup. Tu avances vers nulle part de précis.
+
+Avant d'avoir ce système : ta roadmap dit "refonte onboarding". Après : ta roadmap dit "refonte onboarding — sert KR2 activation J7 (28 % vers 45 %)". La feature n'a pas changé. Son rôle est maintenant lisible.
+
+En pratique, tu n'as pas besoin d'un outil dédié. Un champ "KR associé" sur chaque epic dans Linear ou Jira suffit. Deux minutes par item. Ce qui compte, c'est forcer la conversation à chaque ajout.
+
+## Le filtre "quel KR ça sert ?"
+
+Pour chaque item de ta roadmap, une seule question : "Quel KR ça sert ?"
+
+Si la réponse est claire et rapide, l'item est aligné.
+Si tu dois chercher une minute, le lien n'est pas formalisé.
+Si tu ne trouves pas de réponse, l'item ne correspond pas à tes OKRs actuels.
+
+Ce filtre n'est pas une validation morale. Il ne dit pas que l'item est inutile. Il dit que l'item n'appartient pas à ce trimestre, selon les objectifs que tu as choisis.
+
+L'erreur classique : faire rentrer de force une feature orpheline dans un KR pour qu'elle ait l'air alignée. "Ça améliore l'expérience utilisateur donc ça sert la rétention." C'est vrai. Et ça s'applique à 90 % du backlog. Ce n'est pas un filtre utile.
+
+Figma a appris à ses dépens ce qui arrive quand l'alignement est factice. Leur CPO a suspendu les OKRs à son arrivée : ils étaient devenus des centaines de tâches attribuées à des ICs individuels, présentées en réunion de deux heures. Trop de granularité, zéro lien avec la stratégie. (Source : Lenny's Newsletter, "How Figma builds product")
+
+Duolingo fonctionne autrement. Leur processus OKR trimestriel dure trois semaines et implique les team leads dans l'écriture des KRs. Chaque lead comprend quel KR son travail sert parce qu'il a participé à le définir. L'alignement est construit ensemble, pas annoncé du haut. (Source : Lenny's Newsletter, "How Duolingo builds product")
+
+La différence entre les deux : dans le premier cas, les OKRs sont imposés. Dans le second, ils sont négociés. Les deux aboutissent à des documents. Un seul aboutit à un engagement réel sur les priorités.
+
+## Le framework SOC appliqué au planning produit
+
+SOC est un framework de pilotage produit en trois couches : **Stratégie, Opérations, Communication**.
+
+Appliqué à la connexion OKR-roadmap, chaque couche a un rôle précis.
+
+**Stratégie : tes OKRs trimestriels.**
+Le "pourquoi". La définition de ce qui compte. Trois à cinq objectifs max, chacun avec deux à quatre KRs. Ce niveau ne change pas en cours de trimestre. Si tu le modifies à mi-chemin, tes OKRs n'étaient pas des OKRs. C'était un plan de charge.
+
+**Opérations : ta roadmap et tes sprints.**
+Le "comment". Chaque initiative pointe vers au moins un KR. Chaque feature pointe vers une initiative. Ce niveau est flexible : si une tactique ne fonctionne pas, tu en essaies une autre. La destination est fixe. La route change.
+
+C'est la distinction que Coda formalise dans son organisation : les OKRs ne sont pas une stratégie. La stratégie se construit séparément. Les OKRs traduisent cette stratégie en cibles mesurables pour le trimestre. La roadmap traduit ces cibles en actions concrètes.
+
+**Communication : comment tu présentes le lien aux stakeholders.**
+C'est là que beaucoup de PMs perdent du temps. Ils montrent la roadmap feature par feature. Les stakeholders demandent des features. La discussion porte sur "est-ce qu'on livre X avant Y".
+
+Présente autrement : "Ce trimestre, on vise trois objectifs. Pour le premier — l'activation J7 — on travaille sur l'onboarding. Voici les deux features qui font bouger le KR. Voici pourquoi on a écarté les autres pour l'instant."
+
+La roadmap devient un argument stratégique, pas une liste de livraisons.
+
+## Les features orphelines : trois options
+
+Dans chaque roadmap, il y a des features qui ne servent aucun KR actuel. Trois options pour les traiter.
+
+**Reporter.** L'item est pertinent mais pas pour ce trimestre. Tu le laisses dans le backlog avec une note. Tu y reviens lors du prochain cycle OKR si les priorités changent.
+
+**Requalifier.** L'item sert un KR que tu n'as pas encore formalisé. C'est le signal qu'il manque un KR dans tes OKRs actuels. À discuter en équipe : est-ce qu'on ajoute ce KR, ou est-ce qu'on accepte que cet item sort du scope ?
+
+**Livrer hors OKR.** Certains items sont des impératifs opérationnels : dette technique critique, obligation réglementaire, bug bloquant. Ils ne servent pas un KR, mais tu ne peux pas les ignorer. Traite-les comme une catégorie séparée. Sois transparent sur le fait qu'ils mangent une partie de ta capacité ce trimestre.
+
+Ce que tu évites à tout prix : passer du temps à débattre si une feature orpheline "compte" comme alignée. Le débat prend du temps. Il ne change pas la réalité. Si tu ne sais pas quel KR elle sert, la réponse est "reporter" ou "hors OKR".
+
+Si tu travailles en parallèle sur la priorisation de ton backlog, l'article [Prioriser son backlog avec l'IA](/blog/prioriser-backlog-ia) couvre comment le scoring RICE et les OKRs se combinent pour trier les 40 items qui se disputent le prochain sprint.
+
+## La cadence qui maintient la connexion
+
+La connexion OKR-roadmap ne se fait pas une fois en début de trimestre. Elle ne tient pas toute seule.
+
+**Semaine 1 du trimestre : OKR kickoff.**
+Tu présentes les objectifs. Tu expliques les initiatives qui servent chaque KR. L'équipe comprend le "pourquoi" derrière chaque zone de travail. Ce n'est pas une présentation. C'est une conversation : chaque membre doit pouvoir dire quel KR son travail du trimestre sert.
+
+**Check-in bimensuel : 30 minutes.**
+Une question centrale : "Nos KRs avancent-ils ?" Tu regardes les données. Tu identifies les KRs en retard. Tu demandes si les features en cours sont les bonnes pour rattraper.
+
+**Mid-quarter review : à mi-trimestre.**
+Si un KR est à 20 % de progression et qu'il reste six semaines, il faut changer de tactique. Pas changer l'OKR : changer les features qui servent cet OKR. La destination est fixe. La route est ajustable.
+
+**End-of-quarter : bilan et apprentissages.**
+KRs atteints ? À quel niveau ? Quelles features ont le plus contribué ? Quelles initiatives n'ont rien bougé ? Cette donnée nourrit l'écriture des OKRs du trimestre suivant.
+
+La plupart des équipes font le kickoff et le bilan. Elles sautent les check-ins bimensuels. C'est pour ça que les OKRs semblent "ne pas fonctionner" : la connexion entre la stratégie et l'exécution n'est jamais mise à jour. Un KR peut dériver pendant six semaines sans que personne ne le voie venir.
+
+La fréquence n'est pas une contrainte bureaucratique. C'est le mécanisme qui transforme des OKRs en instrument de navigation plutôt qu'en document de décoration.
+
+Pour aller plus loin sur l'écriture des Key Results eux-mêmes, l'article [OKRs produit : comment mesurer l'impact, pas le travail](/blog/okr-produit-impact) couvre le framework TARS et la distinction entre KPI et OKR.
+
+---
+
+Le Pack OKRs est en préparation. Il inclura un générateur d'OKRs express, des templates de check-in et les prompts pour écrire des Key Results mesurables avec l'IA. Pour être notifié à sa sortie, inscris-toi à la newsletter via le formulaire en bas de page.
