@@ -1,0 +1,131 @@
+---
+title: "Comment prioriser ton backlog avec les OKRs"
+description: "Tes OKRs ne servent à rien si ton backlog ne les reflète pas. Guide pratique pour aligner ta priorisation sur tes objectifs produit."
+slug: "prioriser-backlog-okr"
+date: "2026-04-26"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["prioriser backlog OKR", "OKR product manager backlog", "aligner backlog objectifs produit", "priorisation backlog agile OKR", "OKR équipe produit priorisation"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Priorisation"]
+---
+
+Le backlog de la plupart des équipes produit a un problème invisible : il existe dans un univers parallèle à celui des OKRs.
+
+D'un côté, l'équipe a défini trois objectifs ambitieux pour le trimestre. De l'autre, le backlog déborde de tickets techniques, de demandes commerciales urgentes, de bugs signalés par le support et de features promises à des clients clés. Le tout sans aucun lien explicite avec les Key Results.
+
+Le résultat au bout de trois mois : on a livré beaucoup. On n'a pas bougé les métriques.
+
+## Le test qui révèle le problème
+
+Il y a un diagnostic rapide. Prends les cinq tickets en haut de ton backlog. Pour chacun, réponds à cette question : "Si on livre ce ticket, quel Key Result avance, et de combien ?"
+
+Si tu dois réfléchir plus de dix secondes, le lien n'est pas évident. Si tu ne trouves pas de réponse pour deux tickets sur cinq, ton backlog n'est pas aligné sur tes OKRs.
+
+Ce n'est pas un problème de discipline ou un défaut de ton équipe. C'est un problème de méthode. Le backlog agrège tout ce qui arrive : tickets support, retours sales, dette technique, idées nées en réunion. Sans filtre explicite, il grossit dans toutes les directions.
+
+Les OKRs ne filtrent rien automatiquement. Il faut construire ce filtre.
+
+## Erreur 1 : confondre contribution et alignement
+
+La première erreur classique : on colle un label OKR sur les tickets pour montrer l'alignement. Le ticket devient "lié à KR2". Ça coche une case dans le process, ça ne change pas la priorisation réelle.
+
+"Contribuer à" est trop vague. Un ticket peut contribuer faiblement à un KR tout en mobilisant beaucoup de capacité. Un autre ticket peut déplacer un KR de 20% en deux semaines de travail. Ce que tu cherches, ce n'est pas la contribution. C'est le ratio contribution/effort.
+
+La question à poser à chaque ticket : "Combien de points sur ce KR, divisé par combien de sprints ?"
+
+Si tu n'arrives pas à répondre avec des chiffres, même approximatifs, le ticket n'est pas assez défini pour entrer dans le backlog prioritaire. Il manque encore une hypothèse mesurable.
+
+## Erreur 2 : relire les OKRs uniquement à la fin du trimestre
+
+La deuxième erreur : les OKRs sont définis en début de trimestre, puis consultés lors du bilan. Entre les deux, le backlog vit sa vie.
+
+L'alignement OKR/backlog n'est pas une photo prise une fois par trimestre. C'est un processus continu. Le contexte change, des données arrivent, des priorités se déplacent. Si tu lis tes OKRs une fois tous les trois mois, ils deviennent de la décoration.
+
+La pratique qui corrige ça : une revue backlog OKR-first à chaque sprint. En dix minutes. Tu listes tes KRs en cours, leur avancement actuel, et tu passes les tickets en attente au filtre. Ce qui fait avancer les KRs remonte. Ce qui ne contribue pas descend ou sort.
+
+## Le filtre OKR : trois questions pour chaque ticket
+
+Voici la méthode concrète pour chaque ticket de ton backlog.
+
+**Question 1 : quel KR ce ticket influence-t-il directement ?**
+
+Si la réponse est "aucun", le ticket peut aller dans une colonne séparée — dette technique, hygièneUX, infrastructure — mais pas en haut du backlog prioritaire. Il attend une fenêtre dédiée.
+
+**Question 2 : de combien ce KR avance-t-il si on livre ce ticket ?**
+
+Estimation approximative, pas de précision chirurgicale. "+3% sur le taux d'activation" ou "élimine une friction sur l'étape 2 du onboarding, estimation : -5% sur le churn à 7 jours". Si tu ne peux pas estimer, c'est le signe que tu n'as pas encore assez compris le problème.
+
+**Question 3 : quel est le coût d'opportunité ?**
+
+Livrer ce ticket, c'est ne pas livrer autre chose. Si ce ticket prend 3 sprints pour avancer un KR de 2%, et qu'un autre ticket prend 1 sprint pour avancer le même KR de 8%, le choix est évident. Ce calcul ne sera jamais parfait. Mais sans le faire explicitement, tu ne peux pas prioriser, tu peux seulement choisir intuitivement.
+
+## Le framework FRAME appliqué à la priorisation
+
+Le framework FRAME (Focus, Risques, Alignement, Mesure, Experimentation) s'applique directement à ce problème de priorisation backlog.
+
+**Focus** : chaque trimestre, tes OKRs définissent le focus de ton équipe. La priorisation du backlog doit refléter ce focus. Si tu as trois KRs et que 80% de tes tickets n'en touchent aucun, quelque chose est cassé dans la chaîne de décision.
+
+**Risques** : certains tickets sont dans ton backlog parce qu'ils réduisent un risque réel sur un KR. Un bug critique qui affecte le funnel d'activation mérite de remonter, même si ce n'est pas une feature. Ce n'est pas une exception à la règle OKR, c'est son application : tu protèges un KR en cours.
+
+**Alignement** : les OKRs ne vivent pas uniquement au niveau équipe. Ils cascadent depuis les objectifs de l'organisation. Avant de finaliser tes OKRs équipe, vérifie qu'ils remontent bien vers les OKRs business. Un ticket qui aligne ton KR équipe sur un OKR stratégique a plus de poids qu'un ticket qui n'aligne que ton périmètre interne.
+
+**Mesure** : si tu ne mesures pas l'impact réel de ce que tu livres sur tes KRs, tu n'apprends rien de tes décisions de priorisation. Chaque ticket livré devrait avoir une hypothèse : "on s'attend à voir X bouger de Y% dans les deux semaines suivant le déploiement." Si l'hypothèse se confirme, ta priorisation est validée. Si elle est fausse, tu ajustes ta grille.
+
+**Experimentation** : pour les tickets où tu n'es pas sûr de l'impact sur les KRs, un test limité vaut mieux qu'un déploiement complet. Livrer à 10% des utilisateurs et mesurer avant de généraliser réduit le risque et te donne des données réelles pour les prochaines décisions de priorisation.
+
+## La mécanique en pratique
+
+Prenons un exemple concret. Tu es PM sur un produit SaaS B2B. Tes OKRs pour ce trimestre :
+
+Objectif 1 : augmenter l'activation des nouveaux utilisateurs
+- KR1 : taux d'activation à J7 passe de 34% à 50%
+- KR2 : temps moyen d'atteinte du premier "moment de valeur" sous 15 minutes
+
+Objectif 2 : réduire le churn
+- KR3 : churn mensuel de 4,2% à 2,8%
+
+Ton backlog contient 40 tickets. Classement courant : mix de features demandées par des clients clés, bugfixes, refonte d'une page Settings, et deux grosses initiatives techniques.
+
+La refonte de la page Settings est en haut du backlog depuis deux mois. Elle est là parce qu'un client enterprise a demandé des options supplémentaires, et la conversation est ouverte. Si tu appliques le filtre OKR : quel KR cette refonte influence-t-elle ? Pas KR1. Probablement pas KR2. Peut-être KR3, indirectement, si ces options réduisent la frustration des utilisateurs avancés. Estimation d'impact sur KR3 : faible. Effort : deux sprints.
+
+Pendant ce temps, un ticket de refonte du flow d'onboarding est au milieu du backlog. Il est là depuis longtemps, personne n'a trouvé le temps. Filtre OKR : influence directe sur KR1 et KR2. Estimation d'impact : fort. Effort : un sprint et demi.
+
+Le résultat du filtre OKR : la refonte onboarding remonte en priorité. La refonte Settings descend.
+
+Ce raisonnement paraît évident écrit ainsi. Dans la pratique, sans la mécanique explicite, le ticket du client enterprise remonte parce qu'il y a une pression sales, une promesse implicite, une conversation en cours. La mécanique OKR te donne les arguments pour arbitrer sans rompre la relation commerciale : "On regarde ça pour le prochain cycle, quand on aura défini les KRs qui s'y rattachent."
+
+## Ce que ça change dans tes conversations avec les parties prenantes
+
+Le filtre OKR ne sert pas uniquement à prioriser en interne. Il structure aussi tes échanges avec le reste de l'organisation.
+
+Quand sales remonte une demande feature urgente, la question devient : "quel KR cette feature adresse ?" Si la réponse est "aucun de ceux du trimestre", tu as un cadre pour différer : "On regarde ça pour le prochain cycle, quand on pourra le définir correctement."
+
+Quand la direction demande une mise à jour sur la roadmap, tu peux montrer un backlog structuré par contribution aux KRs. C'est plus lisible qu'une liste chronologique de tickets. Et ça montre que tes décisions sont tracées.
+
+Quand ton équipe se demande pourquoi elle travaille sur tel sujet plutôt que tel autre, la réponse est explicite. Ce n'est pas "parce que j'ai décidé". C'est "parce que c'est ce qui avance KR1 le plus vite ce sprint."
+
+L'article [OKRs produit : comment mesurer l'impact, pas le travail](/blog/okr-produit-impact) couvre la construction des Key Results en détail. Le filtre décrit ici est la suite logique : une fois que tes KRs sont bien définis et mesurables, la priorisation du backlog devient une conséquence mécanique, pas une décision arbitraire.
+
+## Deux pièges à éviter en cours de trimestre
+
+**Piège 1 : ignorer les signaux qui contredisent tes OKRs**
+
+À mi-trimestre, tu reçois des données : KR1 n'avance pas malgré les livraisons. Ça peut signifier que tes hypothèses sur ce qui influence ce KR étaient fausses. Le filtre OKR doit s'adapter. Ce n'est pas un aveu d'échec, c'est de l'apprentissage. Les tickets que tu priorisais ne produisent pas l'effet attendu : tu ajustes le tir sur le cycle restant.
+
+**Piège 2 : ne jamais sortir de tickets du backlog**
+
+Un backlog OKR-first ne grossit pas indéfiniment. Chaque ticket sans lien clair avec un KR actuel va dans une colonne "plus tard" distincte, ou sort du backlog. Un backlog de 200 tickets où personne ne sait ce qui est prioritaire est un backlog inutile. À chaque fin de trimestre, tu passes les tickets en bas de liste à la corbeille ou dans une "icebox". Si personne ne les réclame dans deux trimestres, tu peux les supprimer.
+
+La règle simple : si un ticket n'a pas bougé depuis six mois, il n'était probablement pas si urgent.
+
+## Construire tes OKRs avant de filtrer
+
+Ce filtre ne fonctionne que si tes OKRs sont bien construits. Des Key Results vagues ou centrés sur des livraisons ne permettent pas de trancher entre deux tickets. Tu as besoin de KRs mesurables, centrés sur les comportements utilisateurs et les métriques business, pas sur ce que ton équipe produit.
+
+Si tes OKRs ressemblent encore à une to-do list déguisée, le filtre backlog ne changera pas grand-chose. Commence par là.
+
+Le Générateur OKR express te permet de construire tes OKRs produit en partant de ton contexte réel : objectif business, segment cible, métriques actuelles. Il génère un draft d'OKRs que tu peux affiner avec ton équipe avant de retravailler la priorisation de ton backlog.
+
+[Accède au Générateur OKR express](/outils/generateur-okr)
