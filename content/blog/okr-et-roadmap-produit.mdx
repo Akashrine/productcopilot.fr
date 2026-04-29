@@ -1,0 +1,139 @@
+---
+title: "OKR et roadmap produit : comment éviter le découplage"
+description: "Tes OKRs disent une chose, ta roadmap en fait une autre. Comment connecter les deux sans perdre le fil entre stratégie et exécution."
+slug: "okr-et-roadmap-produit"
+date: "2026-04-29"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["OKR et roadmap produit", "aligner OKRs roadmap", "OKR initiatives product manager", "roadmap outcome", "stratégie exécution produit"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "IA"]
+---
+
+Le trimestre se termine. Tu regardes tes OKRs et ta roadmap côte à côte.
+
+Deux documents, deux histoires différentes.
+
+Les OKRs parlaient d'activation, de rétention, d'impact. La roadmap a livré six features, deux refactos et une migration. Personne ne sait si les OKRs ont été atteints. Tout le monde a l'impression d'avoir beaucoup travaillé.
+
+C'est le découplage classique. Il touche la majorité des équipes produit qui ont adopté les OKRs sans changer la façon dont elles construisent leur roadmap.
+
+## Pourquoi ta roadmap et tes OKRs finissent par ne plus se parler
+
+Le découplage n'arrive pas par malveillance. Il arrive parce que les OKRs et la roadmap suivent des rythmes différents.
+
+Les OKRs se définissent en début de trimestre, souvent en deux à trois jours de workshops. Ils sont ambitieux, orientés résultats. Ils répondent à "où est-ce qu'on veut aller ?".
+
+La roadmap, elle, se construit en permanence. Une demande commerciale arrive en semaine 3. Un bug critique en semaine 5. Un stakeholder débloque du budget pour une feature qu'il attend depuis six mois. La roadmap absorbe tout ça.
+
+Résultat : au bout de quatre semaines, la roadmap reflète les pressions du moment. Les OKRs sont toujours dans la présentation du kick-off Q2.
+
+L'autre facteur : la confusion entre initiatives et OKRs. Beaucoup d'équipes traitent les initiatives (features, projets, expérimentations) comme si elles étaient des OKRs. Or ce n'est pas la même chose. Un OKR est un résultat attendu. Une initiative est un pari pour l'atteindre. Cette distinction change tout dans la façon de construire une roadmap.
+
+## Les features orphelines : le symptôme le plus visible
+
+Une feature orpheline, c'est une feature sur ta roadmap qui ne remonte à aucun OKR.
+
+Dans une équipe B2B SaaS avec cinq personnes, ça peut être :
+- La refonte de l'interface d'administration (demandée par le Customer Success depuis Q1)
+- L'export CSV amélioré (demandé par trois clients enterprise)
+- Les notifications push (promis lors d'un call de vente)
+
+Aucun de ces items n'est mauvais en soi. Certains sont nécessaires. Mais s'ils ne s'inscrivent dans aucun OKR, deux choses peuvent arriver.
+
+Première option : ils consomment du temps sur des OKRs qui auraient eu besoin de plus d'attention. Le sprint est rempli, les Key Results n'avancent pas.
+
+Deuxième option : tu te retrouves à justifier rétrospectivement leur existence en les rattachant à un OKR après coup. "En fait, ça contribue à l'OKR rétention parce que les clients enterprise sont importants pour le churn." C'est de la rationalisation, pas de la stratégie.
+
+Le test simple pour détecter les features orphelines : pour chaque item de ta roadmap, pose la question "si on livre ça et que rien d'autre ne change, quel Key Result progresse ?" Si la réponse prend plus de trente secondes, l'item est probablement orphelin.
+
+## De l'OKR à l'initiative : le sens de lecture qui change tout
+
+La plupart des équipes lisent le lien OKR-roadmap dans le mauvais sens.
+
+Elles construisent la roadmap (features, projets, demandes) et cherchent ensuite à quels OKRs les items se rattachent. C'est le sens bottom-up : on part de l'exécution pour remonter vers la stratégie.
+
+Le bon sens de lecture est l'inverse. On part de l'OKR, on identifie les Key Results à déplacer, et on se demande quelles initiatives ont le plus de chances de les faire bouger. La roadmap devient la liste des paris qu'on fait ce trimestre pour atteindre les KRs.
+
+En pratique, pour une squad qui travaille sur l'activation d'une plateforme SaaS B2B :
+
+OKR : "Rendre l'activation des nouveaux comptes suffisamment fluide pour que les PME voient la valeur avant J14."
+
+Key Result cible : "Le taux d'activation passe de 32 % à 55 % en 90 jours."
+
+Question : "Quelles sont les trois initiatives les plus susceptibles de faire passer ce taux de 32 à 55 ?"
+
+Réponses possibles :
+- Réduire le nombre d'étapes obligatoires dans le setup initial (hypothèse : moins de friction = plus de complétion)
+- Ajouter un email de rappel à J3 avec un exemple de cas d'usage (hypothèse : les comptes qui abandonnent ont juste oublié de finir)
+- Proposer un template pré-rempli au démarrage (hypothèse : la page blanche est le frein principal)
+
+Ces trois initiatives ont des probabilités de succès différentes. Tu ne sais pas laquelle va fonctionner. C'est normal. Ce sont des paris, pas des certitudes. Tu les inscris sur la roadmap, tu les priorises selon leur potentiel et leur effort, et tu commences par celles qui ont le plus de signal utilisateur.
+
+Si une demande commerciale n'entre dans aucun de ces paris, elle attend le prochain cycle. Ou tu ouvres un débat explicite sur sa priorité par rapport aux OKRs en cours.
+
+## FRAME pour cadrer chaque initiative avant qu'elle entre dans le sprint
+
+Connecter un item de roadmap à un OKR n'est pas suffisant. L'étape suivante est de s'assurer que l'initiative est bien cadrée avant d'entrer en développement.
+
+FRAME donne une structure pour ça. Le framework s'applique en dix minutes par initiative, au moment où on décide de l'inclure dans le sprint.
+
+Focus : quel est le résultat précis attendu pour cet item ? Pas "améliorer l'activation" mais "réduire le taux d'abandon à l'étape 3 du setup de 60 % à 30 %". Si le Focus ne tient pas en une phrase avec un chiffre, l'initiative n'est pas encore assez cadrée.
+
+Risques : qu'est-ce qui pourrait empêcher cet item de faire bouger le Key Result ? Le risque technique (peut-on le livrer en deux sprints ?), le risque comportemental (les utilisateurs changeront-ils vraiment de comportement ?), et le risque de mesure (peut-on mesurer l'impact dans les 30 jours suivant le déploiement ?).
+
+Alignement : l'équipe engineering, le Customer Success et le management sont-ils alignés sur cette priorité ? Si l'initiative nécessite du temps engineering mais que le VP Engineering a d'autres urgences, le risque de glissement est élevé. L'alignement se vérifie en amont, pas pendant le sprint.
+
+Mesure : comment sait-on à mi-sprint si l'initiative est sur la bonne trajectoire ? Quel signal intermédiaire (leading indicator) suit-on ? Pour l'activation, ça peut être le nombre de comptes qui ont dépassé l'étape 3 dans les 7 premiers jours.
+
+Experimentation : lance-t-on ça en full release ou en A/B test ? Sur quel segment d'utilisateurs ? Avec quelle durée de mesure minimale avant décision ?
+
+FRAME ne remplace pas le brief ou la spec. Il s'applique avant, au moment où on décide si l'initiative entre dans le sprint. Il évite des semaines de travail sur quelque chose dont personne n'a vérifié le raisonnement.
+
+Sur l'exemple d'activation : l'initiative "réduire les étapes obligatoires du setup" passe FRAME en quinze minutes. Focus clair (taux d'abandon étape 3), risque technique faible (modification de flow), risque comportemental à confirmer (certaines étapes ont peut-être une valeur cachée), alignement à vérifier avec CS (certaines étapes sont là pour des raisons contractuelles), mesure à J7 (nombre de comptes ayant terminé le setup), experimentation en rollout progressif sur les nouveaux comptes du mois.
+
+## Le check-in OKR comme outil de pilotage de la roadmap
+
+Un OKR sans check-in est une déclaration d'intention.
+
+Le check-in hebdomadaire ou bi-hebdomadaire est le moment où OKRs et roadmap se parlent. Il répond à une question simple : "Est-ce que ce qu'on construit fait bouger nos Key Results ?"
+
+Le format tient en cinq lignes par OKR :
+- KR actuel : où en est-on aujourd'hui (chiffre brut)
+- Progression depuis la dernière semaine (delta)
+- Initiative en cours liée à ce KR
+- Signal intermédiaire observé (leading indicator)
+- Action ou décision nécessaire cette semaine
+
+Ce format force deux comportements utiles.
+
+Si un KR ne bouge pas depuis deux semaines alors qu'une initiative est en cours, c'est un signal. Soit l'initiative ne produit pas les effets attendus, soit les données ne sont pas encore disponibles. Dans les deux cas, c'est une conversation à avoir cette semaine, pas en retro.
+
+Si un KR progresse mais qu'aucune initiative spécifique n'explique le mouvement, c'est aussi une information. Des facteurs extérieurs (un email d'un partenaire, une amélioration infra, un changement de comportement saisonnier) expliquent peut-être la progression. Le noter empêche de tirer des conclusions incorrectes sur l'efficacité d'une feature.
+
+Lenny Rachitsky a documenté plusieurs équipes qui formalisent cette approche différemment. Figma a rebaptisé ses OKRs "commitments" pour renforcer le sentiment de responsabilité des équipes sur les résultats (Lenny's Newsletter, How Figma builds product). Duolingo consacre trois semaines en début de trimestre au développement de ses OKRs, avec les co-leads d'équipe directement responsables des résultats et de la roadmap associée.
+
+Le check-in n'est pas une réunion de 90 minutes avec un deck. C'est une synchronisation de 20 à 30 minutes, en synchrone ou en asynchrone sur un doc partagé. Sa valeur est dans la régularité, pas dans la durée.
+
+Si tu as déjà posé les bases sur [ce que mesurent vraiment des OKRs d'impact](/blog/okr-produit-impact), le check-in est l'étape logique suivante. Tu as les bons KRs. Il reste à piloter.
+
+## Ce que ça change concrètement dans ton quotidien de PM
+
+Aligner OKRs et roadmap n'est pas un projet trimestriel. C'est une posture permanente.
+
+En pratique, ça se traduit par trois réflexes.
+
+Premier réflexe : chaque item qui entre dans le backlog est accompagné d'une question. "Sur quel Key Result est-ce que ça joue ?" Si la réponse est vide, l'item reste en parking lot jusqu'à ce que la réponse soit claire ou que le contexte stratégique change.
+
+Deuxième réflexe : le sprint planning commence par les OKRs, pas par le backlog. On regarde où en sont les KRs, on identifie ceux qui ont besoin d'accélération, et on sélectionne les initiatives en fonction de ça. Le backlog vient après.
+
+Troisième réflexe : les demandes externes (commerciaux, CS, management) sont traduites en hypothèses d'impact sur les KRs avant d'entrer dans le sprint. "Le client veut l'export CSV" devient "si on ajoute l'export CSV, est-ce que ça réduit le churn enterprise ? Combien de comptes sont concernés ?" Si la réponse est convaincante, l'initiative entre dans la roadmap avec un KR associé. Sinon, elle attend.
+
+Ces réflexes ne suppriment pas les interruptions. Ils créent un filtre qui permet de les traiter de façon explicite plutôt que d'absorber toutes les demandes par défaut.
+
+La différence entre une équipe qui livre beaucoup et une équipe qui génère de l'impact, c'est souvent ça : un filtre OKR appliqué systématiquement sur chaque item de roadmap.
+
+---
+
+Le Générateur OKR express t'aide à démarrer ce travail. À partir de tes objectifs produit, il génère des Key Results mesurables et des initiatives associées directement utilisables en session de planning. Disponible gratuitement sur [/outils/generateur-okr](/outils/generateur-okr).
