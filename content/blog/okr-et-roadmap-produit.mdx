@@ -1,0 +1,124 @@
+---
+title: "OKRs et roadmap produit : comment les connecter"
+description: "La plupart des équipes traitent OKRs et roadmap comme deux documents séparés. Voici comment créer le lien entre les deux."
+slug: "okr-et-roadmap-produit"
+date: "2026-04-30"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["OKR roadmap produit", "aligner OKR roadmap", "OKR et roadmap équipe produit"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "IA"]
+---
+
+C'est le sprint planning du vendredi. Quelqu'un sort l'item "Refonte du tableau de bord admin". L'ingénieur lead demande : "C'est dans les OKRs ?" Silence. Le PM ouvre un onglet, cherche le doc Q2, ne le retrouve pas. "Oui oui, ça touche à la rétention." La question est enterrée. L'item est planifié.
+
+Trois semaines plus tard, la refonte est en prod. Le KR1 sur la rétention n'a pas bougé.
+
+Ce scénario se joue dans chaque équipe produit qui a des OKRs sur papier et une roadmap dans un autre outil. Les deux documents coexistent sans se parler. L'un décrit où on veut aller, l'autre décrit ce qu'on construit. Personne ne vérifie si les deux pointent dans la même direction.
+
+## Le problème n'est pas l'outil, c'est la connexion
+
+Les équipes qui ont ce problème ne manquent pas de process. Elles ont des OKRs. Elles ont une roadmap. Elles font des reviews trimestrielles et des plannings bihebdomadaires.
+
+Ce qu'elles n'ont pas : un lien explicite entre les deux.
+
+La déconnexion est structurelle. Les OKRs naissent en Q planning, dans un Notion ou un Confluence, portés souvent par le leadership. La roadmap vit dans Linear, Jira, ou Productboard, mise à jour au fil des sprints par le PM. Deux cadences. Deux propriétaires. Deux langues.
+
+Le résultat : à la semaine 6 d'un trimestre, le doc OKR est ouvert dans un onglet que personne ne relit. La roadmap avance. Les métriques fluctuent. Personne ne sait si l'un cause l'autre.
+
+Le symptôme visible côté terrain : les équipes OPS et CSM finissent par construire des workarounds. Un Google Sheet de suivi. Une requête SQL directe en base. Un Airtable parallèle. Pas par rébellion, par nécessité. Quand le produit ne répond pas au problème, et que personne n'est capable d'expliquer pourquoi, l'équipe terrain arrête d'attendre.
+
+Ces workarounds sont des signaux. Ils disent : "la roadmap n'adresse pas ce problème, et les OKRs n'ont probablement pas capturé cet enjeu."
+
+## La règle du pointeur : chaque item pointe vers un OKR
+
+La solution la plus simple n'est pas un nouveau process. C'est une règle.
+
+Chaque item de ta roadmap doit avoir une annotation OKR. Une ligne. Pas un paragraphe.
+
+Format : `[Nom de l'objectif] / KR[n]`
+
+Exemple sur une roadmap B2B SaaS orientée rétention et acquisition :
+
+| Item de roadmap | Connexion OKR |
+|---|---|
+| Refonte du tableau de bord admin | "Rétention enterprise" / KR2 |
+| Amélioration des temps de chargement | "Performance perçue" / KR1 |
+| Module d'export CSV | Pas d'OKR direct (demande Sales) |
+| Refonte de la page pricing | "Acquisition PME" / KR3 |
+| Migration infrastructure AWS | Enabler : débloque "Performance" / KR1 |
+
+Il y a trois catégories d'items dans ce tableau. Le direct : l'item est supposé faire bouger un KR précis. L'enabler : l'item ne bouge pas de KR lui-même, mais débloque un autre item qui en bouge un. Et le non-connecté : maintenance, dette technique, obligations légales.
+
+Aucune de ces catégories n'est problématique en soi. Le problème, c'est de ne pas savoir dans quelle catégorie se situe chaque item.
+
+La règle de seuil : si plus de 25 à 30 % de ta roadmap est non-connectée à un OKR, l'une des deux choses est vraie. Soit ta roadmap dérive de tes priorités réelles, soit tes OKRs ne couvrent pas les vrais enjeux du trimestre. Les deux sont des informations utiles, pas des fautes.
+
+La mise en pratique est simple. Linear et Productboard permettent d'ajouter des propriétés personnalisées. Une colonne "OKR" avec une liste de tes objectifs trimestriels. Vingt minutes à configurer, et la lisibilité du tableau change.
+
+## FRAME pour vérifier que la connexion est réelle
+
+Ajouter un label OKR sur un item de roadmap, c'est facile. Vérifier que la connexion est réelle, c'est plus difficile.
+
+Le framework FRAME donne une structure pour cette vérification. FRAME : Focus, Risques, Alignement, Mesure, Experimentation.
+
+Focus : cet item est-il le meilleur pari pour faire bouger ce KR spécifique ? Pas un pari parmi d'autres. Le meilleur pari disponible avec la capacité qu'on a ce sprint. Si tu as trois items qui prétendent tous cibler le même KR, choisis-en un. Les deux autres attendent.
+
+Risques : que se passe-t-il si cet item ne fait pas bouger le KR ? Est-ce qu'on a un plan B, ou est-ce qu'on a misé toute la capacité du trimestre sur un seul pari non diversifié ? Un risque explicite est un risque gérable. Un risque invisible est un risque qui explose en fin de Q.
+
+Alignement : tes parties prenantes comprennent-elles pourquoi tu construis ça maintenant ? Un CSM qui voit "refonte du tableau de bord admin" dans la roadmap sans comprendre le lien avec la rétention ne pourra pas expliquer à ses clients pourquoi la feature qu'il a demandée n'est pas là. Explique-lui "on cible le churn enterprise ce trimestre", la conversation change.
+
+Mesure : comment sauras-tu si cet item a fait bouger le KR ? C'est la question centrale. Un item livré ne prouve rien. Un KR qui a bougé dans un délai cohérent après un item livré, sur un signal isolé des autres variables, c'est une hypothèse validée. Si tu ne peux pas répondre à cette question, soit la baseline manque (le problème de la data 0 couvert dans l'article sur [les OKRs qui mesurent l'impact](/blog/okr-produit-impact)), soit le lien entre l'item et le KR est trop indirect pour être mesuré.
+
+Experimentation : peut-on tester une version plus petite avant de livrer l'item complet ? Si la refonte du tableau de bord prend 6 semaines, peut-on livrer un tableau simplifié en 2 semaines pour observer si le KR bouge ? Raccourcir les boucles permet d'éviter de passer un trimestre entier sur quelque chose qui ne fait pas bouger la bonne métrique.
+
+## Le check-in hebdomadaire qui regarde les deux
+
+Le problème des reviews OKR : elles regardent les chiffres sans regarder ce qui les a fait bouger. Le problème des sprint reviews : elles regardent ce qui a été livré sans vérifier si ça a fait bouger les chiffres.
+
+Les deux sont incomplètes. Ensemble, elles ferment la boucle.
+
+Un format de check-in hebdomadaire, 30 minutes, le PM anime :
+
+1. Score de confiance sur chaque KR. De 0 à 100 %. Pas une bonne note. Un forecast. "Est-ce qu'on pense atteindre ce KR d'ici la fin du trimestre ?" Un score qui reste stable pendant 3 semaines quand il devrait monter est un signal d'alarme.
+
+2. Ce qui a été livré cette semaine. Les items passés en prod, en test, ou en preview. Nom de l'item et connexion OKR en face.
+
+3. Est-ce que ça a bougé le KR ? Regarde la métrique. Si l'item est trop récent pour avoir un effet visible, note "à observer dans 7 à 14 jours" et trace la date de vérification.
+
+4. Ce qui arrive la semaine prochaine et quel KR ça cible. Anticipation de l'impact avant de livrer, pas après.
+
+Ce format force deux disciplines. Connecter chaque livraison à une métrique avant de la livrer. Et évaluer régulièrement si la trajectoire tient.
+
+Durée : trente minutes maximum. Pas de slides. Le doc OKR et la roadmap ouverts côte à côte. Si la session dure plus longtemps, c'est que les connexions OKR/roadmap ne sont pas encore établies clairement, ou que les données de métriques ne sont pas accessibles directement.
+
+## Ce que ça change pour les parties prenantes
+
+Le schéma classique : un CSM remonte un problème, le PM dit "pas prioritaire", le CSM repart frustré. Quelques semaines plus tard, il construit un workaround dans un Sheet ou fait une modification directement en base de données. Ce que le PM ne voit pas : ce workaround est souvent la solution la plus courte à un problème que la roadmap aurait dû adresser.
+
+Quand OKRs et roadmap sont connectés, la réponse à "c'est pas prioritaire" devient plus précise. "Il n'y a pas d'OKR pour ce problème ce trimestre. Notre focus est sur la rétention enterprise. Si tu penses que ce problème impacte le churn enterprise, montre-moi les données et on en parle pour le Q3."
+
+Ce n'est pas plus agréable à entendre. C'est plus honnête. Et une réponse honnête avec une logique claire crée moins de frustration à long terme que le vague ou le silence.
+
+Le framework SOC donne une lecture utile pour comprendre pourquoi cette connexion est critique. SOC : Strategy, Operations, Communication. Les OKRs vivent dans la couche Strategy. La roadmap vit dans la couche Operations. Ce qui circule entre les deux, c'est ce qui permet à la Communication de tenir : tu peux expliquer à n'importe quel stakeholder pourquoi tu fais ce que tu fais, parce que tu peux retracer chaque item jusqu'à un objectif trimestriel.
+
+Sans cette connexion, les trois couches se désynchronisent. La Strategy devient un poster qu'on colle dans le Notion du Q1 et qu'on ne relit plus. Les Operations deviennent du débit. La Communication devient de la gestion de perceptions au lieu d'être de l'information. Et les workarounds prolifèrent.
+
+## Le rôle de l'IA dans ce travail
+
+Les outils de roadmap et de gestion d'OKRs intègrent maintenant des suggestions automatiques. Productboard, Linear, et des outils comme Tability utilisent des LLMs pour proposer des connexions entre items et objectifs, signaler des anomalies, ou alerter sur un KR dont la métrique stagne alors que des items y sont associés.
+
+La tendance de fond : la gestion des OKRs passe d'une charge administrative à un processus semi-automatisé. L'IA propose les connexions, signale les dérives, génère le rapport de check-in à partir des données de roadmap. Le PM valide et arbitre. Il ne saisit plus.
+
+Ce changement ne supprime pas le travail de fond. Il supprime le travail mécanique. Le choix des OKRs, la définition des KRs, la priorisation des items de roadmap : ces décisions restent humaines. L'IA réduit l'overhead de maintenance, pas le coeur du raisonnement produit.
+
+---
+
+## Construis tes OKRs avec le générateur OKR express
+
+Connecter OKRs et roadmap commence par avoir des OKRs bien construits. Des Key Results qui mesurent un impact réel, pas des livrables. Des objectifs qui donnent un cap, pas une liste de tâches déguisée.
+
+Le générateur OKR express te permet de construire tes OKRs trimestriels à partir de tes problèmes produit. Tu décris ton contexte et tes enjeux. Il génère les objectifs et les Key Results associés, en s'appuyant sur le framework TARS pour garantir que chaque KR mesure quelque chose de réel, pas une livraison.
+
+[Accéder au générateur OKR express](/outils/generateur-okr)
