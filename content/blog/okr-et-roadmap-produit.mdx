@@ -1,0 +1,140 @@
+---
+title: "OKR et roadmap produit : comment connecter les deux"
+description: "Tes OKRs sont validés, ta roadmap existait déjà. Comment décider ce qui reste, ce qui change et ce qu'on arrête avec le framework FRAME."
+slug: "okr-et-roadmap-produit"
+date: "2026-05-01"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["OKR roadmap produit", "aligner OKR roadmap", "roadmap stratégique product manager", "OKR planning produit"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Stratégie"]
+---
+
+Le vrai problème ne commence pas quand tu écris tes OKRs. Il commence quand tu retournes regarder ta roadmap après.
+
+Les OKRs sont validés. Le leadership a signé. Les Key Results sont ambitieux. Et là tu ouvres Notion, Linear ou Jira et tu vois : vingt features planifiées, deux squads au milieu d'un chantier technique, et une refonte de navigation qui occupe trois développeurs depuis six semaines.
+
+Laquelle de ces initiatives fait avancer tes nouveaux OKRs ? Aucune, ou une seule, ou toutes ? Et maintenant, tu fais quoi ?
+
+Cette tension entre OKRs et roadmap est le problème le plus courant chez les PMs ICs. Pas parce qu'ils ne savent pas écrire des OKRs. Parce qu'ils ne savent pas quoi faire de leur roadmap une fois les OKRs posés.
+
+## Pourquoi la roadmap et les OKRs finissent souvent en conflit
+
+La roadmap est construite par accumulation. Une demande commerciale ici, une dette technique là, une idée du CEO, une feature concurrente, un retour utilisateur. Elle s'étoffe au fil des semaines. Elle reflète les engagements pris, les négociations passées, les priorités de chacun.
+
+Les OKRs, eux, sont construits par choix. Trois objectifs, deux à quatre Key Results chacun. Ils demandent de trancher. De nommer ce qui compte vraiment ce trimestre.
+
+Le conflit est structural. Quand les OKRs arrivent (souvent en fin ou début de trimestre), la roadmap existait déjà. Elle a été discutée, estimée, parfois promise aux stakeholders. La modifier coûte politiquement.
+
+Résultat classique : on valide les OKRs, on laisse la roadmap telle quelle, et on passe le trimestre à livrer des features sans relation directe avec les Key Results. Le bilan trimestriel est décevant. Personne ne comprend pourquoi.
+
+L'autre piège : on réécrit les OKRs autour de la roadmap existante. On prend les features prévues et on leur invente un habillage "objectif stratégique". Ce n'est plus un OKR. C'est la roadmap déguisée. L'article sur [comment mesurer l'impact, pas le travail](/blog/okr-produit-impact) couvre exactement cette confusion.
+
+## La cause structurelle : la roadmap précède la stratégie
+
+Dans la plupart des organisations, la roadmap est construite trop tôt. Elle capte les demandes, les bugs, les idées, avant que la direction stratégique du trimestre soit posée.
+
+Quand les OKRs arrivent, ils perturbent une roadmap déjà chargée de promesses. Et le PM se retrouve à "caser" les OKRs dans une roadmap qui les préexiste, au lieu d'en déduire la roadmap.
+
+L'ordre naturel : stratégie d'abord, OKRs ensuite, roadmap en dernier. Dans la réalité, c'est souvent l'inverse.
+
+La bonne nouvelle : tu peux corriger ça à chaque début de cycle, même si la roadmap existe déjà. Le moment où les OKRs sont validés est le bon moment pour recalibrer. Le PM qui le fait systématiquement gagne en clarté et en crédibilité : ses décisions sont explicables, pas défensives.
+
+## FRAME : le filtre pour connecter OKRs et roadmap
+
+FRAME est un framework qui structure les décisions produit en cinq dimensions : Focus, Risques, Alignement, Mesure, Experimentation.
+
+Il s'applique directement au recalibrage de roadmap post-OKRs. Passe chaque initiative de ta roadmap dans ce filtre.
+
+### Focus
+
+Cette initiative contribue directement à atteindre au moins un Key Result du trimestre ?
+
+Si oui, elle reste. Si non, elle doit justifier sa présence autrement : dette technique bloquante, obligation contractuelle, investissement long terme délibéré et assumé.
+
+"Directement" est le mot qui compte. "Cette feature pourrait indirectement améliorer la satisfaction, ce qui pourrait améliorer la rétention, ce qui ferait avancer le KR" : non. Ce n'est pas Focus, c'est du wishful thinking.
+
+### Risques
+
+Cette initiative crée-t-elle un risque pour les OKRs ?
+
+Deux types : le risque de bande passante (elle consomme du temps tech qui manquera aux initiatives liées aux KRs) et le risque de signal (elle envoie une direction contraire à la priorité du trimestre). Une nouvelle feature d'acquisition alors que l'OKR porte sur la rétention des utilisateurs actifs crée de la confusion dans l'équipe et chez les stakeholders.
+
+### Alignement
+
+Toutes les squads comprennent-elles le lien entre leur sprint courant et les OKRs ?
+
+L'alignement ne vient pas des flèches dans un outil de gestion. Il vient de la conversation. Chaque équipe doit pouvoir expliquer en une phrase comment son travail fait avancer un KR. Si elle ne peut pas, le lien n'est pas établi.
+
+### Mesure
+
+Comment tu sais que cette initiative a contribué au Key Result ?
+
+Ce n'est pas "on livrera la feature et on verra". C'est "si cette initiative fonctionne, l'indicateur X bougera de Y". Si tu ne peux pas répondre à ça, l'initiative n'est pas prête à entrer en exécution. Elle manque encore une hypothèse.
+
+### Experimentation
+
+Avant de s'engager sur six semaines de dev, peut-on tester l'hypothèse plus rapidement ?
+
+Un prototype, un test sur un sous-segment, une landing page sans backend. L'Experimentation dans FRAME rappelle que la roadmap n'est pas un plan d'exécution figé : c'est une liste de paris à valider. Certains paris méritent un pré-test avant d'aller en développement complet.
+
+## Garder, reporter, arrêter : la décision pour chaque initiative
+
+Après avoir passé ta roadmap dans FRAME, tu as une vue claire sur chaque initiative. Maintenant, il faut décider.
+
+### Garder
+
+Une initiative reste si elle passe le test Focus : elle fait avancer directement au moins un Key Result. Elle a une hypothèse de mesure claire. Elle est dimensionnée pour ce trimestre.
+
+Exemple : ton OKR porte sur la réduction du time-to-activation. Une initiative sur le redesign du premier écran post-inscription est directement liée. L'hypothèse est explicite : "si on réduit les frictions à l'étape 2, le taux de complétion monte de X points". Elle reste et se priorise.
+
+### Reporter
+
+Une initiative est reportée si elle est utile mais pas urgente pour ce cycle. Elle ne bloque pas les OKRs, elle ne les avance pas non plus. Elle peut attendre.
+
+La règle du report : jamais dans le vide. Une initiative reportée a une condition de retour. "On regarde ça en Q3 si le KR Activation est atteint" ou "on reprend quand la dette infra est réglée". Reporter sans condition, c'est archiver sans le dire.
+
+### Arrêter
+
+C'est la décision difficile, mais la plus saine. Certaines initiatives occupent de la bande passante, ont perdu leur sponsor, ou ont été demandées dans un contexte qui a changé.
+
+Arrêter ne signifie pas que c'était une mauvaise idée. Ça signifie que ce trimestre, ce n'est pas la bonne priorité. Documenter pourquoi, informer les stakeholders, fermer le ticket.
+
+Exemple concret : une équipe travaille sur une refonte de navigation depuis quatre semaines. Les OKRs du trimestre portent sur la rétention des utilisateurs actifs. La refonte nav ne change rien pour les utilisateurs déjà dans le produit. Elle ne passe pas le test Focus. Si ce n'est pas une dette technique critique, on gèle. L'équipe se redéploie sur les initiatives rétention.
+
+La conversation est inconfortable. Elle est aussi nécessaire. Un PM qui ne peut pas dire "on arrête ça" ne peut pas défendre des OKRs ambitieux.
+
+## La revue trimestrielle : 45 minutes pour recalibrer
+
+Ce recalibrage ne demande pas une journée offsite. Il demande 45 minutes, une fois par trimestre, au bon moment.
+
+Timing : première semaine du trimestre, dans les cinq jours suivant la validation des OKRs. Pas avant (tu n'as pas les OKRs finalisés). Pas après (la roadmap prend de l'inertie et les décisions d'arrêt deviennent plus coûteuses).
+
+Participants : PM, Tech Lead, et si possible le Head of Product ou Product Director pour les décisions d'arrêt qui touchent des engagements stakeholders. Pas une réunion à quinze personnes.
+
+Format : trois blocs de quinze minutes.
+
+15 premières minutes : relire les OKRs validés à voix haute. Pas en diagonale. Lire chaque Objective, lire chaque Key Result, confirmer que tout le monde comprend ce que ça veut dire concrètement pour le travail de l'équipe.
+
+15 minutes suivantes : passer la roadmap au filtre Focus, un item à la fois. Pour chaque initiative : elle fait avancer quel KR, comment ? Classer en trois colonnes : Garder, Reporter, Arrêter.
+
+15 dernières minutes : décisions. Confirmer les gardes, clarifier les reports avec leurs conditions, valider les arrêts. Identifier qui informe qui. La dimension Communication de cette revue est souvent sous-estimée : chaque décision d'arrêt ou de report a un stakeholder à qui il faut l'expliquer.
+
+Sortie : une roadmap recalibrée, une liste de décisions, un plan de communication court pour les personnes impactées. Pas un document de vingt pages.
+
+Selon les données du OKR Benchmark Report 2026 (OKRs Tool), les équipes qui maintiennent une cadence régulière de revue complètent 43 % de plus d'OKRs que celles qui ne le font pas. Le recalibrage trimestriel roadmap-OKRs est la première étape de cette cadence.
+
+## Ce que cette revue n'est pas
+
+Ce n'est pas une session de priorisation from scratch. Si tu dois reconstruire entièrement ta roadmap en 45 minutes, le problème est plus profond qu'un recalibrage.
+
+Ce n'est pas une réunion pour convaincre tout le monde. Les décisions de report et d'arrêt sont préparées par le PM en amont, en s'appuyant sur l'analyse FRAME. La réunion sert à valider et à aligner, pas à débattre de chaque initiative.
+
+Et ce n'est pas un exercice annuel. Une fois par trimestre, en début de cycle. Pas en milieu de trimestre quand la pression monte, pas en fin de cycle quand tout le monde regarde le bilan. La régularité est ce qui rend la méthode efficace.
+
+---
+
+Pour que cette revue fonctionne, il te faut des OKRs bien construits avant d'entrer en salle. Sans des Key Results clairs, le filtre FRAME ne tient pas : tu n'as pas de critère de Focus, pas de seuil de Mesure.
+
+Le Générateur OKR Express t'aide à cadrer tes objectifs et tes Key Results avant le démarrage du cycle. Il est gratuit et disponible sur [/outils/generateur-okr](/outils/generateur-okr).
