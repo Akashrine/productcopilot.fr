@@ -1,0 +1,126 @@
+---
+title: "OKR et roadmap produit : de la stratégie à l'exécution"
+description: "OKRs dans Notion, roadmap dans Jira : les deux ne se parlent pas. Comment construire une roadmap à partir de tes OKRs, avec les bets et le framework FRAME."
+slug: "okr-roadmap-produit"
+date: "2026-05-04"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["OKR roadmap product manager", "roadmap orientée OKR", "OKR stratégie exécution", "FRAME product management", "bets produit OKR"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Stratégie produit"]
+---
+
+OKRs et roadmap vivent souvent dans deux silos. Les OKRs sont dans une slide de comité, la roadmap dans Jira ou Linear. À la revue de fin de trimestre, les features sont livrées. Les Key Results n'ont pas bougé.
+
+Ce n'est pas un problème d'exécution. C'est un problème de connexion.
+
+## Deux artefacts qui ne se parlent pas
+
+Dans la plupart des équipes produit, OKRs et roadmap sont gérés comme deux objets indépendants.
+
+Les OKRs sont écrits en début de trimestre dans un document Notion ou en slide de board. La roadmap est dans Jira, Linear, ou un tableur partagé. Les deux sont présentés dans des revues différentes, devant des audiences différentes. Et personne ne vérifie formellement que l'un pilote l'autre.
+
+Le résultat : des équipes qui livrent sans atteindre leurs objectifs.
+
+Le symptôme le plus révélateur est la feature orpheline. Une fonctionnalité livrée en production, dans les délais, qui ne correspond à aucun OKR actif. La squad a travaillé dur. Le produit a progressé. Mais l'impact sur le Key Result est nul, ou impossible à mesurer.
+
+Regarde ta roadmap du dernier trimestre. Compte les features qui ne sont pas liées à un KR précis. Si tu en trouves plus de 30 %, tu as un problème de connexion entre stratégie et exécution.
+
+L'autre signal : des OKRs atteints sur le papier, mais sans réel changement de comportement utilisateur. L'équipe a livré les features du bet A, le KR est coché, mais le taux d'activation n'a pas bougé. L'OKR était lié aux livrables, pas à l'impact. Et le problème remonte en fait à la façon dont les OKRs ont été écrits, pas à la roadmap.
+
+## L'erreur de sens inverse : habiller la roadmap en OKRs
+
+La dérive la plus courante ne vient pas du manque de méthode. Elle vient du sens dans lequel on travaille.
+
+Beaucoup d'équipes commencent par la roadmap. Elles savent déjà ce qu'elles vont construire ce trimestre, parce que les stakeholders ont validé, parce que les specs sont prêtes, parce que le sprint est planifié. Ensuite, elles cherchent les OKRs qui justifient ces features.
+
+Ce n'est pas de la stratégie. C'est du rétro-engineering.
+
+Le bon ordre est l'inverse : OKR d'abord, roadmap ensuite.
+
+Un OKR définit le résultat qu'on veut produire. La roadmap est la liste des paris qu'on prend pour y arriver. L'OKR est la destination. La roadmap est l'itinéraire. Et comme pour un itinéraire, plusieurs chemins peuvent mener au même endroit.
+
+Si tu commences par les features, tu t'es engagé sur un chemin avant de savoir si c'est le bon. Tu construis sans garantie d'arriver où tu veux. Et quand le trimestre se termine, tu ne sais pas si le problème était les features choisies ou l'objectif lui-même.
+
+Le test rapide : prends trois items de ta roadmap actuelle et demande-toi pour chaque : "si je retire cette feature, quel Key Result devient impossible à atteindre ?" Si tu ne peux pas répondre en 30 secondes, la feature est probablement orpheline.
+
+## La couche manquante : les bets
+
+Entre les OKRs et les features, il manque une couche intermédiaire. Sans elle, le saut est trop grand.
+
+On l'appelle souvent "bets" ou "initiatives". Un bet est une hypothèse sur le chemin qui mène à un Key Result. Pas une feature. Pas un livrable. Une hypothèse sur un levier qui devrait produire l'impact cible.
+
+La structure ressemble à ça :
+
+OKR → Key Results → Bets (3 à 5 hypothèses par KR) → Features (issues techniques)
+
+Exemple concret. Une squad SaaS B2B travaille sur l'activation des nouveaux comptes. L'OKR du trimestre : "Rendre l'onboarding suffisamment clair pour que les PME voient la valeur avant J30."
+
+En appliquant TARS (Targeted, Adopted, Retained, Satisfied) pour construire les Key Results, comme détaillé dans [OKRs produit : comment mesurer l'impact, pas le travail](/blog/okr-produit-impact), l'équipe retient ce KR : le taux de complétion de l'onboarding passe de 34 % à 55 % d'ici fin de cycle.
+
+Pour ce seul KR, trois bets :
+
+Bet 1 : simplifier le flow d'onboarding réduit les abandons aux étapes critiques. Hypothèse chiffrée : ce bet porte +12 points de complétion. Trois features rattachées : refonte du flow en 4 étapes, suppression des champs non nécessaires à J0, progress bar visible en permanence.
+
+Bet 2 : personnaliser l'onboarding selon le profil utilisateur augmente la pertinence perçue et diminue le temps de setup. Hypothèse chiffrée : +5 points de complétion sur les profils non-techniques. Deux features : segmentation au premier login, recommandation des modules selon le profil déclaré.
+
+Bet 3 : un email de coaching envoyé à H+24 aux comptes qui n'ont pas terminé l'onboarding en ramène une partie. Hypothèse chiffrée : +4 points de complétion. Une feature : séquence email automatisée avec lien vers l'étape abandonnée.
+
+Avec cette structure, les features ne sont plus des items indépendants. Ce sont les preuves d'un pari. Et un pari peut être invalidé, ajusté, ou remplacé sans toucher à l'OKR.
+
+Les bets sont les vraies unités de décision de ta roadmap. Si Bet 1 ne génère pas le mouvement attendu après trois semaines, tu le déprioritises et tu renforces Bet 3. L'OKR reste. L'itinéraire change. C'est la flexibilité que la roadmap feature-par-feature ne donne pas.
+
+## Vérifier l'alignement avec FRAME
+
+Quand tu assembles ta roadmap à partir de tes bets, il reste un risque : avoir des angles morts. Des KRs sans bets associés. Des bets sans instruments de mesure. Des équipes partenaires qui ne voient pas la même priorité.
+
+FRAME est une check-list en cinq dimensions pour valider que ta roadmap reste dans les rails de ta stratégie. Elle prend dix minutes à parcourir en début de cycle.
+
+F - Focus. Chaque bet est-il clairement associé à un OKR actif ? Si un bet n'a pas d'OKR parent, c'est soit une feature orpheline déguisée, soit le signal que tes OKRs sont incomplets. Les deux cas nécessitent une décision explicite, pas un silence confortable.
+
+R - Risques. Quels Key Results n'ont aucun bet associé ce trimestre ? Ce sont tes angles morts. Tu as un OKR sur la rétention mais aucune initiative pour l'adresser ? C'est un risque assumé ou un oubli ? La distinction est importante. Nommer le risque c'est déjà le gérer.
+
+A - Alignement. Design, data et engineering voient-ils la même roadmap ? Ont-ils les instruments pour mesurer le progrès sur les KRs que tu cibles ? Un KR sur le taux d'activation n'a aucune valeur si l'outil d'analytics n'est pas configuré pour le suivre. L'alignement technique sur les métriques est aussi important que l'alignement stratégique sur les objectifs.
+
+M - Mesure. Pour chaque bet, as-tu une hypothèse chiffrée sur le mouvement attendu ? Bet 1 vise +12 points de complétion, Bet 2 +5, Bet 3 +4. Sans cette répartition, tu ne sais pas lequel de tes paris porte le trimestre. Et à mi-cycle, tu ne sais pas lequel pivoter en priorité.
+
+E - Expérimentation. Quels bets reposent sur des hypothèses non encore validées ? Si Bet 2 n'a jamais été testé (la personnalisation augmente-t-elle vraiment la pertinence pour ce segment ?), il mérite une validation légère avant une implémentation complète. FRAME force à identifier ces paris à haut risque en amont, pas en semaine 10.
+
+Parcourir FRAME en équipe au début du cycle remplace avantageusement trois réunions de priorisation séparées. Les questions qu'il soulève sont les seules qui comptent.
+
+## Les features orphelines comme diagnostic stratégique
+
+Une feature orpheline n'est pas qu'un problème de roadmap. C'est un signal sur l'état de ta stratégie.
+
+Trois causes possibles, et trois réponses différentes.
+
+Première cause : les OKRs sont incomplets. La feature répond à un vrai besoin utilisateur, mais ce besoin n'a pas été capturé dans les OKRs du cycle. Si tu es en début de cycle, tu révises les OKRs. Si tu es à mi-cycle, tu notes le signal pour le prochain trimestre et tu assumes que cette feature est hors-OKR, donc de priorité secondaire.
+
+Deuxième cause : la pression des stakeholders. Un VP a demandé une feature. Elle est dans la roadmap parce que personne n'a questionné l'alignement avec les OKRs. La bonne réponse n'est pas de refuser, c'est d'expliciter le coût. Montrer l'OKR, montrer les bets, demander : dans quel bet ce travail rentre-t-il ? Si le VP ne peut pas répondre, la feature attend. Si la réponse est convaincante, les OKRs méritent peut-être une révision.
+
+Troisième cause : la dette technique et la maintenance. Ces travaux n'ont pas d'OKR et c'est normal. La règle courante : allouer 20 à 25 % de la capacité à la dette technique, hors OKRs, décidé en amont comme un budget fixe, pas feature par feature. Ce budget explicite évite que la maintenance se glisse dans les bets sans transparence.
+
+L'exercice de comptage des features orphelines une fois par cycle est inconfortable. Il oblige à nommer des décisions qui n'ont jamais été prises explicitement. Mais c'est là que les vraies conversations sur la stratégie se tiennent, et non dans les réunions de planification.
+
+## Réviser en mid-cycle sans tout casser
+
+Les OKRs sont définis pour un trimestre. La réalité change en six semaines.
+
+Un concurrent sort une feature clé. Les données de la semaine 4 montrent que Bet 1 ne bouge pas le KR comme prévu. Un stakeholder remonte une demande urgente qui change le contexte marché.
+
+La question n'est pas "est-ce qu'on change les OKRs ?". Dans la quasi-totalité des cas, la réponse est non. Les OKRs changent seulement si l'hypothèse de base du trimestre est invalidée : changement de marché brutal, pivot stratégique de l'entreprise, découverte qui remet en cause l'objectif lui-même.
+
+La question est "est-ce qu'on change les bets ?". Et là, la réponse peut être oui.
+
+Si Bet 1 ne génère pas le mouvement attendu après trois semaines de données, tu as le droit de déprioritiser ses features et de renforcer Bet 3. L'OKR reste. L'itinéraire change. C'est pour ça que la couche bets existe.
+
+Pour les check-ins hebdomadaires, la bonne question n'est pas "combien de features avons-nous livrées cette semaine ?". C'est "quel mouvement avons-nous observé sur nos Key Results, et quelle est notre hypothèse sur la cause ?". Ça change la nature du rapport d'avancement : de la mesure d'activité à la mesure d'impact et d'apprentissage.
+
+Les équipes qui font cette distinction tiennent des réunions hebdo de 20 minutes. Les autres tiennent des status meetings d'une heure où personne ne décide rien.
+
+---
+
+Le Générateur OKR express te guide à travers la structure OKR vers Bets vers Features en 15 minutes. Tu repars avec un OKR propre, trois bets chiffrés, et une liste de features rattachées à chaque pari.
+
+[Accéder au Générateur OKR express](/outils/generateur-okr)
