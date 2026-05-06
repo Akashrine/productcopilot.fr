@@ -1,0 +1,141 @@
+---
+title: "Écrire ses OKRs avec l'IA : méthode et prompts pour PMs"
+description: "Utilise FRAME + l'IA pour passer de la stratégie d'entreprise à des Key Results solides en 20 minutes. Méthode pratique avec prompts."
+slug: "okr-ia-methode-product-manager"
+date: "2026-05-06"
+readingTime: "10 min"
+cluster: "okrs"
+keywords: ["OKR IA product manager", "écrire OKR avec IA", "OKR produit méthode", "OKR product manager"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "IA"]
+---
+
+Chaque trimestre, le même rituel. Leadership publie les objectifs de l'entreprise. Chaque VP les redescend. Tu reçois trois ou quatre objectifs que tu n'as pas écrits, et tu dois produire des OKRs d'équipe en moins d'une semaine.
+
+Le problème n'est pas le délai. C'est la question de départ.
+
+"Comment est-ce qu'on traduit cet objectif en Key Results ?" te fait partir du mauvais endroit. Tu prends l'objectif de quelqu'un d'autre, tu le découpes, tu produis des KRs qui ressemblent à ceux du VP avec les mêmes formulations vagues. Le résultat : un exercice trimestriel perçu comme une contrainte administrative, pas comme un outil de travail.
+
+En 2026, plusieurs équipes produit ont documenté cette dérive. Weekdone l'appelle le "cascading administratif" : des équipes qui copient les OKRs de leur manager sans se demander ce qu'elles peuvent réellement influencer depuis leur position. Le résultat déprécie tout l'exercice.
+
+L'IA ne résout pas ce problème si tu l'utilises sans contexte. Elle amplifie ce que tu lui donnes. Un objectif vague en entrée produit des Key Results vagues en sortie. Un contexte structuré produit une base solide que tu peux challenger et affiner en équipe.
+
+La différence entre "donne-moi des OKRs pour améliorer l'activation" et un prompt contextualisé, c'est 80 % de la qualité du résultat. Ce guide couvre comment construire ce contexte avec FRAME, puis comment l'utiliser dans un LLM.
+
+## Pourquoi le cascading échoue et ce qu'on fait à la place
+
+Le cascading OKR part d'un bon principe : aligner toute l'organisation sur des objectifs communs. L'exécution dérape pour une raison simple. Copier et décliner un objectif ne force pas à réfléchir à ce que l'équipe peut concrètement changer.
+
+Un VP a un OKR "Augmenter le revenu ARR du segment PME de 20 %". Une équipe produit cascade : "Améliorer l'activation des comptes PME pour contribuer à la croissance ARR." C'est la même intention, reformulée. Personne n'a réfléchi à ce que l'équipe sait, à ce qu'elle contrôle, aux hypothèses spécifiques qu'elle va tester ce trimestre.
+
+L'alternative au cascading, c'est la traduction. Tu prends l'objectif de l'entreprise et tu poses la question : "Depuis notre angle produit, avec nos utilisateurs et notre périmètre, qu'est-ce qu'on fait pour que cet objectif se réalise ?"
+
+La traduction produit un OKR d'équipe qui peut diverger de la formulation du VP tout en servant son intention. Et c'est là que FRAME est utile.
+
+## FRAME comme guide de pensée avant de toucher au prompt
+
+FRAME (Focus, Risques, Alignement, Mesure, Expérimentation) est un framework de pensée stratégique produit. Ce n'est pas un framework OKR. Mais ses cinq étapes correspondent exactement aux questions qu'un PM doit résoudre avant d'écrire ses Key Results, et avant de toucher à un LLM.
+
+Focus. Quelle est la seule chose qu'on cherche à changer ce trimestre ? Pas les cinq axes. Pas le plan de charge complet. Un comportement utilisateur à déplacer, une tension à résoudre, une métrique à faire bouger. Cette contrainte force à choisir. Choisir avant de mesurer est la moitié du travail sur les OKRs. Un PM qui ne sait pas ce qu'il cherche à changer ne peut pas écrire de bons Key Results, avec ou sans IA.
+
+Risques. Qu'est-ce qui peut faire échouer cet objectif, indépendamment de vos efforts ? Une dépendance technique, une hypothèse sur le comportement utilisateur que tu n'as pas encore validée, une contrainte marché prévisible. Les risques identifiés ici doivent se retrouver dans tes Key Results. Si un risque n'est pas couvert par un KR, soit tu l'assumes consciemment, soit tu l'as raté.
+
+Alignement. Quel objectif de l'entreprise est-ce qu'on sert ? Et comment ton travail y contribue-t-il spécifiquement ? Cette question force la traduction. Tu ne copies pas l'objectif de ton VP. Tu traces une ligne entre ce que ton équipe va faire et le résultat business attendu. Si cette ligne n'est pas claire, l'OKR ne survivra pas au premier comité de pilotage.
+
+Mesure. Comment sait-on qu'on a réussi ? Cette étape produit les Key Results. Pour chaque dimension de l'objectif, il faut un signal mesurable. Pas une livraison, un chiffre. Un taux, une fréquence, un score, un volume. C'est ici que l'IA va t'aider à générer une base.
+
+Expérimentation. Est-ce qu'on est à 50 % de confiance sur l'atteinte ? C'est le niveau d'ambition attendu pour un OKR solide. À 80 %, l'objectif est trop confortable. À 20 %, il est irréaliste et l'équipe décrochera au premier check-in. Le 50 % place l'OKR comme une hypothèse forte, pas comme un plan de charge garanti.
+
+Passer FRAME en 15 minutes avant d'ouvrir Claude ou Gemini change la qualité des outputs. Pas parce que l'IA est meilleure, mais parce que le contexte que tu lui donnes est meilleur.
+
+## Ce que l'IA fait bien et ce qu'elle fait mal dans ce processus
+
+Deux choses utiles, une chose inutile.
+
+L'IA génère une base de Key Results candidats. Si tu lui donnes un objectif clair, des métriques actuelles, et des risques identifiés, un LLM produit 5 à 7 KRs formulés en outcomes en moins d'une minute. Tu ne garderas pas tout. Mais avoir une base à challenger en équipe est beaucoup plus rapide que partir de zéro.
+
+L'IA reformule les livrables en outcomes. "Livrer le nouveau flow d'onboarding" devient "Le taux de complétion de l'onboarding passe de 34 % à 55 %." C'est la transformation la plus courante que les PMs font mal sous pression de temps. Soumets un draft de KRs et l'IA retraite les formulations en quelques secondes.
+
+En revanche, l'IA ne choisit pas le Focus à ta place. Elle ne connaît pas tes utilisateurs, tes paris stratégiques, les arbitrages que tu as faits avec ton CTO la semaine dernière. Si tu commences le prompt par "aide-moi à écrire des OKRs pour mon équipe produit", le résultat sera générique au sens littéral du terme.
+
+Elle ne connaît pas non plus tes baselines. Un KR avec une cible sans baseline ne vaut rien. Si tu lui dis "améliore le taux d'activation", elle inventera une valeur de départ. C'est à toi de fournir le chiffre actuel, sinon le KR produit est inutilisable.
+
+Les deux cas d'usage valables : générer une base après FRAME, et retravailler les formulations. Tout le reste reste chez toi.
+
+## Le prompt structuré avec le contexte FRAME
+
+Voici le prompt à copier-coller dans Claude, Gemini, ou le LLM de ton choix. Chaque ligne entre crochets est à remplacer par ton contexte FRAME.
+
+```
+Contexte OKR équipe produit :
+- Focus : [Ce qu'on cherche à changer ce trimestre, en une phrase. Un comportement utilisateur ou une métrique à déplacer.]
+- Risques : [Le principal obstacle ou l'hypothèse non validée qui pourrait faire échouer l'objectif.]
+- Alignement : [L'objectif de l'entreprise qu'on sert, formulé simplement.]
+- Mesure : [Les métriques qu'on suit aujourd'hui, avec leurs valeurs actuelles.]
+- Ambition : [Niveau de confiance sur l'atteinte : 50 %.]
+
+Génère un Objectif formulé comme un changement d'état ou de comportement utilisateur.
+Génère 4 Key Results avec : une formulation outcome, une baseline actuelle, une cible ambitieuse à 50 % de confiance.
+Évite les Key Results formulés comme des livrables ou des tâches.
+Chaque KR doit mesurer une dimension différente : activation, adoption, rétention, satisfaction.
+```
+
+Ce prompt produit des Key Results utilisables parce qu'il contraint le LLM à partir de tes données. La qualité du contexte détermine la qualité du résultat.
+
+Un ajout utile si tu travailles sur un produit B2B ou multi-segment : ajoute "Segment cible : [description du segment]" dans le contexte. Les KRs seront calibrés au segment, pas à un utilisateur générique.
+
+## La checklist de validation avant de partager
+
+L'IA produit une base, pas un OKR finalisé. Avant de partager la version avec ton manager ou en comité stratégique, passe ces cinq vérifications.
+
+1. Chaque Key Result commence-t-il par une métrique, pas un verbe ? "Taux de complétion onboarding" est une métrique. "Améliorer le taux de complétion onboarding" est une intention. Ce sont des choses différentes.
+
+2. As-tu une baseline pour chaque KR ? Sans "passe de X % à Y %", la cible est creuse. Si tu ne sais pas où tu en es aujourd'hui, c'est ton premier travail cette semaine, avant d'écrire les OKRs.
+
+3. Les KRs couvrent-ils des dimensions différentes ? Si trois Key Results sur quatre mesurent la même chose, tu as un angle mort. Les dimensions Targeted, Adopted, Retained, Satisfied servent de checklist pour élargir la perspective. L'article [OKRs produit : comment mesurer l'impact, pas le travail](/blog/okr-produit-impact) détaille ce framework avec des exemples.
+
+4. Pourrait-on atteindre ces KRs sans livrer de fonctionnalité ? Si oui, l'OKR est bien formulé. Un taux de churn qu'on améliore par une meilleure communication ou un email de relance, sans aucun code : l'équipe choisit le chemin. C'est le signe que tu mesures l'outcome, pas la solution.
+
+5. À 50 % de confiance, est-ce que l'équipe pense que c'est atteignable ? Pose la question en standup. Si la réponse moyenne est "non" ou "certainement oui", l'OKR n'est pas calibré.
+
+## Un exemple complet de A à Z
+
+Contexte : tu es PM sur une plateforme de gestion documentaire pour les cabinets comptables. Q2 commence. L'objectif company est "accélérer l'adoption du module Collaboration sur les comptes PME."
+
+Tu passes FRAME en 15 minutes.
+
+Focus : le module Collaboration est activé par 18 % des comptes PME. On cherche à passer à 38 % d'ici fin Q2.
+
+Risques : l'onboarding du module dure 45 minutes. Les DAF qui le font seuls n'ont pas ce temps. C'est l'hypothèse principale à valider ou invalider ce trimestre.
+
+Alignement : l'objectif company est d'atteindre 70 % d'adoption des modules premium sur les comptes PME d'ici Q4. Notre OKR attaque la première marche.
+
+Mesure : taux d'activation du module (18 %), taux de complétion de l'onboarding (22 %), volume de tickets "aide module collab", NPS post-activation (31 sur 100).
+
+Expérimentation : 50 % de confiance. Si l'onboarding reste à 45 minutes, on n'atteint pas l'objectif.
+
+Tu envoies ce contexte dans le prompt ci-dessus. Le LLM génère :
+
+Objectif : "Rendre le module Collaboration accessible aux DAF de PME qui travaillent seuls, sans formation dédiée."
+
+- KR1 : Le taux d'activation du module Collaboration sur les comptes PME passe de 18 % à 38 % d'ici fin Q2
+- KR2 : 65 % des comptes activés complètent l'onboarding en moins de 15 minutes (baseline : 22 % le font en moins de 20 minutes)
+- KR3 : Le volume de tickets "aide module collab" diminue de 35 % par rapport à Q1
+- KR4 : Le NPS post-activation du module passe de 31 à 44
+
+Tu passes la checklist. Tous les KRs commencent par une métrique. Les baselines sont présentes sur tous les KRs. Les dimensions sont différentes : activation, adoption, support, satisfaction.
+
+Un seul point à vérifier : le KR2 dit "15 minutes". Est-ce que tu as le temps médian réel dans Mixpanel ou Amplitude ? Si non, c'est ton premier travail avant de partager ces OKRs. Tu vas chercher le chiffre, tu ajustes.
+
+L'IA t'a donné une base propre en 90 secondes. Tu as passé 15 minutes sur FRAME. Total : moins de 20 minutes pour une première version d'OKRs prête à être challengée en équipe.
+
+Le ratio cible : la pensée stratégique reste chez toi, la mise en forme va à l'IA.
+
+Si tu travailles aussi sur la [priorisation de ton backlog](/blog/prioriser-backlog-ia) pour aligner l'exécution sur ces OKRs, les deux exercices se renforcent directement. Les OKRs définissent le cap. La priorisation aligne l'exécution quotidienne sur ce cap.
+
+## Essaie le Générateur OKR express
+
+Le Générateur OKR express fait l'étape FRAME dans le navigateur. Tu décris ton contexte en cinq champs, et il génère une première base d'OKRs formulés en outcomes avec baselines et cibles.
+
+Disponible gratuitement sur [/outils/generateur-okr](/outils/generateur-okr).
