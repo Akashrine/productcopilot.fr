@@ -1,0 +1,102 @@
+---
+title: "OKR et roadmap : aligner ce qu'on construit sur l'impact"
+description: "Tes OKRs ne dictent pas ta roadmap ? Méthode pratique pour connecter chaque item de backlog à un Key Result avec le framework FRAME."
+slug: "okr-roadmap-alignement-produit"
+date: "2026-05-08"
+readingTime: "7 min"
+cluster: "okrs"
+keywords: ["OKR roadmap produit", "aligner roadmap OKR", "OKR pilotage produit", "framework FRAME OKR", "OKR backlog priorisation"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Roadmap"]
+---
+
+Tu as écrit tes OKRs en janvier. Fin mars, tu regardes ta roadmap. Elle n'a pas bougé d'un centimètre. Les features sont livrées. Les Key Results sont au même niveau que le jour un.
+
+C'est la situation la plus courante dans les équipes produit. Pas parce que les OKRs sont mal écrits. Parce qu'ils ne sont jamais vraiment connectés à ce qu'on décide de construire.
+
+## Le problème n'est pas les OKRs. C'est la séquence.
+
+La plupart des équipes font ça dans cet ordre : la roadmap est commitée en Q4 pour l'année suivante, les OKRs sont écrits en janvier, et les deux coexistent sans se parler.
+
+David Pereira, consultant produit qui a travaillé avec 50+ entreprises dans 15 pays, appelle ça le "roadmap theatre". La roadmap devient la stratégie par défaut parce qu'une vraie stratégie est absente. Les équipes livrent ce qui est sur la feuille. Les résultats ne bougent pas. Tout le monde est occupé (Pereira, "7 Reasons Why Product Is Damn Hard In Europe", mai 2026).
+
+Ce n'est pas un problème de discipline. C'est un problème de séquence.
+
+La bonne séquence est l'inverse. D'abord, les OKRs sont écrits et validés avec des baselines connues. Ensuite, la roadmap est construite comme la réponse à la question : comment atteindre ces KRs ? Enfin, chaque item de backlog pointe vers un KR parent explicite.
+
+Ce changement n'est pas un changement d'outil. C'est un changement de logique.
+
+## Tagger chaque item avec un parent KR
+
+C'est la pratique la plus simple et la plus impactante.
+
+Pour chaque item de ta roadmap, ajoute un champ : "OKR parent". Un item sans OKR parent peut exister, mais seulement dans deux cas : dette technique qui débloque un futur KR, ou contrainte réglementaire non négociable.
+
+Tout le reste doit pointer vers un Key Result.
+
+Exemple concret. Une squad SaaS B2B travaille sur une refonte de l'onboarding.
+
+Sans OKR parent : "Refonte de la page d'accueil post-login, priorité haute."
+
+Avec OKR parent : "Refonte de la page d'accueil post-login, parent KR : le taux de complétion de l'onboarding passe de 34 % à 55 % en Q2."
+
+La différence n'est pas cosmétique. Si tu livres la refonte et que le taux de complétion ne bouge pas, tu as un signal immédiat. La feature était peut-être mal conçue. Ou ce n'était pas le bon levier. Tu le sais en deux semaines, pas en fin de trimestre.
+
+Fais l'exercice sur ta roadmap actuelle. Si 30 % des items n'ont pas de parent KR valide, tu as un problème de priorisation à régler avant de coder quoi que ce soit.
+
+## Le framework FRAME appliqué aux OKRs
+
+FRAME est un cadre de décision produit en cinq dimensions : Focus, Risques, Alignement, Mesure, Expérimentation. Chaque dimension s'applique directement à la connexion OKR-roadmap.
+
+**Focus.** Ce trimestre, ta roadmap a un et un seul KR prioritaire par squad. Pas cinq. Un. Si plusieurs squads travaillent en parallèle, chaque squad a son KR focus. Le reste est secondaire.
+
+**Risques.** Pour chaque item de la roadmap, formule le risque si tu ne le livres pas en termes de KR : "si on ne livre pas X, le KR Y reste bloqué à tel niveau parce que..." Ça force à distinguer les items critiques des nice-to-have.
+
+**Alignement.** Chaque item a un OKR parent. Les items sans parent sont parqués ou supprimés. Les stakeholders qui poussent des features sans parent KR doivent justifier pourquoi ça vaut mieux que ce qui avance un KR.
+
+**Mesure.** La baseline de chaque KR est connue avant de construire quoi que ce soit. Si tu n'as pas la data, instrumenter le tracking est le premier item de ta roadmap, pas le dernier.
+
+**Expérimentation.** Chaque item de la roadmap est une hypothèse, pas une livraison. "On pense que X va bouger le KR Y de Z %. On construit la version minimale pour le valider en trois semaines." Ce changement de langage modifie aussi la relation avec les stakeholders : tu ne promets pas une feature, tu proposes un test.
+
+Utilisé comme checklist sur chaque planning de sprint, FRAME prend dix minutes et évite des dérives de trois mois.
+
+## La revue OKR hebdomadaire en 15 minutes
+
+Les revues mensuelles sont trop lentes. Quand tu détectes un problème en fin de mois, tu as perdu quatre sprints.
+
+Une revue hebdomadaire de 15 minutes fonctionne ainsi. D'abord, où en est chaque KR par rapport à la baseline ? (deux minutes par KR). Ensuite, qu'est-ce qu'on a livré cette semaine, et est-ce que ça a bougé le KR ? (cinq minutes). Enfin, est-ce que le plan de la semaine prochaine fait avancer au moins un KR ? (cinq minutes).
+
+La question centrale à se poser : si on livre tout le plan de la semaine prochaine et que les KRs ne bougent pas, est-ce qu'on fait quelque chose de différent ?
+
+Si la réponse est non, c'est le signal qu'il faut creuser. Soit le KR est mal choisi. Soit la roadmap ne fait pas avancer le bon levier. Soit la baseline était fausse.
+
+Cette revue n'a pas besoin d'un outil complexe. Un tableur partagé avec le niveau de chaque KR au début du trimestre et le niveau actuel suffit pour les premières semaines.
+
+## Quand un KR ne bouge pas malgré les livraisons
+
+C'est le signal le plus difficile à gérer. Tu as livré trois features. Le KR est au même niveau.
+
+Deux causes sont courantes.
+
+Première cause : la feature n'était pas le bon levier. Tu pensais que la refonte de l'onboarding boosterait le taux d'activation. En réalité, le frein était l'email d'invitation envoyé trop tard. Tu l'aurais su en regardant le funnel d'activation, pas en livrant la refonte.
+
+Deuxième cause : le KR mesure quelque chose de trop en aval. "Le churn à six mois passe de 22 % à 12 %" est un objectif valide. Mais si tu ne mesures que ça, tu n'as pas de signal intermédiaire pour savoir si tu avances. Ajoute des KRs de levier : taux de complétion de l'onboarding, nombre d'actions clés réalisées dans les 14 premiers jours.
+
+Dans les deux cas, la réponse n'est pas de réécrire les OKRs à mi-trimestre. C'est d'ajuster les hypothèses et de pivoter sur les leviers. Les OKRs restent. La roadmap change.
+
+Si tu travailles sur le choix des métriques et la structure des Key Results, l'article sur le [framework TARS et les OKRs orientés impact](/blog/okr-produit-impact) donne la grille de lecture complémentaire.
+
+## Outil ou processus : dans quel ordre ?
+
+La question revient souvent. Linear, Jira, Notion, Productboard proposent tous des intégrations OKR-roadmap. Certaines sont bien faites.
+
+Mais aucun outil ne remplace la clarté d'une colonne "OKR parent" ajoutée à la main sur chaque item. Si ton équipe n'est pas encore dans la logique OKR-roadmap, commence avec un tableur et une colonne dédiée. Quand le réflexe est en place, l'outil suit naturellement.
+
+L'erreur classique : acheter l'outil avant d'avoir le comportement. Un outil doit encoder une pratique existante, pas en créer une.
+
+La déconnexion OKR-roadmap n'est pas un problème de volonté. C'est un problème de structure. Ajouter un champ "parent KR" à ta roadmap, faire tourner FRAME à chaque sprint planning, et tenir une revue hebdomadaire de 15 minutes : ces trois habitudes suffisent pour que tes OKRs dictent enfin ce que tu construis.
+
+---
+
+Le Générateur OKR express t'aide à écrire des OKRs mesurables en partant d'un problème produit. Il sort des Key Results avec baselines identifiées et leviers suggérés, en moins de 10 minutes. Disponible sur [/outils/generateur-okr](/outils/generateur-okr).
