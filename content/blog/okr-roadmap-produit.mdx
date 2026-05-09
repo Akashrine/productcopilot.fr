@@ -1,0 +1,119 @@
+---
+title: "OKR et roadmap produit : pourquoi les deux cohabitent mal"
+description: "La plupart des équipes ont des OKRs et une roadmap de features. Ces deux outils se contredisent. Voici comment sortir de la contradiction avec des exemples concrets."
+slug: "okr-roadmap-produit"
+date: "2026-05-09"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["OKR roadmap produit", "aligner OKR roadmap", "outcome roadmap product manager", "OKR feature roadmap", "roadmap outcome-based PM"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Roadmap"]
+---
+
+Beaucoup d'équipes ont adopté les OKRs. Ces mêmes équipes ont conservé leur roadmap de features trimestrielle. Personne ne remarque la contradiction.
+
+Puis arrive la revue de milieu de trimestre. Les OKRs sont à 30 %. La roadmap, elle, avance. On a livré 7 features. Mais les métriques ne bougent pas. Et personne ne sait vraiment pourquoi.
+
+## La contradiction au coeur du système
+
+Un OKR, c'est un engagement sur un résultat. "Le taux d'activation passe de 38 % à 60 % ce trimestre." L'équipe a la liberté de choisir comment y arriver.
+
+Une roadmap de features, c'est un engagement sur une livraison. "On livre l'onboarding V2 en mars, les intégrations API en avril, le dashboard analytics en juin." L'équipe doit livrer ce qui est planifié.
+
+Ces deux systèmes partent de présupposés inverses.
+
+L'OKR dit : "Voici le problème à résoudre. A toi de trouver comment."
+La roadmap dit : "Voici ce que tu vas construire. Le problème, on l'a résolu pour toi."
+
+Silicon Valley Product Group appelle ça le piège du faux empowerment : donner des objectifs à une équipe tout en lui imposant la solution sous forme de features à livrer. L'équipe n'est pas autonome. Elle est évaluée sur deux plans en même temps, avec deux systèmes d'accountability qui tirent dans des directions opposées.
+
+## Pourquoi les deux coexistent dans la plupart des équipes
+
+Ce n'est pas un problème de logique. C'est un problème de gouvernance.
+
+Les OKRs arrivent souvent d'en haut. C'est une initiative leadership, une adoption de framework, une décision stratégique. Les équipes doivent en avoir.
+
+Les roadmaps de features, elles, arrivent de partout. Le commercial qui a promis une intégration au client enterprise. Le VP qui a mis une feature dans son slide board. Le head of engineering qui a planifié la migration technique. Ces demandes existent indépendamment des OKRs.
+
+Résultat : les OKRs sont rédigés en début de trimestre, les roadmaps sont conservées telles quelles. Les équipes gèrent les deux en parallèle. Les OKRs deviennent décoratifs. La roadmap, elle, reste pilotée par les demandes entrantes.
+
+Le symptôme visible : en revue trimestrielle, tout le monde présente ce qui a été livré, pas ce qui a changé.
+
+## Ce qu'une roadmap orientée outcomes change
+
+Une roadmap orientée outcomes n'est pas une liste de features avec des dates. C'est une liste de problèmes à résoudre, ordonnés par priorité, avec des critères de succès mesurables.
+
+Exemple concret. Une équipe SaaS B2B travaille sur l'activation des nouveaux comptes.
+
+Version feature roadmap :
+- Mars : Onboarding V2 (guide, checklist, email de bienvenue)
+- Avril : Intégrations API (Salesforce, HubSpot, Zapier)
+- Juin : Dashboard Analytics (rapports, exports, filtres)
+
+Version outcome roadmap :
+- Q1 : Les nouveaux utilisateurs comprennent la valeur du produit avant J14 (taux d'activation de 38 % à 60 %)
+- Q2 : Les équipes sales intègrent l'outil dans leur workflow quotidien (taux d'usage daily de 15 % à 40 %)
+- Q3 : Les managers ont une visibilité suffisante pour renouveler sans appel commercial (score de confiance dans les données de 3,1 à 4,2)
+
+Les solutions (features, intégrations, dashboard) viennent après. Elles sont des hypothèses, pas des engagements. L'équipe peut construire l'onboarding V2 ou non. Ce qui compte, c'est que 60 % des nouveaux comptes activent avant J14.
+
+Cette reformulation change la conversation avec les stakeholders. Tu ne défends plus une liste de features. Tu défends une série de paris sur le comportement utilisateur. C'est une posture différente, et elle est plus solide à défendre.
+
+## Le framework FRAME pour arbitrer les demandes entrantes
+
+Chaque trimestre, des demandes arrivent qui ne rentraient pas dans les OKRs d'origine. Un prospect stratégique, une dette technique urgente, un bug critique. Comment décider ce qui entre dans la roadmap et ce qui attend ?
+
+FRAME donne une structure pour prendre cette décision sans perdre l'alignement OKR.
+
+Focus : est-ce que cette demande contribue directement à un Key Result actif ? Si oui, elle entre. Si non, elle attend le prochain cycle ou trouve son propre financement (équipe ops, budget maintenance).
+
+Risques : quels risques adresse-t-elle ? Risque de valeur (les utilisateurs n'en ont pas besoin), de faisabilité (l'équipe ne sait pas le construire), d'utilisabilité (les utilisateurs ne sauront pas l'utiliser), de viabilité business (ça ne génère pas de revenu). Si la demande réduit un risque lié à un OKR en cours, elle mérite d'être priorisée.
+
+Alignement : est-ce que les parties prenantes clés comprennent pourquoi on la fait maintenant, et pourquoi on ne fait pas autre chose à la place ? Si le commercial a promis une feature client enterprise et que ça ne rentre pas dans les OKRs actuels, il faut une conversation, pas une livraison silencieuse.
+
+Mesure : comment saura-t-on que ça a marché ? Si la demande ne peut pas être liée à un Key Result mesurable, elle appartient au backlog, pas à la roadmap trimestrielle.
+
+Experimentation : peut-on tester une version légère d'abord, avant de s'engager sur le build complet ? Une feature complète n'est pas toujours la bonne première étape.
+
+En pratique, FRAME réduit le nombre de features orphelines dans la roadmap. Chaque item a un lien explicite avec un objectif trimestriel, ou il attend le bon moment.
+
+## Les 3 symptômes d'une roadmap qui contredit les OKRs
+
+Symptôme 1 : les OKRs n'avancent pas, mais la roadmap est "on track".
+
+C'est le signal le plus clair. L'équipe livre. Les métriques ne bougent pas. Soit les features livrées ne s'attaquent pas aux bons problèmes, soit les Key Results ne mesurent pas ce que les features sont supposées influencer. Dans les deux cas, il y a un travail de réalignement à faire.
+
+Symptôme 2 : les OKRs sont réécrits en milieu de trimestre.
+
+Cela arrive quand les OKRs étaient trop ambitieux par rapport à ce que la roadmap prévoyait de livrer. Les équipes ajustent les objectifs pour les aligner sur ce qu'elles ont livré. C'est l'inverse du bon fonctionnement : la roadmap devrait s'ajuster aux OKRs, pas l'inverse.
+
+Symptôme 3 : personne ne sait quel OKR est impacté par quelle initiative.
+
+En sprint planning ou en demo, les équipes présentent les features sans jamais relier ce qui est livré aux Key Results de la semaine. Le lien entre l'activité et l'impact est invisible. Ce n'est pas un problème de communication, c'est un problème de conception du système de pilotage.
+
+Si tu reconnais un ou plusieurs de ces symptômes, le problème n'est probablement pas la rédaction des OKRs. C'est l'architecture du système dans lequel ils vivent.
+
+## Une transition en deux étapes
+
+Transformer une roadmap de features en roadmap outcomes ne se fait pas du jour au lendemain. Les stakeholders ont des attentes. Les processus sont installés.
+
+Etape 1 : ajouter la couche "pourquoi" à chaque item de la roadmap existante.
+
+Pour chaque feature planifiée, pose une question simple : quel Key Result est-ce que ça adresse, et de quelle façon ? Documente la réponse dans l'outil que tu utilises (Notion, Linear, Jira). Si tu ne trouves pas de réponse claire pour un item, c'est une conversation à avoir avec le sponsor de la feature.
+
+Ce travail ne change rien à la roadmap. Il révèle les orphelines. Et les orphelines sont les features que tu construis sans savoir pourquoi.
+
+Etape 2 : au prochain cycle de planification, partir des OKRs pour construire la roadmap.
+
+Commence par les Key Results validés. Pour chaque KR, identifie les 2-3 initiatives qui ont le plus de chances de le faire bouger. C'est ta roadmap de base. Ensuite seulement, intègre les demandes stakeholders qui passent le filtre FRAME.
+
+Cette séquence inversée paraît simple. Elle est difficile à tenir parce qu'elle déplace le centre de gravité de la conversation. Les stakeholders doivent apprendre à défendre leurs demandes en termes d'impact, pas de livraison. Pour beaucoup d'entre eux, c'est un changement de posture qui prend du temps.
+
+L'article [OKRs produit : comment mesurer l'impact, pas le travail](/blog/okr-produit-impact) donne le cadre pour construire des Key Results qui peuvent réellement piloter cette priorisation.
+
+---
+
+Le Générateur OKR express arrive prochainement sur productcopilot.fr. Il t'aide à formuler des OKRs calibrés à partir d'un objectif trimestriel, avec des Key Results liés aux bons niveaux d'ambition pour ton type de produit.
+
+En attendant, le [Pack OKRs](/packs/okrs) sort bientôt avec un système complet pour aligner OKRs, roadmap et rituels d'équipe.
