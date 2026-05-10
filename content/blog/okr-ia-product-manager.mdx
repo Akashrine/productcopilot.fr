@@ -1,0 +1,126 @@
+---
+title: "OKR et IA : comment générer des OKRs produit avec Claude"
+description: "L'IA peut t'aider à écrire tes OKRs. Pas comme générateur : comme challenger. Méthode, prompts et pièges pour product managers."
+slug: "okr-ia-product-manager"
+date: "2026-05-10"
+readingTime: "7 min"
+cluster: "okrs"
+keywords: ["OKR IA product manager", "générer OKRs avec Claude", "prompt OKR pm", "rédiger OKRs IA", "OKR product manager méthode"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "IA"]
+---
+
+La plupart des PMs qui essaient d'utiliser l'IA pour leurs OKRs font la même erreur. Ils ouvrent Claude ou ChatGPT, tapent "génère des OKRs pour mon équipe produit", et récupèrent des formules génériques qui ne correspondent à rien.
+
+Ce n'est pas un problème d'IA. C'est un problème de méthode.
+
+L'IA est utile pour les OKRs, mais pas comme générateur à froid. Elle est utile comme challenger, comme structure de pensée, comme miroir. Et pour s'en servir correctement, il faut lui donner ce qu'elle ne peut pas inventer : ton contexte.
+
+## Ce que l'IA peut faire — et ce qu'elle ne peut pas faire
+
+L'IA peut formuler. Elle transforme des intuitions vagues en phrases structurées. Elle prend "on veut améliorer l'onboarding" et propose plusieurs formulations d'objectifs et de Key Results cohérentes avec la contrainte que tu lui donnes.
+
+Elle peut aussi challenger. C'est son usage le plus sous-estimé dans ce contexte. Soumettre à Claude un OKR que tu as écrit et lui demander de le critiquer donne souvent plus de valeur que de lui demander d'en générer un de zéro. Sara Lobkovich, spécialiste OKR, le formule bien : l'IA peut écrire tes OKRs, mais la vraie difficulté reste d'énoncer la vision qui les rend pertinents — et ça, tu ne peux pas le déléguer.
+
+Ce qu'elle ne peut pas faire : inventer tes baselines. Elle ne sait pas que ton taux de complétion d'onboarding est à 34 %. Elle ne connaît pas ta stratégie de ce trimestre, tes contraintes d'équipe, tes cycles passés. Demander à l'IA des OKRs sans lui donner ces données, c'est comme demander un diagnostic à un médecin qui n'a pas accès à ton dossier.
+
+Les Key Results générés sans baselines ressemblent à ça : "Augmenter le taux de rétention de 20 %". Format correct. Mais 20 % par rapport à quoi ? Est-ce 20 points de pourcentage ou 20 % de croissance relative ? L'IA ne peut pas le savoir si tu ne le lui fournis pas.
+
+L'autre limite : l'IA génère par défaut des KRs de type output. "Lancer la feature X", "Déployer le module Y", "Finaliser la refonte Z". Ce sont des tâches habillées en résultats. Si tu ne précises pas que tu veux des métriques de comportement utilisateur, tu obtiendras une liste de livrables avec un verbe différent. Le problème que Jeff Gothelf (auteur de Lean UX) soulève aussi : ce n'est pas l'IA qui résiste aux outputs — c'est nous qui ne promptons pas pour des outcomes.
+
+## Prépare ton contexte avant de prompter
+
+Le bloc de contexte, c'est l'étape que tout le monde rate. Avant d'écrire le moindre prompt, construis ce bloc. Il doit contenir :
+
+La stratégie produit du cycle : quel est l'enjeu principal ce trimestre ? Acquisition, rétention, monétisation, stabilité ? Une phrase suffit.
+
+Les métriques actuelles : quelles sont tes baselines sur les indicateurs clés ? Taux d'activation, churn, NPS, usage des features principales. Sans ça, les KRs seront des hypothèses sans ancrage.
+
+Les contraintes de l'équipe : combien de personnes ? Des dépendances techniques lourdes ? Un lancement prévu ? Un budget de tests A/B disponible ou non ?
+
+Le problème à résoudre : pas l'objectif — le problème. "Nos utilisateurs activés n'adoptent pas la feature core après 30 jours" est meilleur point de départ que "améliorer l'adoption". Le problème décrit la réalité. L'objectif dit où tu vas. Les KRs mesurent si tu y arrives.
+
+Exemple de bloc de contexte opérationnel :
+
+"Je suis PM sur une plateforme SaaS B2B. Ce trimestre porte sur la rétention des nouveaux comptes. Notre churn J30 est à 22 %. Notre taux de complétion d'onboarding est à 34 %. L'équipe : 2 devs, 1 designer. Pas de refonte majeure possible. Budget disponible pour des tests A/B sur l'onboarding."
+
+Avec ça, tu peux prompter.
+
+## Le prompt pour un premier draft d'OKR
+
+Voici la structure qui donne les meilleurs résultats :
+
+```
+[bloc de contexte]
+
+En tenant compte de ce contexte, propose 1 objectif produit pour ce trimestre et 3 Key Results qui mesurent l'impact sur les utilisateurs, pas les livrables. Chaque Key Result doit inclure une métrique avec sa valeur actuelle (baseline) et une cible. Ne propose aucun KR qui mentionne un livrable technique, une date de lancement, ou une action interne.
+```
+
+Ce que cette formulation fait : elle force l'IA à s'ancrer sur tes données réelles, elle lui interdit explicitement les KRs de type output, et elle lui demande des métriques avec baseline et cible.
+
+Le résultat ne sera pas parfait. Ce sera un premier draft. Et c'est suffisant pour passer à l'étape la plus utile.
+
+## Challenger ses OKRs avec l'IA
+
+Tu as un draft d'OKR, écrit par toi ou co-construit avec l'IA. Maintenant tu le soumets avec une instruction différente :
+
+```
+Voici mes OKRs pour le prochain trimestre :
+
+[tes OKRs]
+
+Joue le rôle d'un PM senior sceptique. Identifie :
+1. Les Key Results qui ressemblent à des tâches déguisées
+2. Les Key Results sans baseline claire
+3. Les objectifs qui pourraient être atteints sans changer le comportement des utilisateurs
+4. Ce qui manque pour mesurer vraiment l'impact
+
+Sois direct. Identifie les problèmes, ne reformule pas.
+```
+
+Ce prompt de challenge produit des retours que tu n'aurais pas vus seul. Pas parce que l'IA est plus intelligente. Parce que la distance donne une perspective différente, et parce que tu as demandé la critique, pas la validation.
+
+Exemple concret : une PM d'une startup SaaS EdTech a soumis ses OKRs Q2 à ce prompt. L'IA a immédiatement identifié que deux de ses trois KRs ne pouvaient pas être mesurés avec les outils analytics dont l'équipe disposait. Un problème réel qu'elle n'avait pas vu parce qu'elle était trop proche du sujet depuis deux semaines.
+
+La session de challenge prend 15 minutes. Elle remplace avantageusement une heure de revue en comité où personne ne veut contester le travail d'autrui.
+
+## TARS + IA pour vérifier que tes KRs mesurent l'impact
+
+Après le challenge, une dernière vérification. Le framework TARS — Targeted, Adopted, Retained, Satisfied — sert de checklist pour s'assurer que tes Key Results couvrent les bonnes dimensions d'impact. Si tu ne le connais pas encore, [l'article sur les OKRs produit](/blog/okr-produit-impact) détaille comment construire des KRs ancrés sur le comportement utilisateur avec TARS.
+
+Avec l'IA, tu peux automatiser cette vérification :
+
+```
+Voici mes Key Results finaux :
+
+[liste de KRs]
+
+Pour chaque KR, indique dans quelle dimension TARS il tombe :
+- Targeted (acquisition ou activation)
+- Adopted (adoption d'une feature ou d'un workflow)
+- Retained (rétention ou engagement dans le temps)
+- Satisfied (satisfaction, NPS, CSAT, tickets support)
+
+Si un KR ne tombe clairement dans aucune de ces dimensions, signale-le.
+```
+
+Ce prompt te donne une cartographie en deux minutes. Si tous tes KRs tombent dans "Adopted" et qu'aucun ne mesure la rétention, c'est un angle mort. Soit tu assumes le choix pour ce cycle, soit tu ajoutes un KR de rétention.
+
+L'IA repère aussi les doublons : des KRs qui semblent mesurer des choses différentes mais qui sont corrélés à 95 % dans la réalité. Le taux de complétion d'onboarding et le taux d'activation en sont souvent un exemple — les deux montent ou baissent ensemble, ce qui ne te donne pas d'information supplémentaire sur le levier à actionner.
+
+## Les pièges à éviter
+
+L'IA génère des OKRs ambitieux par défaut. Trop ambitieux. Elle proposera "réduire le churn de 50 %" sans aucune base dans la réalité de ton produit. Recadre avec tes données historiques et vise une cible à 50 % de probabilité d'atteinte — le niveau d'inconfort mesuré décrit dans la méthode OKR standard. Si tu es à 90 % de confiance, l'objectif n'est pas assez ambitieux. Si tu es à 10 %, il est irréaliste.
+
+L'IA aime aussi les OKRs lisibles mais vides. "Améliorer l'expérience utilisateur pour augmenter la satisfaction" est grammaticalement correct et conceptuellement inutile. Un bon OKR est spécifique sur le problème, la population cible, et la métrique. Si tu ne peux pas compléter la phrase "je saurai que j'ai réussi quand X passe de Y à Z pour la population P", ce n'est pas encore un OKR.
+
+Dernier piège : coller les OKRs générés sans les avoir appropriés. L'IA ne sera pas dans la salle quand tu présenteras tes OKRs à ton N+1 ou à ton équipe. Toi si. Si tu ne peux pas défendre chaque KR avec tes propres mots et expliquer comment tu comptes le mesurer, il n'est pas prêt.
+
+L'IA accélère la rédaction. Elle ne remplace pas la réflexion. Un OKR généré en 3 minutes et soumis tel quel vaut moins qu'un OKR écrit à la main avec friction.
+
+## Passe à l'action
+
+Le Générateur OKR express arrive bientôt sur le site. Il structure la session : bloc de contexte, premier draft, challenge automatisé, vérification TARS. Un workflow guidé pour produire des OKRs ancrés dans ta réalité produit, pas dans des templates génériques.
+
+En attendant, tu peux commencer avec les prompts de cet article et le [Pack OKRs](/packs/okrs) qui détaille la méthode complète de pilotage par les résultats.
