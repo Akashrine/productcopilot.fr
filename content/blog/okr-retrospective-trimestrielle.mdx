@@ -1,0 +1,116 @@
+---
+title: "La revue d'OKRs trimestrielle : scorer, apprendre, relancer"
+description: "Manquer un OKR n'est pas un échec. C'est une information. Comment scorer tes Key Results, tirer les bons enseignements, et construire le cycle suivant."
+slug: "okr-retrospective-trimestrielle"
+date: "2026-05-14"
+readingTime: "9 min"
+cluster: "okrs"
+keywords: ["revue OKR trimestrielle", "bilan OKR product manager", "scorer OKR", "retrospective OKR équipe produit", "OKR fin de trimestre"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Méthode"]
+---
+
+La plupart des équipes produit font leurs OKRs en début de trimestre. Peu les ferment correctement.
+
+La revue de fin de cycle est souvent bâclée : un score calculé à la va-vite, une slide de présentation, et un copy-paste des mêmes objectifs pour le trimestre suivant. Personne n'a vraiment regardé ce qui s'est passé. Personne ne sait pourquoi certains KRs ont bougé et d'autres pas.
+
+Le résultat : l'équipe recommence les mêmes erreurs au cycle suivant avec une légère variation de formulation.
+
+La revue d'OKRs est l'étape la plus importante du cycle. Pas parce qu'elle confirme les succès. Parce qu'elle transforme les ratés en informations exploitables.
+
+## Le scoring OKR n'est pas un bulletin de notes
+
+La première résistance que les équipes ont avec le scoring, c'est la peur de l'évaluation. Un score de 0.4 sur un KR ressemble à un échec. En réunion avec le management, ça demande des explications.
+
+Ce réflexe vient d'une confusion entre OKR et KPI opérationnel.
+
+Un KPI opérationnel mesure la santé courante du produit. Le taux de disponibilité doit être à 99,9 %. Le temps de réponse moyen doit rester sous 200 ms. Ce sont des seuils à ne pas dépasser. Un écart est un incident.
+
+Un OKR mesure une ambition de changement. Le taux d'activation doit passer de 34 % à 55 %. Ce n'est pas un seuil, c'est une cible ambitieuse avec un niveau de confiance de 50 % au départ. Un score de 0.6 signifie que tu as atteint 60 % de l'ambition fixée. C'est de la progression, pas un échec.
+
+Google et Laszlo Bock ont popularisé la règle des 0.7. Un OKR bien calibré devrait être atteint à 70 % en moyenne. Un score de 1.0 systématique signifie que les objectifs n'étaient pas assez ambitieux. Un score de 0.2 signifie qu'ils étaient irréalistes ou mal cadrés.
+
+Le sweet spot : entre 0.6 et 0.8 sur l'ensemble des Key Results du trimestre. L'inconfort mesuré. L'équipe a progressé sans avoir tout atteint, et elle sait pourquoi.
+
+## Comment calculer ton score sans se mentir
+
+Le score d'un Key Result se calcule simplement : valeur atteinte moins valeur de départ, divisé par cible moins valeur de départ.
+
+Si ton KR était "le taux d'activation passe de 34 % à 55 %" et que tu termines à 45 %, ton score est (45 - 34) / (55 - 34) = 11/21 = 0.52.
+
+Deux erreurs courantes dans ce calcul.
+
+La première : utiliser une baseline approximative. Si tu n'avais pas de mesure précise à J0, ton score final ne veut rien dire. Un KR "le taux de complétion de l'onboarding passe de 38 % à 60 %" avec une baseline mesurée à la louche sur une période non représentative produit un score biaisé. Le travail de mesure de la data 0 se fait avant le cycle, pas pendant. C'est ce que l'article [OKRs produit : comment mesurer l'impact, pas le travail](/blog/okr-produit-impact) détaille dans la section sur la data 0.
+
+La deuxième : normaliser les scores a posteriori. Si un KR est clairement hors de portée en milieu de cycle, il est tentant de le reformuler pour qu'il semble raisonnable en fin de période. Ne le fais pas. Le score bas est plus utile que le score réajusté. Il encode une information sur l'ambition, les ressources ou l'hypothèse initiale.
+
+## Les trois questions à poser pour chaque Key Result
+
+Une revue d'OKRs n'est pas une présentation de résultats. C'est une séance d'analyse causale. Pour chaque KR, trois questions.
+
+Premièrement : est-ce que la métrique a bougé dans la bonne direction, indépendamment du score ? Un KR qui passe de 34 % à 41 % au lieu de 55 % a quand même progressé. La question n'est pas "est-ce qu'on a atteint la cible" mais "est-ce qu'on a appris quelque chose sur le levier ?"
+
+Deuxièmement : qu'est-ce qui explique l'écart entre la cible et le résultat ? Trois sources d'écart possibles. L'hypothèse était fausse : la feature que tu as construite ne produit pas l'impact attendu. L'exécution a été freinée : la feature est bonne mais elle est sortie trop tard dans le cycle. La cible était mal calibrée : l'ambition était irréaliste dès le départ.
+
+Ces trois diagnostics ont des implications différentes pour le cycle suivant. Le premier te dit de changer de levier. Le deuxième te dit d'améliorer ta capacité à livrer. Le troisième te dit de mieux calibrer tes ambitions.
+
+Troisièmement : qu'est-ce qu'on sait maintenant qu'on ne savait pas en début de trimestre ? C'est la question la plus utile. Chaque OKR est un pari sur un levier. Trois mois d'exécution produisent des données que tu n'avais pas. Ce savoir-là est l'actif principal du cycle.
+
+## Ce que révèle un score de 0.3
+
+Un score de 0.3 n'est pas automatiquement mauvais. Ça dépend de ce qu'il cache.
+
+Premier cas : l'hypothèse était mauvaise. Tu pensais qu'une refonte de l'onboarding en quatre étapes allait augmenter le taux de complétion de 20 points. Tu as livré la refonte. Le taux a bougé de 3 points. Le problème n'est pas la livraison, c'est l'hypothèse. Les utilisateurs n'abandonnent pas parce que le flow est trop long. Ils abandonnent parce qu'ils ne comprennent pas la valeur dans les premières minutes. Le diagnostic est précieux. Il te dit exactement où chercher au cycle suivant.
+
+Deuxième cas : les ressources ont manqué. L'équipe avait un bet sur trois sprints. Un incident technique majeur en semaine 5 a consommé 30 % de la capacité. Le KR n'a pas bougé parce que le bet n'a pas été exécuté, pas parce que l'hypothèse était fausse. Dans ce cas, le score bas ne dit rien sur l'hypothèse. Il dit quelque chose sur la gestion de la capacité.
+
+Troisième cas : le KR était irréaliste dès le départ. Si tous tes KRs sont à 0.3, ce n'est pas un problème d'exécution. C'est un problème de calibration. La prochaine fois, divise tes ambitions par deux et ajoute un niveau de confiance explicite au moment de l'écriture.
+
+La distinction entre ces trois cas change complètement ce qu'on fait ensuite. C'est pourquoi le scoring seul ne suffit pas. Ce qui compte, c'est l'analyse causale derrière le score.
+
+## Le piège du "même OKR, trimestre suivant"
+
+La dérive la plus courante après une revue d'OKRs : reconduire les OKRs non atteints pour le trimestre suivant, sans les modifier.
+
+La logique est compréhensible. "On n'a pas eu le temps de finir. C'est toujours important. On continue." Mais c'est une erreur silencieuse.
+
+Si tu reconduis un OKR sans analyser pourquoi il n'a pas bougé, tu répètes le pari sans mettre à jour l'hypothèse. Tu recycles le même itinéraire en espérant arriver à une destination différente.
+
+Le bon réflexe : avant de reconduire un OKR, réponds à la question "qu'est-ce qu'on va faire différemment ce trimestre ?" Si tu ne peux pas répondre, l'OKR n'est pas prêt à être reconduit. Soit l'hypothèse change, soit les ressources allouées changent, soit la cible est recalibrée. Quelque chose doit être différent.
+
+L'autre écueil : transformer un OKR non atteint en KPI permanent. "On vise 55 % de complétion de l'onboarding" ne disparaît jamais du tableau de bord. Il devient un indicateur qu'on surveille sans jamais le faire progresser. La distinction entre OKR et KPI de santé devient floue. Et l'équipe travaille sur des features sans cap trimestriel clair.
+
+## La connexion avec le cycle suivant via FRAME
+
+La revue de fin de cycle n'est pas une clôture. C'est le premier acte du cycle suivant.
+
+Les learnings de la revue alimentent directement les deux dernières dimensions de FRAME, Mesure et Expérimentation, au moment de cadrer les nouveaux OKRs.
+
+La dimension Mesure : est-ce que tu as maintenant les instruments pour suivre les KRs que tu veux écrire ? Si le cycle précédent t'a appris que tu n'avais pas de tracking sur un levier clé, tu dois régler ça avant d'écrire le prochain KR. Un KR sans baseline, c'est un pari sans signal de retour.
+
+La dimension Expérimentation : quelles hypothèses du cycle précédent ont été validées, et lesquelles restent ouvertes ? Les bets invalidés sont des informations sur ce qui ne marche pas. Les bets partiellement validés indiquent où creuser. Les angles non testés suggèrent les paris à prendre au prochain cycle.
+
+La revue d'OKRs bien faite produit une liste de quatre ou cinq insights concrets. Ces insights deviennent le point de départ du cadrage FRAME pour le cycle suivant. Pas une page blanche, pas une reconduction par défaut. Un départ informé par ce qu'on vient d'apprendre.
+
+## Structurer la revue en 90 minutes
+
+Une revue d'OKRs efficace ne dure pas trois heures. Elle dure 90 minutes avec la bonne structure.
+
+Les 20 premières minutes : chaque PM ou lead présente les scores calculés pour ses KRs, sans justification. Juste les chiffres et la méthode de calcul. Pas de mise en contexte défensive. Les chiffres d'abord.
+
+Les 40 minutes suivantes : analyse causale des KRs avec un score inférieur à 0.6. Pour chaque KR, les trois questions : la métrique a-t-elle bougé dans la bonne direction, qu'est-ce qui explique l'écart, qu'est-ce qu'on sait maintenant. On écrit les réponses, pas seulement on les dit.
+
+Les 20 minutes suivantes : synthèse des learnings. Quels KRs sont à reconduire avec une hypothèse modifiée ? Quels leviers ont surpris par leur efficacité ? Quels leviers sont à éliminer du catalogue des bets ?
+
+Les 10 dernières minutes : décisions sur les inputs pour le cycle suivant. Pas les OKRs complets, mais les orientations : quels problèmes on continue à adresser, quels problèmes on abandonne, quelles hypothèses nouvelles on veut tester.
+
+Cette structure produit un document de revue de deux pages maximum : scores, analyse causale, learnings, orientations. C'est tout ce dont l'équipe a besoin pour démarrer le cycle suivant.
+
+## Pour structurer tes OKRs dès le début du cycle
+
+Le travail de revue est plus simple quand les OKRs ont été bien écrits au départ. Un KR sans baseline claire produit un score inutilisable. Un OKR sans hypothèse de causalité ne permet pas l'analyse causale en fin de cycle.
+
+Le [Générateur OKR express](/outils/generateur-okr) est un outil gratuit en préparation qui structure l'écriture des OKRs avec les bonnes questions dès le départ : baseline, cible, hypothèse de causalité, niveau de confiance. Il produit des OKRs qui se scorent et s'analysent correctement à la revue trimestrielle.
+
+Le [Pack OKRs](/packs/okrs) regroupe les templates et frameworks pour couvrir l'ensemble du cycle : écriture, suivi, revue, et préparation du cycle suivant.
