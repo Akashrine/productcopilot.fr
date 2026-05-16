@@ -1,0 +1,220 @@
+---
+title: "OKR et IA : rédige et audite tes OKRs en 20 minutes"
+description: "Un workflow en 4 étapes avec Claude ou ChatGPT pour écrire des OKRs centrés sur l'impact. Prompts concrets, framework TARS, adversarial review inclus."
+slug: "okr-ia-product-manager"
+date: "2026-05-16"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["OKR IA product manager", "OKR avec ChatGPT", "prompts OKR PM", "rédiger OKR IA", "audit OKR IA"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "IA"]
+---
+
+La session OKR du mardi après-midi. Deux heures de réunion. Des post-its partout. Et à la fin, une liste de "livrer X, déployer Y, finaliser Z" habillée en OKRs.
+
+C'est le scénario le plus courant dans les équipes produit. C'est aussi le problème que l'IA peut résoudre, à condition de lui donner le bon contexte.
+
+Voici un workflow en 4 étapes pour générer des OKRs centrés sur l'impact avec Claude ou ChatGPT. Pas une liste de prompts magiques. Un process utilisable immédiatement, avec les prompts exacts et les pièges à éviter à chaque étape.
+
+## Ce qui fait rater les OKRs avant même de commencer
+
+La plupart des équipes abordent les OKRs sans avoir fait un travail préalable : connaître leur baseline.
+
+Un Key Result comme "le taux d'activation passe à 60 %" ne veut rien dire si tu ne sais pas où tu en es aujourd'hui. 60 %, c'est mieux que 10 % mais moins bien que 85 %. Est-ce ambitieux ou confortable ? Impossible à dire sans la donnée de départ.
+
+L'IA amplifie ce problème. Si tu lui fournis des chiffres flous, elle va produire des cibles tout aussi floues, mais formulées avec assurance. Un KR bien écrit sur un problème mal défini reste un mauvais KR.
+
+Avant de lancer le workflow IA, passe 30 minutes dans Amplitude, Mixpanel, ou tes dashboards. Note tes 5 à 6 métriques clés avec leur valeur actuelle. Ces chiffres sont l'entrée indispensable de l'étape 1.
+
+Les équipes qui structurent leurs inputs avant d'utiliser l'IA obtiennent des résultats mesurables ; celles qui s'en servent sans contexte reproduisent leur désorganisation à plus grande vitesse (Refactoring.fm, interview CPO Atono, mai 2026).
+
+## Étape 1 : Donne à l'IA un contexte exploitable
+
+L'IA ne connaît pas ton produit. Elle ignore ce que tu as livré le trimestre dernier et où tu en es sur tes métriques. Si tu lui demandes "écris des OKRs pour mon équipe produit", tu vas obtenir quelque chose de générique et d'inutile.
+
+Le contexte à fournir avant tout autre prompt :
+
+1. Ce que fait ton produit (une phrase, pas un pitch deck)
+2. Tes utilisateurs cibles (un segment précis, pas "les PMs" en général)
+3. Les métriques clés actuelles avec leur baseline chiffrée
+4. Ce qui s'est passé le trimestre précédent (succès, ratés, surprises)
+5. Le problème stratégique du prochain trimestre (une seule phrase)
+6. Les contraintes réelles (taille d'équipe, budget, dépendances externes)
+
+Prompt de contextualisation :
+
+```
+Tu m'aides à écrire des OKRs pour le prochain trimestre.
+
+Contexte :
+- Produit : [description courte]
+- Utilisateurs : [segment précis]
+- Métriques actuelles : [3 à 5 chiffres clés avec leur valeur d'aujourd'hui]
+- Trimestre passé : [ce qui a bien fonctionné / ce qui a raté / les surprises]
+- Problème à résoudre ce trimestre : [une phrase]
+- Contraintes : [taille équipe, budget, dépendances, intégrations]
+
+Ne génère pas encore d'OKRs. Pose-moi 3 à 5 questions pour clarifier
+ce qui n'est pas assez précis avant de produire des drafts.
+```
+
+La dernière instruction est clé. Si tu demandes directement des OKRs, l'IA va en produire sans avoir vérifié ses hypothèses. Les questions qu'elle pose révèlent immédiatement ce qui manque dans ton contexte. Réponds à ces questions, puis passe à l'étape 2.
+
+## Étape 2 : Génère trois versions d'OKRs avec des angles différents
+
+Une fois le contexte clarifié, tu demandes des drafts. Pas un seul jeu d'OKRs : trois versions avec des angles différents.
+
+Prompt de génération :
+
+```
+Génère 3 versions d'OKRs pour le prochain trimestre.
+
+Chaque version doit :
+- Avoir 1 Objectif (qualitatif, ancré dans le problème réel, pas dans les livrables)
+- Avoir 3 à 4 Key Results (quantitatifs, avec baseline et cible chiffrées)
+- Aucun KR ne commence par un verbe de livraison : livrer, déployer,
+  lancer, finaliser, migrer, développer, intégrer
+
+Version A : focus sur l'acquisition et l'activation
+Version B : focus sur la rétention et l'engagement
+Version C : focus sur la satisfaction et la perception utilisateur
+
+Pour chaque KR, indique :
+- La métrique exacte et comment elle se mesure
+- La baseline actuelle (utilise les chiffres fournis dans le contexte)
+- La cible pour la fin du trimestre
+- Ton niveau de confiance (50 à 60 % est le bon range, explique pourquoi)
+```
+
+Le fait de demander trois versions force une exploration réelle. Dans la pratique, la plupart des équipes convergent vers un hybride entre deux des trois versions après relecture. L'IA ne décide pas : elle génère une surface de choix plus large sur laquelle tu te positionnes.
+
+Un exemple concret : une squad SaaS B2B travaillant sur l'onboarding d'une plateforme de gestion de projet. Problème du trimestre : un tiers des comptes s'activent mais abandonnent avant J30. Métriques actuelles : taux de complétion onboarding 34 %, churn J30 22 %, CSAT onboarding 3,2/5.
+
+La version A va se concentrer sur le taux de complétion et le premier usage de 3 modules. La version B sur le churn J30 et la fréquence d'usage à J14. La version C sur le CSAT et le volume de tickets support liés à l'onboarding. Chacune mesure un aspect différent du même problème. Ensemble, elles couvrent tout le spectre.
+
+## Étape 3 : Audite avec le framework TARS
+
+Les drafts générés par l'IA sont souvent corrects sur la forme mais déséquilibrés dans la couverture. C'est là que le framework TARS entre en jeu pour vérifier les angles morts.
+
+TARS définit quatre dimensions d'impact mesurable pour une équipe produit :
+
+- Targeted : les bons utilisateurs arrivent. Acquisition, activation, premiers gestes clés.
+- Adopted : ils utilisent le produit. Adoption d'une feature ou d'un workflow cible dans le temps.
+- Retained : ils reviennent. Rétention, fréquence d'usage, engagement dans la durée.
+- Satisfied : ils en sont satisfaits. NPS, CSAT, volume de tickets support, perception.
+
+Un OKR n'a pas besoin de couvrir les quatre dimensions simultanément. Mais TARS comme checklist te force à aller au-delà des métriques de livraison et à repérer ce que tu as oublié.
+
+L'article [OKRs produit : comment mesurer l'impact, pas le travail](/blog/okr-produit-impact) détaille TARS avec des exemples de Key Results concrets pour chaque dimension.
+
+Prompt d'audit TARS :
+
+```
+Audite ces OKRs avec le framework TARS.
+
+Pour chaque jeu d'OKRs, classe chaque Key Result dans une des 4 dimensions :
+T : Targeted (acquisition, activation)
+A : Adopted (adoption, usage)
+R : Retained (rétention, engagement)
+S : Satisfied (satisfaction, perception)
+
+Ensuite :
+1. Identifie les dimensions non couvertes dans chaque version
+2. Pour chaque dimension manquante : est-ce un angle mort ou un choix assumé ?
+3. Propose 1 Key Result alternatif pour chaque dimension absente
+
+[Colle ici les OKRs générés à l'étape 2]
+```
+
+Dans l'exemple de l'onboarding SaaS : si tous les KRs de la version B tombent dans "Retained" et qu'aucun ne mesure l'activation initiale, c'est un angle mort. L'équipe peut maximiser la rétention des comptes qui s'activent correctement, mais si l'activation reste bloquée à 34 %, la rétention globale ne bougera pas.
+
+## Étape 4 : Stress-teste avec l'adversarial review
+
+L'IA peut générer des OKRs qui semblent solides mais qui restent confortables. L'étape adversariale force un stress-test.
+
+Prompt adversarial :
+
+```
+Tu joues le rôle d'un CPO sceptique qui reçoit ces OKRs pour validation.
+
+Pour chaque Objectif et chaque Key Result, applique ces 4 tests :
+
+1. Le test de l'alibi-metric : "Cette cible peut-elle être atteinte sans
+   résoudre le vrai problème ?" Si oui, la métrique est une couverture, pas une mesure.
+
+2. Le test de la manipulation : "Comment une équipe peu scrupuleuse
+   pourrait-elle atteindre ce KR sans créer de valeur réelle ?"
+
+3. Le test des dépendances : "Si on atteint ce KR mais pas les autres,
+   est-ce un succès ou un signal d'échec sur le reste ?"
+
+4. Le test de l'ambition : "Le niveau de confiance est-il entre 50 et 60 % ?
+   Ou est-ce trop facile, ce qui trahit une cible conservative ?"
+
+Pour chaque faiblesse identifiée, propose une reformulation du KR.
+
+[Colle ici les OKRs après l'audit TARS]
+```
+
+Le niveau de confiance est central. Un bon OKR se situe autour de 50 % de probabilité d'atteinte. L'équipe pense que c'est faisable, mais ce n'est pas garanti. Si l'adversarial review révèle que la plupart de tes KRs sont "probablement atteints à 80 %", tes OKRs sont trop confortables. Ils mesurent le travail prévu, pas l'impact visé.
+
+David Pereira, dans sa newsletter de mai 2026, formule le problème ainsi : la valeur d'un PM ne se mesure plus à ce qu'il livre, mais à l'impact qu'il crée. L'adversarial review est le filtre qui sépare les OKRs qui mesurent l'impact de ceux qui mesurent l'activité.
+
+## Connecter tes OKRs au framework FRAME
+
+Une fois que tu as tes OKRs finaux, le framework FRAME permet de vérifier leur cohérence stratégique avant de les présenter.
+
+FRAME structure le travail d'alignement autour de cinq axes :
+
+- Focus : est-ce que les OKRs ciblent bien le problème prioritaire du trimestre, et un seul ?
+- Risques : les OKRs révèlent-ils les risques principaux, ou les contournent-ils ?
+- Alignement : les Key Results sont-ils alignés avec les OKRs de l'entreprise et les autres squads ?
+- Mesure : les métriques sont-elles mesurables aujourd'hui avec les outils en place ?
+- Expérimentation : les OKRs laissent-ils de la place pour tester plusieurs chemins pour atteindre le résultat ?
+
+Tu peux lancer un dernier prompt d'alignement :
+
+```
+Vérifie que ces OKRs passent le test FRAME :
+- Focus : un seul problème principal est-il adressé ?
+- Risques : quels risques ces OKRs révèlent-ils ou cachent-ils ?
+- Alignement : y a-t-il des OKRs d'autres équipes avec lesquels
+  ces KRs pourraient entrer en conflit ?
+- Mesure : chaque KR peut-il être suivi avec des outils existants ?
+- Expérimentation : les OKRs permettent-ils plusieurs chemins pour
+  atteindre le résultat, ou imposent-ils une solution ?
+
+[Colle ici les OKRs finaux]
+```
+
+Cette étape prend 5 minutes. Elle révèle souvent des problèmes d'alignement ou des métriques non trackées avant que tu ne présentes les OKRs à ton manager ou en revue d'équipe.
+
+## Ce que l'IA ne fait pas à ta place
+
+L'IA génère des formulations. Elle ne connaît pas :
+
+- Tes utilisateurs (uniquement ce que tu lui en dis)
+- Les données réelles (uniquement les chiffres que tu fournis)
+- Le contexte politique de ton organisation
+- Ce que ton équipe peut réellement absorber ce trimestre
+
+Un workflow IA accélère la rédaction. Il ne remplace pas la réflexion sur le problème à résoudre. Si ton problème stratégique du trimestre n'est pas clairement défini avant l'étape 1, l'IA va te produire des OKRs cohérents sur un mauvais problème.
+
+Le test de clarté : si tu ne peux pas rédiger la phrase "le problème que nous devons résoudre ce trimestre est..." en moins de 20 mots, arrête le workflow IA et résous d'abord ce problème-là.
+
+## Le workflow complet
+
+1. Prépare ta baseline (30 min dans tes dashboards avant de commencer)
+2. Contextualise l'IA et réponds à ses questions de clarification
+3. Génère 3 versions d'OKRs avec des angles différents
+4. Audite avec TARS pour repérer les angles morts
+5. Stress-teste avec l'adversarial review
+6. Vérifie la cohérence stratégique avec FRAME
+7. Consolide manuellement : 3 OKRs, 3 à 4 KRs chacun
+
+Compte 20 à 30 minutes en tout. Moins si ta baseline est déjà propre et ton problème bien défini. Plus si ton contexte stratégique est flou, et dans ce cas, c'est un signal utile : le problème n'est pas l'IA, c'est la clarté sur ce que tu cherches à résoudre.
+
+---
+
+Le Générateur OKR express de productcopilot.fr intègre ce workflow directement dans une interface guidée. Tu renseignes ton contexte, le générateur produit des drafts d'OKRs, les audite avec TARS, et te sort un set prêt à présenter. Disponible bientôt sur [/outils/generateur-okr](/outils/generateur-okr).
