@@ -1,0 +1,202 @@
+---
+title: "Écrire ses OKRs avec l'IA : méthode en 4 prompts"
+description: "Comment utiliser un LLM pour rédiger des OKRs produit solides en moins d'une heure. 4 prompts concrets, le framework FRAME, et des exemples réels."
+slug: "okrs-ia-prompts-methode"
+date: "2026-05-20"
+readingTime: "9 min"
+cluster: "okrs"
+keywords: ["OKR IA product manager", "prompt OKR PM", "écrire OKRs avec IA", "framework FRAME OKR", "OKR méthode produit 2026"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "IA"]
+---
+
+La réunion de planning OKR ressemble souvent à ça : deux heures, cinq personnes, une page blanche, et des objectifs qui sortent du processus sous forme de compromis diplomatiques. Assez vagues pour ne contrarier personne. Trop mous pour guider réellement le travail.
+
+Le résultat : 48 % des équipes produit déclarent avoir du mal à formuler des Key Results assez précis pour être actionnables (Mind the Product, 2025). Ce n'est pas un problème d'intelligence ou de méthode. C'est un problème de processus.
+
+L'IA peut accélérer ce processus. Pas en le remplaçant : en forçant à articuler le contexte stratégique qui manque généralement à l'entrée de ces réunions. Cette méthode t'amène du brief stratégique à des OKRs testables en quatre prompts, en moins d'une heure.
+
+## Ce que l'IA fait (et ce qu'elle ne fait pas)
+
+Commençons par poser le cadre. L'IA ne définit pas ta stratégie. Elle ne connaît pas tes risques business, ta tech debt, ou les tensions internes à ton organisation. Elle ne décide pas à ta place quelles métriques comptent.
+
+Ce qu'elle fait :
+
+- Structurer ta pensée en te forçant à articuler un contexte explicite
+- Générer des premières formulations d'Objectifs depuis un brief imprécis
+- Convertir des objectifs vagues en Key Results avec une structure mesurable
+- Jouer l'avocat du diable pour tester la solidité de ce que tu as écrit
+
+C'est une accélération de la réflexion, pas une délégation de la décision.
+
+Si les OKRs sortent du LLM exactement tels qu'ils ont été proposés, sans modification de ta part, tu as mal briefé le modèle. Ou le contexte que tu lui as donné était si précis que tu avais déjà fait 80 % du travail avant de commencer. Dans les deux cas, la valeur vient du processus de préparation, pas de la génération.
+
+## Préparer le contexte avec FRAME
+
+Avant de lancer le moindre prompt, tu dois répondre à cinq questions. Ces cinq questions forment le contexte dont le LLM a besoin pour produire quelque chose d'utile. Sans elles, le modèle génère des OKRs génériques, valables pour n'importe quelle équipe produit dans n'importe quel secteur.
+
+Le framework FRAME structure ce contexte en cinq dimensions : Focus, Risques, Alignement, Mesure, Experimentation.
+
+**Focus** : sur quel problème utilisateur central ton équipe se concentre ce trimestre ? Un seul. Si tu en as trois, tu n'en as aucun. Le Focus force à choisir avant même d'écrire le premier Objectif.
+
+**Risques** : quels sont les deux ou trois risques qui peuvent bloquer ou invalider le travail de ton équipe ? Pas une liste exhaustive, pas une analyse SWOT. Les risques qui comptent ce cycle.
+
+**Alignement** : sur quelle priorité d'entreprise ou de direction produit ton travail s'accroche-t-il ? Le lien entre ce que ton équipe fait ce trimestre et ce que l'organisation cherche à atteindre doit tenir en une phrase.
+
+**Mesure** : quelle est ta baseline aujourd'hui sur les métriques clés ? Sans cette donnée, tu ne peux pas écrire de Key Results à la fois ambitieux et réalistes. L'étape "data 0" est souvent celle que les équipes sautent. C'est ce qui rend leurs OKRs invérifiables à la fin du cycle.
+
+**Experimentation** : quelles sont les hypothèses que tu cherches à valider ce trimestre ? Un OKR n'est pas un plan de livraison. C'est une mise sur une direction qui n'est pas encore certaine. L'Experimentation rend explicite ce que tu cherches à apprendre.
+
+Exemple concret. Voici le contexte FRAME complet pour une squad Activation d'une plateforme SaaS B2B :
+
+- Focus : améliorer la conversion "compte créé → première valeur perçue" dans les 30 premiers jours
+- Risques : (1) absence de tracking fin sur le parcours d'onboarding actuel ; (2) dépendance à une squad data pour le dashboard de suivi
+- Alignement : priorité "NRR + 15 %" de la direction produit pour le Q2
+- Mesure : taux d'activation à J30 = 34 % ; churn J30 = 22 % ; CSAT onboarding = 3,2/5
+- Experimentation : hypothèse principale : personnaliser l'onboarding selon le type de compte (PME vs ETI) double le taux de complétion
+
+Ce contexte passe en entier dans le premier prompt. Plus il est précis, plus la sortie est utilisable.
+
+## Prompt 1 : générer les Objectifs depuis la stratégie
+
+Avec le contexte FRAME en main, le premier prompt génère des candidats d'Objectifs. Colle le bloc suivant dans ton LLM, en remplaçant les crochets par ton contexte réel.
+
+```
+Tu es un senior product manager qui m'aide à formuler des OKRs produit.
+
+Contexte FRAME pour mon équipe ce trimestre :
+- Focus : [ton focus]
+- Risques : [tes risques]
+- Alignement : [ton alignement]
+- Mesure : [tes baselines]
+- Experimentation : [tes hypothèses]
+
+Génère 3 candidats d'Objectifs pour ce trimestre.
+Chaque Objectif doit :
+- Être formulé comme un état à atteindre, pas une action à faire
+- Être ambitieux mais réaliste sur 3 mois
+- Concerner le résultat utilisateur, pas la livraison technique
+- Tenir en une phrase de 15 mots maximum
+
+Pour chaque Objectif, explique en une phrase pourquoi tu l'as formulé ainsi.
+```
+
+Ce que tu fais avec la sortie : tu lis les trois candidats, tu identifies celui qui capture le mieux ton Focus, tu le modifies si la formulation n'est pas dans ta voix ou si un détail du contexte est mal interprété.
+
+Sur l'exemple squad Activation, le LLM propose trois Objectifs :
+
+1. "Les nouveaux comptes comprennent la valeur du produit avant J30."
+2. "L'onboarding transforme un compte activé en utilisateur actif en moins de deux semaines."
+3. "Les PME voient leur premier retour mesurable dans les 30 jours suivant l'activation."
+
+Le troisième est le plus ancré dans une réalité utilisateur précise (les PME, pas les comptes en général). C'est celui qu'on retient. On le modifie légèrement : "Les PME perçoivent une première valeur concrète avant J30, sans aide du support."
+
+La formulation exacte du LLM n'est presque jamais la bonne. Elle donne un point de départ concret plutôt qu'une page blanche.
+
+## Prompt 2 : convertir l'Objectif en Key Results mesurables
+
+Avec l'Objectif choisi, le deuxième prompt génère les Key Results. La contrainte clé : chaque Key Result doit suivre le format "de X à Y en Z jours" ou "X % des [utilisateurs] font [action] dans les Z premiers jours".
+
+```
+Objectif retenu pour ce trimestre :
+"[ton objectif]"
+
+Baselines actuelles :
+[tes métriques actuelles, avec les chiffres]
+
+Génère 3 à 4 Key Results pour cet Objectif.
+Chaque Key Result doit :
+- Suivre le format "de X à Y en 90 jours" ou "X % des [utilisateurs] font [action] dans les Z jours"
+- Mesurer un comportement utilisateur, pas une livraison technique
+- Être vérifiable à la fin du trimestre sans ambiguïté
+- Couvrir des dimensions différentes : activation, adoption, rétention, satisfaction
+
+Pour chaque Key Result, indique quelle dimension il couvre.
+```
+
+La contrainte de format "de X à Y" oblige à avoir une baseline. Si tu ne la connais pas, le LLM te le signale. C'est utile : ça identifie un angle mort de ta mesure avant que le trimestre commence, pas après.
+
+Sur l'exemple squad Activation, la sortie donne :
+
+- (Activation) Le taux de complétion du flow d'onboarding passe de 34 % à 55 % en 90 jours
+- (Adoption) 70 % des comptes ayant terminé l'onboarding utilisent au moins 3 modules dans les 14 premiers jours
+- (Rétention) Le churn à J30 des nouveaux comptes passe de 22 % à 12 %
+- (Satisfaction) Le CSAT mesuré en fin d'onboarding passe de 3,2 à 4,0 sur 5
+
+Ces quatre Key Results ne prescrivent aucune solution. L'équipe peut personnaliser l'onboarding, lancer des sessions live, optimiser les emails d'activation, ou une combinaison des trois. Ce qui compte, c'est le chiffre de sortie, pas le chemin. Pour aller plus loin sur cette distinction entre métriques de livraison et métriques d'impact, l'article sur [comment mesurer l'impact et pas le travail](/blog/okr-produit-impact) couvre le framework TARS en détail.
+
+## Prompt 3 : le challenger
+
+C'est l'étape que la plupart des équipes sautent. C'est là que la méthode prend tout son sens.
+
+```
+Voici mes OKRs pour ce trimestre :
+
+Objectif : [ton objectif]
+- KR1 : [premier Key Result]
+- KR2 : [deuxième Key Result]
+- KR3 : [troisième Key Result]
+
+Joue le rôle d'un investisseur sceptique qui lit ces OKRs pour la première fois.
+Pose-moi 5 questions difficiles. Tes questions doivent challenger :
+- L'ambition des chiffres (trop facile ? trop ambitieux ?)
+- Les angles morts (qu'est-ce qui n'est pas mesuré ?)
+- Les risques d'exécution (dépendances, ressources, timeline)
+- La cohérence stratégique (pourquoi ce trimestre plutôt qu'un autre ?)
+- Les définitions floues (qu'est-ce qu'un "compte actif" exactement ?)
+```
+
+Ce prompt génère des questions que tu as évité de te poser. Certaines révèlent de vrais problèmes. D'autres confirment que tu as bien réfléchi. Dans les deux cas, tu sors du processus avec des OKRs plus solides et une meilleure capacité à les défendre.
+
+Sur l'exemple squad Activation, le LLM produit ces cinq questions :
+
+1. "Comment mesures-tu le taux de complétion du flow d'onboarding ? Chaque étape est-elle trackée en production aujourd'hui ?"
+2. "70 % d'adoption des modules en 14 jours est-il réaliste si des comptes migrent depuis un ancien outil avec des données existantes ?"
+3. "Si tu atteins le KR sur le churn mais que la satisfaction chute, ces deux métriques sont-elles indépendantes ?"
+4. "Qui est responsable du dashboard de suivi ? Si la squad data a d'autres priorités ce trimestre, comment tu t'assures que tes métriques sont visibles ?"
+5. "Le passage de 34 % à 55 % d'activation : est-ce ambitieux par rapport à ton secteur, ou conservateur ?"
+
+La première question a identifié un angle mort de tracking. La squad n'avait pas de tag sur chaque étape de l'onboarding en production. Ce point aurait rendu le KR1 invérifiable à la fin du trimestre. Le problème a été corrigé avant de valider les OKRs.
+
+## Prompt 4 : le "why" pour l'équipe
+
+Les OKRs sont écrits et challengés. Avant de les présenter à l'équipe, un dernier prompt.
+
+```
+Voici nos OKRs finaux pour ce trimestre :
+
+Objectif : [objectif]
+- KR1 : [premier Key Result]
+- KR2 : [deuxième Key Result]
+- KR3 : [troisième Key Result]
+
+Écris un paragraphe de 100 à 120 mots pour expliquer à mon équipe POURQUOI ces OKRs ce trimestre.
+Le paragraphe doit :
+- Expliquer le problème utilisateur qu'on cherche à résoudre
+- Lier ce problème à une priorité business claire
+- Expliquer ce qu'on ne fera PAS ce trimestre, et pourquoi
+- Être écrit pour des pairs PM et développeurs, sans jargon corporate
+
+Ne pas utiliser des formulations génériques comme "s'aligner sur la stratégie" ou "améliorer l'expérience utilisateur".
+```
+
+Ce paragraphe sert à l'alignement interne. Pas pour "vendre" les OKRs à l'équipe ; pour s'assurer que tout le monde comprend le même problème, la même contrainte, et le même cap.
+
+Tu le modifies à la main pour qu'il soit dans ta voix. Le LLM fournit la structure ; le ton et les exemples concrets restent les tiens.
+
+Exemple de sortie pour la squad Activation :
+
+"Ce trimestre, on s'attaque à un problème simple : trop de comptes s'activent et disparaissent avant d'avoir vu la valeur du produit. Un tiers churnent avant J30. Ce n'est pas un problème de produit en soi ; c'est un problème de temps-à-valeur. On ne travaille pas sur de nouvelles features ce cycle. On améliore le chemin entre 'compte créé' et 'première valeur perçue'. Si on tient nos quatre Key Results, on a divisé le churn par deux et prouvé que le produit tient ses promesses pour les PME."
+
+## Le processus complet en pratique
+
+Les quatre prompts enchaînés prennent 30 à 45 minutes. Ce n'est pas l'IA qui écrit tes OKRs. C'est toi qui penses à voix haute ; l'IA structure la sortie et te pose les questions que tu aurais évitées.
+
+La différence par rapport à une réunion de planning OKR classique : tu arrives avec un contexte structuré (FRAME) et tu repars avec des OKRs challengés. Le LLM joue le rôle du co-équipier sceptique qui ne connaît pas l'historique politique de ton organisation et pose les questions bêtes que personne n'ose poser en réunion.
+
+Les OKRs ainsi produits ne sont pas parfaits. Ils sont un point de départ solide. La validation finale reste une décision humaine, prise avec la connaissance du terrain que le LLM n'a pas.
+
+---
+
+Le Générateur OKR express, l'outil dédié à ce cluster, arrive prochainement sur le site. En attendant, le [Template PRD IA](/outils/template-prd-ia) te montre comment cette approche de génération par contexte fonctionne sur un autre livrable PM central. Même logique : tu remplis un contexte structuré, l'IA génère le prompt expert, tu l'exécutes.
