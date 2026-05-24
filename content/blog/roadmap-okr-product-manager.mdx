@@ -1,0 +1,126 @@
+---
+title: "Roadmap produit et OKRs : passer des features aux résultats"
+description: "Ta roadmap et tes OKRs ne se parlent pas ? Guide pratique pour connecter chaque initiative à un Key Result mesurable."
+slug: "roadmap-okr-product-manager"
+date: "2026-05-24"
+readingTime: "9 min"
+cluster: "okrs"
+keywords: ["roadmap produit OKR", "aligner roadmap OKR", "OKR product manager planification", "cascade OKR équipe produit", "FRAME product management"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "IA"]
+---
+
+OKRs validés en janvier. Roadmap figée en décembre. Six semaines plus tard, les deux ne se parlent plus.
+
+C'est le scénario le plus courant dans les équipes produit. Pas par mauvaise volonté. Par architecture. Les OKRs sont posés en top-down dans un atelier de deux jours. La roadmap, elle, s'est construite progressivement : demandes sales, dettes tech, promesses faites aux clients en Q3. Les deux coexistent sans vraiment s'articuler.
+
+Le résultat : une squad qui livre sans relâche et des Key Results qui n'avancent pas. Fin de trimestre, l'OKR est à 40%. Tout le monde est épuisé. Personne ne comprend ce qui s'est passé.
+
+Le problème n'est pas l'OKR. C'est l'absence de fil conducteur entre la planification OKR et la construction de la roadmap.
+
+Pour comprendre pourquoi les Key Results eux-mêmes posent problème avant même la roadmap, [l'article sur les OKRs produit et le framework TARS](/blog/okr-produit-impact) pose les bases.
+
+## La question test pour chaque item de ta roadmap
+
+Prends ta roadmap du trimestre en cours. Pour chaque initiative, pose une seule question : "Quel Key Result est-ce que ça fait bouger, et de combien ?"
+
+Si tu ne peux pas répondre en deux phrases, l'item ne devrait pas être dans la roadmap ce trimestre.
+
+Pas parce que c'est une mauvaise idée. Mais parce que tu n'as pas encore clarifié le lien entre cette initiative et ce que tu cherches à accomplir. Une initiative sans lien OKR explicite est une initiative qui mangera du temps sans te permettre de mesurer ce qu'elle apporte.
+
+Ce filtre donne trois catégories :
+
+Initiatives OKR-ready : tu sais exactement quel KR elles font bouger, et tu as une hypothèse chiffrée sur l'ampleur. Ce sont les seules qui méritent d'être priorisées ce trimestre.
+
+Initiatives OKR-adjacent : elles contribuent vaguement à un objectif, mais le lien est flou. Soit tu clarifies l'hypothèse, soit tu les repousses au cycle suivant.
+
+Initiatives hors-OKR : dette technique incontournable, obligation légale, demande client liée à un contrat stratégique. Celles-là peuvent rester, mais elles doivent être explicitement budgétées en dehors du temps OKR, avec un volume fixé à l'avance.
+
+Dans les faits, les équipes produit qui appliquent ce filtre réduisent leur roadmap de 30 à 40% au premier passage. Pas parce que les idées sont mauvaises. Parce que beaucoup d'entre elles n'avaient pas leur place ce trimestre.
+
+## FRAME : structurer la planification OKR au début du cycle
+
+Une fois les OKRs posés par le leadership, ta mission n'est pas de les accepter passivement. C'est de les opérationnaliser.
+
+FRAME est un framework de planification produit qui structure ce travail en cinq dimensions : Focus, Risques, Alignement, Mesure, Experimentation.
+
+Focus : quel est l'objectif central du trimestre ? Si tu as trois OKRs, lequel est le plus critique ? En cas de conflit de ressources, lequel l'emporte ? Le Focus force ce choix explicite avant que la pression du quotidien ne le fasse à ta place.
+
+Risques : qu'est-ce qui peut bloquer l'atteinte de tes Key Results ? Dépendances tech non confirmées, données Mixpanel absentes pour mesurer le KR, feature flag qui doit passer une validation légale. Le travail de risque se fait en début de cycle, pas en semaine 8.
+
+Alignement : quelles équipes ont une dépendance sur tes OKRs, ou toi sur les leurs ? Sales a-t-elle besoin d'une feature pour closer des deals ce trimestre ? Support va-t-il recevoir un afflux de tickets si tu changes l'onboarding ? Ces questions ne se règlent pas en standup. Elles se valident avant le sprint 1.
+
+Mesure : quelle est ta baseline aujourd'hui pour chaque Key Result ? Si tu ne connais pas ta valeur de départ, tu ne sais pas si tu avances. C'est l'étape que les équipes sautent le plus souvent, et celle qui rend le bilan de fin de trimestre impossible à produire.
+
+Experimentation : quelles initiatives vas-tu tester pour atteindre tes KRs ? Pas une liste exhaustive. Deux ou trois paris sur les leviers les plus probables, avec une hypothèse explicite sur chacun.
+
+Un exemple concret. Une équipe produit B2B SaaS a pour OKR "Améliorer la rétention des comptes mensuels". Key Result : le churn à 90 jours passe de 24% à 15%.
+
+FRAME appliqué en atelier de 90 minutes en début de trimestre :
+
+Focus : la rétention à 90 jours est l'unique objectif qui prime ce trimestre. La feature d'intégration CRM demandée par Sales passe après.
+
+Risques : les données de churn ne sont pas trackées de manière fiable dans Amplitude. Priorité semaine 1 : instrumenter correctement avant de lancer quoi que ce soit.
+
+Alignement : le Customer Success doit être impliqué dès le départ. Sans leur input sur les patterns de churn, on travaille à l'aveugle.
+
+Mesure : baseline à J0 = 24% churn à 90 jours. Source : extraction manuelle depuis la base de données, à automatiser.
+
+Experimentation : trois leviers à tester en priorité : email de réactivation J15, module "quick win" pour les comptes inactifs, appel CS proactif pour les comptes à risque identifiés.
+
+## La cascade en trois niveaux
+
+Les OKRs d'une équipe produit ne s'inventent pas dans le vide. Ils se déduisent.
+
+Niveau 1 : les OKRs company. La direction fixe deux à trois objectifs stratégiques pour l'année ou le semestre. Par exemple : "Devenir leader sur le segment PME en Europe de l'Ouest."
+
+Niveau 2 : les OKRs produit. L'équipe produit traduit l'objectif stratégique en objectifs opérationnels qui relèvent de son périmètre. "Augmenter la rétention des comptes PME à 85% à 12 mois." "Réduire le time-to-value de 45 à 20 jours pour les nouveaux comptes."
+
+Niveau 3 : les OKRs squad. Chaque squad prend un OKR produit et le décompose en objectifs sur lesquels elle a un levier direct. La squad onboarding prend le time-to-value. La squad activation prend la rétention à 90 jours.
+
+Le piège classique à ce niveau : la squad reçoit un OKR company directement, sans translation intermédiaire. "Devenir leader PME en Europe" n'est pas un OKR de squad. C'est un objectif de direction générale. La squad ne peut pas piloter ça. Elle a besoin d'un OKR produit intermédiaire qui traduit la stratégie en quelque chose qu'elle peut influencer avec ses propres outils.
+
+Duolingo résout ce problème avec un processus en deux étapes : des "area OKRs" définis par les responsables de domaine, puis des "team OKRs" définis par chaque squad en partant des area OKRs. Chaque niveau choisit comment atteindre l'objectif, mais le lien de causalité avec l'OKR supérieur est explicite et vérifiable (Lenny Rachitsky, How Duolingo builds product).
+
+## Les dépendances horizontales avant le sprint 1
+
+La cascade verticale n'est pas suffisante. Les OKRs produit ont presque toujours des dépendances horizontales : Sales, Support, Marketing, Data, Tech.
+
+Ces dépendances ne remontent pas d'elles-mêmes. Elles doivent être cartographiées activement, avant le début du cycle.
+
+Questions à poser systématiquement :
+
+Sales : "Avez-vous besoin d'une feature ou d'une update produit pour atteindre vos propres OKRs ce trimestre ? Et nos OKRs produit supposent-ils que vous allez sourcer un certain type de compte ?"
+
+Tech : "Y a-t-il des dépendances d'infrastructure sur les initiatives qu'on prévoit ? De la dette technique qui bloque telle ou telle hypothèse ?"
+
+Data : "A-t-on l'instrumentation en place pour mesurer tous nos Key Results dès J1 ? Sinon, c'est une dette à rembourser en semaine 1, pas en semaine 8."
+
+Support : "Quelles sont vos prévisions de volume sur les zones du produit qu'on va modifier ? Faut-il anticiper une montée en compétence de vos équipes ?"
+
+Ces échanges prennent 30 minutes par équipe. Ils évitent des semaines de retard en milieu de trimestre.
+
+Les organisations qui formalisent cet alignement horizontal observent une réduction de 40% des conflits d'arbitrage liés à la roadmap, selon une analyse McKinsey relayée dans les benchmarks OKR de Monday.com (2025). La roadmap ne change pas. Les frictions autour d'elle disparaissent parce que les dépendances sont connues à l'avance.
+
+## La review mi-trimestre : adapter sans repartir de zéro
+
+À la moitié du cycle, une seule question compte : est-ce que les métriques bougent dans le sens prévu ?
+
+Pas "est-ce qu'on a livré les features planifiées ?". Ca, c'est du suivi de backlog. La review OKR mi-trimestre mesure l'impact des initiatives sur les Key Results.
+
+Trois scénarios :
+
+KR en avance sur la cible : tu es à 70% d'atteinte à mi-cycle. Soit l'OKR était trop prudent, soit tu as trouvé un levier particulièrement efficace. Note ce qui a fonctionné. Tu vas vouloir le réutiliser au prochain cycle, et le partager avec les autres squads.
+
+KR en ligne avec la cible : tu es autour de 45 à 55%. Continue. Pas besoin d'ajuster la stratégie. Reste concentré sur les leviers prévus.
+
+KR à la traîne : tu es à 15% à mi-cycle. Deux options possibles. Soit l'hypothèse de départ était mauvaise et tu dois tester un autre levier. Soit la baseline était fausse et le KR doit être recalibré, avec une explication transparente aux parties prenantes.
+
+La review mi-trimestre n'est pas une session de planification. C'est un diagnostic rapide : les hypothèses de départ tiennent-elles ? Sinon, qu'est-ce qu'on change ?
+
+Les OKRs "continus" qui gagnent du terrain en 2026 s'appuient exactement sur ce principe : le cycle reste trimestriel, mais les initiatives sont revues toutes les quatre à six semaines pour s'adapter sans attendre la fin du trimestre (Elitek Formation, 2026). La revue mi-trimestre prend 60 minutes avec la squad. Elle peut sauver un trimestre entier.
+
+---
+
+Le Générateur OKR express arrive sur productcopilot.fr pour t'aider à poser tes Key Results, vérifier la cohérence de ta cascade et structurer ton atelier de planification OKR en moins d'une heure. En attendant, retrouve les templates et prompts IA pour tes OKRs dans le [Pack OKRs](/packs/okrs).
