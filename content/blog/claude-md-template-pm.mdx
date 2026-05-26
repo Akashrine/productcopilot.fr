@@ -1,0 +1,185 @@
+---
+title: "CLAUDE.md pour product managers : guide et template"
+description: "CLAUDE.md est le fichier de mémoire de Claude Code. Ce guide PM te montre quoi mettre dedans pour arrêter de tout réexpliquer à chaque session."
+slug: "claude-md-template-pm"
+date: "2026-05-26"
+readingTime: "9 min"
+cluster: "vibe-coding"
+keywords: ["CLAUDE.md template", "CLAUDE.md product manager", "CLAUDE.md vibe coding", "mémoire projet claude code", "context claude code pm"]
+relatedTool: "template-prd-ia"
+relatedPack: "vibe-coding-pm"
+tags: ["Vibe Coding", "Claude Code", "Product Management", "IA"]
+---
+
+Tu ouvres Claude Code. Tu commences à coder une nouvelle feature. Après 20 minutes, Claude génère du code qui ignore ton système d'authentification, nomme tes routes de façon incohérente, et oublie que ta base de données est Supabase.
+
+Tu réexpliques. Il corrige. Tu continues. Demain, même chose.
+
+Le problème n'est pas Claude. C'est l'absence de mémoire persistante entre les sessions. Chaque conversation repart de zéro, comme si tu onboardais un nouveau développeur tous les matins.
+
+Un fichier règle ce problème. Il s'appelle CLAUDE.md.
+
+## Pourquoi chaque session Claude Code repart de zéro
+
+Claude Code n'a pas de mémoire entre les sessions. Ferme la fenêtre, la conversation disparaît. Rouvre-la demain, il ne sait plus rien de ton projet.
+
+Sur un projet court, c'est gérable. Tu réexpliques une fois, tu avances.
+
+Sur un projet de 10 semaines, c'est 30 à 60 minutes perdues par jour. Ce sont des conventions de nommage incohérentes entre les modules. Ce sont des décisions d'architecture prises deux fois. C'est du code qui viole des règles posées la semaine précédente.
+
+Teresa Torres, dans un article de Lenny's Newsletter sur Claude Code for PMs, maintient un système de fichiers de contexte indexés par CLAUDE.md. Son fichier dit à Claude quoi charger selon le contexte du travail. Pas de réexplication quotidienne. La logique : "rich context beats clever prompting."
+
+Ce principe, c'est l'essence du CLAUDE.md.
+
+## Ce qu'est un CLAUDE.md
+
+CLAUDE.md est un fichier markdown à la racine de ton projet. Claude Code le lit automatiquement au démarrage de chaque session. Ce qu'il contient devient le contexte permanent de toutes tes conversations avec Claude.
+
+Ce n'est pas un README. Le README explique le projet aux humains. Le CLAUDE.md instruit Claude sur comment travailler avec ce projet.
+
+Ce n'est pas une documentation. La documentation décrit ce qui existe. Le CLAUDE.md encode les règles de travail : comment nommer les fichiers, quelle stack utiliser, quelles décisions ont déjà été prises.
+
+Ce n'est pas un PRD. Le PRD définit ce que tu construis. Le CLAUDE.md dit à Claude comment le construire, sans avoir à tout réexpliquer à chaque session.
+
+La distinction est importante. Un bon CLAUDE.md ne documente pas l'histoire du projet. Il encode les invariants : les règles stables, session après session.
+
+## La structure d'un CLAUDE.md orienté PM
+
+Un développeur met dans son CLAUDE.md : les conventions de code, les patterns d'architecture, les règles de testing. C'est pertinent pour lui.
+
+Pour un PM qui vibe code, le contenu est différent. Tu n'optimises pas pour la qualité du code. Tu optimises pour la cohérence du produit et la vitesse de livraison.
+
+Voici la structure recommandée en 6 sections.
+
+### 1. Contexte produit
+
+Ton produit en 3 lignes. Le problème résolu. L'utilisateur cible. La valeur principale.
+
+Exemple à éviter :
+
+```
+Ce projet est une app de gestion de tâches pour les équipes.
+```
+
+Exemple utilisable :
+
+```
+Produit : YomuShelf
+Utilisateurs cibles : lecteurs solo qui veulent suivre leurs lectures
+Problème résolu : perdre le fil de ses lectures en cours et de ses envies
+Valeur principale : une bibliothèque personnelle simple, sans friction
+Modèle : SaaS freemium, 5 EUR/mois pour la version pro
+```
+
+La différence : la deuxième version donne à Claude assez de contexte pour prendre des décisions de produit sans te demander à chaque fois.
+
+### 2. Stack technique
+
+```
+Stack :
+- Next.js 15 App Router (TypeScript)
+- Tailwind CSS v4
+- Supabase (base de données PostgreSQL + auth)
+- Vercel (déploiement)
+- Loops.so (emails transactionnels)
+- LemonSqueezy (paiement)
+```
+
+Claude sait maintenant qu'il ne doit pas générer du code Express. Il sait qu'il y a du Row Level Security à respecter côté Supabase. Il sait quel système de routage utiliser.
+
+### 3. Conventions de nommage
+
+```
+Conventions :
+- Composants : PascalCase (UserCard, BookList)
+- Fichiers : kebab-case (user-card.tsx, book-list.tsx)
+- Tables Supabase : snake_case (user_books, reading_sessions)
+- Routes : /books, /books/[id], /books/[id]/notes
+- Variables : camelCase (userId, bookTitle)
+- Constantes : SCREAMING_SNAKE_CASE (MAX_BOOKS_FREE_TIER)
+```
+
+Une convention définie une fois s'applique à tous les fichiers générés, dans toutes les sessions futures.
+
+### 4. Décisions d'architecture
+
+```
+Décisions prises (ne pas remettre en question) :
+- Auth gérée par Supabase Auth, pas de custom auth
+- Pas de Redux, pas de Zustand — useState et Context suffisent pour ce projet
+- Tout le fetch de données dans les Server Components
+- Pas d'ORM — SQL natif via le client Supabase
+- Les emails partent uniquement via Loops.so, pas de SendGrid
+```
+
+Ces décisions ont été prises pour des raisons que Claude n'a pas à connaître. Il doit les respecter, pas les débattre.
+
+### 5. Règles métier
+
+```
+Règles métier :
+- Un utilisateur free peut ajouter 20 livres maximum
+- Les notes sont privées par défaut, jamais publiques
+- L'export CSV est réservé aux utilisateurs pro
+- L'email de bienvenue part dans les 5 minutes après inscription
+- Les données sont supprimées 30 jours après résiliation
+```
+
+Sans ces règles dans le CLAUDE.md, Claude génère du code qui ignore les limites du freemium. Tu débugges des violations de ton modèle business au lieu de livrer des features.
+
+### 6. Ce à ne pas faire
+
+```
+À ne jamais faire dans ce projet :
+- Ajouter Prisma (migration effectuée, retour en arrière exclu)
+- Utiliser le composant Image de Next.js pour les couvertures de livres (latence trop haute)
+- Créer des endpoints API REST séparés (tout passe par Server Actions)
+- Hardcoder des clés API dans le code source
+- Importer depuis 'moment' (remplacé par dayjs)
+```
+
+Cette section évite les régressions. Tu documentes les erreurs déjà faites et les migrations déjà effectuées. Claude ne revient pas en arrière sur des choix que tu as soldés.
+
+## CLAUDE.md dans la méthode 4 phases
+
+Dans la méthode en 4 phases du vibe coding, le CLAUDE.md occupe une place précise : il est le pont entre le PRD et le code.
+
+La phase Clarifier produit un PRD structuré. Ton PRD définit ce que tu construis : le problème, les utilisateurs, les métriques, les cas d'usage. À la fin de cette phase, tu transformes les décisions du PRD en instructions persistantes pour Claude Code. C'est ton CLAUDE.md.
+
+Les règles métier viennent des exigences fonctionnelles du PRD. La stack vient des contraintes techniques documentées. Le contexte produit résume le problème à résoudre. Le CLAUDE.md est une traduction du PRD, pas un document séparé.
+
+La phase Construire commence par là. Claude lit ton CLAUDE.md avant de générer la moindre ligne. Il sait qu'il travaille en Next.js App Router, qu'il y a du RLS dans Supabase, que les composants sont en PascalCase. Tu ne répètes rien.
+
+Sans cette connexion entre PRD et CLAUDE.md, Claude Code interprète librement ton architecture. Le résultat : des incohérences entre les modules, des décisions contradictoires d'une session à l'autre, du code qui respecte l'intention mais pas la structure. L'article sur le [PRD à l'ère du vibe coding](/blog/prd-vibe-coding-anti-bug-loop) détaille pourquoi ce lien est critique pour éviter la boucle de bugs.
+
+La phase Vérifier inclut une mise à jour du CLAUDE.md. Si une décision d'architecture a changé en cours de route, tu le notes. Si une nouvelle règle métier est apparue, tu l'ajoutes. Le CLAUDE.md est un document vivant. Il reflète l'état réel du projet, pas l'état initial.
+
+La [méthode complète en 4 phases](/blog/vibe-coding-methode-4-phases) couvre l'ensemble du workflow : de l'idée au produit qui tourne, avec les 12 prompts chaînés.
+
+## Ce que tu ne mets pas dans ton CLAUDE.md
+
+Un CLAUDE.md trop long est un CLAUDE.md inutile. Claude le lit en entier à chaque session. Si c'est 2000 lignes, il perd les informations critiques dans la masse. Si c'est 80 lignes bien choisies, il retient tout.
+
+Deux règles de tri.
+
+La première : ne mets pas ce qui change souvent. Les notes de réunion, les changelogs, les idées à explorer, les décisions provisoires n'ont rien à faire là. Ces informations deviennent fausses rapidement. Un CLAUDE.md périmé est pire qu'un CLAUDE.md inexistant : il instruit Claude avec des mensonges.
+
+La deuxième : ne mets pas ce que Claude peut inférer depuis les fichiers du projet. Si ton fichier `next.config.ts` est dans le repo, Claude sait que tu utilises Next.js. Pas besoin de le répéter. Concentre-toi sur ce qu'il ne déduit pas seul : tes décisions de business, tes règles implicites, tes anti-patterns spécifiques à ce projet.
+
+Un bon CLAUDE.md fait entre 60 et 150 lignes. Au-delà, tu documentes au lieu d'instruire.
+
+## Le CLAUDE.md comme contrat de travail
+
+Le CLAUDE.md n'est pas un fichier de configuration. C'est le contrat entre toi et Claude Code.
+
+Sans lui, chaque session est une négociation. Tu expliques le contexte, Claude propose, tu corriges, il corrige. Le résultat est imprévisible. Les conventions dérivent. Les décisions se contredisent.
+
+Avec lui, chaque session démarre avec les mêmes règles du jeu. Claude Code devient un contributeur qui connaît le projet, qui respecte les conventions, qui n'a pas besoin qu'on lui rappelle les fondamentaux.
+
+Pour un PM qui construit seul, c'est la différence entre livrer un produit fonctionnel en 3 semaines ou passer 3 mois à corriger des incohérences.
+
+---
+
+Avant d'écrire ton CLAUDE.md, tu as besoin d'un PRD structuré. Le [Template PRD IA](/outils/template-prd-ia) te guide en 7 questions pour poser les bases : problème, utilisateurs, contraintes, métriques. Gratuit, sans inscription.
+
+Si tu veux le système complet, PRD structuré et CLAUDE.md inclus, avec les 12 prompts des 4 phases (Clarifier, Designer, Construire, Vérifier), c'est ce que couvre le [Pack Vibe Coding for PMs](/packs/vibe-coding-pm) à 29 EUR.
