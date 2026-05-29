@@ -1,0 +1,108 @@
+---
+title: "Clarity Map : diagnostiquer l'alignement de ton équipe produit"
+description: "Ton équipe livre mais quelque chose coince. Comment cartographier les frictions entre produit, tech et business avec le framework SOC et la Clarity Map."
+slug: "clarity-map-diagnostic-alignement"
+date: "2026-05-29"
+readingTime: "8 min"
+cluster: "alignement"
+keywords: ["diagnostic alignement produit", "clarity map product manager", "aligner produit tech business", "SOC framework product management"]
+relatedTool: "clarity-map"
+relatedPack: "alignement"
+tags: ["Product Management", "Alignement", "Organisation produit"]
+---
+
+L'équipe livre. Le backlog avance. Pourtant, la direction n'est pas satisfaite. Les engineers se plaignent de changer de cap trop souvent. Les commerciaux promettent des features que le produit n'a pas encore. Et toi, tu passes tes journées en réunions d'escalade.
+
+Ce n'est pas un problème de productivité. C'est un problème d'alignement.
+
+Le challenge : l'alignement ne se voit pas dans les tickets Jira. Il n'y a pas de dashboard qui te dit "niveau d'alignement : 42 %". Les signaux sont dispersés, les causes confondues avec les symptômes. Pour intervenir, il faut d'abord cartographier.
+
+## Pourquoi l'alignement casse toujours aux mêmes endroits
+
+Dans la plupart des organisations produit, les frictions ne tombent pas au hasard. Elles se concentrent dans trois couches distinctes : la stratégie, les opérations, et la communication. Ces trois couches forment le framework SOC.
+
+**Stratégie** : tout le monde a-t-il la même compréhension de où on va et pourquoi ? L'absence de clarté stratégique se manifeste par des décisions contradictoires à différents niveaux de l'organisation. Le PM arbitre une feature, l'engineering en discute une autre, la direction annonce une troisième. Personne n'est de mauvaise foi. Chacun remplit son rôle tel qu'il le comprend. Mais les compréhensions divergent.
+
+**Opérations** : les processus qui permettent à l'équipe de travailler ensemble sont-ils clairs et acceptés ? Les frictions opérationnelles sont les plus visibles : "on n'a jamais de specs claires", "le PM change les priorités en cours de sprint", "les reviews durent deux semaines". Ce sont des douleurs réelles, mais souvent des symptômes d'un problème stratégique ou communicationnel plus profond.
+
+**Communication** : les bonnes personnes reçoivent-elles la bonne information au bon moment ? La communication est souvent le premier bouc émissaire. "On ne communique pas assez." En réalité, dans la plupart des équipes, on communique beaucoup. On communique mal. Pas au bon niveau de détail, pas au bon rythme, pas dans le bon format selon l'audience.
+
+SOC t'invite à regarder les trois couches séparément. Parce qu'une friction opérationnelle réglée sans corriger le problème stratégique sous-jacent revient six mois plus tard sous une autre forme.
+
+## Le diagnostic Clarity Map : neuf questions, trois couches
+
+La Clarity Map est un outil de diagnostic qui structure ces neuf questions en partant de la stratégie vers la communication. Elle produit une image de l'état d'alignement actuel, pas des recommandations génériques.
+
+L'objectif n'est pas de tout résoudre en une session. C'est d'identifier les deux ou trois frictions prioritaires sur lesquelles agir.
+
+### Couche Stratégie
+
+**1. Est-ce que chacun dans l'équipe peut expliquer la stratégie produit en deux phrases ?**
+
+Teste ça avec un engineer, un designer, un PM junior. Si les réponses divergent significativement, tu n'as pas un problème de communication. Tu as un problème de clarté stratégique. La stratégie n'est pas assez claire pour être mémorisée et transmise.
+
+**2. Les OKRs du trimestre sont-ils connus par tout le monde ou seulement par les leads ?**
+
+Si seuls les leads connaissent les OKRs, les décisions de niveau 3 (priorité des features, arbitrages techniques, trade-offs UX) se prennent sans boussole. Chaque décision individuelle est raisonnable. L'ensemble manque de cohérence.
+
+**3. La direction et l'équipe produit ont-elles la même liste de priorités pour les 90 prochains jours ?**
+
+Cette question révèle souvent un fossé entre la roadmap telle que le PM la vit et la roadmap telle que la direction la comprend. L'une est une liste d'hypothèses à tester. L'autre est souvent une liste de promesses. Ce décalage génère des escalades récurrentes et une défiance mutuelle.
+
+### Couche Opérations
+
+**4. Le processus de décision est-il connu ? Qui décide quoi, à quel niveau ?**
+
+Dans beaucoup d'équipes, le processus de décision est implicite. "On en discute et on voit." En pratique, les décisions importantes sont prises par les personnalités les plus dominantes ou les plus disponibles, pas par les mieux placées pour décider. Une RACI légère (même sur une page) clarifie qui consulte qui, qui décide, qui est informé.
+
+**5. Les specs arrivent-elles suffisamment tôt pour permettre un travail de qualité ?**
+
+Ce n'est pas une question de délai. C'est une question de confiance. Si l'engineering reçoit les specs deux jours avant le sprint, c'est un signal que le PM n'a pas de visibilité assez tôt sur ce qui arrive. Ou qu'il y en a, mais qu'elle ne remonte pas jusqu'à lui à temps.
+
+**6. Combien de fois par trimestre l'équipe change-t-elle de priorité de manière non anticipée ?**
+
+Un changement de priorité par trimestre est normal. Trois ou plus, c'est un signal de dysfonctionnement stratégique ou opérationnel. Soit la stratégie n'est pas assez claire pour guider les décisions en cas d'imprévu, soit le processus de décision laisse entrer trop de variables externes dans le sprint.
+
+### Couche Communication
+
+**7. Les stakeholders (ventes, marketing, direction) savent-ils ce que l'équipe va livrer dans les 4 prochaines semaines ?**
+
+Pas dans les 6 mois. Dans les 4 prochaines semaines. Si ce n'est pas le cas, les attentes se forment sans données. Et les déceptions suivent mécaniquement.
+
+**8. Les retours utilisateurs atteignent-ils l'équipe de manière régulière, pas seulement lors des alertes ?**
+
+Une équipe qui n'entend les utilisateurs que lors des escalades ou des churns importants réagit plutôt qu'elle n'anticipe. Les rituels de partage de feedback (weekly digest, revue de tickets support, session user research mensuelle) changent la posture de l'équipe sur la durée.
+
+**9. L'équipe sait-elle comment ses livrables s'intègrent dans la stratégie commerciale ?**
+
+Pas en détail. Mais assez pour comprendre l'enjeu. Un engineer qui sait que la feature qu'il construit conditionne le renouvellement d'un contrat majeur travaille différemment de celui qui reçoit une spec sans contexte. L'information business aide à prioriser les bugs, à juger des trade-offs, à poser les bonnes questions.
+
+## Lire la carte : ce que les patterns révèlent
+
+Une fois les neuf questions complétées avec ton équipe ou en solo, trois patterns émergent souvent.
+
+**Le pattern "flou stratégique"** : les questions 1, 2 et 3 révèlent des réponses divergentes. L'équipe n'a pas une compréhension commune de la direction. Ce pattern génère des frictions opérationnelles chroniques, mais les résoudre une par une (specs, process, réunions) ne règle rien. La priorité est de clarifier la stratégie avant d'optimiser l'exécution.
+
+**Le pattern "silos opérationnels"** : les questions 4, 5 et 6 révèlent des processus mal définis ou mal acceptés. La stratégie est claire, mais les interfaces entre équipes dysfonctionnent. Ici, les rituels et les processus peuvent aider : un planning hebdo de synchronisation, une RACI clarifiée, un template de spec standardisé.
+
+**Le pattern "communication à sens unique"** : les questions 7, 8 et 9 révèlent que l'information ne circule que dans un sens. L'équipe produit communique vers le bas (les engineers savent ce qu'ils font) mais pas vers les côtés (les stakeholders ne savent pas) ni vers le haut (la direction n'a pas de visibilité). Ce pattern génère des escalades et des conflits de priorités récurrents.
+
+La plupart des équipes présentent un mix des trois. Ce qui compte, c'est d'identifier la couche dominante pour intervenir en priorité.
+
+## Par où commencer : les trois actions à haute priorité
+
+Le risque après un diagnostic est de vouloir tout corriger à la fois. C'est la même erreur que de vouloir tout mettre dans les OKRs. Mieux vaut choisir deux ou trois interventions à fort effet de levier.
+
+Action 1 si le flou stratégique domine : une session de deux heures avec toute l'équipe pour aligner sur la stratégie produit. Pas une présentation descendante. Un exercice où chacun écrit sa compréhension, puis on compare. Les écarts révèlent les zones floues. On repart avec un document court (une page maximum) qui fait référence pour tout le monde.
+
+Action 2 si les silos opérationnels dominent : auditer les interfaces. Où est-ce que l'information se perd entre produit et engineering, entre PM et design, entre produit et marketing ? Pour chaque interface qui craque, définir un artefact simple : un ticket standard, un format de handoff, un rituel de sync hebdo de 20 minutes.
+
+Action 3 si la communication à sens unique domine : instaurer un format de mise à jour régulière vers les stakeholders. Pas un rapport long. Un format court (10 lignes, hebdomadaire ou bimensuel) qui dit : ce qu'on a livré, ce qu'on livre la semaine prochaine, ce qui a changé par rapport au plan, et un chiffre clé. Ce format remplace les réunions d'escalade qui consomment trois heures pour des informations qui tiennent en dix lignes.
+
+Ces actions ne résolvent pas tout. Elles créent les conditions pour que les problèmes se voient et se gèrent avant de devenir des crises.
+
+## La Clarity Map en outil
+
+La Clarity Map express (à venir sur [/outils/clarity-map](/outils/clarity-map)) structure ce diagnostic en 20 minutes. Tu réponds aux neuf questions, l'outil identifie le pattern dominant et te propose les actions prioritaires correspondantes.
+
+Si tu veux aller plus loin sur l'alignement produit, le [Pack Alignement](/packs/alignement) sera disponible prochainement — il couvre l'ensemble des outils et frameworks pour aligner produit, tech et business sur la durée.
