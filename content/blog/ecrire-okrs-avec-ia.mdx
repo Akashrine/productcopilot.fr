@@ -1,0 +1,176 @@
+---
+title: "Écrire ses OKRs avec l'IA : méthode et prompts pour PMs"
+description: "L'IA ne connaît pas tes données. Mais elle challenger tes KRs, reformule tes objectifs et évite les pièges classiques en 20 minutes."
+slug: "ecrire-okrs-avec-ia"
+date: "2026-05-30"
+readingTime: "9 min"
+cluster: "okrs"
+keywords: ["OKR IA product manager", "écrire OKRs Claude", "prompts OKR PM", "générer OKRs IA", "FRAME OKR product manager"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "IA"]
+---
+
+Le quarter planning dure trois heures. À la fin, tu as des OKRs. Mais personne n'avait les données sous la main. Les baselines ont été estimées à vue. Les cibles ont été négociées par consensus. Et deux des Key Results commencent par "lancer" ou "déployer".
+
+Ce n'est pas un problème de méthode. C'est un problème de processus. L'IA peut en résoudre une bonne partie, à condition de savoir comment l'utiliser.
+
+## Ce que l'IA fait bien sur les OKRs (et ce qu'elle ne fait pas)
+
+L'IA n'est pas un oracle. Elle ne connaît pas ton taux d'activation de la semaine dernière, ni le NPS de ta dernière release, ni le cap stratégique de ton entreprise pour ce trimestre.
+
+Ce qu'elle fait bien :
+
+Reformuler un objectif flou. "Améliorer l'expérience utilisateur" devient, avec un bon prompt, une formulation centrée sur un problème précis. L'IA force la clarté que les réunions n'arrivent pas à produire.
+
+Challenger des Key Results. Tu peux donner ta liste de KRs à Claude et lui demander de trouver les failles : est-ce qu'ils commencent par des verbes de livraison ? Est-ce que les cibles semblent négociées plutôt que calculées ? Est-ce que la baseline est citée pour chaque KR ?
+
+Proposer des bets. À partir d'un KR bien formulé, Claude génère des hypothèses d'initiatives. Pas toutes pertinentes. Mais utiles comme point de départ pour en discuter en équipe.
+
+Vérifier les angles morts. L'IA peut passer une liste d'OKRs au filtre de TARS et signaler les dimensions non couvertes : est-ce que tu mesures l'activation ? la rétention ? la satisfaction ?
+
+Ce qu'elle ne fait pas bien :
+
+Inventer des baselines. Si tu demandes à Claude "quel est mon taux de churn actuel ?", tu obtiens une réponse inventée. La data métier reste ta responsabilité.
+
+Remplacer le contexte business. L'IA ne sait pas que ton équipe a perdu deux engineers ce trimestre, ou que le partenariat clé vient d'être signé. Ce contexte doit venir de toi.
+
+Décider à ta place. L'IA génère des options. Le PM choisit. Ce n'est pas interchangeable.
+
+La règle d'or : garbage in, garbage out. Un prompt sans contexte donne des OKRs génériques qu'on lit sur n'importe quel blog. Un prompt avec le bon contexte donne un challenger utile, personnalisé à ta situation.
+
+## Construire le contexte avant le prompt : FRAME comme brief
+
+Avant d'envoyer quoi que ce soit à Claude, tu dois construire ton contexte. Le framework FRAME donne une structure naturelle pour ce brief.
+
+Focus : quel est le problème central de ce trimestre ? Pas l'objectif encore. Le problème sous-jacent. "Les utilisateurs ne comprennent pas la valeur du produit assez vite pour rester." Une phrase, pas une liste.
+
+Risques : quelles sont les incertitudes majeures ? Dépendances techniques, changement de priorités business, ressources limitées. L'IA peut utiliser ces contraintes pour te proposer des KRs qui ne reposent pas sur des hypothèses irréalistes.
+
+Alignement : quel est l'OKR d'entreprise que cet OKR d'équipe doit soutenir ? Copie-colle l'objectif d'entreprise dans ton prompt. Sans cet ancrage, les OKRs générés risquent de partir dans une bonne direction mais pas la bonne.
+
+Mesure : quelles sont les métriques que tu suis déjà, avec leurs valeurs actuelles ? C'est le seul endroit où tu dois apporter de la data réelle. C'est aussi la partie que les PMs oublient le plus souvent d'inclure dans leur prompt.
+
+Expérimentation : quelles sont les initiatives que l'équipe envisage ce trimestre ? Même vaguement. Ça permet à l'IA de proposer des KRs cohérents avec ce que tu vas construire, plutôt que des objectifs théoriques déconnectés de ton plan.
+
+Un exemple de brief FRAME complet pour un prompt :
+
+```
+Focus : les utilisateurs ne complètent pas l'onboarding et abandonnent avant J14.
+Risques : dépendance à une refonte mobile prévue en Q3, pas en Q2.
+Alignement : OKR entreprise = "Atteindre un NRR de 110 % d'ici fin d'année".
+Mesure : taux de complétion onboarding = 34 % (baseline), churn J30 = 22 % (baseline).
+Expérimentation : on envisage un nouveau flow d'onboarding et un email de coaching H+24.
+```
+
+Avec ces cinq éléments en main, ton prompt est un brief. Sans eux, tu demandes à Claude de deviner.
+
+## Quatre prompts pour construire tes OKRs
+
+### Reformuler l'Objectif
+
+```
+Tu es un PM senior. Je te donne un objectif trimestriel formulé de façon vague.
+Reformule-le en une phrase qui décrit un changement de comportement ou d'état
+pour les utilisateurs. L'objectif doit être inspirant mais ancré dans un problème
+réel. Pas de verbes de livraison (lancer, déployer, finaliser).
+
+Contexte :
+[ton brief FRAME]
+
+Objectif actuel : [ta formulation brute]
+
+Propose 3 reformulations avec une phrase d'explication pour chacune.
+```
+
+### Écrire les Key Results avec TARS
+
+```
+Tu es un PM senior. À partir de l'objectif ci-dessous, propose 3 à 4 Key Results
+qui couvrent les quatre dimensions TARS : Targeted (acquisition/activation),
+Adopted (adoption d'une feature ou workflow), Retained (rétention), Satisfied (satisfaction).
+
+Chaque Key Result doit :
+- Commencer par une métrique, pas un verbe de livraison
+- Avoir une valeur de départ (baseline) et une cible chiffrée
+- Être mesurable en moins de 90 jours
+
+Objectif : [ton objectif reformulé]
+Métriques disponibles avec baselines : [tes données]
+Risques à prendre en compte : [tes risques]
+```
+
+### Challenger les Key Results existants
+
+```
+Voici mes Key Results pour ce trimestre. Analyse-les sur ces critères :
+1. Est-ce que certains commencent par un verbe de livraison ? (si oui, lesquels)
+2. Est-ce que les cibles semblent estimées au doigt mouillé ou calculées ?
+3. Est-ce que la baseline est clairement indiquée pour chaque KR ?
+4. Avec TARS (Targeted, Adopted, Retained, Satisfied), quelles dimensions sont absentes ?
+
+Key Results :
+[colle tes KRs]
+
+Pour chaque problème identifié, propose une reformulation.
+```
+
+### Générer des bets pour un Key Result
+
+```
+Je veux atteindre ce Key Result : [ton KR avec baseline et cible].
+
+Propose 4 à 5 bets (hypothèses d'initiatives) pour y arriver.
+Pour chaque bet :
+- Une hypothèse claire : "On pense que [action] va produire [effet] parce que [raison]"
+- Une estimation de l'impact sur le KR en points ou pourcentage
+- Un signal qui indiquera si le bet fonctionne, visible en 3 semaines maximum
+
+Contexte de l'équipe : [ressources, contraintes techniques, initiatives déjà prévues]
+```
+
+Ces quatre prompts couvrent l'essentiel du processus OKR : formuler l'objectif, construire les KRs, les challenger, les connecter aux initiatives de la roadmap.
+
+Pour aller plus loin sur le lien entre bets et roadmap, l'article [OKR et roadmap produit](/blog/okr-produit-impact) revient sur la structure complète : un KR qui commence par un verbe de livraison n'est pas un KR.
+
+## La revue de mi-cycle avec l'IA
+
+L'IA n'est pas seulement utile en début de cycle. Elle l'est aussi quand les chiffres ne bougent pas comme prévu.
+
+Le prompt de check-in :
+
+```
+Voici mes OKRs du trimestre et les données actuelles après [X semaines].
+
+Objectif : [...]
+KR1 : baseline [X], cible [Y], actuel [Z], semaines écoulées [N] sur [12]
+KR2 : baseline [X], cible [Y], actuel [Z], semaines écoulées [N] sur [12]
+Initiatives en cours : [liste des bets actifs]
+
+Questions :
+1. La trajectoire actuelle me permet-elle d'atteindre les cibles ? Calcule la progression attendue.
+2. Quel KR est le plus à risque ? Pour quelle raison ?
+3. Quels bets dois-je déprioritiser ou accélérer en fonction de ces données ?
+```
+
+Ce prompt fonctionne parce qu'il donne à Claude des données réelles. Le modèle calcule la trajectoire, identifie les KRs à risque, et challenge les bets en cours sur la base de ce que tu lui montres.
+
+Le résultat n'est pas une décision. C'est un point de vue structuré à emporter dans ta revue d'équipe. C'est la différence entre une réunion qui part dans tous les sens et une réunion qui part d'un diagnostic partagé.
+
+## Les pièges à éviter
+
+Trop faire confiance à la première réponse. Claude génère des OKRs qui semblent bien formulés mais qui sont souvent génériques. La première réponse est un point de départ. La deuxième, après feedback, est souvent bien meilleure.
+
+Oublier la baseline. Si tu ne communiques pas la valeur actuelle d'une métrique, Claude va en inventer une. La réponse semble crédible. Le KR est inutilisable.
+
+Remplacer la discussion d'équipe par l'IA. L'IA génère des hypothèses. La discussion d'équipe valide lesquelles sont faisables, désirables et alignées avec ce que vous savez du terrain. Ce n'est pas interchangeable.
+
+Reformuler sans recalibrater. Si Claude te propose une reformulation de KR plus ambitieuse que prévu, vérifie que ton équipe a la capacité de l'atteindre. L'IA n'a pas accès à ton planning de sprint ni à ton backlog de dette technique.
+
+Envoyer trop de KRs en un seul prompt. Si tu fournis 8 Key Results d'un coup, le feedback devient superficiel. Travaille par bloc de 3 maximum. La qualité du challenge monte.
+
+## Un outil pour aller plus vite
+
+Le Générateur OKR express arrive bientôt sur productcopilot.fr. Il intègre le framework FRAME et TARS dans une interface guidée : tu renseignes ton contexte étape par étape, il te génère des OKRs structurés et challengeables en équipe, sans avoir à construire tes prompts à la main.
+
+En attendant, retrouve les 10 prompts Discovery IA pour partir du bon problème avant même d'écrire tes OKRs : [Pack Discovery IA](/pack-discovery).
