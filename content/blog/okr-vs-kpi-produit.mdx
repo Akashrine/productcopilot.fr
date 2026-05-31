@@ -1,0 +1,144 @@
+---
+title: "OKR vs KPI produit : comment utiliser les deux"
+description: "OKRs et KPIs ne font pas la même chose. Confondre les deux, c'est perdre le pilotage de son produit. Méthode claire et exemples concrets pour PM."
+slug: "okr-vs-kpi-produit"
+date: "2026-05-31"
+readingTime: "7 min"
+cluster: "okrs"
+keywords: ["OKR vs KPI product manager", "différence OKR KPI produit", "OKR ou KPI", "piloter produit OKR KPI", "KPI product manager"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Métriques"]
+---
+
+La plupart des équipes produit utilisent les OKRs et les KPIs. Beaucoup les confondent. Certaines ont abandonné les OKRs parce qu'elles les avaient transformés en KPIs. D'autres ont abandonné les KPIs parce qu'elles pensaient que les OKRs les remplaçaient.
+
+Les deux erreurs coûtent cher. OKRs et KPIs font des choses différentes. Comprendre laquelle est le point de départ d'un pilotage produit qui tient.
+
+## Ce qu'un KPI fait (et uniquement ça)
+
+KPI = Key Performance Indicator. Un indicateur de performance clé.
+
+Un KPI mesure l'état courant d'un système. Il répond à la question : "Où en sommes-nous ?"
+
+- Le taux de churn mensuel est à 3,2 %
+- Le NPS est à 41
+- Le temps de chargement moyen de la page est à 1,8 secondes
+- Le taux de conversion trial-to-paid est à 9 %
+
+Ces chiffres ne disent pas où tu veux aller. Ils te disent où tu es. C'est leur rôle. Un KPI bien choisi te donne un signal continu sur la santé de ton produit. Si le churn monte, quelque chose se passe. Si le NPS descend, quelque chose a changé. Si le temps de chargement explose, une release a introduit un problème.
+
+Les KPIs sont ton tableau de bord. Tu le surveilles en permanence. Tu ne le "vises" pas.
+
+L'erreur classique : écrire "notre KPI est d'atteindre un NPS de 50 ce trimestre". Ce n'est plus un KPI. C'est un Key Result. Et les confondre crée une ambiguïté qui pollue les deux outils.
+
+## Ce qu'un OKR fait (et uniquement ça)
+
+OKR = Objective + Key Results. Objectif + Résultats clés.
+
+Un OKR dit où tu veux aller, et comment tu vas mesurer si tu y es arrivé. Il répond à la question : "Qu'est-ce qu'on cherche à changer ?"
+
+L'Objectif est qualitatif, inspirant, borné dans le temps. Il décrit un état futur désirable.
+
+Les Key Results sont quantitatifs, mesurables, ambitieux. Ils décrivent les changements observables qui te diront que l'Objectif est atteint.
+
+Exemple concret :
+
+Objectif : "L'onboarding ne freine plus l'adoption du produit."
+
+Key Results :
+- Le taux de complétion du flow onboarding passe de 38 % à 62 %
+- 65 % des comptes ayant terminé l'onboarding utilisent au moins 3 modules dans les 14 premiers jours
+- Le churn à J30 des nouveaux comptes passe de 19 % à 11 %
+
+Ces trois KRs ne sont pas des KPIs. Ce sont des cibles ambitieuses pour un trimestre. Une fois ce trimestre terminé, si l'onboarding est bon, le taux de complétion sera devenu un KPI surveillé en permanence. Mais pendant le trimestre, c'est un OKR.
+
+## La distinction qui clarifie tout
+
+Voilà la formulation la plus simple :
+
+Un KPI mesure où tu es. Un OKR dit où tu vas.
+
+Ou encore : les KPIs décrivent le présent, les OKRs commandent le futur.
+
+Un KPI ne change pas de cycle en cycle. Tu surveilles ton NPS tous les mois, peu importe ton trimestre. Tu surveilles ton churn toutes les semaines, quelle que soit la roadmap.
+
+Un OKR est éphémère par nature. Il naît en début de trimestre, il meurt à la fin. Un OKR atteint n'est pas reconduit : s'il est atteint, la situation a changé, et le prochain trimestre demandera un OKR différent.
+
+La relation entre les deux : un Key Result utilise souvent un KPI comme base. Si ton KPI "taux d'activation" est à 38 %, tu peux écrire un Key Result "le taux d'activation passe à 62 %". Tu pars de l'existant (le KPI), tu fixes une cible (le KR), tu les deux mesures en cours de route. Mais le KPI continue d'exister après l'OKR.
+
+## Le piège du "KPI objectif"
+
+Le mélange des deux se manifeste souvent sous une forme : les "KPI objectifs".
+
+Un chef de produit écrit : "Notre KPI Q2 est d'augmenter le NPS à 50." Le problème n'est pas la cible. Le problème est le mot "KPI".
+
+Un KPI n'est pas une cible. Mettre une cible sur un KPI, c'est confondre la boussole et la destination. La boussole ne dit pas où tu veux aller. Elle dit où tu es orienté.
+
+Ce que cette erreur produit dans la pratique : des réunions où l'équipe discute de si elle "atteint son KPI" en fin de trimestre. Des arbitrages entre actions basés sur laquelle va "faire monter le KPI". Une pression sur les métriques de santé qui devrait être neutre.
+
+Un KPI de churn à 3 % n'est pas bon ou mauvais en soi. C'est un signal. Bon ou mauvais dépend du contexte, du segment, de la période. Vouloir le faire descendre à 2 % ce trimestre, c'est un OKR. Le surveiller en permanence, c'est un KPI.
+
+## En pratique : comment les deux coexistent dans une équipe produit
+
+Voilà un exemple de ce à quoi ça ressemble quand les deux outils sont bien utilisés ensemble.
+
+**Tableau de bord KPI (surveillé en permanence)**
+
+Ces indicateurs sont suivis toutes les semaines ou tous les 15 jours, peu importe la roadmap :
+- Churn mensuel (target : en dessous de 3,5 %)
+- NPS (baseline : 41)
+- Taux d'activation J7 (baseline : 34 %)
+- Taux de conversion trial-to-paid (baseline : 9 %)
+- Temps de chargement P75 (target : sous 2 secondes)
+
+Aucun de ces indicateurs n'est "à atteindre". Ce sont des signaux permanents. Si l'un d'eux se dégrade, c'est un signal d'alerte, pas une note de fin de trimestre.
+
+**OKR Q2 (borné dans le temps)**
+
+Objectif : "Transformer l'activation de nouveaux comptes en avantage concurrentiel."
+
+Key Results :
+- Le taux d'activation J7 passe de 34 % à 55 %
+- Le taux de conversion trial-to-paid passe de 9 % à 14 %
+- 70 % des comptes convertis utilisent au moins une intégration tierce dans les 30 premiers jours
+
+La relation est claire : deux KPIs (activation J7, conversion trial-to-paid) sont utilisés comme base de Key Results. L'équipe part de la baseline connue, fixe une cible ambitieuse, mesure l'évolution. Quand le trimestre se termine, ces métriques redeviennent des KPIs ordinaires dans le tableau de bord.
+
+Ce n'est pas plus compliqué que ça.
+
+## La règle des trois questions
+
+Avant de placer une métrique dans tes OKRs ou dans ton tableau de bord KPI, pose-toi trois questions :
+
+1. Est-ce que je surveille ce chiffre en dehors de tout trimestre ? Si oui, c'est probablement un KPI.
+
+2. Est-ce que je cherche à le changer de façon délibérée ce cycle ? Si oui, c'est un candidat pour un Key Result.
+
+3. Est-ce que ma cible est ambitieuse au point que je ne suis pas sûr de l'atteindre ? Si oui, c'est un bon Key Result. Si tu es certain de l'atteindre, c'est un plan de production, pas un OKR.
+
+Ces trois questions séparent ce qui surveille de ce qui oriente.
+
+## Ce que l'IA change (ou ne change pas)
+
+La pression sur les équipes produit à justifier leurs investissements IA est forte en 2026. Les budgets ont explosé ; les résultats sont inégaux. Uber a consommé l'intégralité de son budget AI en cinq mois, avant que le COO n'exige une mesure systématique du ROI (source : Department of Product, mai 2026). Selon Revenue Cat, les apps AI génèrent 41 % de revenus par payant supplémentaires par rapport aux apps non-AI, mais seulement pour celles qui mesurent l'impact correctement.
+
+Ce contexte ne change rien à la logique OKR/KPI. Il la rend plus urgente. Les équipes qui ne savent pas distinguer un KPI de surveillance d'un Key Result d'impact vont avoir du mal à répondre à la question "quel est le ROI de ce qu'on a construit ?"
+
+Un tableau de bord KPI bien construit répond à "où en est-on ?". Un OKR bien formulé répond à "qu'a-t-on changé, et de combien ?". C'est la combinaison des deux qui permet de montrer l'impact d'une décision produit.
+
+## Ce qu'il faut retenir
+
+OKRs et KPIs sont complémentaires. Les utiliser ensemble est la norme dans les équipes produit qui pilotent par l'impact.
+
+Les KPIs te donnent la santé en continu. Les OKRs te donnent le cap pour un trimestre.
+
+Un KPI peut devenir la base d'un Key Result. Un Key Result atteint se transforme en nouvelle baseline KPI. Les deux outils se nourrissent mutuellement.
+
+La seule erreur est de les confondre : mettre des cibles sur tes KPIs, ou utiliser des métriques permanentes comme OKRs sans jamais les remettre à zéro.
+
+---
+
+Si tu cherches à construire des Key Results qui mesurent l'impact, pas les livrables, l'article [OKRs produit : comment mesurer l'impact, pas le travail](/blog/okr-produit-impact) couvre le framework TARS avec des exemples complets.
+
+Le Générateur OKR express (un outil pour construire et valider tes OKRs en 10 minutes) est en cours de développement sur productcopilot.fr.
