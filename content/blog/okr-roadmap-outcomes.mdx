@@ -1,0 +1,124 @@
+---
+title: "OKRs et roadmap : passer des features aux outcomes"
+description: "Ta roadmap liste des features, tes OKRs mesurent des comportements. Les deux systèmes se contredisent. Comment les réconcilier en 4 étapes."
+slug: "okr-roadmap-outcomes"
+date: "2026-06-01"
+readingTime: "7 min"
+cluster: "okrs"
+keywords: ["OKR roadmap produit", "outcome based roadmap", "aligner OKRs features", "roadmap outcome PM", "passer features outcomes"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Roadmap"]
+---
+
+Ton équipe a des OKRs pour ce trimestre. Elle a aussi une roadmap validée en Q4 de l'année dernière. Les deux documents coexistent dans Notion.
+
+Le problème : la roadmap dit quoi construire. Les OKRs disent quoi mesurer. Et les deux systèmes ne se parlent pas vraiment.
+
+## Le signe que tes OKRs sont cosmétiques
+
+Marty Cagan, chez Silicon Valley Product Group, a résumé le paradoxe clairement : une équipe qui reçoit des OKRs ET une roadmap de features imposée n'est pas une équipe empowered. Elle a les contraintes de l'output planning avec le vocabulaire de l'outcome thinking.
+
+Le symptôme classique ressemble à ça. En fin de trimestre, l'équipe a livré 80 % de la roadmap. Mais les Key Results sont à 30 %. La réunion de bilan est inconfortable. On explique que "les features ont pris plus de temps". On reporte les OKRs au trimestre suivant.
+
+Ça ne dérape pas par mauvaise volonté. Ça dérape parce que la roadmap et les OKRs ont été construits en parallèle, par deux processus distincts, sans jamais se questionner mutuellement.
+
+Les deux systèmes ont des logiques opposées. La roadmap est construite à partir de solutions que quelqu'un a déjà validées politiquement. Les OKRs sont censés partir des problèmes à résoudre. Si la roadmap est posée en premier, les OKRs finissent par justifier des décisions déjà prises. C'est l'inverse du processus.
+
+La confusion entre OKRs et KPIs aggrave le problème. Un KPI mesure l'état courant du produit en continu, comme un tableau de bord. Un OKR fixe une cible ambitieuse pour changer cet état d'ici la fin du cycle. Les KPIs décrivent où tu es. Les OKRs disent où tu vas, et si tu y arrives. Confondre les deux, c'est se retrouver avec des OKRs qui mesurent sans jamais s'engager sur un changement réel.
+
+## Pourquoi la roadmap de features sabote les OKRs
+
+Une roadmap de features est une liste de solutions. Elle dit : "ce trimestre, on livre le module de facturation, le nouveau dashboard analytics et la migration vers la nouvelle API."
+
+Un OKR est une cible comportementale. Il dit : "ce trimestre, 60 % des clients activent la facturation automatique dans les 7 jours après onboarding."
+
+Les deux peuvent coexister si la feature est une hypothèse pour atteindre le Key Result. Mais dans la pratique, la roadmap n'est pas présentée comme une hypothèse. Elle est présentée comme un engagement. Et un engagement, ça se livre, même si les métriques ne bougent pas.
+
+Résultat : l'équipe livre le module. Le taux d'activation à J7 passe de 12 % à 15 %. L'OKR cible 60 %. La roadmap est "terminée". Le problème reste entier.
+
+La roadmap a mangé les OKRs.
+
+L'autre mécanisme qui fait dérailler : quand la roadmap est construite en amont des OKRs, le PM se retrouve à chercher des Key Results qui valident les features qu'on lui a demandé de livrer. Les métriques sont choisies après coup, pour justifier une décision politique déjà prise. Les chiffres sont là pour rassurer, pas pour mesurer.
+
+## Convertir une roadmap : de la feature à l'outcome
+
+La conversion se fait en deux étapes.
+
+Étape 1 : reformuler chaque item de roadmap en problème à résoudre.
+
+Prends ta roadmap actuelle. Pour chaque feature, pose une question : quel comportement utilisateur ou quelle business metric est censé changer si on livre ça ?
+
+Roadmap classique :
+- Nouveau module de facturation automatique
+- Refonte du dashboard analytics
+- Migration vers API v3
+
+Après reformulation :
+- 40 % des PME abandonnent la facturation manuelle avant J30. On veut passer à 20 %.
+- Les utilisateurs consultent le dashboard 1,2 fois par semaine en moyenne. On veut 3 fois.
+- La latence API actuelle coûte 12 % de conversion sur mobile. On veut sous les 3 %.
+
+Ces reformulations sont les outcomes. Les features deviennent des hypothèses : peut-être que le module de facturation automatique résout le premier problème. Peut-être pas. Peut-être qu'un simple email de relance à J7 fait le même travail à 10 % du coût. On ne sait pas encore.
+
+La roadmap outcome-based ne liste pas les solutions. Elle liste les problèmes priorisés. Les solutions restent dans le backlog de l'équipe, négociables jusqu'au dernier moment.
+
+Étape 2 : faire remonter les outcomes dans les OKRs.
+
+Une fois les outcomes identifiés, ils alimentent directement les Key Results du cycle. Un Key Result bien écrit ressemble exactement à un outcome reformulé : une métrique, une baseline, une cible, un horizon temporel.
+
+OKR issu de la conversion :
+
+Objectif : rendre la facturation assez simple pour que nos clients PME l'utilisent vraiment.
+
+- KR1 : le taux d'abandon de la facturation manuelle avant J30 passe de 40 % à 20 %
+- KR2 : 55 % des nouveaux comptes activent la facturation automatique dans les 7 premiers jours
+- KR3 : le volume de tickets support liés à la facturation baisse de 35 %
+
+L'équipe peut maintenant choisir comment atteindre ces chiffres. Feature complexe, amélioration de l'onboarding, email de nudge, session live. Ce qui compte, c'est la cible.
+
+Si tu veux aller plus loin sur la rédaction des Key Results qui mesurent vraiment l'impact, l'article sur le [framework TARS pour les OKRs produit](/blog/okr-produit-impact) couvre ça en détail.
+
+## Du trimestre au sprint : le processus en 4 étapes
+
+Une fois les OKRs posés, le passage à l'exécution suit un processus simple. Voici comment ça fonctionne dans les équipes qui ont converti leur roadmap.
+
+Étape 1 : cartographier les metrics gaps. Pour chaque Key Result, identifie le delta entre baseline et cible. Le delta "taux d'abandon de 40 % à 20 %" implique de comprendre pourquoi 40 % abandonnent en premier lieu. C'est le problème à résoudre, pas la feature à livrer.
+
+Étape 2 : brainstormer les initiatives. Quelles sont les hypothèses qui pourraient réduire ce gap ? L'équipe liste les initiatives possibles sans filtrer encore. Feature, UX, copy, email, segment de pricing, documentation, support proactif.
+
+Étape 3 : filtrer par effort et impact. On ne sélectionne pas dix initiatives pour un seul Key Result. On en prend deux ou trois, celles avec le meilleur ratio "chance de bouger le chiffre et coût de développement". Les autres attendent dans le backlog.
+
+Étape 4 : découper en sprints. Les initiatives sélectionnées se découpent en stories. Chaque sprint a une hypothèse à valider, pas juste du code à livrer. La sprint review ne demande pas "qu'est-ce qu'on a livré ?" mais "qu'est-ce qu'on a appris ?"
+
+Ce processus met en pratique le framework FRAME sur le cycle entier. Le F de Focus force à ne sélectionner que les initiatives qui pointent vers un OKR existant. Le A d'Alignement assure que chaque sprint est explicitement lié à un Key Result. Le R de Risques se pose lors de la sélection des initiatives : qu'est-ce qui peut faire échouer cette hypothèse avant qu'on dépense trois sprints dessus ? Et le M de Mesure oblige à définir la baseline avant de commencer, pas après.
+
+Sans baseline, un Key Result "le taux d'activation passe à 60 %" ne veut rien dire. Est-ce qu'on est à 10 % ou à 55 % aujourd'hui ? La réponse change tout. L'étape fastidieuse, c'est d'aller chercher ces données dans Mixpanel, Amplitude ou directement en base avant d'écrire les OKRs. C'est pourtant ce qui rend les OKRs utilisables.
+
+## Ce que ça change dans les réunions
+
+Une équipe qui pilote par outcomes transforme trois habitudes de réunion.
+
+La roadmap review trimestrielle ne demande plus "qu'est-ce qu'on a livré ?" mais "de combien s'est-on rapproché des Key Results ?" Si une feature a été livrée sans impact sur les métriques, c'est une information utile. On pivote plutôt que d'attendre la fin du trimestre pour constater l'échec.
+
+Le sprint planning ne commence plus par la liste des features à développer, mais par une question : quelle hypothèse teste-t-on ce sprint pour avancer sur le Key Result X ? La roadmap reste dans l'arrière-plan comme un stock d'hypothèses, pas comme un plan gravé dans le marbre.
+
+La réunion de bilan OKR n'est plus un exercice de justification. "On a livré 8 features sur 10" devient "on a atteint 2 Key Results sur 3, voilà pourquoi le troisième n'a pas bougé, et voilà ce qu'on aurait fait différemment." La transparence devient possible parce que les métriques existent et ont été mesurées tout au long du cycle.
+
+Un signal concret que la transition marche : les PMs commencent à demander les données avant de valider une initiative, pas après. "Quelle est la baseline ?" devient un réflexe de début de discussion, pas une question d'audit de fin de trimestre.
+
+Un autre signal : le backlog se vide des features sans sponsor métrique. Si une feature ne peut pas répondre à la question "quel Key Result ça adresse ?", elle n'entre pas dans le sprint. Ça nettoie naturellement les backlogs gonflés de bonnes intentions sans objectif clair.
+
+## Gérer la transition dans un contexte réel
+
+La conversion ne se fait pas du jour au lendemain, surtout si la roadmap est partagée avec des stakeholders externes qui attendent des engagements sur des features précises.
+
+L'approche pragmatique : garder une roadmap de communication visible pour les stakeholders, mais piloter l'équipe en interne sur les OKRs. Les features de la roadmap externe deviennent des hypothèses dans le processus interne. Quand une feature est livrée, on communique sur l'impact mesuré, pas sur la livraison elle-même.
+
+Progressivement, les stakeholders s'habituent à recevoir des résultats plutôt que des updates de livraison. "Le taux d'abandon a baissé de 40 % à 22 %" est un meilleur compte-rendu que "on a livré le module de facturation automatique." Le premier change une conversation. Le second remplit un ticket.
+
+Pour prioriser le backlog en parallèle des OKRs et s'assurer que les deux systèmes restent alignés, l'approche détaillée dans l'article sur la [priorisation du backlog avec l'IA](/blog/prioriser-backlog-ia) donne un processus complémentaire.
+
+---
+
+Le Générateur OKR express est l'outil gratuit du cluster OKRs. Il te permet de formuler tes objectifs trimestriels et de générer des Key Results mesurables à partir d'une description de ton problème produit. Disponible bientôt sur le site.
