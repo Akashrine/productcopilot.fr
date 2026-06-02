@@ -1,0 +1,127 @@
+---
+title: "OKR et roadmap produit : lier tes objectifs à tes features"
+description: "La plupart des roadmaps ne parlent pas à leurs OKRs. Comment construire une roadmap orientée outcomes avec le framework FRAME."
+slug: "okr-roadmap-product-manager"
+date: "2026-06-02"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["OKR roadmap product manager", "aligner OKR roadmap", "roadmap orientée outcomes", "FRAME product management"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Roadmap"]
+---
+
+Un OKR définit où tu veux aller. Une roadmap décrit comment tu penses y arriver. En théorie, les deux se tiennent.
+
+Dans la pratique, la plupart des équipes construisent leur roadmap en premier, puis cherchent l'OKR qui la justifie. Le résultat : des OKRs qui ressemblent à des plans de livraison déguisés, et des roadmaps déconnectées des vrais enjeux du trimestre.
+
+Ce n'est pas un problème de mauvaise volonté. C'est structurel. Et il existe une méthode pour l'inverser.
+
+## Le test qui révèle le problème
+
+Prends n'importe quel item de ta roadmap actuelle. Pose-toi la question : si cette feature est livrée à 100 %, quel Key Result est-ce que ça fait bouger, et de combien ?
+
+Si tu dois réfléchir plus de 5 secondes, il y a un problème d'alignement.
+
+L'erreur classique : les équipes construisent leur roadmap depuis le backlog existant. Ce qui est techniquement prêt, ce qui est demandé depuis 3 mois par les sales, ce qui est bloqué depuis le dernier trimestre et que l'engineering veut enfin sortir. La roadmap reflète l'inertie organisationnelle, pas l'ambition de l'OKR.
+
+Une situation concrète. Une squad B2B travaille depuis deux trimestres sur une refonte de leur dashboard. L'OKR du trimestre : "réduire le churn à J30 de 22 % à 12 %". La refonte est livrée en sprint 6. Le churn à J30 ne bouge pas. Tout le monde était occupé, les délais étaient tenus, le backlog avançait. L'OKR était raté. Et la question du lien entre la feature et le Key Result n'avait jamais été posée au démarrage du trimestre.
+
+Ce cas n'est pas une exception. C'est le mode de fonctionnement par défaut de la majorité des équipes produit.
+
+## Pourquoi la déconnexion persiste malgré les bonnes intentions
+
+Trois causes structurelles reviennent systématiquement dans les équipes qui ont adopté les OKRs sans changer leur façon de planifier.
+
+L'OKR est défini trop tard dans le cycle de planning. Les OKRs sont finalisés en fin de session de planning trimestriel. La roadmap, elle, a été construite deux semaines avant, dans les sessions de priorisation. Les OKRs arrivent pour habiller des décisions déjà actées. Le résultat : chaque item de roadmap reçoit un label "contribue à l'OKR X" sans que le lien soit réellement évalué.
+
+Le fossé entre les langages. Une roadmap parle de features : "lancer le module d'export", "refonte de l'onboarding", "amélioration du moteur de recherche". Un OKR parle d'outcomes : "le taux d'adoption des comptes pro passe de 40 % à 65 %". Ces deux langages ne se traduisent pas naturellement. Les stakeholders habitués à raisonner en livrables voient mal comment une métrique de comportement utilisateur se connecte à un ticket Jira.
+
+Le lien implicite qui ne se formalise jamais. L'équipe sait intuitivement que la feature va "contribuer" à l'objectif. Mais aucun document ne précise comment, avec quelle hypothèse de causalité, et comment on le saurait si l'impact n'était pas au rendez-vous. Ce flou persiste trimestre après trimestre, et c'est lui qui fait rater les OKRs.
+
+## Construire la roadmap depuis les Key Results
+
+La méthode inverse : commence par l'OKR, construis la roadmap depuis là.
+
+La plupart des équipes ne le font pas parce que les backlog items existent déjà et exercent une gravité naturelle. Rouvrir le backlog vide cette semaine semble irréaliste quand il y a 200 items dedans. Le travail est de rompre avec cette inertie au moment précis du planning trimestriel.
+
+Trois étapes concrètes.
+
+Étape 1 : formule tes Key Results avant d'ouvrir ton outil de gestion de projet.
+
+Avant de toucher au backlog, pose-toi la question : dans 90 jours, qu'est-ce qui doit avoir changé dans le comportement de tes utilisateurs ? Formule des Key Results mesurables depuis cette question, pas depuis les features déjà pensées.
+
+Sans baseline, un Key Result ne veut rien dire. "Le taux d'activation passe à 60 %" est vide si tu ne sais pas où tu en es aujourd'hui. L'article sur les [OKRs produit et la mesure d'impact](/blog/okr-produit-impact) couvre ce point. La donnée de départ est le travail que personne ne fait, et c'est lui qui conditionne tout le reste.
+
+Étape 2 : pour chaque Key Result, liste les hypothèses de levier sans prioriser.
+
+Un Key Result est un résultat cible. Ce n'est pas un plan d'action. Pour faire bouger un KR, plusieurs leviers sont possibles : une nouvelle feature, l'amélioration d'une feature existante, un changement d'email d'onboarding, une modification de parcours, une formation de l'équipe Customer Success, un changement de tarification.
+
+Liste ces leviers sans les prioriser. Cette liste brute devient le point de départ de ta roadmap. Elle remplace le backlog existant comme source de vérité pour le trimestre.
+
+Étape 3 : priorise les leviers par confiance dans le lien KR-levier.
+
+Parmi les leviers listés, lesquels ont la meilleure chance de faire bouger le Key Result ? La question n'est pas : quel levier est le plus facile à livrer ? Ni : quel levier a été le plus demandé par les stakeholders ? La question est : quelle est ta confiance dans l'hypothèse de causalité entre ce levier et le chiffre cible ?
+
+Cette question force à être honnête sur ce qu'on sait et ce qu'on suppose.
+
+## FRAME pour valider chaque item de roadmap avant de s'engager
+
+Une fois la liste de leviers construite depuis les Key Results, FRAME sert de filtre de validation avant de committer sur une roadmap.
+
+FRAME est un framework à 5 dimensions. Appliqué à chaque item de roadmap, il prend 15 minutes par item et élimine les "good to have" qui se glissent dans les roadmaps sans relation réelle avec les OKRs.
+
+F, Focus : cet item adresse-t-il directement le même problème que l'Objectif ? Pas un problème connexe, pas "ça va globalement dans le bon sens". Le même problème central que l'OKR cherche à résoudre. Si non, l'item appartient peut-être à un autre OKR, ou à aucun OKR de ce trimestre.
+
+R, Risques : quels sont les risques de livrer cet item sans que le KR bouge ? Identifier les risques d'exécution (complexité technique, dépendances, délais) mais aussi les risques d'impact : si on livre et que ça ne change pas le chiffre cible, on perd quoi en termes de temps et d'opportunité ? Cette question force à poser l'hypothèse plutôt qu'à la laisser implicite.
+
+A, Alignement : product, tech et business sont-ils alignés sur le fait que cet item adresse l'OKR, et pas juste "au courant" ? L'Engineering Lead sait-il quel Key Result il sert en développant cette feature ? Le Head of CS sait-il comment ce changement va modifier son accompagnement des comptes ? Si le lien n'est pas partagé et compris par les trois, l'item n'est pas prêt à entrer sur la roadmap.
+
+M, Mesure : comment sauras-tu si livrer cet item a contribué à faire bouger le KR ? Quelle métrique intermédiaire peut servir de signal de validation avant la fin du trimestre, sans attendre le J90 ? Cette dimension force à instrumenter les features avant de les livrer, pas après coup quand il est trop tard pour réagir.
+
+E, Expérimentation : peut-on valider l'hypothèse d'impact avec moins d'effort avant d'investir dans le développement complet ? Un test A/B sur un changement de copy, un prototype non-codé testé en user research, une modification d'un paramètre existant. L'expérimentation n'est pas obligatoire sur chaque item, mais c'est la question à poser systématiquement pour les items à fort coût et faible confiance.
+
+## Exemple complet : une squad onboarding B2B SaaS
+
+Contexte : une équipe produit sur une plateforme SaaS B2B. OKR du trimestre : "Augmenter la valeur perçue dans les 30 premiers jours pour réduire le churn précoce."
+
+Key Results du trimestre :
+- KR1 : Le taux de complétion de l'onboarding passe de 34 % à 55 %
+- KR2 : 70 % des comptes activés utilisent au moins 3 modules dans les 14 premiers jours
+- KR3 : Le churn à J30 passe de 22 % à 12 %
+
+Backlog existant au moment du planning, par ordre de "demande stakeholder" : refonte du dashboard (demandée depuis 6 mois par les gros comptes), nouveau module d'export CSV, amélioration du moteur de recherche interne, onboarding gamifié.
+
+Application de FRAME sur chaque item.
+
+Refonte dashboard. KR adressé potentiel : KR2 (si le dashboard est plus clair, les utilisateurs explorent plus de modules). Problème avec l'hypothèse : les gros comptes qui demandent cette refonte ont déjà passé l'onboarding depuis longtemps. L'hypothèse d'impact sur KR2 pour les nouveaux comptes est spéculative. FRAME A : les utilisateurs qui formulent la demande ne sont pas les utilisateurs ciblés par l'OKR. Verdict : hors roadmap ce trimestre, avec justification documentée.
+
+Export CSV. Aucun des trois KRs n'est adressé. Aucune hypothèse crédible sur le churn à J30 ou sur l'adoption précoce des modules. Verdict : explicitement exclu ce trimestre. L'item reste dans le backlog avec une note sur pourquoi il ne rentre pas dans l'OKR en cours.
+
+Amélioration moteur de recherche. KR adressé potentiel : KR2, si les utilisateurs ne trouvent pas les modules via la recherche, ils ne les adoptent pas. Hypothèse crédible, mais coût de développement élevé. FRAME E : existe-t-il un signal data existant (taux de zéro résultats, abandons de session après une recherche) qui valide d'abord le problème avant d'investir dans la solution ? Verdict : investigation data d'abord, décision roadmap dans 2 semaines.
+
+Onboarding gamifié. KR1 et KR3 adressés. Hypothèse forte sur la complétion du flow et sur l'engagement précoce. FRAME M : quelle métrique intermédiaire valide l'impact avant J90 ? Proposition de l'équipe : taux de complétion à J7, premier "aha moment" atteint dans les 3 premiers jours. Verdict : entre sur la roadmap, avec instrumentation définie avant le premier sprint.
+
+Résultat du planning : seul l'onboarding gamifié entre sur la roadmap du trimestre. Le moteur de recherche passe en investigation data avant toute décision. Les deux autres items sont exclus avec une justification documentée pour les stakeholders.
+
+C'est ça, aligner la roadmap sur les OKRs. Pas en ajoutant une colonne "OKR lié" dans Linear. En changeant l'ordre du processus : OKR d'abord, liste de leviers ensuite, roadmap en dernier.
+
+## Le rituel d'alignement hebdomadaire
+
+Une roadmap alignée sur les OKRs au départ peut dériver en cours de trimestre. Des bugs critiques remontent, des stakeholders poussent de nouveaux items, des dépendances techniques retardent les features prévues et libèrent du bandwidth qui se remplit vite.
+
+Un rituel simple pour maintenir l'alignement : 15 minutes par semaine, trois questions.
+
+1. Qu'est-ce qu'on a livré cette semaine ? Quelle métrique intermédiaire ça a fait bouger, si on peut déjà le mesurer ?
+2. Y a-t-il des items sur la roadmap dont le lien avec les KRs est devenu flou ou dont l'hypothèse d'impact a été invalidée par un signal récent ?
+3. Y a-t-il des données, retours utilisateurs ou feedbacks CS qui remettent en question l'hypothèse d'impact d'un item à venir ?
+
+Ce n'est pas une revue de sprint. C'est une revue d'alignement. L'objectif n'est pas de savoir si on est "dans les délais". C'est de vérifier si ce qu'on construit ce trimestre sert encore les Key Results tels qu'on les a définis.
+
+Ce rituel coexiste avec les cérémonies agiles existantes sans les remplacer. Le sprint gère le "comment on livre". Le rituel d'alignement gère le "pourquoi on livre ça ce trimestre". Les deux opèrent à des niveaux différents et se renforcent.
+
+Pour aller plus loin sur la connexion entre OKRs et priorisation au quotidien, l'article sur la [priorisation de backlog avec l'IA](/blog/prioriser-backlog-ia) couvre les méthodes de tri une fois que le cap trimestriel est posé.
+
+---
+
+Le Générateur OKR express est en cours de construction : de ton problème trimestriel à des Key Results mesurables en 10 minutes. Pour être notifié à la sortie et recevoir les prochains articles du cluster OKRs, abonne-toi à la newsletter sur la page d'accueil ou via la page [Template PRD IA](/outils/template-prd-ia).
