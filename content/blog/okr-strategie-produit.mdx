@@ -1,0 +1,126 @@
+---
+title: "OKRs produit : aligner stratégie et exécution avec FRAME"
+description: "Tes OKRs flottent sans stratégie en amont. La méthode FRAME pour construire des OKRs produit alignés et les écrire en 30 min avec l'IA."
+slug: "okr-strategie-produit"
+date: "2026-06-03"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["OKR produit stratégie", "aligner OKRs équipe produit", "FRAME product manager", "construire OKRs produit"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Stratégie produit"]
+---
+
+Chaque trimestre, la même scène. La réunion de planning OKR s'ouvre. Chaque PM arrive avec sa liste de "ce qu'on va faire ce trimestre". On reformule en Key Results. On vote. On applaudit les OKRs "finalisés".
+
+Six semaines plus tard, les squads travaillent dans des directions différentes. Chaque squad est dans les clous de ses propres OKRs. Le produit n'avance pas vers quelque chose de cohérent.
+
+Le problème n'est pas la façon dont tu as écrit tes OKRs. C'est que tu as sauté l'étape d'avant.
+
+## Pourquoi tes OKRs flottent dans le vide
+
+Les OKRs ne sont pas une stratégie. Ce sont des engagements mesurables sur un trimestre. Leur rôle est de traduire une stratégie en cibles concrètes pour chaque équipe.
+
+Quand la stratégie manque, les OKRs deviennent une collection de préférences individuelles. Le PM mobile veut réduire le churn. Le PM acquisition veut augmenter les signups. Le PM monétisation veut améliorer le taux de conversion. Trois OKRs valides. Aucun lien entre eux.
+
+Résultat : chaque squad optimise localement. L'ingénierie reçoit des demandes contradictoires. La data ne sait plus quel funnel prioriser. Le CPO passe son temps à arbitrer des priorités qui auraient dû être tranchées avant.
+
+Ce n'est pas un problème d'OKRs. C'est un problème de stratégie manquante.
+
+La distinction que peu d'articles font : un OKR dit "d'ici fin de trimestre, tel chiffre doit bouger de X à Y". Une stratégie dit "voilà le problème principal qu'on cherche à résoudre, pour tel utilisateur, voilà pourquoi, voilà ce qu'on s'autorise à laisser de côté". Les OKRs sans stratégie mesurent du mouvement. Pas de la direction.
+
+## La stratégie d'abord : FRAME comme couche de préparation
+
+Avant d'ouvrir un doc OKR, passe par FRAME. Ce framework se construit en cinq dimensions.
+
+Focus : quel problème tu résous, pour qui, et dans quel périmètre ce trimestre ? Pas "améliorer l'onboarding en général". Plutôt : les comptes PME qui s'activent mais abandonnent dans les 14 premiers jours.
+
+Risques : qu'est-ce qui pourrait faire rater ce trimestre ? Une dépendance technique non résolue, une hypothèse non validée, un changement de priorité probable venant du top. Les nommer avant de les subir, pas après.
+
+Alignement : qui doit être d'accord avec tes OKRs pour qu'ils aient une chance de se réaliser ? Sales, Customer Success, Engineering lead ? Quel est leur angle, et comment tes OKRs se connectent à leurs enjeux ?
+
+Mesure : quels sont les signaux qui te diront si tu avances ? Pas les KPIs que tu surveilles déjà en permanence, mais les métriques qui changeront si ta stratégie fonctionne.
+
+Experimentation : comment tu apprendras en cours de route ? Quels checkpoints tu poses à S4 et S8 du trimestre pour ajuster avant la fin ?
+
+FRAME n'est pas un processus long. C'est une heure de réflexion avant la session OKR. L'exercice produit une demi-page de clarté stratégique. C'est ce socle qui permet d'écrire des OKRs cohérents plutôt qu'une liste de souhaits.
+
+## FRAME vers OKRs : la traduction concrète
+
+Prenons un exemple. Une squad travaille sur la rétention d'une plateforme SaaS B2B. Le churn à J30 est à 21 %. La priorité du trimestre : comprendre et réduire ce churn.
+
+FRAME donne :
+
+Focus : les comptes activés qui ne complètent pas l'onboarding dans les 21 premiers jours. Profil cible : les équipes de moins de 20 personnes, sans DSI, qui achètent en self-serve.
+
+Risques : l'équipe engineering est en refactoring sur le module d'onboarding. Les exports de données seront en retard de trois semaines. La moitié de l'outil est en anglais, ce qui freine les comptes francophones.
+
+Alignement : Customer Success a des données qualitatives sur les raisons de churn. Sales a fait des promesses fonctionnelles lors des demos. Les deux doivent être dans la boucle avant l'écriture des OKRs.
+
+Mesure : taux de complétion de l'onboarding, churn à J30, NPS à J14, volume de tickets support dans les 30 premiers jours.
+
+Experimentation : point de mi-trimestre à S6 pour évaluer si les hypothèses de churn sont correctes. Si le problème est la langue, on arbitre entre traduction et accompagnement humain.
+
+Avec ce FRAME en main, les OKRs s'écrivent en 20 minutes :
+
+Objectif : rendre l'onboarding suffisamment clair pour que les PME francophones voient la valeur avant J30.
+
+- KR1 : le taux de complétion de l'onboarding passe de 34 % à 55 %
+- KR2 : 70 % des comptes ayant terminé l'onboarding utilisent au moins 3 modules clés avant J14
+- KR3 : le churn à J30 des nouveaux comptes passe de 21 % à 13 %
+
+Trois Key Results. Ils découlent directement de FRAME, pas d'une brainstorm collective. Chacun mesure un maillon de la chaîne de causalité.
+
+Si tu veux aller plus loin sur la mécanique d'écriture des Key Results, l'article [OKRs produit : comment mesurer l'impact, pas le travail](/blog/okr-produit-impact) couvre en détail comment vérifier que tes KRs mesurent des outcomes réels, pas des livrables.
+
+## L'alignement entre squads : éviter le conflit d'OKRs
+
+La question qui revient en planning produit : "nos OKRs se connectent à quoi, exactement ?"
+
+Le problème classique : chaque squad fait son FRAME séparément et écrit ses OKRs en silo. Résultat : trois squads qui mesurent des choses différentes sur le même funnel, sans lien entre elles.
+
+La solution est une session de 60 minutes avant le writing individuel.
+
+Format : le CPO ou le Head of Product pose deux questions en ouverture. Quel est le problème principal qu'on doit résoudre ce trimestre pour le produit dans son ensemble ? Quel signal nous dira dans 90 jours qu'on a avancé dans la bonne direction ?
+
+Les PMs construisent une réponse commune. Ça devient l'OKR produit du trimestre, porté au niveau du groupe. Chaque squad écrit ensuite ses propres OKRs en se demandant : en quoi mes KRs contribuent-ils à ce signal commun ?
+
+Ce n'est pas du top-down. La direction commune est construite en session, pas imposée d'en haut. Les PMs peuvent défendre pourquoi leur focus ce trimestre est la bonne réponse à la question posée.
+
+Ce processus révèle aussi les conflits avant qu'ils ne coûtent cher. Si deux squads se battent pour le même bandwidth engineering sur deux enjeux contradictoires, mieux vaut le voir en session de planning qu'en S6 quand les retards s'accumulent.
+
+Un test simple à la fin de la session : chaque PM peut-il expliquer en une phrase comment ses OKRs contribuent à l'OKR produit ? Si quelqu'un bute, il y a un angle mort à corriger avant de lancer le trimestre.
+
+## Utiliser l'IA pour construire tes OKRs plus vite
+
+L'IA ne remplace pas l'analyse stratégique. Elle accélère la traduction de FRAME vers les OKRs.
+
+Voilà un workflow concret en trois étapes.
+
+Étape 1 : construis ton FRAME sur papier ou dans un doc. Vingt minutes. Réponds aux cinq dimensions avec le contexte réel de ton trimestre. Ne cherche pas la perfection, cherche la précision.
+
+Étape 2 : envoie ce FRAME à Claude avec ce prompt :
+
+"Tu es un coach produit. Voici mon analyse FRAME pour ce trimestre : [colle ton FRAME]. Génère 3 Objectifs potentiels avec 3 Key Results chacun. Les Key Results doivent mesurer des outcomes utilisateurs, pas des livrables. Format : Objectif / KR1 / KR2 / KR3. Pour chaque KR, indique la métrique et la baseline estimée si elle manque dans l'analyse."
+
+Étape 3 : parmi les trois propositions que Claude génère, tu en choisis une. Tu la retravailles avec ton contexte réel : chiffres de baseline vérifiés, contraintes engineering, niveau d'ambition calibré. Tu la valides avec ton squad.
+
+Le gain : Claude traite le travail de formulation. Toi tu te concentres sur le choix et la calibration. Tu passes d'une session OKR de trois heures à une heure de réflexion stratégique suivie de 30 minutes de validation.
+
+Ce workflow fonctionne parce que l'IA est efficace pour structurer et formuler à partir d'une intention claire. Elle est incapable de définir cette intention à ta place. FRAME te force à définir l'intention. L'IA fait la traduction.
+
+Une mise en garde directe : si tu donnes à Claude un FRAME vague du type "améliorer l'expérience utilisateur", tu obtiendras des OKRs vagues. La qualité de ce qui sort dépend directement de la précision de ce que tu mets dedans. Garbage in, garbage out.
+
+## Le test avant de lancer le trimestre
+
+Avant de valider tes OKRs pour Q+1, pose une seule question pour chacun : si on atteint ces Key Results, est-ce qu'on peut expliquer en une phrase quel problème utilisateur on a résolu ?
+
+Si la réponse est oui, tes OKRs sont connectés à quelque chose de concret.
+
+Si tu butes sur la réponse, tes OKRs mesurent du mouvement sans direction. Retourne au Focus de ton FRAME et précise l'utilisateur et le problème. Puis recommence la traduction vers les Key Results.
+
+Ce test n'est pas une vérification de forme. C'est le signal de cohérence entre ta stratégie et tes engagements trimestriels. Deux minutes pour l'appliquer. Potentiellement un trimestre entier gagné.
+
+---
+
+Le Générateur OKR express de productcopilot.fr te guide à travers les cinq dimensions de FRAME et génère tes premiers OKRs en 30 minutes. Tu entres ton contexte, tes enjeux et les contraintes du trimestre. Tu sors un FRAME structuré et trois OKRs prêts à valider avec ton équipe. [Accéder au Générateur OKR express](/outils/generateur-okr).
