@@ -1,0 +1,191 @@
+---
+title: "Écrire ses OKRs avec Claude : méthode et 3 prompts"
+description: "Passer d'un problème stratégique flou à des Key Results mesurables. Méthode FRAME + 3 prompts Claude concrets pour product managers."
+slug: "okr-claude-prompts-product-manager"
+date: "2026-06-10"
+readingTime: "9 min"
+cluster: "okrs"
+keywords: ["rédiger OKR avec IA", "prompts OKR product manager", "Claude OKR PM", "écrire Key Results IA"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "IA"]
+---
+
+"Les amateurs ont un objectif. Les experts ont un système." Cette formule circule dans les newsletters management. Elle résume bien le problème des OKRs.
+
+La méthode est connue. Les principes sont clairs. Les exemples sont partout. Et pourtant, beaucoup de PMs arrivent au moment d'écrire leurs OKRs et se retrouvent face à une page blanche.
+
+Ce n'est pas un problème de compréhension. C'est un problème de passage à l'acte : passer d'une stratégie floue à des chiffres précis, dans un format qui tient la route 90 jours.
+
+C'est là que Claude peut intervenir.
+
+## Le problème de la formulation
+
+Tu sais ce qu'est un bon OKR. Tu sais qu'un Key Result doit mesurer un comportement utilisateur, pas une livraison. Si tu veux un rappel sur les erreurs classiques, l'article sur [les OKRs qui mesurent l'impact](/blog/okr-produit-impact) couvre ça en détail.
+
+Le problème central n'est pas théorique. C'est le saut entre "on doit améliorer l'acquisition" et cette formulation précise : "le taux d'activation des comptes créés dans les 7 derniers jours passe de 23 % à 45 %".
+
+Ce saut exige plusieurs choses en même temps :
+- connaître ta baseline exacte sur la métrique concernée
+- identifier quel indicateur est un vrai levier plutôt qu'une vanity metric
+- calibrer la cible entre l'ambitieux et le réaliste
+- vérifier que l'objectif s'aligne avec la stratégie business de ce cycle
+
+Faire tout ça seul, en une session, avec les réunions qui s'enchaînent et les priorités qui bougent, c'est difficile. Claude ne fait pas le travail à ta place. Il peut tenir le rôle que personne d'autre ne joue dans l'équipe : le sparring partner qui questionne chaque choix sans agenda politique.
+
+## Claude comme sparring partner, pas comme générateur
+
+L'erreur classique : demander à Claude "génère des OKRs pour une équipe produit B2B SaaS, 3 personnes, focus rétention."
+
+Tu vas obtenir quelque chose de bien formaté. Métrique, baseline, cible. Le format est correct. Mais les chiffres sont inventés. Le contexte ne colle pas à ton produit réel. L'objectif ne reflète pas les tensions concrètes de ton cycle.
+
+La bonne posture : traiter Claude comme un consultant qui a besoin d'être briefé avant de contribuer. Plus tu lui fournis de contexte spécifique, plus ses réponses sont utilisables.
+
+Il y a trois usages distincts de Claude dans un process OKR :
+1. Construire et challenger le contexte stratégique avant d'écrire quoi que ce soit
+2. Générer des Key Results candidats à partir de ce contexte
+3. Challenger chaque KR retenu contre des critères stricts
+
+Ces trois usages correspondent à trois prompts distincts. Voici comment les utiliser en séquence.
+
+## Prompt 1 : construire le contexte avec FRAME
+
+Avant d'écrire un seul OKR, tu dois verbaliser le problème stratégique que ce cycle doit résoudre. Pas "on veut croître". Le problème précis, avec ses données.
+
+Le framework FRAME structure cette réflexion en cinq dimensions :
+
+Focus : quel est le problème central à résoudre ce trimestre, formulé en une phrase ?
+
+Risques : qu'est-ce qui se passe concrètement si ce problème n'est pas résolu ce cycle ?
+
+Alignement : comment ce problème se connecte aux priorités business ou à la stratégie annuelle ?
+
+Mesure : comment saura-t-on qu'on l'a résolu ? Quelle donnée change, dans quelle direction ?
+
+Experimentation : quels leviers d'action sont dans ton périmètre direct pour y répondre ?
+
+Le prompt à utiliser :
+
+```
+Contexte : je suis PM sur un produit [description en 2-3 phrases].
+Mon équipe de [X] personnes travaille sur [périmètre].
+
+Ce trimestre, le problème que je cherche à résoudre est : [problème].
+
+Ce que j'observe aujourd'hui : [données disponibles, baseline si connue].
+
+Ce que le business attend ce cycle : [priorité direction ou OKR de niveau supérieur].
+
+Joue le rôle d'un CPO expérimenté. Analyse mon contexte avec le framework FRAME
+(Focus, Risques, Alignement, Mesure, Experimentation).
+Pour chaque dimension, dis-moi si mon problème est bien défini ou s'il manque de précision.
+Pose une question de clarification pour chaque dimension qui te semble floue.
+Pose une question à la fois.
+```
+
+Ce prompt génère un dialogue, pas une liste. Claude va poser des questions qui forcent la précision. "Quelle est ta baseline exacte sur ce taux d'activation ?" "Cet objectif est dans ton périmètre direct ou tu dépends d'une autre équipe ?" "Quand tu dis améliorer l'expérience, tu cibles quelle étape du parcours ?"
+
+Ce dialogue prend 10 à 15 minutes. Il remplace une réunion de cadrage qui en prendrait 60. Et il évite deux semaines d'OKRs mal calibrés parce que le problème de départ n'était pas assez précis.
+
+## Prompt 2 : générer des Key Results candidats
+
+Une fois le contexte posé et validé, tu peux demander à Claude de générer des Key Results candidats. L'important : en demander plusieurs, sous différents angles, pas seulement les "meilleurs" selon lui.
+
+Le prompt :
+
+```
+Voici le contexte de mon cycle [Q] :
+
+Problème principal : [résumé du problème issu du dialogue FRAME]
+Baseline connue : [métriques actuelles sur les dimensions concernées]
+Périmètre d'action : [ce que l'équipe contrôle, les leviers disponibles]
+Contraintes : [ressources, dépendances techniques, dette connue]
+
+Objectif candidat : "[formulation en une phrase]"
+
+Génère 8 Key Results candidats pour cet objectif.
+Catégorise-les en 4 groupes de 2 :
+- Ciblage et activation (les bons utilisateurs arrivent et font le premier geste clé)
+- Adoption (les utilisateurs activés intègrent le produit dans leur usage)
+- Rétention (les utilisateurs reviennent et leur engagement progresse dans le temps)
+- Satisfaction (la perception de l'expérience, signal qualitatif)
+
+Pour chaque KR, donne :
+- la métrique exacte
+- la baseline supposée ou connue
+- la cible proposée
+- ton niveau de confiance estimé à 90 jours (entre 0 et 100 %)
+```
+
+Tu vas obtenir 8 Key Results structurés. Certains seront évidents. Certains te surprendront. Certains pointeront des angles que tu n'avais pas considérés.
+
+L'objectif de cette étape n'est pas de sélectionner les 3-4 meilleurs KRs immédiatement. C'est d'avoir la matière pour choisir. En voyant 8 options, tu identifies les angles morts : les dimensions de l'impact que tu n'avais pas mesurées, les métriques que ton stack analytics ne trace pas encore, les leviers que ton équipe ne contrôle pas directement.
+
+Les quatre catégories correspondent aux dimensions du framework TARS (Targeted, Adopted, Retained, Satisfied), détaillé dans l'article sur [les OKRs qui mesurent l'impact](/blog/okr-produit-impact). Un OKR n'a pas besoin de couvrir les quatre dimensions. Mais les avoir en face te force à justifier chaque angle mort.
+
+## Prompt 3 : challenger les KRs retenus
+
+Tu as sélectionné tes 3 ou 4 Key Results. Avant de les valider pour le cycle, un dernier passage avec Claude.
+
+Le prompt :
+
+```
+Voici mes Key Results retenus pour l'objectif "[objectif]" :
+
+KR1 : [formulation complète, métrique, baseline, cible]
+KR2 : [formulation complète, métrique, baseline, cible]
+KR3 : [formulation complète, métrique, baseline, cible]
+
+Pour chaque KR, évalue les points suivants :
+1. Ce KR peut-il être atteint sans résoudre le problème central ?
+2. Ce KR peut-il progresser sans qu'on livre quoi que ce soit ?
+3. La relation entre ce KR et l'objectif est-elle causale ou seulement corrélée ?
+4. Le niveau de confiance à 70 % est-il réaliste ou optimiste par défaut ?
+5. Quelle donnée manque pour établir la baseline avec certitude ?
+```
+
+Ce prompt est le test de réversibilité. Un bon Key Result doit répondre "non" aux deux premières questions. Si un OKR peut être "atteint" sans que le problème soit résolu, ce n'est pas un outcome. C'est un output déguisé.
+
+La troisième question (causalité ou corrélation) est souvent là où les KRs s'effondrent. "Le NPS passe de 32 à 45" est une cible légitime. Mais si ton levier d'action est l'onboarding, est-ce que l'onboarding impacte le NPS, ou principalement la rétention à 30 jours ? Si c'est la rétention, ton KR devrait mesurer la rétention.
+
+Claude va te sortir des réponses structurées sur chaque dimension. Certaines seront incomplètes ou basées sur des suppositions incorrectes. Ce qui compte, c'est qu'elles te forcent à justifier tes choix plutôt que de les valider par défaut.
+
+## Ce que ces prompts ne remplacent pas
+
+Deux éléments que ce workflow ne substitue pas.
+
+La baseline. Claude peut supposer des chiffres. Il ne connaît pas ton Amplitude, ton Mixpanel, ou ton entrepôt de données. Si tu ne sais pas où tu en es aujourd'hui sur chaque métrique, aucun prompt ne t'aidera. C'est ton travail avant toute session OKR : ouvrir les dashboards, noter les chiffres réels, rentrer dans le prompt avec des données exactes plutôt que des estimations confortables.
+
+Le choix. Claude peut générer 12 OKRs candidats bien formulés. Il ne peut pas décider lequel engage ton équipe pour 90 jours. Ce choix reste humain. Il dépend de ce que tu penses être atteignable, de la dynamique interne, de ce que la direction valorise, de ce que l'équipe peut absorber sans se disperser.
+
+Un PM qui utilise Claude pour ses OKRs n'externalise pas la stratégie. Il récupère le temps économisé sur la formulation pour se concentrer sur les décisions que lui seul peut prendre.
+
+En 2026, Asana a publié un guide sur le pilotage des OKRs avec l'IA. La conclusion qui s'en dégage : l'IA accélère la formulation, mais le suivi reste humain. Des KRs bien formulés ne servent à rien si personne ne regarde les chiffres chaque semaine.
+
+## La cadence de suivi
+
+L'écriture des OKRs n'est que la première étape. L'exécution tient ou tombe sur la cadence.
+
+Quelques pratiques concrètes :
+
+Revue hebdomadaire de 15 minutes sur chaque OKR. Avancement des KRs, blocages identifiés, ajustements tactiques de la semaine.
+
+Check-in mensuel avec les stakeholders. Les hypothèses de départ tiennent-elles ? Les conditions ont-elles changé depuis le début du cycle ?
+
+Rétrospective en fin de cycle. Quels KRs ont capturé l'impact réel ? Lesquels ont manqué l'essentiel ? Pourquoi ?
+
+Claude peut aider sur la rétrospective aussi. Un prompt simple en fin de cycle :
+
+```
+Voici nos OKRs du [Q] avec les résultats finaux : [données].
+
+Pour chaque KR manqué, propose les 3 hypothèses les plus probables.
+Pour chaque KR atteint, identifie le facteur principal de succès.
+Que retenir pour calibrer les OKRs du prochain cycle ?
+```
+
+Cette rétrospective structurée prend 20 minutes et alimente directement le cycle suivant. Si tu gères aussi la priorisation de ton backlog en parallèle des OKRs, [l'article sur la priorisation avec l'IA](/blog/prioriser-backlog-ia) donne les mêmes leviers appliqués au backlog plutôt qu'aux objectifs stratégiques.
+
+---
+
+Le Générateur OKR express arrive prochainement sur productcopilot.fr. Il prend ton contexte stratégique, applique FRAME, et génère des Key Results candidats pour chaque dimension d'impact. [Pack OKRs : accès anticipé](/packs/okrs).
