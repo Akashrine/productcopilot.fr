@@ -1,0 +1,133 @@
+---
+title: "OKR multi-squads : comment aligner sans créer des silos"
+description: "Trois squads avec des OKRs indépendants, c'est trois équipes qui optimisent dans des directions différentes. La méthode SOC pour aligner sans réunion de 3 heures."
+slug: "okr-alignment-squads-product-strategy"
+date: "2026-06-11"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["aligner OKRs squads", "OKR product strategy", "OKR cross-équipe produit"]
+relatedTool: ""
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Product Strategy"]
+---
+
+Un constat que revient régulièrement dans les équipes produit en croissance : plus on embauche, moins on avance vite. Deux fois plus de squads, et pourtant le produit n'évolue pas deux fois plus vite. Souvent même l'inverse.
+
+Ce n'est pas un problème de talent. Ce n'est pas un problème d'outils. C'est un problème d'alignement sur les priorités. Et les OKRs, mal utilisés, l'aggravent au lieu de le corriger.
+
+## Le piège des OKRs par silos
+
+La situation classique dans une organisation produit de 3 à 5 squads.
+
+Chaque squad définit ses OKRs au début du trimestre. Elle le fait sérieusement : ateliers, post-its, discussions avec l'engineering lead. Les OKRs sont bien rédigés, centrés sur des outcomes, avec des baselines. Tout le monde repart satisfait.
+
+Puis le trimestre avance. Et on découvre que la squad Onboarding optimise pour l'activation alors que la squad Core Product optimise pour l'engagement des utilisateurs déjà actifs. Les deux équipes tirent sur des leviers opposés. L'une veut réduire le temps avant la première valeur. L'autre veut augmenter la profondeur d'usage. Dans certains cas, elles se disputent les mêmes ressources engineering shared, les mêmes créneaux dans l'API, les mêmes fenêtres de release.
+
+Résultat : des OKRs verts dans chaque squad, et un produit qui n'a pas vraiment avancé sur sa promesse centrale.
+
+Ce n'est pas une erreur de rédaction des OKRs. C'est une erreur de structuration du cycle OKR.
+
+## Pourquoi les OKRs par équipe ne suffisent pas
+
+L'OKR a été pensé pour cascader. De l'entreprise vers les équipes, des équipes vers les squads. La logique est simple : l'objectif d'entreprise descend, chaque équipe définit sa contribution à cet objectif, les Key Results de l'entreprise deviennent les Objectives des équipes.
+
+En théorie.
+
+En pratique, trois choses cassent cette cascade.
+
+D'abord, l'Objective d'entreprise est souvent trop vague pour être opérationnel. "Devenir le leader du segment PME d'ici 18 mois" ne donne pas de signal clair sur ce que la squad Onboarding doit faire ce trimestre.
+
+Ensuite, les squads interprètent librement. Sans cadre partagé, chaque PM traduit l'objectif d'entreprise à travers le prisme de son équipe. L'une se concentre sur l'acquisition, l'autre sur l'activation, la troisième sur la rétention. Pas parce qu'elles ont choisi une répartition cohérente, mais parce que chacune a optimisé pour ce qu'elle contrôle.
+
+Enfin, les dépendances inter-squads ne sont pas modélisées dans les OKRs. Les Key Results d'une squad supposent que la squad voisine livrera quelque chose à un certain moment. Personne ne l'a écrit dans ses OKRs. Personne ne sera tenu responsable si ça ne se fait pas.
+
+## La méthode SOC appliquée aux OKRs
+
+SOC est un cadre d'organisation produit qui structure le travail en trois couches : Strategy, Operations, Communication.
+
+Appliqué aux OKRs, il donne un processus en trois niveaux qui répond à ces trois questions :
+
+- S - Strategy : quel problème l'entreprise veut-elle résoudre ce trimestre ? C'est le niveau des OKRs d'entreprise ou de direction produit.
+- O - Operations : quelle est la contribution de chaque squad à ce problème ? C'est le niveau des OKRs de squad.
+- C - Communication : comment les squads se coordonnent-elles pour éviter les conflits et les doublons ? C'est le niveau des dépendances inter-squads.
+
+La plupart des organisations font S et O. Elles sautent C.
+
+C'est là que les silos se créent.
+
+## En pratique : le cycle OKR en 3 sessions
+
+Voici le processus concret pour aligner les OKRs de 3 à 5 squads en un cycle de 4 heures, réparti sur deux jours.
+
+### Session 1 - Strategy (90 min, direction produit seule)
+
+Avant que les squads ouvrent un seul doc, la direction produit définit les 2-3 problèmes prioritaires pour le trimestre. Pas des objectifs. Des problèmes.
+
+Format : une fiche par problème, avec :
+- Le symptôme observable (ex : "les comptes activés en semaine 1 churnt à 30% en mois 2")
+- La métrique cible du trimestre (ex : "churn mois 2 passe de 30% à 18%")
+- La contrainte (ex : "sans refonte de l'architecture backend, qui est prévue Q3")
+
+Ces fiches deviennent les inputs des squads. Pas les OKRs finaux. Les inputs.
+
+### Session 2 - Operations (90 min, tous les PMs + engineering leads)
+
+Chaque squad reçoit les fiches et répond à une question : quelle est votre contribution au problème sur ce trimestre ?
+
+Deux règles strictes :
+1. Chaque squad ne peut pas prendre en charge plus d'un problème prioritaire comme OKR principal.
+2. Chaque Key Result doit identifier si une autre squad en est une dépendance.
+
+Le livrable de la session : un tableau de contribution partagé. Colonnes : problème prioritaire, squad responsable, Key Results proposés, dépendances squads.
+
+Ce tableau se lit en 5 minutes et révèle immédiatement les conflits, les doublons, et les angles morts.
+
+### Session 3 - Communication (60 min, PMs uniquement)
+
+On résout les conflits. On clarifie les dépendances. On transforme les dépendances tacites en Key Results explicites dans les squads concernées.
+
+Exemple : la squad Onboarding a besoin que la squad Platform livre une API d'événements pour mesurer son KR "taux de complétion de l'onboarding". On ne suppose pas que c'est dans le roadmap de Platform. On le demande. Si c'est oui, ça devient un KR dans l'OKR de Platform ce trimestre. Si c'est non, on adapte les KRs d'Onboarding.
+
+À la fin de ces trois sessions, chaque squad a des OKRs dont les Key Results sont soit entièrement autonomes, soit explicitement liés à un KR d'une autre squad. Plus de surprise en semaine 8 quand une dépendance ne se matérialise pas.
+
+## Les signaux qui indiquent un problème d'alignement OKR
+
+Ces signaux apparaissent en milieu de trimestre et indiquent que les OKRs ont été écrits en silos :
+
+**Les KRs de deux squads se contredisent.** La squad A veut augmenter le taux de conversion sur le checkout. La squad B veut réduire la surface UI pour améliorer la performance mobile. Les deux travaillent sur le même écran. Personne ne le savait au départ.
+
+**Une squad n'atteint pas ses KRs pour des raisons qu'elle ne contrôle pas.** Le classique "on n'a pas pu finir parce qu'on attendait [autre équipe]". Si ça arrive, c'est que les dépendances n'ont pas été modélisées en session 3.
+
+**Chaque squad a ses OKRs verts mais le produit n'avance pas.** C'est le signal le plus grave : les OKRs de chaque squad n'avaient pas de lien réel avec le problème prioritaire de l'entreprise. Session 1 n'a pas été faite sérieusement.
+
+**Les check-ins OKR hebdomadaires durent 90 minutes.** Parce que chaque squad présente son avancement sans lien avec les autres. Dans un bon système SOC, le check-in hebdomadaire dure 30 minutes. On parle des risques et des dépendances en danger, pas des métriques de chaque squad une par une.
+
+## Comment l'IA peut accélérer le processus de Session 1
+
+La session Strategy (Session 1) est souvent sous-préparée. On arrive avec des intuitions, des slides de la dernière QBR, et des opinions disparates sur ce qui compte vraiment ce trimestre.
+
+Claude peut accélérer la préparation de cette session. Un prompt utile avant d'entrer en salle :
+
+> "Voici les données de rétention du trimestre dernier, les retours utilisateurs de la dernière vague de recherche, et nos OKRs Q2 avec leur statut final. Donne-moi les 3 problèmes les plus critiques à résoudre ce trimestre. Pour chaque problème, propose une métrique de succès mesurable et une contrainte à ne pas oublier."
+
+Le résultat n'est pas un OKR. C'est le point de départ de Session 1. L'IA structure l'input, l'équipe fait les arbitrages.
+
+L'autre usage utile de l'IA dans ce processus : stress-tester les dépendances inter-squads. Une fois le tableau de contribution de Session 2 rempli, tu le passes à Claude avec la question : "quelles dépendances cachées ou conflits latents vois-tu dans ce tableau ?" La réponse révèle souvent deux ou trois risques que personne n'avait identifiés.
+
+## La différence entre OKRs alignés et OKRs agrégés
+
+Un dernier point qui change tout : l'alignement OKR ne signifie pas que chaque squad optimise le même indicateur.
+
+Des OKRs agrégés : chaque squad a "augmenter le taux de rétention" comme Objective. Toutes travaillent sur le même KR global. C'est du commandement descendant habillé en OKRs.
+
+Des OKRs alignés : chaque squad contribue à un problème commun via son propre levier. La squad Onboarding réduit le churn J30 via l'activation. La squad Core Product réduit le churn J90 via l'engagement. La squad Support réduit le churn lié aux bugs via le temps de résolution. Trois approches différentes, un problème partagé, une mesure d'impact commune en fin de trimestre.
+
+C'est ça, l'alignement. Pas l'uniformité. La cohérence.
+
+Si tu travailles sur la rédaction des Key Results eux-mêmes avant de t'attaquer à l'alignement inter-squads, l'article sur [comment mesurer l'impact plutôt que le travail dans tes OKRs](/blog/okr-produit-impact) couvre les fondations.
+
+---
+
+Le Pack OKRs arrive avec des templates de cycle OKR par structure d'équipe (1 squad, 2-3 squads, 4+ squads) et des prompts pour accélérer les sessions Strategy et Operations.
+
+[Voir le Pack OKRs](/packs/okrs)
