@@ -1,0 +1,202 @@
+---
+title: "OKRs et roadmap produit : comment aligner les deux"
+description: "OKRs d'un côté, roadmap de l'autre : le disconnect classique. Méthode pour construire une roadmap qui découle vraiment de tes objectifs."
+slug: "okr-roadmap-produit"
+date: "2026-06-13"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["OKR roadmap produit", "aligner OKR roadmap", "OKR product manager", "FRAME OKR produit"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Stratégie produit"]
+---
+
+La situation est banale.
+
+Les OKRs sont définis en janvier lors d'un atelier de deux jours. La roadmap existait avant. On essaie de faire correspondre les deux après coup. On finit par écrire des OKRs qui justifient ce qu'on avait déjà prévu de construire.
+
+Ce n'est pas de l'alignement. C'est de la justification a posteriori.
+
+## Pourquoi la roadmap finit par dicter les OKRs
+
+Dans la majorité des équipes produit, la roadmap est construite à partir de trois sources : les demandes des clients, les priorités commerciales et les dettes techniques. C'est une liste d'items qu'on a promis de livrer à des dates qu'on a acceptées sans vraiment les choisir.
+
+Les OKRs arrivent ensuite, pendant le planning trimestriel. L'équipe doit les définir "en partant des objectifs business". Mais la roadmap existe déjà. Les ingénieurs sont assignés. Les sprints sont calés.
+
+Alors on fait ce qui est naturel : on habille la roadmap en OKRs.
+
+- Objectif : "Améliorer la plateforme" - KR1 : Livrer la v2 de l'API d'ici fin mars.
+- Objectif : "Développer le produit" - KR1 : Lancer la feature d'export CSV.
+- Objectif : "Réduire la dette technique" - KR1 : Migrer 80% du codebase vers TypeScript.
+
+Aucun de ces KRs ne mesure quelque chose qui compte pour l'utilisateur. Tous mesurent du travail, pas des résultats.
+
+L'article [OKRs produit : comment mesurer l'impact, pas le travail](/blog/okr-produit-impact) traite de ce problème en profondeur. Mais reformuler les KRs ne suffit pas si la construction du trimestre reste dans le même ordre. Il faut inverser la séquence.
+
+## La séquence correcte
+
+Voici l'ordre qui fonctionne :
+
+1. Fixer les OKRs (ce qu'on cherche à changer)
+2. Identifier les initiatives qui permettent de bouger les KRs
+3. Construire la roadmap à partir de ces initiatives
+
+Dans cet ordre, et pas dans l'autre.
+
+Le problème : cet ordre demande de résister à la pression du backlog existant, des engagements clients et des convictions internes sur ce qu'il faut construire. Ce n'est pas naturel. C'est un acte de discipline.
+
+La question à poser en début de trimestre n'est pas "qu'est-ce qu'on a prévu de livrer ?" mais "qu'est-ce qu'on cherche à changer pour nos utilisateurs ?"
+
+## FRAME pour construire des OKRs qui connectent à la roadmap
+
+Le framework FRAME (Focus, Risques, Alignement, Mesure, Experimentation) est un outil de stratégie produit. Il s'applique directement à la construction des OKRs parce qu'il force à répondre aux bonnes questions dans le bon ordre.
+
+### Focus
+
+Quelle est la priorité absolue ce trimestre ?
+
+Une seule réponse. Pas trois. Si l'équipe ne peut pas formuler la priorité en une phrase, c'est qu'elle n'est pas encore claire.
+
+Le Focus devient l'Objective. Il doit décrire un changement dans la situation ou le comportement des utilisateurs, pas une action interne.
+
+Mauvais Focus : "Améliorer le produit"
+
+Bon Focus : "Réduire le churn des utilisateurs actifs dans les 30 premiers jours"
+
+La différence : le premier n'exclut rien, donc n'oriente rien. Le second crée une contrainte claire sur ce qui compte ce trimestre.
+
+### Risques
+
+Qu'est-ce qui pourrait empêcher d'atteindre cet objectif ?
+
+Liste les trois risques principaux. Ce sont eux qui orientent les Key Results.
+
+Pour l'exemple précédent :
+- Les utilisateurs ne trouvent pas la valeur du produit assez vite.
+- Le processus d'activation est trop long et complexe.
+- Les utilisateurs qui activent ne reviennent pas après la première session.
+
+Ces risques sont des hypothèses sur ce qui explique le churn. Si tu les résous, tu atteins l'objectif. Les KRs vont mesurer si tu les résous.
+
+Ce renversement est important : tu ne listes pas des tâches. Tu modélises les causes du problème.
+
+### Alignement
+
+Est-ce aligné avec la stratégie de l'entreprise ce trimestre ?
+
+Chaque OKR produit doit être traçable jusqu'à un objectif company. Si l'équipe se fixe des OKRs sans ce lien, elle travaille dans son coin. Le bilan trimestriel montre "globalement atteint" alors que le business n'a pas bougé.
+
+La question à poser : quel objectif company est-ce que cet OKR produit fait avancer ?
+
+Si tu ne peux pas y répondre, soit l'OKR est mal formulé, soit il ne devrait pas exister ce trimestre.
+
+Ce filtre élimine environ 40% des OKRs que les équipes produit s'auto-imposent. C'est un signe que la discipline d'alignement fonctionne, pas un échec de créativité.
+
+### Mesure
+
+Comment saura-t-on qu'on a réussi ?
+
+C'est ici que tu formules les Key Results. Un KR mesure un indicateur de résultat, jamais une action.
+
+Pour l'exemple précédent :
+- KR1 : Taux d'activation J7 passe de 34% à 50%
+- KR2 : Temps médian jusqu'à la première valeur passe de 8 min à 4 min
+- KR3 : Taux de retour J30 passe de 22% à 35%
+
+Ces trois KRs correspondent directement aux trois risques identifiés. KR1 mesure si les utilisateurs trouvent la valeur assez vite. KR2 mesure si l'activation est suffisamment courte. KR3 mesure si les utilisateurs reviennent.
+
+Construire les KRs à partir des risques garantit que chaque KR mesure quelque chose qui compte.
+
+### Experimentation
+
+Quelle hypothèse produit est-ce que tu testes ce trimestre ?
+
+Un OKR bien construit contient une hypothèse testable. "Si on fait X, alors Y changera." Cette hypothèse doit être vérifiable en 12 semaines.
+
+Exemple : "Si on simplifie l'onboarding à trois étapes maximum et qu'on envoie un email de nurturing au J3, alors le taux d'activation J7 passera au-dessus de 50%."
+
+La dimension d'expérimentation transforme l'OKR en outil de discovery. Tu n'exécutes pas un plan. Tu testes une hypothèse.
+
+## De l'OKR à l'initiative : la traduction concrète
+
+Une fois les OKRs construits avec FRAME, la question devient : quelles initiatives met-on dans la roadmap ?
+
+La règle : chaque initiative en roadmap doit être rattachée à au moins un Key Result actuel. Si un item du backlog ne sert aucun KR du trimestre, il n'a pas sa place cette période. Soit il attend le prochain trimestre, soit il révèle un OKR manquant.
+
+Pour l'exemple précédent :
+
+| Initiative | KR rattaché |
+|------------|-------------|
+| Refonte du flow d'onboarding (3 étapes) | KR2 : temps jusqu'à valeur |
+| Email de nurturing J3 | KR1 : taux activation J7 |
+| Checklist de première session | KR1 + KR2 |
+| Notifications de réactivation J14 | KR3 : retour J30 |
+| Refacto de la base de données | aucun KR |
+
+Ce dernier item n'a pas sa place dans le trimestre. Si la dette technique est urgente, elle doit générer son propre OKR avec un KR qui mesure ce que ça améliore concrètement (temps de chargement, taux d'erreurs, coût d'infrastructure).
+
+Cette discipline force les conversations importantes. "Pourquoi on construit ça ?" devient une question qui a une réponse chiffrée, pas intuitive.
+
+## Le suivi trimestriel sans theater
+
+Le point de blocage courant : les OKRs sont écrits en début de trimestre, puis consultés seulement au bilan final.
+
+Entre les deux, les réunions hebdomadaires deviennent des rapports de tâches. Les KRs ne bougent pas. Les OKRs sont "en cours". Tout le monde sait que la réalité diverge du plan, personne ne le dit.
+
+Un format de suivi efficace répond à une seule question : est-ce que les indicateurs bougent ?
+
+Weekly check (15 min maximum) :
+- Valeur actuelle de chaque KR vs. valeur cible (chiffre, pas commentaire)
+- Ce qui bloque la progression vers chaque KR en retard
+- La prochaine action prioritaire pour chaque KR bloqué
+
+La valeur réelle d'un KR doit être mise à jour chaque semaine. Si un KR ne peut pas être mis à jour hebdomadairement, c'est un signal : soit la donnée n'existe pas, soit personne ne la regarde, soit le KR est mal formulé.
+
+Mid-quarter (1h30) :
+- Revue des KRs avec données actualisées
+- Décision sur les initiatives qui ne fonctionnent pas
+- Ajustements si le contexte a changé de façon significative
+
+Le mid-quarter n'est pas un moment pour ajuster les ambitions à la baisse. C'est un moment pour changer la stratégie si les hypothèses ne se confirment pas. Un KR en retard à mi-trimestre n'est pas un problème de ressources. C'est un signal sur l'hypothèse.
+
+Bilan de fin de trimestre :
+- Score pour chaque KR (0 à 1)
+- Ce qu'on a appris sur les hypothèses
+- Ce qui passe dans le prochain cycle
+
+Un score de 0.7 avec des enseignements clairs est plus utile qu'un score de 1.0 dont personne ne comprend la cause.
+
+## Calibrer ses OKRs : ni trop haut, ni trop bas
+
+Un problème de calibration courant : les équipes fixent des OKRs atteignables à coup sûr pour éviter de mauvais scores.
+
+Le résultat : des OKRs qui ne challengent pas l'équipe, des KRs atteints à 100% chaque trimestre et une croissance qui stagne.
+
+L'autre extrême : des OKRs "moonshot" inatteignables qui démotivent après quatre semaines.
+
+La calibration correcte pour une équipe qui commence avec les OKRs : 70% de probabilité d'atteindre chaque KR au moment où on le fixe.
+
+Ça veut dire que sur trois KRs, deux seront atteints et un ne le sera pas. C'est un signal d'ambition saine, pas d'échec.
+
+Pour calibrer, regarder les deux ou trois trimestres précédents. Quel était l'écart entre ce qu'on s'était fixé et ce qu'on a atteint ? Intégrer cet écart dans les nouvelles ambitions.
+
+Si l'équipe n'a jamais utilisé les OKRs, commencer conservateur. L'objectif du premier trimestre est de créer le muscle du suivi, pas de tester la limite de l'équipe.
+
+## Ce que les OKRs ne remplaceront jamais
+
+Un dernier point, souvent oublié.
+
+Les OKRs sont un outil d'alignement et de focus. Ils ne remplacent pas :
+- La stratégie produit (pourquoi ce produit existe, pour qui, face à quelle alternative)
+- La discovery (comprendre les problèmes des utilisateurs avant de fixer les objectifs)
+- Le bon sens sur ce qui est faisable en 12 semaines
+
+Un OKR mal calibré crée plus de dégâts qu'une absence d'OKRs. Une équipe qui se fixe des KRs inatteignables passe son temps à se justifier plutôt qu'à progresser.
+
+Un KR sur lequel l'équipe n'a aucun levier direct n'est pas un KR. C'est un voeu.
+
+---
+
+Le Pack OKRs arrive bientôt sur productcopilot.fr. Il contient des templates de Key Results par type d'objectif produit, une structure de session planning trimestriel, et des exemples annotés d'OKRs mal et bien calibrés.
+
+[Voir le Pack OKRs](/packs/okrs)
