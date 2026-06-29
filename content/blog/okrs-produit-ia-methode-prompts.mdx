@@ -1,0 +1,130 @@
+---
+title: "Rédiger des OKRs produit avec l'IA : méthode et prompts"
+description: "Comment utiliser l'IA pour écrire des OKRs qui mesurent l'impact, pas les livrables. Méthode en 4 étapes + 5 prompts concrets pour product managers."
+slug: "okrs-produit-ia-methode-prompts"
+date: "2026-06-29"
+readingTime: "9 min"
+cluster: "okrs"
+keywords: ["OKR produit IA", "écrire OKRs product manager", "prompts OKR IA", "générer OKRs intelligence artificielle", "méthode OKR PM"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "IA"]
+---
+
+La plupart des PMs passent des heures à rédiger leurs OKRs en début de trimestre. Pas parce que c'est complexe. Parce que la page blanche frappe là aussi.
+
+L'IA résout une partie de ce problème. Pas en générant des OKRs à ta place, mais en accélérant le passage du "problème vague" à une formulation mesurable. Ce n'est pas l'IA qui choisit tes priorités. C'est toi. L'IA structure, reformule, et challenge ce que tu lui donnes.
+
+Ce guide couvre la méthode en 4 étapes pour rédiger des OKRs produit avec l'IA, avec les prompts exacts pour chaque phase.
+
+## Partir du problème, pas du livrable
+
+Avant de donner quoi que ce soit à l'IA, une question préalable : est-ce que tu pars d'un problème ou d'une solution déjà choisie ?
+
+Si tu tapes dans Claude ou ChatGPT "écris-moi des OKRs pour l'onboarding", tu vas obtenir quelque chose de plausible et d'inutile. L'IA n'a aucun contexte sur ce qui dysfonctionne dans ton onboarding, qui est affecté, et ce que tu veux réellement changer.
+
+Le bon point de départ ressemble à ça :
+
+"On a un problème d'activation sur les nouveaux comptes B2B. 40 % des comptes créés ne font pas leur première action clé dans les 7 premiers jours. Le taux chute à 25 % après 30 jours. On pense que le problème vient de la complexité perçue des 3 premières étapes du setup, pas du produit lui-même."
+
+Avec ce contexte, tu obtiens quelque chose d'utilisable. Sans ce contexte, tu obtiens du bruit générique habillé en objectif.
+
+L'erreur fréquente : donner un livrable à l'IA et lui demander de l'habiller en objectif. "On veut lancer le nouveau flow d'onboarding, génère des OKRs pour ça." L'IA sort des Key Results centrés sur la livraison. Tu as l'impression d'avoir des OKRs. Tu as un plan de charge avec des chiffres.
+
+Prompt pour formuler l'objectif depuis le problème :
+
+> "Voici le problème qu'on cherche à résoudre ce trimestre : [description du problème]. Notre baseline actuelle : [métriques]. Les utilisateurs affectés : [persona + contexte]. Propose 3 formulations d'objectif OKR qui partent de l'impact sur les utilisateurs, sans mentionner de livrable. Chaque objectif doit être testable : en fin de trimestre, on doit pouvoir dire si on l'a atteint ou pas."
+
+## Générer des Key Results avec TARS
+
+Une fois l'objectif formulé, vient le moment le plus technique : les Key Results. C'est là que la plupart des OKRs déraillent. On écrit ce qu'on va faire, pas ce qu'on va mesurer.
+
+Le framework TARS donne une structure pour ne pas oublier les dimensions d'impact importantes. Quatre axes :
+
+Targeted : les bons utilisateurs arrivent et s'activent. Tes métriques d'acquisition et d'activation.
+
+Adopted : ils utilisent ce que tu as construit. L'adoption réelle d'une feature ou d'un workflow.
+
+Retained : ils reviennent. La rétention et la fréquence d'usage dans le temps.
+
+Satisfied : ils en sont satisfaits. NPS, CSAT, volume de tickets, qualitatif.
+
+Tous les Key Results d'un OKR n'ont pas besoin de couvrir les quatre axes. Mais TARS comme checklist te force à sortir des métriques de livraison et à regarder ce qui compte.
+
+Pour un OKR sur l'onboarding B2B, tu peux demander à l'IA de générer des KRs sur chaque dimension :
+
+> "Pour l'objectif suivant : [objectif], génère 4 Key Results qui couvrent les 4 dimensions TARS : Targeted (activation des bons profils), Adopted (usage des fonctions clés), Retained (rétention à 30 et 90 jours), Satisfied (score de satisfaction mesuré). Pour chaque KR, inclus : la baseline actuelle en pourcentage ou valeur, la cible ambitieuse, et l'instrument de mesure. Évite les verbes de livraison : pas de 'livrer', 'développer', 'déployer'."
+
+Ce qui sort est une base de travail, pas un résultat final. Tu vas probablement retirer un KR, modifier un autre, et ajuster les cibles selon ce que ton équipe peut réellement influencer en un trimestre.
+
+Un point que l'article sur les [OKRs et la mesure de l'impact](/blog/okr-produit-impact) couvre en détail : sans baseline, un Key Result ne veut rien dire. Si tu ne sais pas où tu en es aujourd'hui, ton premier travail avant de rédiger l'OKR, c'est d'aller chercher ce chiffre.
+
+## Calibrer l'ambition : ni trop facile, ni irréaliste
+
+L'ambition d'un OKR se situe autour de 50 % de confiance. Si l'équipe est sûre d'atteindre l'objectif à 90 %, il n'est pas assez ambitieux. Si l'équipe pense que c'est mission impossible, les gens décrochent avant la fin du trimestre.
+
+L'IA peut jouer le rôle du challenger. Tu lui donnes tes Key Results rédigés, tu lui demandes de les challenger sur le niveau d'ambition.
+
+> "Voici mes Key Results pour le trimestre : [liste]. Notre baseline : [données]. Mon équipe : [composition, taille]. Durée : 12 semaines. Évalue chaque KR sur deux dimensions : est-ce trop facile (plus de 80 % de confiance), trop ambitieux (moins de 20 % de confiance), ou dans la zone cible (40 à 60 %) ? Pour chaque écart identifié, explique le raisonnement et propose un ajustement de cible."
+
+Le résultat de ce prompt ne remplace pas ta connaissance de l'équipe et du contexte. Il t'aide à sortir de ton angle mort. Quand tu vis un projet depuis six mois, tu as du mal à voir si ta cible est ambitieuse ou confortable. L'IA n'a pas ce biais d'ancrage.
+
+Un cas concret : une squad travaille sur la rétention d'une app mobile. Elle écrit "le taux de rétention à J7 passe de 42 % à 55 %". En apparence ambitieux. En réalité, la moyenne secteur est à 60 % et l'équipe a déjà livré deux améliorations clés le trimestre précédent. Ce KR est confortable. L'IA, à qui tu donnes ces données, te dit que 65 % serait un meilleur point de départ pour atteindre le "50 % de confiance" qui caractérise un bon OKR.
+
+## Passer les OKRs au filtre FRAME
+
+Avant de committer tes OKRs pour le trimestre, un dernier passage avec FRAME.
+
+FRAME est un framework de validation stratégique qui couvre cinq dimensions : Focus, Risques, Alignement, Mesure, Experimentation.
+
+Appliqué aux OKRs, il force cinq questions.
+
+Focus : qu'est-ce qu'on arrête implicitement de faire ? Tout OKR crée des arbitrages. Un OKR sur l'activation B2B signifie qu'on ne travaille pas sur la rétention enterprise ce trimestre. C'est un choix. Il doit être assumé, pas subi.
+
+Risques : quels sont les trois risques principaux sur chaque Key Result ? Un KR "churn à 30 jours passe de 22 % à 12 %" peut être bloqué par une cause technique hors du scope produit, par une saisonnalité, ou par une décision commerciale qui injecte de mauvais profils. Ces risques méritent d'être nommés avant de commencer.
+
+Alignement : ces OKRs s'alignent-ils avec les objectifs de la direction et des autres équipes ? Un OKR qui tire dans la direction opposée d'une initiative marketing lancée le même trimestre va créer des frictions à mi-parcours.
+
+Mesure : as-tu les instruments pour mesurer ces KRs dès le premier jour ? Si la réponse est non pour un KR, c'est un signal d'alerte. Tu ne peux pas piloter ce que tu ne mesures pas.
+
+Experimentation : pour chaque Key Result, quelle est la première expérience à lancer ? Un OKR sans hypothèse testable dans les deux premières semaines n'est pas opérationnel, c'est un voeu pieux.
+
+Prompt FRAME pour tes OKRs :
+
+> "Pour mes OKRs suivants : [liste]. Applique le filtre FRAME. Pour chaque dimension, donne : (Focus) les 2 à 3 renoncements implicites les plus importants ; (Risques) les 3 risques les plus probables et une hypothèse de mitigation pour chacun ; (Alignement) les tensions potentielles avec des objectifs d'autres équipes ; (Mesure) les instruments de mesure à mettre en place avant de commencer ; (Experimentation) une expérience à lancer dans les deux premières semaines pour au moins un des Key Results."
+
+Ce prompt est dense. Adapte-le selon ce dont tu as besoin. Si l'alignement n'est pas un sujet ce trimestre parce que tu travailles en isolation, ignore cette dimension. Le point est d'utiliser FRAME comme checklist, pas comme rituel obligatoire.
+
+## Les 5 prompts à garder dans tes templates
+
+Pour résumer la méthode, voici les cinq prompts à stocker dans ton espace de travail.
+
+Prompt 1 : formuler l'objectif depuis le problème.
+Input : description du problème, baseline, persona, enjeu business.
+Output : 3 formulations d'objectif centrées sur l'impact, sans livrable.
+
+Prompt 2 : générer des Key Results avec TARS.
+Input : objectif retenu, baseline métriques, dimensions TARS prioritaires.
+Output : 3 à 4 KRs mesurables avec cible et instrument de mesure.
+
+Prompt 3 : calibrer l'ambition.
+Input : KRs rédigés, taille équipe, durée du cycle, baseline.
+Output : évaluation du niveau de confiance par KR et ajustements suggérés.
+
+Prompt 4 : audit FRAME des risques.
+Input : OKRs complets, contexte organisation, équipes impliquées.
+Output : risques, renoncements, alignement inter-équipes, instruments de mesure manquants.
+
+Prompt 5 : détecter les vanity metrics.
+Input : liste de Key Results finalisée.
+Output : identification des KRs qui mesurent l'activité interne plutôt que l'impact utilisateur, reformulations suggérées.
+
+Ce cinquième prompt est souvent le plus utile au moment de la review trimestrielle. Quand tu regardes tes KRs du trimestre passé pour rédiger les suivants, tu vois rapidement lesquels étaient des vanity metrics déguisés. L'IA fait cette lecture critique de façon systématique et sans ménagement.
+
+Un conseil d'utilisation : ne donne jamais tous ces prompts à la suite dans une seule conversation. Chaque prompt mérite sa propre session, avec le contexte approprié. La qualité de l'output dépend de la qualité de l'input. Une session surchargée produit des réponses de surface.
+
+## Le Générateur OKR express
+
+Le Générateur OKR express sur productcopilot.fr automatise cette méthode. Tu décris le problème, tu renseignes ta baseline et tes contraintes d'équipe. Il génère des Key Results calibrés sur TARS, avec un audit FRAME intégré.
+
+[Accéder au Générateur OKR express](/outils/generateur-okr)
