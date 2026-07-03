@@ -1,0 +1,182 @@
+---
+title: "Écrire ses OKRs produit avec l'IA : 5 prompts pour PMs"
+description: "Utilise l'IA pour écrire des OKRs centrés sur les résultats, pas les livrables. 5 prompts concrets testés sur des cas réels de PMs."
+slug: "okr-ia-prompts-product-manager"
+date: "2026-07-03"
+readingTime: "9 min"
+cluster: "okrs"
+keywords: ["OKR produit IA", "écrire OKR avec IA", "prompts OKR product manager", "ChatGPT OKR", "OKR impact produit"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "IA"]
+---
+
+L'IA peut générer tes OKRs en 30 secondes. Et si tu lui poses la mauvaise question, elle te produira 30 secondes de mauvais OKRs.
+
+Elena Verna a nommé ce phénomène "AI Confidence Theater" dans sa newsletter du 2 juillet 2026 (co-publiée dans Lenny's Newsletter). Elle décrit des équipes qui exhibent des workflows IA impressionnants en démo, mais dont les résultats réels sont indistinguables du travail d'avant. Son diagnostic s'applique directement aux OKRs : demander à l'IA d'habiller un plan de charges en Key Results bien formulés n'est pas du progrès. C'est du théâtre.
+
+Son prescription pour les PMs est sans équivoque : "Focus on outcomes. Show your leadership what your team can move and use AI to amplify that. Don't just start with AI and shrug your way to how it connects to business impact."
+
+Le problème n'est pas l'IA. C'est la question qu'on lui pose.
+
+"Génère-moi 3 OKRs pour mon équipe produit" produit des objectifs génériques avec des verbes de livraison bien emballés. "Transforme cet objectif stratégique en Key Results qui mesurent des changements de comportement utilisateur, et rejette toute formulation orientée livrable" produit quelque chose d'utilisable.
+
+Ce guide couvre cinq prompts. Chacun correspond à une étape du travail réel : écrire ses OKRs de zéro, distinguer output et outcome, attaquer ses Key Results, vérifier leur couverture, et tester la cohérence avec la roadmap.
+
+## Ce que l'IA fait bien et ce qu'elle fait mal
+
+Avant les prompts, un recadrage utile.
+
+L'IA fait bien trois choses pour les OKRs. Elle reformule un objectif vague en langage mesurable. Elle propose des angles de mesure que tu n'avais pas envisagés, souvent parce qu'ils impliquent des données que tu n'as pas encore. Et elle joue le rôle du sceptique : quand tu lui demandes d'attaquer tes Key Results, elle le fait sans ménagement.
+
+L'IA fait mal deux choses. Elle ne connaît pas ta baseline : si tu ne lui donnes pas tes métriques actuelles, elle invente des chiffres plausibles mais sans fondement. Et elle optimise pour la forme, pas pour la stratégie : elle produit des Key Results syntaxiquement corrects qui mesurent la mauvaise chose.
+
+La règle de base est simple. Donne-lui du contexte. Produit, utilisateurs, métriques actuelles, problème à résoudre. Sans ces éléments, tu obtiens des OKRs génériques de product management déguisés en OKRs produit.
+
+## Prompt 1 : transformer une stratégie en OKRs
+
+Ce prompt s'utilise quand tu as un objectif trimestriel dans la tête, ou dans un brief de direction, mais que tu ne sais pas comment le structurer en OKR avec des Key Results centrés sur les résultats.
+
+```
+Tu es un product manager senior. J'ai un objectif stratégique pour le prochain trimestre.
+
+Contexte :
+- Produit : [décris ton produit en 2 lignes]
+- Utilisateurs cibles : [segment principal]
+- Métrique principale actuelle : [chiffre actuel, ex : taux d'activation 34%]
+- Problème à résoudre : [décris le problème utilisateur ou business]
+
+Objectif trimestriel : [ton objectif]
+
+Génère 3 OKRs. Pour chaque OKR :
+- Un objectif qualitatif et inspirant (aucun chiffre dans l'objectif lui-même)
+- 3 Key Results qui mesurent des changements de comportement utilisateur ou des résultats business
+- Un niveau de confiance estimé (entre 40% et 70%)
+
+Contrainte absolue : rejette tout Key Result qui commence par un verbe de livraison
+(développer, lancer, déployer, finaliser, migrer, créer, rédiger).
+Si tu proposes un tel Key Result, remplace-le automatiquement avant de me le présenter.
+```
+
+Ce qui change par rapport à un prompt générique : la contrainte absolue sur les verbes de livraison. Sans elle, l'IA produit des OKRs syntaxiquement propres mais orientés output.
+
+Le niveau de confiance demandé entre 40% et 70% est aussi important. Si l'IA propose des OKRs avec 90% de confiance, tes objectifs ne sont pas assez ambitieux. Le sweet spot est l'inconfort mesuré : l'équipe pense que c'est atteignable, mais ce n'est pas garanti.
+
+## Prompt 2 : distinguer output et outcome dans tes Key Results
+
+Ce prompt s'utilise quand tu as déjà des Key Results écrits, que ce soit par toi ou générés avec le prompt précédent, et que tu veux les trier.
+
+```
+Voici mes Key Results actuels :
+[colle tes Key Results]
+
+Pour chacun, classe-le comme :
+- OUTPUT : mesure un livrable ou une activité de l'équipe
+- OUTCOME : mesure un changement de comportement ou de résultat côté utilisateur ou business
+
+Pour chaque OUTPUT identifié :
+1. Explique pourquoi c'est un output et pas un outcome
+2. Propose une reformulation en outcome qui conserve l'intention stratégique sous-jacente
+3. Indique quelle donnée manque probablement pour mesurer cet outcome (et comment l'obtenir)
+```
+
+En pratique, ce prompt révèle que 60 à 70% des Key Results que les équipes produit écrivent sont des outputs déguisés. Ce n'est pas une honte, c'est structurel. Les PMs passent leur temps à penser en livrables. Les OKRs leur demandent de penser en résultats. Ce changement de perspective n'est pas naturel, et l'IA sert d'arbitre externe.
+
+La troisième question est la plus utile : "quelle donnée manque pour mesurer cet outcome ?" Elle force le travail de baseline, l'étape que les équipes sautent systématiquement. Si tu n'as pas ta data de départ, aucun Key Result ne peut être évalué honnêtement en fin de trimestre. L'[article sur les OKRs produit et le framework TARS](/blog/okr-produit-impact) revient en détail sur ce prérequis.
+
+## Prompt 3 : le stress test OKR
+
+Ce prompt s'utilise quand tu as un OKR presque finalisé et que tu veux l'attaquer avant de le présenter à ta direction ou à tes stakeholders.
+
+```
+Tu es un investisseur sceptique qui évalue mes OKRs. Voici mon objectif et mes Key Results :
+
+[colle ton OKR complet]
+
+Joue l'avocat du diable. Pose-moi les 5 questions les plus difficiles pour démontrer que :
+1. Ces Key Results peuvent être atteints sans que l'objectif soit réellement rempli
+2. Ces chiffres sont des vanity metrics déguisés
+3. L'équipe pourrait optimiser ces métriques sans créer de valeur réelle pour les utilisateurs
+4. La baseline est trop floue pour évaluer honnêtement le succès en fin de trimestre
+5. Des facteurs externes pourraient fausser les résultats à la hausse ou à la baisse
+
+Pour chaque faille identifiée, propose une correction ou une reformulation qui la comble.
+
+Ne sois pas gentil.
+```
+
+La dernière instruction n'est pas anecdotique. Par défaut, les LLMs adoucissent leurs critiques. Sur un document que tu as écrit, la tendance est encore plus marquée : le modèle détecte ton investissement et optimise pour ne pas te frustrer. L'instruction explicite change le registre.
+
+Ce prompt est particulièrement utile avant une revue trimestrielle. Mieux vaut recevoir les questions difficiles de l'IA à froid que de les entendre en réunion sans réponse préparée.
+
+Un exemple concret : une squad e-commerce écrit comme Key Result "le taux de conversion checkout passe de 2,1% à 3,5%". Le stress test révèle que ce chiffre peut grimper simplement en modifiant le segment d'utilisateurs analysé, sans toucher au produit. Le Key Result doit être resserré : "le taux de conversion checkout pour les utilisateurs mobile nouvelle acquisition passe de 1,8% à 3%". Scope précis, baseline claire, manipulation difficile.
+
+## Prompt 4 : vérifier la couverture avec le framework TARS
+
+Ce prompt s'utilise pour t'assurer que tes Key Results couvrent les bons angles d'impact sans trous stratégiques.
+
+Le framework TARS définit quatre dimensions d'impact produit. Targeted : les bons utilisateurs arrivent (acquisition, activation). Adopted : ils utilisent ce qu'on a construit (adoption, usage de la feature). Retained : ils reviennent (rétention, fréquence d'usage). Satisfied : ils en sont satisfaits (NPS, CSAT, volume de support). L'[article sur les OKRs produit](/blog/okr-produit-impact) détaille comment construire des Key Results sur chaque dimension avec des exemples chiffrés.
+
+```
+Analyse mes Key Results en utilisant le framework TARS :
+- Targeted : acquisition et activation (les bons utilisateurs arrivent-ils ?)
+- Adopted : adoption et usage (utilisent-ils ce qu'on a construit ?)
+- Retained : rétention et fréquence (reviennent-ils ?)
+- Satisfied : perception et satisfaction (NPS, CSAT, volume de support)
+
+Mes Key Results :
+[colle tes Key Results]
+
+Pour chaque dimension TARS :
+1. Indique si elle est couverte par au moins un Key Result
+2. Si elle est absente, pose cette question : est-ce un choix stratégique assumé ou un angle mort ?
+3. Si c'est un angle mort, propose un Key Result supplémentaire pour la couvrir
+
+Ne me demande pas de couvrir toutes les dimensions si ce n'est pas pertinent pour mon objectif
+trimestriel. Le but est d'identifier les oublis non intentionnels, pas d'imposer
+une symétrie artificielle.
+```
+
+La dernière contrainte est essentielle. Un OKR centré sur l'acquisition n'a pas besoin d'un Key Result sur la rétention si la rétention n'est pas un enjeu ce trimestre. L'IA, sans instruction, a tendance à vouloir couvrir toutes les dimensions pour paraître exhaustive. Ce prompt la force à distinguer choix stratégique et angle mort.
+
+## Prompt 5 : tester la cohérence OKR / roadmap
+
+Ce prompt s'utilise une fois tes OKRs finalisés, pour vérifier que ta roadmap trimestrielle les sert réellement.
+
+```
+J'ai mes OKRs pour le prochain trimestre et ma liste de chantiers roadmap.
+
+OKRs :
+[colle tes OKRs complets]
+
+Chantiers roadmap planifiés :
+[liste tes initiatives ou epics du trimestre]
+
+Pour chaque chantier roadmap :
+1. Identifie à quel Key Result il contribue (si applicable)
+2. Estime sa contribution : forte, partielle, ou nulle
+3. Si un chantier n'a aucun lien avec tes Key Results, signale-le
+
+Pour chaque Key Result :
+1. Identifie quels chantiers roadmap y contribuent
+2. Si aucun chantier ne contribue à un Key Result, signale-le comme alerte :
+   soit tu as oublié un chantier, soit ton Key Result est déconnecté de ce que l'équipe fait
+
+Produis un tableau de correspondance OKR / roadmap à la fin.
+```
+
+Ce prompt est le plus opérationnel des cinq. Il force une conversation souvent évitée : les équipes écrivent leurs OKRs d'un côté et leur roadmap de l'autre, sans jamais les réconcilier formellement. Le résultat classique en fin de trimestre : la roadmap est livrée à 85%, les OKRs sont atteints à 40%. Les deux exercices ont été faits en parallèle au lieu d'être faits en séquence.
+
+L'IA ne résout pas ce problème structurel. Elle le rend visible, et elle le fait en 2 minutes au lieu d'une réunion de 90 minutes.
+
+## Utiliser les 5 prompts dans l'ordre
+
+Le bon enchaînement : commence par le prompt 1 si tu pars d'une page blanche. Passe au prompt 2 pour trier les Key Results générés. Lance le prompt 3 pour attaquer le résultat. Utilise le prompt 4 pour vérifier la couverture TARS. Termine par le prompt 5 une fois la roadmap du trimestre connue.
+
+Tu peux aussi entrer dans la séquence en cours de route. Si tu as déjà des OKRs écrits, commence directement au prompt 2. Si tu as des OKRs et une roadmap mais aucun pont entre les deux, commence au prompt 5.
+
+Les cinq prompts fonctionnent sur n'importe quel LLM : Claude, ChatGPT, Gemini. La qualité des sorties dépend de la qualité du contexte que tu fournis, pas du modèle.
+
+---
+
+Le Générateur OKR express arrive bientôt sur productcopilot.fr. Tu entres ton objectif trimestriel et tes métriques clés, tu obtiens 3 OKRs avec stress test TARS intégré. En attendant, les 5 prompts de cet article font le même travail, étape par étape.
