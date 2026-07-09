@@ -1,0 +1,126 @@
+---
+title: "OKRs produit avec l'IA : méthode et prompts testés"
+description: "Rédiger des OKRs depuis une page blanche prend 2h. Le workflow IA pour formuler, challenger et valider tes Key Results en moins d'une heure."
+slug: "okr-produit-ia-prompts"
+date: "2026-07-09"
+readingTime: "9 min"
+cluster: "okrs"
+keywords: ["OKR IA product manager", "écrire ses OKRs produit", "prompts OKR produit", "Key Result produit", "OKR PM IA 2026"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "IA"]
+---
+
+La page blanche de début de trimestre. Un Objectif vague hérité du dernier planning. Deux Key Results qui ressemblent à des features de roadmap.
+
+C'est là que la plupart des cycles OKR se perdent. Pas dans le suivi. Pas dans la revue. Dans la formulation.
+
+L'IA ne remplace pas la réflexion stratégique derrière un OKR. Mais elle compresse les deux étapes les plus lentes : la mise en mots et le stress-test.
+
+## Pourquoi la formulation est le vrai goulot
+
+Un OKR mal formulé génère de la coordination. Le PM devient l'intermédiaire qui réexplique le "pourquoi" à chaque réunion de synchro, parce que l'intention n'est pas lisible dans le Key Result lui-même.
+
+Exemple. Tu veux "améliorer l'onboarding". Mais "améliorer" n'est pas mesurable. Tu penses à "taux de complétion de l'onboarding". De combien ? Depuis quelle baseline ? Et ce comportement intermédiaire mesure-t-il vraiment l'impact, ou seulement un clic de plus dans un flow ?
+
+Ce travail de traduction, fait seul, prend du temps. Les planning sessions OKR finissent avec des Key Results qui ont l'air propres mais ne résistent pas au premier mois. La squad ne sait pas si elle avance. Le PM réexplique. Les réunions s'accumulent.
+
+Voilà le vrai coût d'un OKR mal formulé : la coordination qu'il génère après coup. L'IA réduit le coût de la mise en mots pour que tu passes plus vite à la conversation stratégique, qui est la vraie valeur de ton rôle.
+
+## Ce que l'IA fait dans ce cycle (et ce qu'elle ne remplace pas)
+
+L'IA génère des variantes. Vite, sans fatigue, sans ego attaché à la première formulation.
+
+Tu lui donnes un contexte précis : le problème, les données disponibles, le segment cible, la contrainte de temps. Elle sort trois à cinq formulations d'Objectifs ou de Key Results. Tu choisis, tu ajustes, tu gardes ce qui est juste.
+
+Elle challenge aussi. Tu lui demandes d'adopter la posture d'un CFO sceptique ou d'un Engineering Lead qui refuse de s'engager sur une métrique invérifiable. Elle identifie les angles faibles de tes Key Results avant que tu les présentes.
+
+Ce qu'elle ne fait pas : décider de la stratégie. Elle ne sait pas quelle dimension est prioritaire pour ton produit ce trimestre. Elle peut générer un OKR sur la rétention et un autre sur l'acquisition simultanément. Elle ne sait pas lequel est juste. Ce choix implique une conversation avec ta CPO, ton CEO, ou ton équipe commerciale. Aucun prompt ne remplace cette conversation.
+
+Elle ne connaît pas non plus la capacité de ton équipe. Un KR à 50 % de confiance pour une squad de deux développeurs, ça ne ressemble pas au même engagement qu'une squad de six. Elle ne voit pas la dette technique, les dépendances inter-équipes, ou les crises qui vont consommer deux semaines de bandwidth.
+
+Le workflow IA comprime la mécanique de formulation. Le jugement stratégique sur quoi viser reste le tien.
+
+## Le workflow en 4 étapes
+
+### Étape 1 : préparer le contexte (10 minutes)
+
+Avant de commencer à prompter, prépare un bloc de contexte. Deux paragraphes suffisent.
+
+Format utile :
+
+> "Notre produit est [description courte]. Nos utilisateurs cibles ce trimestre sont [segment]. Le problème principal qu'on cherche à résoudre est [problème spécifique]. Nos métriques actuelles : [liste avec chiffres]. L'horizon de cet OKR est [durée, typiquement 90 jours]."
+
+Sans ce contexte, l'IA va sortir des OKRs génériques. "Augmenter l'adoption de la feature X de 20 %." Ce n'est pas mauvais. Ce n'est pas le tien. Les meilleurs OKRs générés par l'IA ressemblent au contexte que tu lui donnes.
+
+### Étape 2 : formuler l'Objectif (15 minutes)
+
+Un bon Objectif OKR décrit un état futur désirable, pas un chantier à mener.
+
+Prompt à utiliser :
+
+> "À partir de ce contexte, formule 3 candidats d'Objectif OKR pour le prochain trimestre. Chaque Objectif doit : décrire un état futur pour nos utilisateurs cibles, être inspirant sans être vague, ne contenir aucun livrable technique. Présente-les dans un tableau avec pour chaque candidat : l'Objectif, la tension stratégique qu'il assume, et la question à laquelle il répond."
+
+Le tableau force l'IA à argumenter chaque proposition. Tu choisis l'Objectif qui correspond au vrai problème du trimestre, pas celui qui semble le plus ambitieux sur le papier.
+
+### Étape 3 : générer les Key Results avec TARS (20 minutes)
+
+Une fois l'Objectif choisi, tu génères les Key Results. Utilise le framework TARS comme grille de lecture.
+
+TARS structure quatre dimensions d'impact : Targeted (les bons utilisateurs arrivent), Adopted (ils utilisent le produit), Retained (ils reviennent), Satisfied (ils en sont satisfaits). Pour une explication complète de TARS avec des exemples par dimension, voir [OKRs produit : comment mesurer l'impact, pas le travail](/blog/okr-produit-impact).
+
+Prompt à utiliser :
+
+> "À partir de l'Objectif [X] et du contexte fourni, génère 4 à 5 Key Results. Utilise le framework TARS pour couvrir au moins trois des quatre dimensions (Targeted, Adopted, Retained, Satisfied). Chaque KR doit : être mesurable avec une baseline et une cible chiffrée, ne pas mentionner de livrable technique, représenter un niveau de confiance autour de 50 % (ambitieux mais atteignable)."
+
+Vérifie deux choses sur la liste générée : tu as bien les données pour mesurer ces métriques aujourd'hui ? Et un des KRs ressemble encore à un livrable déguisé ?
+
+### Étape 4 : le stress-test adversarial (15 minutes)
+
+C'est l'étape la plus utile et la moins pratiquée.
+
+Prompt :
+
+> "Adopte la posture d'un CFO qui gère les budgets et d'un Engineering Lead qui doit s'engager sur ces métriques. Critique chacun des Key Results suivants : [liste]. Pour chaque KR, indique (1) si la métrique est vraiment mesurable avec les outils standards d'une équipe produit, (2) si la cible est réaliste ou décourageante, (3) si le KR peut être atteint sans réellement résoudre le problème sous-jacent. Sois direct et sans concession."
+
+Ce prompt génère les mêmes objections que tu entendras en quarterly review. Mieux vaut les avoir maintenant que devant ton CPO.
+
+Tu peux aussi utiliser l'IA pour les check-ins hebdomadaires pendant le trimestre. Format de check-in :
+
+> "Voici l'état de nos OKRs en semaine [N]. KR1 : [baseline / cible / état actuel]. KR2 : [baseline / cible / état actuel]. KR3 : [baseline / cible / état actuel]. Identifie les KRs en retard ou en risque, les signaux faibles à surveiller, et les questions à poser à l'équipe lors du prochain point."
+
+Si un KR ne bouge pas depuis deux semaines, le diagnostic IA aide à formuler les bonnes questions : problème de livraison, de mesure, ou de formulation initiale ?
+
+## La donnée zéro : trouver sa baseline avant de prompter
+
+L'IA ne connaît pas tes métriques actuelles. Sans baseline, elle va générer des cibles arbitraires ou inventer des chiffres plausibles qui n'ont aucun ancrage dans ta réalité.
+
+Avant de lancer le workflow, ouvre ton outil analytics. Note les valeurs actuelles de : taux d'activation, taux de complétion de l'onboarding si applicable, rétention J7 et J30, NPS ou CSAT le plus récent, fréquence d'usage de la feature ciblée.
+
+Cinq minutes dans Amplitude, Mixpanel, ou directement en base. Ces chiffres transforment un KR vague en engagement mesurable.
+
+Sans baseline, "passer de X à Y" n'a pas de sens. Avec baseline, le KR oblige à choisir un cap précis et à assumer l'ambition. Un KR sans baseline n'est pas un Key Result. C'est une intention. Les intentions ne pilotent pas une squad.
+
+## 3 points de départ pour des contextes fréquents
+
+Trois variations du prompt de contexte selon la situation produit.
+
+Pour un OKR d'activation en SaaS B2B :
+
+> "Notre produit est un outil de pilotage de projet pour les équipes marketing des PME. On vient de refondre l'onboarding. Le problème : 60 % des nouveaux comptes n'utilisent pas la feature principale dans les 14 premiers jours. Baseline : taux d'activation J14 à 40 %, taux de complétion onboarding à 35 %, churn J30 à 22 %. Génère un OKR Q3 avec l'Objectif et 4 KRs TARS."
+
+Pour un OKR d'adoption d'une feature IA :
+
+> "On a lancé une feature de résumé automatique des réunions dans notre app collaborative. Disponible depuis 8 semaines. Adoption stagnante à 18 % des utilisateurs actifs. Les users qui l'adoptent ont un NPS 12 points au-dessus de la moyenne. Baseline : adoption 18 %, NPS global 32, NPS adopters 44. Génère un OKR pour augmenter l'adoption de cette feature, avec 3-4 KRs centrés sur Adopted et Satisfied."
+
+Pour un OKR de rétention sur une app mobile :
+
+> "Application mobile de suivi de santé mentale. Nos users s'activent bien : 85 % complètent le premier flow. Le problème est la rétention : 65 % ne reviennent pas à J7. Baseline : rétention J7 à 35 %, rétention J30 à 12 %, sessions par semaine des retained users : 4,2. Génère un OKR de rétention Q3 avec le focus sur Retained et Satisfied."
+
+Ces points de départ donnent un premier set que tu vas affiner. L'IA ne sortira pas des OKRs parfaits du premier essai. Elle t'économise la mise en mots initiale et les reformulations en boucle lors de la planning session.
+
+## La prochaine étape
+
+Le Générateur OKR express arrive prochainement sur productcopilot.fr. Il prend ton contexte produit en entrée et génère un set d'OKRs TARS-compatible en quelques minutes, sans page blanche ni construction manuelle des prompts.
+
+Pour être notifié à la sortie et recevoir les outils OKR dès leur publication : inscris-toi à la newsletter depuis la [page d'accueil](/).
