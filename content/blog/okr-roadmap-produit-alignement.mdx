@@ -1,0 +1,161 @@
+---
+title: "OKR et roadmap produit : comment les aligner sans perdre le fil"
+description: "Ta roadmap livre des features. Tes OKRs mesurent des outcomes. Comment les faire converger sans réunion de 2h chaque trimestre."
+slug: "okr-roadmap-produit-alignement"
+date: "2026-07-10"
+readingTime: "9 min"
+cluster: "okrs"
+keywords: ["OKR roadmap produit", "aligner OKRs roadmap", "product manager OKR", "roadmap outcome", "stratégie produit OKR"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Stratégie produit"]
+---
+
+La roadmap et les OKRs vivent dans des documents séparés. La roadmap liste les features à livrer. Les OKRs listent les objectifs à atteindre. Personne ne fait le lien explicitement.
+
+Résultat au bilan de fin de trimestre : l'équipe a tout livré, aucun KR n'est atteint.
+
+Ce scénario n'est pas rare. Ce n'est pas un problème d'exécution. C'est un problème d'architecture.
+
+## Pourquoi tes OKRs et ta roadmap se désynchronisent
+
+La plupart des équipes construisent leurs OKRs et leur roadmap à des moments différents, avec des personnes différentes.
+
+Les OKRs : définis en fin de trimestre, souvent top-down, avec les managers et la direction.
+La roadmap : construite par l'équipe produit sur la base des demandes clients, de la dette technique, et des intuitions accumulées depuis 3 mois.
+
+Ces deux artefacts auraient dû être co-construits. Ils ne le sont presque jamais.
+
+Conséquence directe : chaque feature de ta roadmap a une justification business vague. "Améliorer l'onboarding", "réduire le churn", "fluidifier le parcours". Aucune de ces justifications ne pointe vers un KR précis. Et en fin de trimestre, impossible de mesurer si la livraison a produit le résultat attendu.
+
+La désynchro n'est pas accidentelle. Elle est structurelle.
+
+Un cas fréquent : une équipe fixe comme KR "Taux d'activation à J7 : de 35% à 50%". En parallèle, la roadmap prévoit six features : refonte du dashboard, intégration Slack, export CSV, nouveau flow d'onboarding, amélioration de la recherche, et refonte du système de permissions.
+
+Quelle feature influence le taux d'activation à J7 ? Le nouveau flow d'onboarding, clairement. Les cinq autres ? Probablement pas.
+
+L'équipe a réparti toute la capacité du trimestre sur six chantiers. Le seul qui comptait pour les OKRs a eu un sixième du budget.
+
+## Le problème du sens de lecture
+
+Il y a un défaut de conception dans la façon dont la plupart des équipes utilisent OKRs et roadmap.
+
+Sens de lecture habituel :
+Étape 1 : on définit des OKRs, souvent trop vagues.
+Étape 2 : on construit une roadmap, souvent trop longue.
+Étape 3 : on espère que les deux convergent d'eux-mêmes.
+
+Le bon sens de lecture est inverse :
+Étape 1 : on définit des OKRs clairs, mesurables, centrés sur le comportement utilisateur.
+Étape 2 : on demande pour chaque KR "quelles hypothèses doivent être vraies pour que ce KR progresse ?"
+Étape 3 : on construit une roadmap de livraisons conçues pour tester ces hypothèses.
+
+La roadmap devient un plan d'apprentissage, pas une liste de livraisons.
+
+Ce basculement semble évident sur le papier. Il est difficile à maintenir quand les demandes clients, les arbitrages techniques, et les requêtes commerciales s'accumulent chaque semaine.
+
+## FRAME pour connecter OKRs et roadmap
+
+FRAME est un cadre pour structurer la réflexion stratégique en Product Management. Il regroupe cinq dimensions : Focus, Risques, Alignement, Mesure, Experimentation.
+
+Appliqué à l'alignement OKRs / roadmap, il structure les questions à se poser avant de valider ta roadmap du trimestre.
+
+Focus. Ton objectif trimestriel est-il assez concentré pour qu'une seule équipe l'atteigne ? Un OKR qui touche quatre squads différentes ne dirige pas une roadmap claire. Si tu ne peux pas nommer une seule équipe responsable, l'OKR est trop large.
+
+Risques. Quelles hypothèses doivent être vraies pour que ta roadmap atteigne les KRs ? Si ton KR est "augmenter la rétention à J30 de 20 à 30%", cela suppose que le problème de rétention vient du produit, pas du canal d'acquisition ou du positionnement. C'est une hypothèse forte. Est-elle validée par des données ou des interviews ?
+
+Alignement. Chaque feature de ta roadmap pointe-t-elle vers un KR précis ? Si une feature ne sert aucun KR du trimestre, elle n'a pas sa place sur la roadmap ce trimestre. Elle va dans le backlog. Pas sur la roadmap active.
+
+Mesure. Comment vas-tu observer l'évolution de ton KR semaine par semaine ? Si tu attends la fin du trimestre pour mesurer, il est trop tard pour corriger. Un KR qui ne se mesure pas hebdomadairement n'est pas opérationnel : c'est un voeu.
+
+Experimentation. Ta roadmap contient-elle des points d'apprentissage intermédiaires ? Des releases conçues pour valider une hypothèse avant de livrer la feature complète ? Ou est-ce une liste de big batchs livrés en une seule fois en fin de sprint ?
+
+Passer la roadmap du trimestre à travers ce filtre prend 30 à 45 minutes. C'est du temps qui évite des mois de travail mal calibré.
+
+## Le processus d'alignement trimestre par trimestre
+
+Voici comment structurer le lien entre OKRs et roadmap en pratique.
+
+La semaine avant le début du trimestre : le mapping hypothèses / features.
+
+Pour chaque KR, liste les deux ou trois hypothèses principales qui permettent de l'atteindre.
+
+KR : "Taux de conversion onboarding : de 40% à 55%"
+
+Hypothèse 1 : les utilisateurs ne perçoivent pas la valeur du produit dans les cinq premières minutes.
+Hypothèse 2 : le formulaire d'inscription mobile est trop long et génère de l'abandon.
+Hypothèse 3 : l'absence d'exemple concret dans l'onboarding empêche la première action significative.
+
+Pour chaque hypothèse, identifie la plus petite livraison qui permette de la tester. Ces livraisons sont les candidats pour ta roadmap. Pas toutes les features de ton backlog accumulé depuis six mois.
+
+La semaine 1 du trimestre : la sélection.
+
+Tu as sans doute plus de candidats que de capacité d'équipe. Applique une grille simple : impact estimé sur le KR si l'hypothèse est vraie, niveau de confiance dans l'hypothèse sur la base des interviews ou des données, effort de développement estimé.
+
+Ce n'est pas une priorisation RICE classique. C'est une priorisation centrée sur l'apprentissage. Les items à fort impact et haute confiance passent en premier. Les items à fort impact et faible confiance passent en expérimentation rapide. Les items à faible impact sortent de la roadmap.
+
+Les semaines 4 et 8 : les checkpoints d'alignement.
+
+A mi-trimestre, les KRs n'ont souvent pas bougé. Ce n'est pas forcément un signal d'alarme en soi. Certains KRs sont lents à se déplacer. Mais si les KRs ne bougent pas et que les livraisons sont en retard, c'est un double problème.
+
+Le checkpoint de mi-trimestre sert à répondre à trois questions : quelles hypothèses ont été testées depuis le début du trimestre ? Que disent les données sur ces hypothèses ? Que faut-il ajuster sur la roadmap des six prochaines semaines ?
+
+Ce n'est pas un moment de défense. C'est un moment d'arbitrage basé sur l'apprentissage en cours.
+
+La fin de trimestre : le bilan d'apprentissage.
+
+Pas seulement "combien de KRs atteints sur combien". Aussi : quelles hypothèses ont été confirmées ou infirmées ? Qu'est-ce que l'équipe sait maintenant qu'elle ne savait pas en début de trimestre ? Quelle hypothèse fausse a consommé le plus de capacité ?
+
+Ce bilan alimente directement les OKRs du trimestre suivant. Sans lui, chaque cycle repart de zéro.
+
+## Les signaux qui indiquent une désynchro
+
+Quatre signaux concrets à surveiller en continu.
+
+Signal 1 : ta roadmap contient des features sans KR associé.
+Si tu ne peux pas répondre en dix secondes à "quel KR cette feature fait-elle bouger ?", la connexion n'est pas faite. Ce n'est pas un détail de documentation. C'est le signal que la feature n'a pas été pensée dans le contexte des objectifs du trimestre.
+
+Signal 2 : tes KRs ne bougent que le jour d'une release.
+Un KR qui reste stable six semaines puis monte d'un coup après une mise en production signifie que tu livres et tu espères. Tu ne pilotes pas vers un résultat. Tu exécutes un plan et tu mesures après.
+
+Signal 3 : tes revues de sprint ne mentionnent pas les OKRs.
+Si les OKRs n'apparaissent pas dans la revue de sprint, c'est qu'ils ne guident pas la conversation d'équipe. Ils sont décoratifs. La revue de sprint devrait commencer par "où en sont nos KRs ce sprint ?" avant de montrer les features livrées.
+
+Signal 4 : tu ajoutes des items à ta roadmap sans vérifier s'ils servent un KR.
+C'est le signe que la roadmap reprend le dessus sur les OKRs. Une roadmap qui s'auto-alimente sans filtre OKR finit par devenir une liste de travail habillée en stratégie.
+
+Chaque signal est un signal faible isolément. Combinés, ils indiquent que tes deux documents coexistent sans se parler.
+
+## Rendre la connexion visible dans ton outillage
+
+L'architecture documentaire compte. Si ta roadmap et tes OKRs vivent dans des espaces différents, la friction empêche l'alignement au quotidien. L'alignement ne se produit pas spontanément : il faut le rendre structurellement inévitable.
+
+Dans Notion : une table "Features" avec une propriété "KR associé" en relation vers la table OKRs. Pour chaque feature ou epic, la propriété est obligatoire. Si elle est vide, la feature n'est pas priorisable ce trimestre.
+
+Dans Linear : les labels de cycle mappent les KRs du trimestre. Chaque issue reçoit un label KR au moment de sa création dans le sprint.
+
+Dans Jira : les Epics portent le libellé du KR cible. Les stories en découlent directement.
+
+L'outil importe moins que la discipline. Ce qui compte : rendre l'absence de KR visible. Une feature sans KR doit être une anomalie dans ton système, pas la norme implicite.
+
+Une note sur l'IA et les OKRs : des outils comme Notion AI ou les nouvelles fonctions de Linear commencent à proposer des suggestions de KRs sur la base des features de la roadmap. C'est utile pour démarrer. Ce n'est pas suffisant : l'IA ne sait pas quelles hypothèses ton équipe a validées sur le terrain.
+
+## Ce qui change quand tes OKRs et ta roadmap sont synchronisés
+
+L'alignement ne simplifie pas la vie. Il la rend plus exigeante.
+
+Quand la connexion est faite, chaque décision de priorisation devient un arbitrage explicite. Tu ne peux plus mettre une feature sur la roadmap sans justifier son lien avec un KR. Tu ne peux plus clore un sprint sans interroger l'évolution des KRs.
+
+En contrepartie : les débats en réunion de priorisation deviennent plus courts. La question n'est plus "est-ce une bonne idée ?" mais "est-ce que ça sert un KR du trimestre ?" La réponse est factuelle, pas politique.
+
+Et en fin de trimestre, le bilan est plus honnête. Pas "on a livré 80% de la roadmap". Mais "on a validé 2 des 3 hypothèses clés, le KR a progressé de 35% à 44%, et voici ce qu'on a appris pour le prochain trimestre."
+
+C'est un autre standard. Il est plus difficile à tenir. Il est aussi beaucoup plus utile.
+
+---
+
+Sur la définition des OKRs eux-mêmes, avant même la question de l'alignement avec la roadmap, le point de départ est dans [OKRs produit : comment mesurer l'impact, pas le travail](/blog/okr-produit-impact). La plupart des problèmes d'alignement commencent là : les KRs mesurent du travail, pas de l'impact. Un KR mal formulé ne peut pas guider une roadmap.
+
+Le Générateur OKR express arrive prochainement sur productcopilot.fr. Il te permettra de construire des OKRs centrés sur l'impact utilisateur en moins de 10 minutes, à partir de trois champs : le contexte du produit, le problème utilisateur principal, et l'objectif business du trimestre. Tu récupères un objectif et trois KRs calibrés, prêts à discuter avec ton équipe.
+
+Pour être notifié de sa sortie, abonne-toi à la newsletter depuis la page d'accueil.
