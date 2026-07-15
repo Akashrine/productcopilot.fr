@@ -1,0 +1,157 @@
+---
+title: "OKR et roadmap produit : aligner objectifs et livrables"
+description: "Comment connecter tes OKRs à ta roadmap pour éviter les features qui n'impactent aucun objectif. Méthode SOC et exemples concrets pour PMs."
+slug: "okr-et-roadmap-produit"
+date: "2026-07-15"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["OKR et roadmap produit", "aligner OKRs roadmap", "roadmap produit objectifs", "OKR product manager méthode"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Stratégie produit"]
+---
+
+## Roadmap et OKRs : deux documents qui ne se parlent pas
+
+La situation est courante. Tu démarres le trimestre avec des OKRs signés. Tu as aussi une roadmap pleine de features attendues par les clients et le sales. En réunion, tout le monde parle des deux. Mais le lien n'est jamais posé explicitement.
+
+Fin de trimestre : l'équipe a livré. La roadmap avance. Les OKRs sont à 40 %.
+
+Ce n'est pas un problème d'exécution. C'est un problème de connexion. Les features livrées ne pointaient pas vers les OKRs. Ou elles le faisaient vaguement, dans les esprits, sans que personne ne formalise ce lien.
+
+Le résultat : une équipe qui s'est beaucoup dépensée, et des chiffres qui n'ont pas bougé.
+
+## Pourquoi une roadmap de features déconnecte naturellement
+
+Une roadmap classique est une liste de livrables. "Refonte du profil utilisateur", "Nouveau système de notifications", "Export CSV", "Intégration Slack". Chaque item a une taille, un owner, une deadline.
+
+Ce format a un défaut structurel : il ne dit pas pourquoi. Pourquoi l'export CSV va-t-il faire passer l'adoption de 35 % à 50 % ? Pourquoi les nouvelles notifications vont-elles réduire le churn ?
+
+Sans cette connexion explicite, la roadmap devient un plan de charge. L'équipe livre, mais elle n'a pas de signal sur si ce qu'elle construit a le bon impact. Les features s'accumulent. Les métriques n'évoluent pas. Et personne ne comprend vraiment pourquoi.
+
+Le problème s'aggrave à mesure que l'équipe grandit. Plus il y a de gens qui alimentent la roadmap (sales, support, direction, marketing), plus les features s'empilent sans lien visible avec les objectifs. La roadmap devient un catalogue de souhaits, pas un outil de priorisation.
+
+La distinction à faire dès maintenant : une roadmap de features dit ce qu'on va faire. Une roadmap orientée OKRs dit pourquoi on le fait. Ce n'est pas le même document, même si les features finissent par être les mêmes.
+
+## Le niveau manquant : les initiatives
+
+Entre OKR et feature, il manque un niveau intermédiaire. Les initiatives.
+
+Un OKR dit : "le taux de rétention à 90 jours passe de 62 % à 75 %".
+Une feature dit : "checklist d'activation dans le dashboard".
+L'initiative fait le lien : "réduire le temps avant la première valeur perçue".
+
+C'est à ce niveau que tu décides comment tu vas attaquer l'OKR. Une initiative génère plusieurs features. Des features qui ne servent pas la même initiative n'appartiennent pas au même effort stratégique, même si elles se ressemblent en surface.
+
+La structure à adopter :
+
+```
+OKR
+  ├── Initiative 1
+  │     ├── Feature A
+  │     └── Feature B
+  └── Initiative 2
+        ├── Feature C
+        └── Feature D
+```
+
+Chaque feature que tu places en roadmap doit remonter à une initiative, qui remonte elle-même à un OKR. Si tu ne peux pas faire cette remontée, la feature n'a pas sa place dans la roadmap ce trimestre. Elle existe dans un backlog, elle sera candidate au prochain cycle, mais elle ne consomme pas de bandwidth maintenant.
+
+Cette contrainte est inconfortable. Elle met en lumière toutes les features "orphelines" qui vivent dans la roadmap parce qu'un client a demandé, parce que le sales a promis, ou parce que c'est une bonne idée sans lien clair avec les objectifs du moment.
+
+## Le framework SOC pour structurer les trois niveaux
+
+SOC est un framework d'organisation produit : Strategy, Operations, Communication.
+
+Appliqué à la connexion OKR-roadmap, chaque dimension a un rôle distinct.
+
+Strategy, c'est le niveau OKR. Décidés en début de trimestre avec le leadership et l'équipe. Ils définissent le succès : quelle métrique doit bouger, de combien, dans quel délai. Ils restent stables sur le trimestre. Si tu les modifies à mi-parcours, c'est souvent le signe qu'ils n'étaient pas bien posés au départ.
+
+Operations, c'est le niveau roadmap. Initiatives et features. C'est l'exécution. Ce niveau est vivant : il évolue chaque sprint en fonction de ce que tu apprends. Une feature peut être déprioritisée si un autre levier se révèle plus efficace. C'est le principe fondamental des OKRs : tu fixes le cap en Strategy, mais tu laisses l'équipe choisir le chemin en Operations.
+
+Communication, c'est le niveau des rituels. La revue hebdomadaire OKR, le planning de sprint ancré sur les initiatives, la démo qui montre ce qui a bougé dans les métriques. Sans ce niveau, Strategy et Operations dérivent. Les OKRs restent un document de début de trimestre, la roadmap redevient une liste de souhaits, et l'équipe perd le fil.
+
+Le modèle SOC décrit une tension réelle dans les équipes produit : la tendance à sur-investir dans Operations (construire, livrer, shipper) au détriment de Strategy (pourquoi ?) et Communication (est-ce que ça marche ?). Le résultat : une équipe très occupée, sans cap clair.
+
+## En pratique : construire le lien OKR, initiative, feature
+
+Concrètement, chaque item de ta roadmap doit répondre à trois questions :
+
+1. À quel OKR ça contribue ?
+2. Via quelle initiative ?
+3. Quelle est la contribution attendue sur le Key Result, même estimée grossièrement ?
+
+Exemple d'application sur un produit SaaS de gestion de projet :
+
+OKR : "Le taux de rétention à 90 jours passe de 62 % à 75 %".
+
+Initiative 1 : "Accélérer la prise en main des nouveaux comptes".
+- Feature : checklist d'activation visible depuis le dashboard (contribution estimée : +5 pts rétention)
+- Feature : email J+3 avec cas d'usage concrets par type d'équipe (contribution estimée : +4 pts rétention)
+
+Initiative 2 : "Réduire les frictions dans l'usage quotidien".
+- Feature : raccourcis clavier pour les cinq actions les plus fréquentes (contribution estimée : +2 pts rétention)
+- Feature : amélioration des performances sur les projets de plus de 500 tâches (contribution estimée : +3 pts rétention)
+
+Total des contributions estimées : +14 pts. OKR cible : +13 pts. L'équipe a de la marge.
+
+Ces estimations seront fausses. Ce n'est pas grave. Elles forcent une réflexion sur l'impact avant de planifier l'effort. Et elles créent un espace de conversation : si une feature contribue à 0 pt sur le Key Result, pourquoi est-elle dans la roadmap ce trimestre ?
+
+La réponse peut être valide : "parce qu'un client clé va churner si on ne la livre pas". Dans ce cas, tu l'ajoutes avec la mention "hors OKR" et tu quantifies le coût d'opportunité. C'est un choix assumé, pas un oubli.
+
+Pour aller plus loin sur la définition des Key Results eux-mêmes, l'article sur [le framework TARS appliqué aux OKRs produit](/blog/okr-produit-impact) détaille comment choisir des métriques qui mesurent vraiment l'impact plutôt que le travail.
+
+## La revue hebdomadaire : le filet de sécurité
+
+L'alignement OKR-roadmap n'est pas un exercice de début de trimestre. C'est un rituel hebdomadaire.
+
+En pratique, deux questions suffisent chaque semaine :
+
+1. Où en est le Key Result ? (donne le chiffre actuel)
+2. Qu'est-ce qu'on a livré cette semaine qui a bougé ce chiffre ?
+
+Si la réponse à la deuxième question est "rien" deux semaines de suite, c'est un signal. Soit les features en cours n'ont pas encore d'impact mesurable, parce que le cycle d'activation prend du temps. Soit la roadmap a dévié et l'équipe livre des choses qui ne pointent plus vers l'OKR.
+
+Cette revue est la partie Communication du SOC. Elle force la question inconfortable : "est-ce que ce qu'on a livré cette semaine va changer notre chiffre ?"
+
+Format simple pour une équipe de quatre à huit personnes : un document partagé avec une ligne par OKR, mise à jour chaque lundi avant le standup. Chiffre actuel, chiffre cible, features en cours et leur contribution estimée. Pas de réunion dédiée. Un regard hebdomadaire de cinq minutes par OKR.
+
+L'erreur à éviter : transformer cette revue en reporting. L'objectif n'est pas de montrer que l'équipe travaille. C'est de détecter les décrochages tôt, avant qu'ils soient irrattrapables en fin de trimestre.
+
+Si à la cinquième semaine du trimestre un Key Result n'a toujours pas bougé, c'est le moment d'agir : changer les initiatives en cours, tester un autre levier, réduire la cible si elle s'avère irréaliste. Pas en semaine 11.
+
+## Quand roadmap et OKRs entrent en conflit
+
+C'est la situation la plus courante pour un PM : une demande externe arrive, sales ou direction, et elle ne contribue pas aux OKRs du trimestre.
+
+Deux scénarios.
+
+Premier scénario : la demande est urgente et non négociable. Un client clé menace de churner si tu ne livres pas une feature spécifique dans les trois semaines. Tu la prends. Mais tu l'ajoutes en roadmap avec une mention explicite : "hors OKR, impacte la capacité des initiatives 1 et 2 de X jours". La feature est visible, son coût est tracé, et l'OKR n'est pas contaminé par une promesse de livraison qui n'est pas la tienne.
+
+Deuxième scénario : la demande est importante mais négociable. Tu peux la planifier au prochain cycle. Le recadrage à utiliser avec le stakeholder : "Cette feature est importante. Elle ne s'aligne pas avec nos OKRs Q3. Je la planifie pour Q4 avec une estimation de ressources. Si c'est urgent, dis-moi quel OKR tu veux qu'on abandonne pour la prendre maintenant."
+
+Cette formulation force un choix explicite. Elle sort du registre "on va essayer de caser ça" et pose le vrai enjeu : prioriser, c'est renoncer. Tu ne peux pas ajouter sans retirer.
+
+Si les demandes "hors OKR" s'accumulent trimestre après trimestre, c'est un signal plus large : tes OKRs ne capturent pas les vraies priorités de l'entreprise. Ce n'est pas un problème de roadmap, c'est un problème de cadrage OKR. Il faut recalibrer au prochain cycle, pas en cours de trimestre.
+
+Ça rejoint ce que le travail de [priorisation de backlog avec l'IA](/blog/prioriser-backlog-ia) met en évidence : les OKRs sont le critère de priorisation le plus solide. Quand ils sont bien posés, les décisions de roadmap deviennent mécaniques.
+
+## Utilise tes OKRs pour libérer l'équipe, pas pour la contraindre
+
+Une erreur fréquente : traiter les OKRs comme une contrainte supplémentaire en plus de la roadmap. "On doit livrer ces features ET atteindre ces chiffres."
+
+C'est l'inverse de ce qu'ils sont censés faire.
+
+Quand tu connectes correctement tes OKRs à ta roadmap, tu donnes à l'équipe plus de liberté. L'équipe ne livre pas les features de la roadmap parce qu'elles sont dans la roadmap. Elle choisit les features qui maximisent les chances d'atteindre les Key Results.
+
+Cette différence change tout dans la pratique. Une équipe qui travaille "pour la roadmap" ne remet pas en cause une feature si elle ne produit pas les résultats attendus. Une équipe qui travaille "pour les OKRs" pivote, teste un autre levier, abandonne une feature à mi-chemin si les données montrent qu'elle ne bouge pas la métrique.
+
+C'est pour ça que les OKRs fonctionnent mieux quand l'équipe les co-construit. Si les Key Results sont imposés d'en haut, l'équipe les traite comme des KPIs à reporter. Si l'équipe a participé à leur définition, ils deviennent un engagement collectif.
+
+Ce qui est vrai aussi au niveau individuel : un PM qui co-construit ses OKRs avec son manager dispose d'un espace de négociation pour refuser ou déprioritiser des demandes hors sujet. "Ce n'est pas dans mes OKRs" est une réponse professionnelle, pas un refus. C'est un rappel de ce qui a été décidé ensemble.
+
+## Pour aller plus loin
+
+Le Générateur OKR express arrive prochainement sur ce site. Il part d'un problème produit, identifie les métriques à bouger avec le framework TARS, et génère des OKRs cohérents prêts à être challenger en équipe.
+
+En attendant, le Pack OKRs contiendra les prompts pour rédiger, challenger, et réviser tes OKRs à chaque cycle. Il est en préparation.
