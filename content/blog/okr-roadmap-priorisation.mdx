@@ -1,0 +1,130 @@
+---
+title: "OKR et roadmap : comment aligner ta priorisation"
+description: "Beaucoup de PMs écrivent des OKRs clairs et une roadmap déconnectée. Comment faire de tes OKRs le filtre actif de chaque décision du cycle."
+slug: "okr-roadmap-priorisation"
+date: "2026-07-16"
+readingTime: "7 min"
+cluster: "okrs"
+keywords: ["OKR roadmap product manager", "priorisation OKR", "aligner roadmap OKRs", "OKR et backlog", "priorisation produit trimestrielle"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Priorisation"]
+---
+
+Deux documents. Deux réunions séparées. Deux dynamiques différentes.
+
+D'un côté, les OKRs : écrits en début de trimestre dans un Google Doc partagé, applaudis en réunion de planning, puis laissés à eux-mêmes pendant dix semaines.
+
+De l'autre, la roadmap : alimentée par les demandes du sales, les bugs remontés par le support, les idées de la dernière rétro, et les features promises à un client clé six mois plus tôt.
+
+Le bilan au bout de trois mois : l'équipe a livré 80 % de sa roadmap. Elle a atteint 30 % de ses KRs. Tout le monde est épuisé, et personne ne comprend vraiment pourquoi les chiffres n'ont pas bougé.
+
+## Le diagnostic : deux processus qui ne se rejoignent pas
+
+Ce n'est pas une histoire d'OKRs mal écrits ou de roadmap mal gérée. C'est une histoire de processus déconnectés.
+
+Les OKRs sont construits pendant le planning stratégique, souvent par le leadership, parfois en collaboration avec les PMs. La roadmap, elle, est bâtie depuis le backlog : des requêtes remontées, des intuitions sur ce qui aura le plus d'impact, des engagements passés. Ces deux exercices se déroulent à des moments différents, avec des participants différents, dans des espaces mentaux différents.
+
+Résultat : l'item "améliorer les performances de chargement" atterrit dans la roadmap parce qu'un engineer l'a mentionné en rétro. Mais aucun KR du trimestre ne mesure les performances de chargement. C'est utile. Ça mérite de l'attention un jour. Mais ce n'est pas ce que le cycle essaie d'accomplir.
+
+L'erreur ne vient pas de mauvaise foi. Elle vient de l'absence d'un mécanisme de connexion entre les objectifs du cycle et les décisions quotidiennes de priorisation.
+
+## Pourquoi la roadmap finit par ignorer les OKRs
+
+Trois mécanismes expliquent la déconnexion.
+
+Le premier : l'urgence gagne toujours sur l'importance. Un bug critique remonte. Un client stratégique demande une feature. Le support génère un ticket avec quarante votes. Ces inputs ont un poids émotionnel et politique que les OKRs n'ont pas. L'OKR est abstrait. Le ticket de support, lui, a un nom, un compte client, et un chiffre d'affaires associé.
+
+Le deuxième : les OKRs ne sont rarement traduits en critères de décision opérationnels. "Améliorer l'expérience d'onboarding" n'est pas un critère de tri de backlog. "Le taux de complétion de l'onboarding passe de 38 % à 60 %" en est un. Si tu n'as pas transformé chaque KR en question de priorisation concrète, les OKRs restent des intentions écrites dans un doc que personne ne rouvre.
+
+Le troisième : la roadmap est construite depuis des inputs qui précèdent les OKRs. Les features promises lors du dernier sales kick-off. Les dettes techniques identifiées avant le planning stratégique. Les idées surfacées lors d'une session de brainstorming il y a deux mois. Ces inputs sont légitimes. Mais si tu les intègres sans les filtrer par les objectifs du cycle, tu construis une roadmap qui maximise la satisfaction des stakeholders, pas l'impact sur les KRs.
+
+## Le filtre OKR : une question par item de roadmap
+
+La solution n'est pas d'interdire tous les inputs non-OKR. C'est de donner aux OKRs un rôle actif dans chaque décision de priorisation.
+
+Le test tient en une seule question. Pour chaque item de roadmap : quel KR ce travail fait-il avancer, et par quel mécanisme ?
+
+Si tu ne peux pas répondre en deux phrases, l'item n'appartient pas au cycle en cours. Il va dans le backlog long terme, dans le cycle suivant, ou dans le cimetière des bonnes idées qui n'ont pas encore trouvé leur moment.
+
+Ce filtre s'applique aussi aux items apparemment évidents. La dette technique, par exemple. "Refactorer le module de paiement" : quel KR fait-on avancer ? Si un KR mesure "réduire le temps de validation d'un paiement de 12s à 3s" et que la refactorisation est le chemin le plus court pour y arriver, l'item est clairement légitime. Si la réponse est "on aura moins de bugs à long terme" sans lien avec un KR du trimestre, c'est une décision d'investissement technique, pas un item aligné sur le cycle.
+
+Ce n'est pas dire que la dette technique ne compte pas. C'est dire qu'elle compte différemment selon où on en est dans la stratégie.
+
+Ce filtre révèle aussi les OKRs sans solution dans le backlog. Si aucun item ne correspond à un KR donné, ce n'est pas un problème de roadmap, c'est un signal de discovery. Il faut aller chercher des pistes avant de planifier l'exécution.
+
+## Construire une roadmap pilotée par les KRs
+
+### Reformuler chaque KR en question de priorisation
+
+Prends chaque Key Result. Reformule-le sous forme d'une question à laquelle la roadmap doit répondre.
+
+"Le taux de complétion de l'onboarding passe de 38 % à 60 %" devient : "Qu'est-ce qui, dans notre backlog, a le plus de chances de faire bouger le taux de complétion de l'onboarding ?"
+
+"Le churn à J30 passe de 18 % à 10 %" devient : "Qu'est-ce que, parmi nos initiatives disponibles, impacte directement la rétention dans les trente premiers jours ?"
+
+Cette reformulation semble triviale. Elle ne l'est pas. Elle change la nature du processus de priorisation : on ne cherche plus à livrer vite, on cherche à maximiser la probabilité d'atteindre chaque KR.
+
+### Trier le backlog par KR
+
+Prends ton backlog. Crée une colonne "KR associé". Pour chaque item, associe-le à un KR ou marque-le "hors cycle".
+
+Pas de KR associé = l'item ne rentre pas dans le cycle courant, sauf exception justifiée explicitement : compliance réglementaire, bug critique, engagement contractuel irréversible.
+
+Ce tri révèle presque toujours deux choses. D'abord, un backlog surchargé sur certains KRs et vide sur d'autres. Les KRs vides sont le signal qu'il n'y a pas de solution évidente dans le backlog actuel : soit on fait de la discovery pour en trouver, soit le KR est mal calibré et il faut le retravailler. Ensuite, un ensemble d'items "orphelins" : des trucs qu'on fait parce qu'on les a toujours faits, sans lien avec les objectifs du cycle.
+
+### Prioriser à l'intérieur de chaque KR
+
+Une fois le backlog trié, priorise au sein de chaque KR. Quelle initiative, parmi celles associées à ce KR, a le meilleur ratio impact sur le KR par rapport à l'effort de build ? Laquelle réduit le plus le risque de ne pas atteindre l'objectif ?
+
+Ce n'est pas une science exacte. C'est un jugement sous incertitude. Mais c'est un jugement que tu peux défendre lors du planning : "on fait ça en premier parce que c'est le chemin le plus direct vers ce KR, et ce KR est notre priorité ce trimestre."
+
+Si deux KRs se retrouvent en compétition pour les mêmes ressources engineering, ce n'est plus une décision de priorisation interne, c'est une décision stratégique. Le PM escalade et clarifie avec le leadership lequel des deux objectifs prime. Ce conflit mérite d'être eu maintenant, pas en semaine six quand les deux chantiers patinent.
+
+### Laisser de la marge
+
+Une roadmap qui remplit 100 % de la capacité disponible est une promesse de dérapage.
+
+Réserve 15 à 20 % de la capacité pour l'inattendu : le bug critique qui arrive en semaine trois, la demande urgente d'un client stratégique, la discovery qui révèle qu'une hypothèse centrale est fausse. Si l'inattendu n'arrive pas, utilise cette marge pour aller plus loin sur les KRs les plus sous-performants.
+
+Une roadmap avec de la marge est aussi plus honnête : elle dit qu'on a prévu du temps pour apprendre, pas seulement pour exécuter.
+
+Si tu travailles sur [la priorisation de ton backlog avec l'IA](/blog/prioriser-backlog-ia), tu trouveras des méthodes complémentaires pour scorer les items une fois que tu as filtré par les OKRs du cycle.
+
+## Valider chaque initiative avec FRAME
+
+Avant de committer une initiative dans le cycle, fais-la passer par FRAME.
+
+FRAME est un framework de validation en cinq questions. Il s'applique à chaque initiative qui passe le premier filtre OKR.
+
+**Focus** : cette initiative est-elle bien dans le scope du cycle ? Ou est-ce qu'elle se retrouve là parce qu'elle est intéressante, pas parce qu'elle est prioritaire maintenant ?
+
+**Risques** : quels risques l'initiative introduit-elle ? Quel risque court-on si on ne la fait pas ce trimestre ? Un item qui n'adresse aucun risque identifié est souvent un "nice to have" déguisé.
+
+**Alignement** : cette initiative est-elle alignée avec la stratégie de l'organisation, pas uniquement avec les OKRs de l'équipe produit ? Si le comité de direction a annoncé que le trimestre est dédié à la réduction du churn et que ton initiative améliore l'acquisition de nouveaux comptes, il y a un désalignement à résoudre avant de lancer.
+
+**Mesure** : comment saura-t-on que cette initiative a eu l'effet attendu sur le KR ? Si la réponse est "on verra dans les stats à la fin du trimestre", c'est insuffisant. Il faut un signal intermédiaire : une métrique de suivi, un test A/B, un taux d'usage à J7. Sans signal intermédiaire, tu ne peux pas corriger le tir à mi-cycle.
+
+**Experimentation** : peut-on tester cette hypothèse en version minimale avant de s'engager sur le build complet ? Une initiative qui coûte quatre semaines d'engineering doit presque toujours avoir une version de validation rapide. Une landing page. Un test avec cinq utilisateurs. Un prototype cliquable. Sinon, tu parles sur une hypothèse qui n'a pas été confrontée à la réalité.
+
+FRAME n'est pas une grille de scoring à remplir pour chaque item. C'est une liste de vérification qui force à articuler ce qu'on croit sur l'initiative avant de s'y engager. Si tu ne peux pas répondre aux cinq questions, tu n'es pas prêt à mettre l'initiative dans le cycle.
+
+## Ce que révèle le tri : une roadmap honnête
+
+Si tu appliques ce processus sérieusement, tu découvres deux choses inconfortables.
+
+La première : ton backlog actuel ne couvre pas tous tes KRs. Pour certains objectifs, aucune initiative existante ne tient la route. C'est une information précieuse. Ça veut dire que tu dois faire de la [product discovery](/blog/ia-product-discovery-guide) avant de planifier, pas en parallèle.
+
+La deuxième : une partie significative de ta roadmap actuelle n'est pas alignée avec les OKRs du cycle. Ces items existent parce que quelqu'un les a ajoutés au backlog, pas parce qu'ils font avancer les objectifs du trimestre. Les retirer de la roadmap crée un conflit. C'est le conflit qui vaut la peine d'avoir.
+
+L'objectif d'une roadmap honnête n'est pas de rendre tout le monde content. C'est de rendre les choix visibles. De montrer qu'on a décidé de ne pas faire certaines choses, pas qu'on les a oubliées.
+
+Une roadmap alignée sur les OKRs dit : "ce trimestre, on fait ça parce que c'est le chemin le plus court vers ces objectifs. Le reste attend." C'est une position défendable. Elle clarifie les priorités pour l'équipe engineering, elle aligne les stakeholders sur ce qui compte, et elle permet de mesurer l'impact réel du travail réalisé.
+
+Si tu as lu l'article sur [les OKRs produit et la mesure de l'impact](/blog/okr-produit-impact), tu as les outils pour écrire de bons Key Results. Cet article te donne le processus pour connecter ces KRs à chaque décision de ta roadmap.
+
+## Générateur OKR express
+
+Le Générateur OKR express, bientôt disponible sur productcopilot.fr, te permet de passer d'une stratégie formulée ou d'insights de discovery à des OKRs cohérents avec le framework TARS. Il structure l'étape de formulation pour que tes objectifs et Key Results soient exploitables comme filtres de priorisation dès le premier jour du cycle.
+
+Accès en avant-première : [/outils/generateur-okr](/outils/generateur-okr)
