@@ -1,0 +1,218 @@
+---
+title: "CLAUDE.md : le fichier qui fait que Claude ne recommence jamais à zéro"
+description: "Tu relances Claude Code et il perd le contexte du projet. Le CLAUDE.md règle ça en 20 minutes. Guide pour PMs non-devs."
+slug: "claude-md-guide-product-manager"
+date: "2026-07-17"
+readingTime: "8 min"
+cluster: "vibe-coding"
+keywords: ["CLAUDE.md product manager", "CLAUDE.md guide français", "Claude Code mémoire projet", "vibe coding product manager", "Claude Code non-développeur"]
+relatedTool: "template-prd-ia"
+relatedPack: "vibe-coding-pm"
+tags: ["Vibe Coding", "Claude Code", "Product Management"]
+---
+
+Tu relances Claude Code après 2 jours. Tu rouvres le projet. Et tu passes 15 minutes à réexpliquer à l'IA ce que tu construis, comment c'est structuré, et ce qu'il ne faut pas toucher.
+
+Puis il touche quand même ce qu'il ne fallait pas toucher.
+
+Le CLAUDE.md règle ce problème. C'est le fichier que tu crées une fois, que tu places à la racine du repo, et qui donne à Claude Code un contexte permanent sur ton projet. Pas de briefing à chaque session. L'IA sait où elle est.
+
+Le template de Karpathy (chercheur IA, ex-OpenAI, ex-Tesla) sur ce sujet a accumulé 5 800 étoiles GitHub (source: dev.to, juillet 2026). En anglais. En français, rien. Cet article comble ce vide.
+
+## Ce que Claude oublie sans CLAUDE.md
+
+Claude Code n'a pas de mémoire persistante entre les sessions. Chaque fois que tu fermes et rouvres une conversation, l'IA repart de zéro.
+
+Concrètement, sans CLAUDE.md, tu dois réexpliquer à chaque session :
+
+- Ce que le projet fait et pour qui
+- Comment les routes et les dossiers sont organisés
+- Quelles librairies tu utilises et pourquoi
+- Quel fichier fait quoi
+- Ce qu'il ne faut surtout pas modifier (la base de données, l'authentification, le fichier de config)
+
+Sans ce contexte, Claude Code fait des hypothèses. Il crée des fichiers qui existent déjà. Il renomme des fonctions. Il installe des dépendances que tu as déjà. Il touche des fichiers critiques parce que ça lui semble la solution la plus directe.
+
+C'est la boucle de bugs décrite dans [le PRD à l'ère du vibe coding](/blog/prd-vibe-coding-anti-bug-loop) : l'IA produit du code, le code casse quelque chose, tu demandes de corriger, la correction casse autre chose. Sans contexte stable, l'IA dérive à chaque échange.
+
+Le CLAUDE.md arrête cette boucle. C'est le contexte que tu fournis une fois, que Claude relit automatiquement à chaque démarrage de session, et qui le cadre pour toute la durée du projet.
+
+## Les 4 sections d'un CLAUDE.md PM
+
+Le CLAUDE.md n'est pas un fichier pour développeurs. C'est un document de cadrage projet. Un bon CLAUDE.md pour un PM qui fait du vibe coding contient quatre sections.
+
+### La description du projet
+
+En 3 à 5 lignes. Ce que le produit fait. Pour qui. Ce qu'il ne fait pas (les non-goals). C'est le résumé de ton PRD, condensé en format CLAUDE.
+
+```
+## Project
+
+YomuShelf est une app web de gestion de bibliothèque personnelle
+pour lecteurs assidus (20+ livres/an).
+Elle permet de tracker les lectures, noter les livres,
+et générer des recommandations basées sur l'historique.
+Non-goals : pas de social features, pas de partage public, pas de marketplace.
+```
+
+### La stack et l'architecture
+
+Les choix techniques déjà faits. Pas pour expliquer pourquoi tu as fait ces choix. Pour que l'IA ne propose pas d'alternatives.
+
+```
+## Stack
+
+Next.js 15 (App Router), TypeScript, Tailwind CSS v4,
+Supabase (auth + db), Vercel (déploiement).
+Ne pas proposer d'alternatives à ces choix.
+```
+
+Cette ligne "Ne pas proposer d'alternatives" change tout. Sans elle, Claude Code suggère régulièrement de passer à une autre base de données ou un autre framework, ce qui pollue les échanges.
+
+### Les fichiers clés
+
+Quels fichiers font quoi. Quels fichiers ne pas modifier sans instruction explicite. C'est la section la plus utile en pratique.
+
+```
+## Key files
+
+- lib/supabase.ts : client Supabase (NE PAS MODIFIER)
+- app/api/books/route.ts : CRUD des livres
+- components/BookCard.tsx : composant carte livre réutilisable
+- types/index.ts : types TypeScript globaux
+
+Ne pas modifier lib/supabase.ts, .env.local,
+et app/api/auth/ sans instruction explicite.
+```
+
+### Les conventions de code
+
+Style de code, langue des variables, règles de nommage. Cette section évite que l'IA mélange du français et de l'anglais dans le code, ou passe du camelCase au snake_case sans raison.
+
+```
+## Conventions
+
+- Variables et fonctions : English
+- Contenu utilisateur affiché : French
+- Composants React : PascalCase
+- Hooks : useXxx
+- Pas de commentaires sauf si le WHY est non-obvious
+- Commits en anglais
+```
+
+Ces quatre sections tiennent en 40 à 60 lignes. Pas plus. Un CLAUDE.md trop long est lu en entier à chaque session et consomme du contexte inutilement, au détriment du code réel.
+
+## Comment générer ton CLAUDE.md sans écrire une ligne
+
+Tu n'as pas besoin d'écrire le CLAUDE.md à la main.
+
+Dans [la méthode en 4 phases](/blog/vibe-coding-methode-4-phases), le Prompt 07 (CLAUDE.md Generator) génère ce fichier automatiquement. Il consomme ta Spec Technique (l'output de la Phase 3 : Construire) et produit un CLAUDE.md complet, calibré sur ton projet.
+
+Si tu n'as pas encore suivi la méthode, tu peux demander directement à Claude Code sur un projet existant :
+
+```
+Analyse le code de ce projet et génère un fichier CLAUDE.md
+complet à la racine du repo.
+
+Inclus ces 4 sections :
+1. Description du projet (5 lignes max : quoi, pour qui, non-goals)
+2. Stack (liste des technologies + "Ne pas proposer d'alternatives")
+3. Fichiers clés (rôle de chaque fichier important + liste des fichiers à ne pas modifier)
+4. Conventions de code (nommage, langue, style)
+
+Total : 50-60 lignes maximum. Priorité à la concision.
+```
+
+Claude Code scanne le repo, infère la structure et les conventions, et produit le fichier. Tu relis. Tu corriges ce qu'il a mal compris (non-goals, fichiers sensibles que tu connais et lui non). Tu places le fichier à la racine : `/CLAUDE.md`.
+
+Depuis le 4 juillet 2026, Claude Code utilise Sonnet 5 par défaut (source: LogRocket AI power rankings, juillet 2026). Ce modèle est nettement plus performant pour inférer la structure d'un projet existant. Si tu utilises une version antérieure, vérifie tes paramètres avant de générer.
+
+## Les 3 erreurs qui rendent le CLAUDE.md inutile
+
+### Erreur 1 : le CLAUDE.md trop long
+
+Certains guides recommandent de tout documenter. Chaque route. Chaque composant. Chaque décision. Résultat : un fichier de 300 lignes que Claude lit à chaque session, ce qui réduit le contexte disponible pour le code réel.
+
+Règle : si une information est déductible du code lui-même, ne la mets pas dans le CLAUDE.md. Ce fichier documente ce qui n'est pas évident dans le code : les non-goals, les fichiers sensibles, les conventions inhabituelles.
+
+Un CLAUDE.md de 60 lignes bien ciblé est plus efficace qu'un CLAUDE.md de 200 lignes exhaustif.
+
+### Erreur 2 : le CLAUDE.md figé
+
+Le CLAUDE.md doit évoluer avec le projet. Tu ajoutes une intégration externe ? Tu l'ajoutes au CLAUDE.md. Tu renommes un composant clé ? Tu mets à jour le fichier.
+
+Convention simple : à la fin de chaque session de code significative, demande à Claude Code de mettre à jour le CLAUDE.md pour refléter les changements faits dans la session. 2 minutes. Pas plus.
+
+Un CLAUDE.md qui n'a pas été mis à jour depuis 3 semaines n'est plus fiable. L'IA va se baser sur des informations obsolètes.
+
+### Erreur 3 : oublier la liste des fichiers protégés
+
+La section la plus utile du CLAUDE.md, c'est la liste des fichiers à ne pas modifier sans ordre explicite.
+
+L'IA ne transgresse pas ce type d'instruction délibérément. Mais sans instruction, elle peut toucher n'importe quel fichier si ça lui semble la solution la plus rapide à ton problème. Et un fichier d'authentification modifié par erreur, c'est une session entière de debug pour rien.
+
+Identifie tes 3 à 5 fichiers critiques. Mets une ligne explicite : "Ne pas modifier X sans instruction explicite."
+
+## La place du CLAUDE.md dans le système 4 phases
+
+Dans le système Clarifier, Designer, Construire, Vérifier, le CLAUDE.md est le pivot de la Phase 3 : Construire.
+
+Il est généré après la Spec Technique (Prompt 06B) et avant le début du code réel. Il fonctionne comme un contrat entre toi et l'IA : voilà ce qu'on construit, voilà comment, voilà ce qu'on ne touche pas.
+
+Ce placement n'est pas anodin. À ce stade, tu as déjà :
+
+- Un PRD validé (Phase 1 : Clarifier)
+- Un design.md avec les specs visuelles complètes (Phase 2 : Designer)
+- Une spec technique avec le schéma de données et l'architecture (Phase 3, Prompts 06A et 06B)
+
+Le CLAUDE.md consolide ces trois inputs dans un format court que Claude Code peut absorber à chaque session. Il ne remplace pas le PRD ou la spec. Il est leur distillat opérationnel.
+
+Deux fichiers pilotent la Phase 3 :
+
+- `CLAUDE.md` : ce que tu construis et comment
+- `docs/design.md` : à quoi ça ressemble
+
+Quand Claude dérive sur le code (touche les mauvais fichiers, ignore les conventions), tu pointes vers le CLAUDE.md. Quand il dérive sur le design (composants génériques, incohérences visuelles), tu pointes vers le design.md. Ces deux fichiers sont tes deux leviers de correction rapide sans avoir à réexpliquer.
+
+## Ce que le CLAUDE.md ne fait pas
+
+Le CLAUDE.md cadre l'IA sur le projet. Il ne la contrôle pas en permanence.
+
+Il y a des situations où le contexte du CLAUDE.md ne suffit pas :
+
+- Une session trop longue avec de nombreux échanges : la fenêtre de contexte se remplit, et le CLAUDE.md que Claude a lu en début de session devient moins prioritaire par rapport aux instructions récentes
+- Un bug complexe qui touche plusieurs fichiers en même temps : Claude peut sortir du cadre pour trouver une solution
+- Une demande trop ouverte ("améliore l'interface") : sans périmètre défini, l'IA décide seule du périmètre
+
+Dans ces cas, la règle du rollback propre s'applique : si Claude touche plusieurs fichiers sans que tu comprennes ce qu'il fait, si l'historique de la session dépasse 10 échanges sur le même bug, tu annules tout, tu ouvres une nouvelle session, et tu recommences avec une demande plus précise.
+
+Le CLAUDE.md est là pour accélérer le démarrage de cette nouvelle session. Tu n'as pas à tout réexpliquer. Tu reprends là où tu t'es arrêté.
+
+## Lance-toi maintenant
+
+Si tu as déjà un projet vibe coding en cours, copie ce prompt et lance-le dans Claude Code :
+
+```
+Analyse le code de ce projet et génère un fichier CLAUDE.md
+complet à la racine du repo.
+
+Sections :
+1. Description du projet (quoi, pour qui, 3 non-goals)
+2. Stack (technologies + "Ne pas proposer d'alternatives")
+3. Fichiers clés avec leur rôle + liste des fichiers à ne pas modifier
+4. Conventions de code (nommage, langue, commentaires)
+
+Maximum 60 lignes. Priorité à la concision sur l'exhaustivité.
+```
+
+Place le fichier à la racine. Ferme la session. Ouvre une nouvelle session. Claude Code lit automatiquement le CLAUDE.md au démarrage et démarre avec le contexte complet du projet.
+
+Le prochain projet que tu lances, commence par le CLAUDE.md avant d'écrire la première ligne de code.
+
+## Commence par structurer ton projet
+
+Avant le CLAUDE.md, il te faut un PRD clair. C'est le document source qui alimente la description du projet, les non-goals, et les métriques de succès que tu mettras dans le CLAUDE.md.
+
+Le Template PRD IA te guide en 7 sections pour produire un PRD complet en 10 minutes, avec l'IA comme co-rédacteur. Gratuit.
+
+[Accéder au Template PRD IA →](/outils/template-prd-ia)
