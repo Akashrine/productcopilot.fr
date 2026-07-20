@@ -1,0 +1,175 @@
+---
+title: "Rédiger tes OKRs avec l'IA : méthode FRAME et prompts"
+description: "Comment challenger et construire des OKRs produit solides avec Claude. La méthode FRAME en 5 prompts concrets pour PMs."
+slug: "rediger-okr-ia-methode-frame"
+date: "2026-07-20"
+readingTime: "9 min"
+cluster: "okrs"
+keywords: ["OKR IA product manager", "rédiger OKR avec Claude", "méthode FRAME OKR", "prompts OKR produit", "générer OKR IA"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "IA"]
+---
+
+La plupart des PMs rédigent leurs OKRs en deux heures, la semaine avant le planning trimestriel, sur un Google Slides modifié en live.
+
+Le résultat : des objectifs qui ressemblent à des intentions, des Key Results qui mesurent l'activité plutôt que l'impact, et un sentiment vague que tout ça ne changera rien à l'exécution réelle.
+
+L'IA peut aider. Pas à écrire des OKRs à ta place : si tu demandes à Claude "écris mes OKRs pour le Q3", tu obtiens du remplissage bien formaté. L'IA est utile comme sparring partner : elle challenge les formulations, identifie les angles morts, et force des choix que tu évites d'habitude.
+
+La méthode repose sur FRAME. Cinq dimensions. Cinq types de prompts. Chacun attaque un angle différent de la qualité d'un OKR.
+
+## Ce que l'IA ne peut pas faire à ta place
+
+Un point de méthode avant les prompts.
+
+L'IA ne connaît pas ton contexte. Elle ne sait pas que ton équipe a perdu un engineer en milieu de trimestre. Elle ne sait pas que ta direction a changé de priorité en février et que la roadmap n'a pas encore été mise à jour. Elle ne sait pas que ton taux de rétention actuel est de 34 % et non 50 % comme le deck le suggère.
+
+Tout ce contexte, c'est toi qui le fournis. Plus tu en donnes, plus la réponse est utile.
+
+Le schéma qui fonctionne : tu apportes le contexte, la baseline, les contraintes organisationnelles. L'IA apporte la rigueur formelle, les contre-exemples, les angles morts. Ensemble vous construisez quelque chose qu'aucun des deux n'aurait produit seul.
+
+Ce qui reste entier sans IA : la négociation de l'ambition avec ta direction, la validation de la data 0 (est-ce qu'on sait vraiment où on en est ?), et la décision sur ce qu'on laisse de côté ce cycle.
+
+## FRAME appliqué aux OKRs
+
+FRAME est un cadre d'analyse en cinq dimensions : Focus, Risques, Alignement, Mesure, Expérimentation.
+
+À l'origine, il sert à évaluer une stratégie produit. Appliqué aux OKRs, il devient une grille de qualité : est-ce que chaque OKR répond à ces cinq critères ?
+
+Focus : l'objectif concentre-t-il l'équipe sur un seul combat réel ce trimestre ?
+
+Risques : qu'est-ce qui peut faire rater chaque Key Result ?
+
+Alignement : les OKRs supportent-ils la stratégie de l'entreprise, ou naviguent-ils en parallèle ?
+
+Mesure : est-ce qu'on sait où on en est aujourd'hui, et peut-on suivre le progrès chaque semaine ?
+
+Expérimentation : quelle est la première chose à tester pour avancer vers chaque KR sans engager trois sprints ?
+
+Chaque dimension devient un prompt distinct. Tu n'as pas besoin de tous les utiliser sur chaque OKR. Mais si tu bloques, FRAME te dit où regarder.
+
+## Les 5 prompts FRAME pour construire un OKR solide
+
+Voici les prompts exacts, avec les variables à remplir entre crochets.
+
+### F : Focus
+
+Le problème des objectifs vagues, c'est qu'ils ne forcent aucun choix. "Améliorer l'expérience utilisateur" peut signifier cinquante choses différentes. Le prompt Focus sert à affiner jusqu'à ce que l'objectif soit incontestable.
+
+```
+Contexte : je suis PM sur [produit] ciblant [persona], avec une équipe de [taille] pour le prochain trimestre.
+
+Mon objectif provisoire est : "[objectif]"
+
+Identifie les trois interprétations les plus différentes possibles de cet objectif. Pour chaque interprétation, donne l'action prioritaire qu'une équipe ferait. Dis-moi laquelle correspond le mieux à [problème ou opportunité réelle]. Propose une reformulation plus précise qui exclut les deux autres.
+```
+
+Ce prompt force une clarification que tu ferais normalement en réunion de planning, mais que personne ne fait vraiment parce que tout le monde a l'air d'accord.
+
+### R : Risques
+
+Un bon OKR a un niveau de confiance d'environ 50 %. Si tu es à 80 %, c'est trop confortable. Si tu es à 20 %, c'est irréaliste. Le prompt Risques sert à identifier ce qui peut faire rater chaque KR et à ajuster l'ambition en conséquence.
+
+```
+Voici mes Key Results pour l'objectif "[objectif]" :
+- KR1 : [...]
+- KR2 : [...]
+- KR3 : [...]
+
+Pour chaque Key Result, identifie :
+1. Le principal risque de non-atteinte (technique, organisationnel, marché, dépendance externe)
+2. Un signal d'alerte précoce qu'on peut suivre chaque semaine
+3. Une version dégradée mais utile du KR si le risque se matérialise
+
+Évalue le niveau de confiance sur chacun (faible / moyen / fort). Propose des ajustements si le niveau est trop haut ou trop bas.
+```
+
+Le point utile : les "versions dégradées" forcent à penser aux mauvaises surprises avant qu'elles arrivent, pas après.
+
+### A : Alignement
+
+Le cas classique : l'équipe a des OKRs cohérents en interne, mais qui naviguent en parallèle de la stratégie de l'entreprise. Personne ne le dit pendant le planning. On découvre le problème en milieu de trimestre quand les priorités changent.
+
+```
+Voici les priorités stratégiques de l'entreprise pour ce trimestre : [colle les OKRs ou orientations de ton CEO / CPO]
+
+Voici mes OKRs d'équipe :
+Objectif 1 : [...]
+  - KR1 : [...]
+  - KR2 : [...]
+
+Pour chaque OKR, dis-moi :
+1. Quel objectif d'entreprise il supporte le plus directement
+2. Si ce lien est fort, indirect, ou inexistant
+3. S'il y a un objectif d'entreprise qui n'est couvert par aucun de mes OKRs d'équipe
+
+Donne une reformulation alternative pour les OKRs dont le lien est faible, en restant ancré dans le périmètre réel de l'équipe.
+```
+
+Ce prompt est inconfortable. C'est souvent ici qu'on découvre qu'un OKR d'équipe est une initiative personnelle habillée en objectif stratégique.
+
+### M : Mesure
+
+Sans baseline, un Key Result est une intention. "Le taux de conversion passe à 12 %" ne veut rien dire si tu ne sais pas qu'il est à 7 % ou à 11 % aujourd'hui.
+
+```
+Voici mes Key Results :
+- KR1 : [...]
+- KR2 : [...]
+- KR3 : [...]
+
+Pour chaque KR :
+1. Quelle est la donnée source qui permet de le mesurer ? (event Mixpanel, requête SQL, export CRM...)
+2. Quel est le cycle de rafraîchissement réaliste ? (temps réel, hebdomadaire, mensuel)
+3. Si la baseline n'est pas connue, quelle est la première action pour l'établir ?
+4. Y a-t-il un proxy mesurable plus rapidement qui indique si on est sur la bonne trajectoire ?
+
+Identifie les KRs pour lesquels la mesure est fondamentalement incertaine. Propose une reformulation plus instrumentable.
+```
+
+Le proxy mesurable est le point clé. Sur un KR de rétention à 90 jours, attendre 90 jours pour savoir si tu progresses, c'est trop tard. Il faut un signal à J+14 ou J+30.
+
+### E : Expérimentation
+
+Un OKR sans première action concrète reste un voeu. Le prompt Expérimentation sert à trouver la chose la plus petite à tester pour progresser vers chaque KR sans dépenser trois sprints.
+
+```
+Objectif : [...]
+Key Results : [KR1, KR2, KR3]
+
+Pour chaque Key Result, propose :
+1. L'hypothèse principale derrière ce KR (si on fait X, les utilisateurs feront Y)
+2. Le test minimal (idéalement en moins de 2 semaines) qui valide ou invalide cette hypothèse avant d'engager une feature complète
+3. Le critère de succès du test (qu'est-ce qui te ferait continuer ? qu'est-ce qui te ferait pivoter ?)
+
+Prioritise les trois tests par ordre d'impact potentiel et de rapidité d'exécution.
+```
+
+Ce prompt est particulièrement utile pour les KRs sur lesquels l'équipe n'a aucune solution évidente. Il transforme un objectif ambitieux en trois expériences pilotables.
+
+## En pratique : d'un problème vague à des OKRs en 45 minutes
+
+Voici comment ça se passe concrètement.
+
+Point de départ : "on perd trop d'utilisateurs dans les 30 premiers jours."
+
+Étape 1 (Focus) : tu donnes le contexte. Produit, persona, taille d'équipe. Tu décris le problème avec ta propre formulation. Claude identifie trois directions possibles : onboarding trop long, valeur pas visible assez tôt, mauvaise adéquation entre les comptes acquis et le produit. Tu choisis la direction qui correspond à ta réalité.
+
+Étape 2 (Mesure) : tu fournis ce que tu sais de ta baseline. Claude te pose les questions que tu aurais dû te poser : est-ce que tu sais exactement où les utilisateurs décrochent ? est-ce que c'est mesurable dans ton outil analytics actuel ? Tu repères l'angle mort avant d'écrire un seul KR.
+
+Étape 3 (Risques) : tu rédiges des KRs avec TARS comme guide (cf. [l'article sur les OKRs produit](/blog/okr-produit-impact)). Tu les passes dans le prompt Risques. Claude identifie le KR qui a le niveau de confiance le plus bas et propose une version ajustée.
+
+Résultat : trois OKRs construits, challengés, avec des baselines clarifiées et des premières expériences définies. En 45 minutes si tu n'as pas à aller chercher les données. En deux heures si tu dois les extraire.
+
+## Ce qui reste le plus dur
+
+L'IA accélère la partie formelle : construire les phrases, challenger les formulations, vérifier la cohérence interne.
+
+Ce qu'elle n'accélère pas : convaincre ta direction que 50 % de confiance est suffisant et qu'un OKR raté à 70 % reste plus utile que dix KPIs verts. Ni décider ce que l'équipe abandonne ce cycle pour se concentrer sur ces trois objectifs.
+
+Ces deux conversations restent humaines. Elles sont aussi les plus déterminantes.
+
+---
+
+Le Générateur OKR express est en cours de construction sur productcopilot.fr. Il applique la méthode FRAME directement depuis ton navigateur, sans avoir à construire les prompts manuellement. En attendant, tu peux accéder à l'outil gratuit sur [/outils/generateur-okr](/outils/generateur-okr) dès sa sortie.
