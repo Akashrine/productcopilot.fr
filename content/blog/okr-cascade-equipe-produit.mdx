@@ -1,0 +1,131 @@
+---
+title: "OKRs en cascade : aligner squad et direction"
+description: "Comment cascader les OKRs de la stratégie d'entreprise aux squads produit sans traduire des features en Key Results."
+slug: "okr-cascade-equipe-produit"
+date: "2026-07-21"
+readingTime: "9 min"
+cluster: "okrs"
+keywords: ["cascade OKR produit", "aligner OKRs équipe produit", "OKR squad", "OKR stratégie produit", "OKR company team"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Stratégie produit"]
+---
+
+La direction pose ses OKRs en janvier. Les squads reçoivent leurs objectifs en février. Et dans la plupart des cas, les Key Results des squads ressemblent à la roadmap qui existait déjà, reformatée en bullet points avec des pourcentages dessus.
+
+Ce n'est pas une cascade. C'est une traduction mécanique qui préserve le problème au lieu de le résoudre.
+
+Exemple typique. L'OKR de direction : "Devenir la solution de référence sur le segment PME en France." Key Result associé : "500 nouveaux clients PME d'ici fin décembre."
+
+La squad produit reçoit ça et construit ses propres OKRs :
+
+Objectif : "Contribuer à l'objectif d'acquisition PME."
+- KR1 : Livrer le module d'import de données pour les comptables
+- KR2 : Intégrer le SSO pour les offres entreprise
+- KR3 : Réduire le temps d'onboarding moyen de 45 min à 25 min
+
+Le KR3 ressemble à un résultat. Les KR1 et KR2 sont des livrables. Et le KR3 est déconnecté de l'objectif PME : réduire l'onboarding de qui ? De tous les clients, ou des PME spécifiquement ?
+
+C'est le paradoxe de la cascade OKR. L'intention est de décliner la stratégie en objectifs opérationnels. Dans la pratique, on donne à la squad une liste de features avec un emballage OKR.
+
+## Pourquoi la cascade tourne presque toujours mal
+
+Trois raisons structurelles expliquent l'échec.
+
+La première : la traduction de "quoi" en "quoi". Les OKRs de direction disent ce que l'entreprise veut atteindre. Quand la squad les reçoit, elle traduit le "quoi" stratégique en un autre "quoi" : des livrables produit. Elle court-circuite la question centrale : "pourquoi ces livrables permettraient-ils d'atteindre l'objectif de direction ?"
+
+La deuxième : le manque de contexte sur les choix stratégiques. "Atteindre 500 nouveaux clients PME" cache une décision : pourquoi PME ? Pourquoi 500 et pas 200 ou 1000 ? Quel est le levier prioritaire : l'activation, la conversion, la rétention ? Sans ce contexte, la squad improvise ses propres hypothèses. Et chaque squad improvise différemment, dans des directions qui ne se cumulent pas.
+
+La troisième : la pression des roadmaps existantes. La roadmap Q3 existe au moment où les OKRs arrivent. Elle a été négociée, validée, budgétée. Le PM reformule ce qui est prévu en Key Results. Résultat : des OKRs écrits a posteriori pour justifier ce qui était planifié, pas pour orienter les décisions à venir.
+
+Le symptôme le plus révélateur : demande à la squad de décrire en une phrase comment son OKR contribue à l'objectif de direction. Si la réponse prend plus de 30 secondes, la cascade est cassée.
+
+## Le framework FRAME pour structurer la cascade
+
+Avant d'écrire les OKRs d'équipe, une question centrale : quel est le problème que la stratégie cherche à résoudre ?
+
+Le framework FRAME donne une structure pour traverser ce raisonnement en cinq étapes : Focus, Risques, Alignement, Mesure, Experimentation.
+
+**Focus.** Quel est l'unique objectif de direction qui prime ce trimestre ? Pas les cinq. Un seul. Si la direction ne peut pas le réduire à un, la cascade est impossible. Une squad ne peut pas opérationnaliser l'ambiguïté.
+
+**Risques.** Quels sont les obstacles qui empêchent cet objectif d'être atteint aujourd'hui ? Ce sont ces obstacles qui deviennent les leviers de la squad. Si l'objectif est "500 clients PME" et que le risque principal est "les PME s'activent mais ne voient pas la valeur dans les 30 premiers jours", la squad qui travaille sur l'onboarding a un levier direct. Celle qui travaille sur les intégrations comptables en a un indirect, plus difficile à relier causalement.
+
+**Alignement.** Est-ce que l'OKR d'équipe, si atteint, contribue de façon causale à l'OKR de direction ? Pas par corrélation vague ("un meilleur onboarding peut aider à avoir plus de clients"). Par causalité traçable : "réduire le churn J30 de 22 % à 10 % libère de la capacité commerciale, réduit le coût d'acquisition effectif, et alimente mécaniquement la croissance nette des 500 clients."
+
+**Mesure.** L'équipe peut-elle mesurer son propre Key Result sans dépendre d'un reporting de la direction ? Si la squad attend le bilan trimestriel pour savoir si elle a avancé, les KRs sont mal construits. Chaque KR doit être visible en autonomie, idéalement dans un dashboard que l'équipe gère elle-même.
+
+**Experimentation.** Les Key Results laissent-ils la squad libre de choisir son chemin ? Un bon OKR dit où aller, pas comment. Si les KRs prescrivent les solutions ("lancer le module X", "intégrer le SSO"), ils ne permettent pas d'expérimenter. La squad livre les features plutôt que de chercher le meilleur moyen d'atteindre le résultat.
+
+Appliquer FRAME avant d'écrire les OKRs de squad, c'est s'assurer de travailler sur le bon problème, pas sur les bonnes features.
+
+## Les trois niveaux et comment les connecter
+
+Une cascade saine a trois niveaux distincts. Chacun a un rôle précis.
+
+**Niveau 1 : l'OKR d'entreprise.**
+
+Un objectif. Deux à trois Key Results. Ils portent sur les résultats business : acquisition, revenu, part de marché, NPS global. Ce niveau est posé par la direction. Il ne change pas en cours de trimestre sauf situation de crise réelle.
+
+Exemple : "Atteindre 500 nouveaux clients PME en France d'ici Q4 2026."
+- KR1 : 500 comptes PME actifs en production
+- KR2 : MRR des comptes PME à 180K EUR
+- KR3 : Churn mensuel des comptes PME sous 2 %
+
+**Niveau 2 : l'OKR produit (niveau PM).**
+
+C'est le niveau du Product Manager responsable d'un périmètre. Son rôle : traduire les OKRs d'entreprise en hypothèses produit. Quelle part de l'objectif d'entreprise peut être adressée par le produit ? Et quel problème produit, s'il est résolu, contribue le plus à cet objectif ?
+
+Exemple : "Permettre aux PME de comprendre la valeur du produit avant la fin de leur premier mois."
+- KR1 : Taux de complétion de l'onboarding PME : de 34 % à 60 %
+- KR2 : Taux d'usage d'au moins 3 modules dans les J14 : de 22 % à 50 %
+- KR3 : Churn J30 sur les comptes PME : de 22 % à 12 %
+
+Le lien est explicite. Si ce KR3 produit est atteint, il contribue directement au KR3 entreprise (churn mensuel sous 2 %). La direction peut tracer le chemin.
+
+**Niveau 3 : l'OKR de squad.**
+
+Un objectif ciblé sur un problème spécifique, atteignable par une squad autonome en un cycle.
+
+Exemple (squad onboarding) : "Rendre le premier flow d'onboarding suffisamment clair pour que les PME atteignent leur premier moment de valeur."
+- KR1 : Taux de complétion du step 3 du flow (étape critique actuelle) : de 28 % à 55 %
+- KR2 : Taux de comptes ayant créé leur premier projet dans les 48h : de 15 % à 40 %
+
+Deux Key Results. Ciblés sur le levier que la squad contrôle directement. Aucun livrable. La squad choisit son chemin : refonte UX, emails de nudge, session d'onboarding live, personnalisation selon le profil. Ce qui compte, c'est le chiffre de sortie.
+
+## Le test de causalité
+
+Avant de valider la cascade, un test simple. Est-ce que l'OKR de squad, si atteint, contribue de façon causale à l'OKR produit ? Et est-ce que l'OKR produit, si atteint, contribue de façon causale à l'OKR entreprise ?
+
+La technique "so that" : écris la phrase en enchaînant les trois niveaux.
+
+"La squad améliore le taux de complétion de l'onboarding à 55 % [so that] les comptes PME comprennent la valeur produit plus vite et leur churn J30 baisse de 22 % à 12 % [so that] le churn mensuel global des comptes PME passe sous les 2 %."
+
+Si tu ne peux pas écrire cette phrase de façon fluide et cohérente, la cascade est cassée quelque part.
+
+L'erreur fréquente : le test semble fonctionner logiquement, mais la relation n'est pas causale. "La squad livre le module SSO [so that] les PME se connectent plus facilement [so that] la direction atteint 500 clients." Ce n'est pas de la causalité. C'est une liste de suppositions enchaînées. Le SSO facilite peut-être la connexion. La facilité de connexion n'est peut-être pas le frein à l'acquisition PME.
+
+Un autre cas qui piège : les OKRs de squads différentes ne se cumulent pas. La squad onboarding améliore le churn J30. La squad acquisition améliore le taux de conversion. Mais personne ne mesure l'effet combiné sur les 500 clients. La cascade est cohérente à chaque niveau en isolation, mais les squads ne se parlent pas. C'est le PM qui coordonne ce que les OKRs de squads ne couvrent pas.
+
+## OKRs en cascade et rythme produit
+
+La cascade OKR n'est pas un événement annuel. C'est un processus itératif qui vit dans ton rythme de travail.
+
+Semaine 1 du trimestre : la direction publie ses OKRs et les présente avec le contexte des choix stratégiques. Pourquoi ces objectifs et pas d'autres. Pourquoi ce segment, ce levier, ce chiffre. Sans ce contexte, les PMs improvisent. Avec, ils construisent des hypothèses.
+
+Semaines 2-3 : les PMs construisent leurs OKRs produit avec leurs équipes. Ce n'est pas une cascade top-down pure. La squad propose ses Key Results, le PM valide la cohérence avec l'OKR produit, la direction valide la cohérence avec l'OKR entreprise. C'est participatif. Les équipes co-créent leurs OKRs à partir de l'objectif de direction, elles ne reçoivent pas une liste.
+
+Mi-trimestre : check-in court (30 minutes maximum). Trois questions uniquement. Quelle est ta confiance sur chaque KR de 0 à 1 ? Qu'est-ce qui bloque ? La cascade est-elle toujours cohérente ou un OKR de direction a-t-il changé de priorité ?
+
+Fin de trimestre : revue OKR. La question n'est pas "est-ce qu'on a atteint les KRs ?" mais "qu'est-ce qu'on a appris sur le problème qu'on cherchait à résoudre ?" Atteindre 70 % d'un OKR ambitieux et comprendre pourquoi les 30 % restants ont résisté, c'est plus utile qu'atteindre 100 % d'un OKR trop confortable.
+
+C'est l'erreur politique à ne pas reproduire : les squads écrivent des KRs confortables parce que ne pas atteindre ses OKRs est perçu comme un échec personnel. Le niveau de confiance d'atteinte tourne à 85-90 %, là où l'inconfort sain serait à 50-60 %. Les OKRs ne sont pas un contrat de livraison. Ce sont des hypothèses sur ce qui peut changer ce trimestre.
+
+La cascade devient aussi un filtre naturel pour la [priorisation du backlog](/blog/prioriser-backlog-ia). Toute nouvelle demande en cours de trimestre passe par une seule question : est-ce que ça contribue à l'OKR de squad ce cycle ? Si non, ça attend le prochain cycle ou ça rejoint le backlog sans date.
+
+Et pour des Key Results qui mesurent l'impact réel plutôt que les livrables, le [framework TARS](/blog/okr-produit-impact) est le complément direct de la cascade. TARS t'aide à formuler les KRs une fois que tu sais sur quel problème la squad se concentre ce trimestre.
+
+## Le Générateur OKR express
+
+Un outil pour poser les OKRs de ta squad en moins de 10 minutes arrive prochainement sur productcopilot.fr. Il couvre les trois niveaux de cascade, génère le test de causalité, et produit une structure prête à partager avec ta direction.
+
+Pour être notifié à la sortie, rejoins la liste sur [productcopilot.fr](/).
