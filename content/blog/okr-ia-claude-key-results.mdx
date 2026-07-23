@@ -1,0 +1,123 @@
+---
+title: "Écrire des OKRs avec l'IA : méthode et prompts"
+description: "Comment utiliser Claude pour passer de la page blanche à des Key Results solides en moins d'une heure. Méthode et prompts testés."
+slug: "okr-ia-claude-key-results"
+date: "2026-07-23"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["OKR IA product manager", "utiliser IA pour OKR", "Claude OKR PM", "écrire OKR avec IA", "key results IA"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "IA"]
+---
+
+La page blanche OKR est une des situations les plus paralysantes pour un PM.
+
+Tu sais que l'OKR doit mesurer un résultat, pas une livraison. Tu connais la distinction entre output et outcome. Mais face à un objectif comme "améliorer l'expérience utilisateur", transformer ça en trois Key Results mesurables reste un exercice difficile.
+
+L'IA ne fait pas les OKRs à ta place. Mais elle accélère chaque étape du processus : formuler l'objectif, trouver les bons angles de mesure, vérifier la cohérence, anticiper les objections. Ce guide documente comment s'y prendre.
+
+## Ce que l'IA fait bien, et ce qu'elle ne remplace pas
+
+Avant de rentrer dans les prompts, une clarification utile.
+
+L'IA est efficace pour : transformer un problème flou en objectif formulé, générer plusieurs angles de Key Results à partir d'une situation, vérifier si un KR mesure bien un résultat ou une livraison, reformuler un KR trop vague ou trop large, poser les questions qu'un facilitateur OKR expérimenté poserait.
+
+L'IA ne remplace pas : ta connaissance du contexte produit, les données de ta baseline, l'alignement organisationnel, les décisions stratégiques sur ce que tu priorises ce trimestre.
+
+En pratique, ça veut dire que tu dois apporter le contexte. Un prompt sans contexte donne des OKRs génériques qui n'engagent personne. Un prompt avec le bon contexte donne un premier draft en deux minutes que tu passes 20 minutes à affiner.
+
+## La séquence en quatre étapes
+
+### Etape 1 : Formuler le problème, pas l'objectif
+
+Le premier réflexe est de commencer par l'objectif : "Améliorer la rétention". Mais partir de l'objectif, c'est partir trop tard dans la réflexion.
+
+Commence par le problème :
+
+> "Je suis PM sur une plateforme SaaS B2B de gestion de projets. Notre taux de churn à 90 jours est de 28%. Les interviews avec les comptes churned montrent qu'ils n'ont pas vu la valeur du produit avant J30. Notre time-to-value moyen est de 21 jours. Aide-moi à formuler un objectif OKR pour ce trimestre."
+
+Ce prompt donne à Claude les éléments concrets pour proposer un objectif centré sur le bon levier, pas sur le symptôme.
+
+Exemple de réponse utile : "Rendre la valeur du produit visible et mesurable avant J21 pour tous les nouveaux comptes."
+
+Exemple de réponse inutile : "Améliorer l'expérience onboarding." Ce n'est pas un objectif, c'est une zone de travail.
+
+Si Claude part sur quelque chose de trop générique, demande-lui : "Reformule en une phrase qui dit ce qui doit changer dans le comportement des utilisateurs ou dans les métriques business."
+
+### Etape 2 : Générer les angles de Key Results
+
+Une fois l'objectif formulé, tu veux explorer plusieurs angles de mesure avant d'en choisir trois.
+
+> "Pour cet objectif [colle l'objectif], génère 8 à 10 Key Results possibles. Chaque KR doit mesurer un résultat, pas une livraison. Formate-les ainsi : [Dimension] : [Métrique] passe de [valeur actuelle si connue] à [cible] en [délai]."
+
+Le paramètre "8 à 10" est volontaire. Tu ne vas pas garder tout ça. Mais avoir une liste large te permet de voir les angles que tu n'aurais pas envisagés seul : satisfaction, adoption, rétention précoce, signal d'engagement intermédiaire.
+
+Sur chaque KR généré, pose-toi la question : est-ce que cette métrique peut s'améliorer sans que le problème de départ ne soit résolu ? Si oui, c'est un mauvais KR. Retraite-le ou élimine-le.
+
+### Etape 3 : Passer au filtre TARS
+
+Le framework TARS structure l'impact produit en quatre dimensions : Targeted (les bons utilisateurs arrivent et s'activent), Adopted (ils utilisent le produit), Retained (ils reviennent), Satisfied (ils en sont satisfaits).
+
+> "Prends cette liste de Key Results et classe chacun dans une des quatre dimensions TARS : Targeted, Adopted, Retained, Satisfied. Ensuite dis-moi quelles dimensions ne sont pas couvertes, et propose un KR pour chaque dimension manquante."
+
+Ce prompt a deux effets. Il t'aide à choisir parmi les candidats en voyant lesquels couvrent les dimensions les plus importantes pour ton objectif. Et il révèle les angles morts : si tous tes KRs tombent dans "Adopted" mais qu'aucun ne mesure la rétention précoce, c'est un signal que tu travailles sur un seul levier alors que le problème en touche plusieurs.
+
+Un OKR n'a pas besoin de couvrir les quatre dimensions. Mais TARS comme checklist t'évite de construire une vision tunnel.
+
+### Etape 4 : Challenger chaque KR
+
+Avant de valider un KR, fais-le passer par un adversaire.
+
+> "Joue le rôle d'un CFO sceptique. Pour chaque Key Result de cette liste, trouve l'objection la plus évidente : ce KR peut-il s'améliorer sans que le problème business ne soit résolu ? Ce KR est-il manipulable (peut-on l'atteindre sans créer de valeur réelle) ? Y a-t-il une métrique plus directe qui mesurerait mieux ce qu'on cherche ?"
+
+Ce prompt révèle systématiquement deux ou trois KRs fragiles dans tout ensemble d'OKRs. Pas parce qu'ils sont faux, mais parce qu'ils mesurent un indicateur intermédiaire qu'on peut optimiser sans résoudre le vrai problème.
+
+Exemple classique : "Le nombre de sessions support diminue de 40%" peut s'améliorer parce que les utilisateurs abandonnent le produit et n'ouvrent plus de tickets. Ce n'est pas un signal de satisfaction. C'est un signal de churn déguisé.
+
+## Un exemple complet
+
+Situation : squad activation sur un outil de collaboration pour équipes distribuées. Le problème : les comptes créés restent inactifs à 60% passé J7. La baseline est connue : 40% des comptes utilisent l'outil au moins une fois par semaine à J30.
+
+Prompt de départ :
+
+> "Je suis PM sur un outil de collaboration asynchrone pour équipes distribuées. 60% de nos comptes créés sont inactifs passé J7. 40% utilisent l'outil au moins une fois par semaine à J30. Le problème identifié : les équipes ne comprennent pas la valeur de l'asynchrone dans leur workflow, donc elles continuent avec Slack et les meetings. Aide-moi à formuler un objectif OKR pour ce trimestre, centré sur le changement de comportement."
+
+Objectif proposé par Claude : "Faire du mode asynchrone le mode par défaut pour 50% des équipes actives avant J30."
+
+Angles de KRs générés (sélection après filtrage) :
+
+- (Targeted) Le taux d'activation à J7 passe de 40% à 65%
+- (Adopted) 50% des comptes actifs utilisent la fonctionnalité "message différé" au moins deux fois par semaine
+- (Retained) Le taux d'utilisation hebdomadaire à J30 passe de 40% à 62%
+- (Satisfied) Le score NPS des comptes utilisant le mode asynchrone depuis plus de 21 jours passe de 24 à 38
+
+Filtre TARS : les quatre dimensions sont couvertes. Le challenge CFO révèle que le KR "Adopted" peut se manipuler si on rend la fonctionnalité obligatoire dans le parcours. On le reformule : "50% des comptes actifs utilisent la fonctionnalité de leur propre initiative, sans trigger automatique".
+
+Ce changement de formulation est la différence entre un KR qui mesure l'adoption réelle et un KR qui mesure la compliance forcée.
+
+## Itérer en cours de trimestre
+
+L'IA n'est pas utile qu'au moment de l'écriture des OKRs. Elle sert aussi en cours de cycle pour interpréter les données intermédiaires.
+
+À mi-trimestre, si un KR stagne :
+
+> "Mon KR 'Le taux d'activation à J7 passe de 40% à 65%' est à 43% en semaine 6. Les initiatives lancées : refonte du flow d'onboarding (J+2), email de réactivation J5 (J+3), session live onboarding hebdomadaire (J+4). Génère trois hypothèses pour expliquer la stagnation et trois leviers que je n'ai pas encore testés."
+
+Ce prompt transforme un constat de stagnation en plan d'action en moins de 10 minutes. Ce n'est pas une analyse. C'est une accélération de la réflexion que tu aurais eue de toute façon.
+
+## Ce que ça change dans la pratique
+
+Les équipes qui structurent leurs OKRs avec ce type d'approche rapportent deux changements concrets.
+
+Le premier : l'exercice OKR prend moins de temps. Pas parce que la réflexion est raccourcie, mais parce que la page blanche disparaît. Le travail cognitif difficile (trouver les bons angles de mesure, challenger ses propres hypothèses) est distribué entre toi et l'IA.
+
+Le second : les OKRs survivent mieux au premier contact avec les parties prenantes. Un KR qui a passé le filtre "adversaire sceptique" est un KR qui a déjà répondu aux objections classiques. La conversation de validation devient plus rapide.
+
+Pour aller plus loin sur la construction des Key Results, l'article [OKRs produit : comment mesurer l'impact, pas le travail](/blog/okr-produit-impact) détaille le framework TARS et la notion de baseline.
+
+## L'outil pour aller plus vite
+
+Le Générateur OKR express est en cours de développement sur productcopilot.fr. Il structure la séquence décrite ici sous forme de formulaire guidé : problème, contexte, angles de mesure, filtre TARS, validation.
+
+En attendant, retrouve tous les outils disponibles sur la [page outils](/outils).
