@@ -1,0 +1,161 @@
+---
+title: "Comment écrire des OKRs avec l'IA : méthode et prompts"
+description: "Utilise Claude comme sparring partner pour tes OKRs produit. Méthode en 3 phases, prompts testés, erreurs à éviter."
+slug: "okr-ia-prompts-product-manager"
+date: "2026-07-25"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["OKR avec IA", "rédiger OKRs Claude", "prompts OKR product manager", "générer OKRs IA", "OKR IA produit"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "IA"]
+---
+
+L'IA ne sait pas ce que ton équipe construit. Elle ignore tes contraintes headcount, les priorités de ton CEO, et les baselines de tes métriques actuelles.
+
+Si tu lui demandes "écris des OKRs pour une équipe produit", elle te sort des OKRs génériques. Utilisables nulle part.
+
+Mais utilisée autrement, elle change la façon dont tu travailles tes OKRs. Pas comme rédactrice. Comme sparring partner.
+
+Cette distinction est importante. Un sparring partner force la précision. Il pose des questions inconfortables. Il teste tes formulations. Il détecte les angles que tu as ignorés.
+
+Voici la méthode en 3 phases pour utiliser Claude de cette façon.
+
+## Ce que l'IA fait bien sur les OKRs (et ce qu'elle rate)
+
+Les LLMs excellent à deux choses en contexte OKR.
+
+D'abord, ils challengent les formulations molles. "Améliorer l'onboarding" n'est pas un objectif. "Réduire le churn à J30 des nouveaux comptes de 18 % à 10 %" en est un. Un bon prompt force cette précision.
+
+Ensuite, ils génèrent des variantes. Face à un O clarifié, ils proposent 8 Key Results candidats que tu n'aurais pas tous trouvés seul. Tu choisis. Tu combines. Tu raffines.
+
+En revanche, l'IA ne peut pas décider ce qui est ambitieux dans ton contexte. Elle ne sait pas si passer de 30 % à 50 % d'activation est facile ou irréaliste pour ton produit en 90 jours. Elle n'a pas accès à tes dashboards. Elle ne connaît pas les engagements de ton management.
+
+Les deux conditions pour que ça marche : tu apportes le contexte, et tu gardes la décision finale.
+
+## Phase 1 : clarifier l'objectif avec le Focus du framework FRAME
+
+Avant d'écrire un seul Key Result, l'objectif doit être net. Un O flou génère des KRs flous.
+
+Le problème classique ressemble à ça : "Améliorer l'expérience produit pour les nouveaux utilisateurs". C'est vaste. Activation ? Temps à la valeur ? Support ? On ne sait pas.
+
+Dans le framework FRAME, la première dimension est le Focus. L'objectif doit être suffisamment précis pour qu'une équipe sache quoi arbitrer quand deux initiatives entrent en compétition. Si l'O peut légitimer n'importe quelle initiative, il n'est pas assez focalisé.
+
+Claude aide à atterrir. Ce prompt fonctionne :
+
+```
+Je prépare mes OKRs pour le prochain trimestre.
+
+Contexte produit : [description courte du produit et du marché]
+Problème principal ce trimestre : [2-3 lignes]
+Contraintes équipe : [headcount, tech debt, autres projets en cours]
+OKRs company ce trimestre : [si disponibles]
+
+Pose-moi 5 questions pour clarifier mon objectif avant qu'on écrive les Key Results.
+```
+
+Les questions de Claude vont pointer les mêmes angles aveugles. "Comment vas-tu mesurer le succès de cet objectif ?" "Qui est l'utilisateur cible ?" "Quel est l'état actuel, et où veux-tu en être dans 90 jours ?"
+
+Ce n'est pas de la magie. C'est un travail de clarification que tu aurais fait en une heure de réunion d'alignement, compressé en 15 minutes.
+
+Réponds aux questions de Claude par écrit. Pas seulement dans ta tête. Le fait d'écrire force la précision d'une façon que la réflexion mentale n'atteint pas.
+
+À la fin de cette phase, tu dois avoir un O d'une seule phrase. Un changement de comportement utilisateur ou une évolution de business metric. Atteignable en 90 jours.
+
+## Phase 2 : générer des Key Results candidats avec la dimension Mesure
+
+L'O clarifié, tu passes à la génération de KRs. Voici le prompt :
+
+```
+Mon objectif pour ce trimestre : [O clarifié]
+
+Baselines actuelles :
+- [Métrique 1] : [valeur actuelle]
+- [Métrique 2] : [valeur actuelle]
+- [Métrique 3] : [valeur actuelle]
+
+Leviers disponibles : [2-3 lignes sur ce que l'équipe peut faire concrètement ce trimestre]
+
+Génère 8 Key Results candidats pour cet objectif.
+Chaque KR doit :
+- Mesurer un résultat, pas une livraison
+- Inclure une valeur cible chiffrée
+- Être atteignable en 90 jours
+- Appartenir à l'une de ces catégories : activation, adoption, rétention, satisfaction
+
+Présente-les groupés par catégorie.
+```
+
+La section "Baselines actuelles" est la plus importante. Elle transforme des KRs génériques en KRs contextualisés. "Le taux d'activation passe de 31 % à 50 %" est utilisable. "Le taux d'activation augmente de 20 points" ne l'est pas.
+
+Si tu n'as pas de baseline pour une métrique, c'est un signal. Soit tu l'exclus de tes OKRs, soit tu en fais une tâche de sprint avant de finaliser le planning.
+
+Sur les 8 KRs générés, tu vas en garder 3 ou 4. Les critères de sélection :
+
+- Tu as les données pour les mesurer aujourd'hui
+- Tu peux agir dessus avec les ressources disponibles
+- Ils couvrent des dimensions d'impact différentes (pas quatre KRs sur la rétention)
+
+L'approche de sélection correspond au M de FRAME : Mesure. Les KRs doivent mesurer des métriques que tu suis déjà, ou que tu peux commencer à suivre immédiatement. Un KR sur une métrique inexistante n'est pas un KR, c'est un chantier de data.
+
+Si tu travailles déjà tes Key Results selon la méthode TARS décrite dans l'[article sur les OKRs produit](/blog/okr-produit-impact), tu peux utiliser les 4 dimensions comme filtre de sélection à la place des catégories du prompt. Les deux approches sont compatibles.
+
+## Phase 3 : challenger ses OKRs avec Risques et Alignement
+
+Un OKR écrit seul souffre toujours du même biais : tu valides ce que tu as écrit plutôt que de le challenger. L'IA joue l'avocat du diable.
+
+```
+Voici mes OKRs pour ce trimestre :
+
+Objectif : [O]
+- KR1 : [...]
+- KR2 : [...]
+- KR3 : [...]
+
+Joue l'avocat du diable. Identifie :
+1. Les KRs qui mesurent des outputs plutôt que des outcomes
+2. Les valeurs cibles trop confortables ou irréalistes
+3. Les dimensions d'impact que j'aurais oubliées
+4. Les scénarios où un KR serait atteint sans impact réel sur le business
+5. Ce qui manque pour que ces OKRs soient alignés sur les OKRs company
+```
+
+Cette phase est souvent la plus précieuse. Non pas dans la génération, mais dans la détection des failles.
+
+Exemple typique : tu présentes un KR "Livrer le nouveau module analytics avant fin septembre". Claude va pointer que c'est une livraison, pas un résultat. Tu aurais livré en avance et rien changé aux comportements utilisateurs.
+
+Un autre exemple fréquent : des OKRs sans KR sur la rétention. L'équipe pense activation et adoption, et oublie de mesurer si les utilisateurs activés reviennent. Claude le remarque.
+
+Cette étape correspond aux R (Risques) et A (Alignement) dans FRAME. Tu identifies ce qui peut faire rater les KRs, et tu vérifies que tes objectifs parlent à la même stratégie que celle du niveau au-dessus.
+
+L'alignement est souvent la faille la moins visible. Des OKRs équipe produit techniquement bien écrits, mais déconnectés des priorités company, créent de la performance locale sans impact global. Claude peut identifier les écarts. Mais c'est à toi d'aller valider avec ton management.
+
+## Comment intégrer ça dans ton cycle OKR réel
+
+Ces trois phases ne remplacent pas les réunions d'OKR planning. Elles les préparent.
+
+Semaine 1 du cycle : tu donnes à Claude le contexte business. Tu utilises le prompt de clarification. Tu notes les questions qu'il pose, et tu y réponds par écrit.
+
+Semaine 2 : tu lances le prompt de génération avec tes baselines. Tu sélectionnes 3-4 KRs candidats. Tu les partages avec ton équipe pour une première réaction.
+
+Fin de semaine 2 : tu lances le prompt de challenger sur tes OKRs provisoires. Tu prends en compte les failles identifiées. Tu affines.
+
+Semaine 3 : OKRs finaux en revue avec le management. Claude n'intervient plus à cette étape.
+
+Ce déroulé réduit le temps de la session de planning de 3 heures à 45 minutes. L'essentiel du travail de clarification et de construction a déjà été fait en amont. La réunion sert à aligner et à arbitrer, pas à repartir de zéro.
+
+## Les trois erreurs à ne pas faire
+
+**Donner trop peu de contexte.** Un prompt court donne un OKR générique. La section contexte n'est pas optionnelle. Plus tu contextualises, plus les KRs candidats sont proches de ta réalité.
+
+**Prendre les KRs générés tels quels.** Claude propose des hypothèses. Chaque KR doit passer le filtre : est-ce que cette métrique existe dans mes dashboards aujourd'hui ? Est-ce que je peux agir dessus dans les 90 prochains jours avec les ressources disponibles ?
+
+**Utiliser l'IA pour éviter les conversations difficiles.** Les OKRs les plus utiles émergent d'une friction productive avec le reste de l'équipe. Si tu utilises Claude pour éviter le débat sur les priorités, tu rates l'alignement qui fait fonctionner les OKRs dans la durée.
+
+L'IA est un outil de préparation, pas de substitution. Le sparring ne remplace pas le match.
+
+## Passe à l'action
+
+Le Générateur OKR express automatise les phases 1 et 2 de cette méthode. Tu entres ton contexte, ton objectif, et tes baselines. Tu reçois une liste de Key Results candidats classés par dimension d'impact, avec un niveau de confiance estimé pour chaque cible.
+
+[Accéder au Générateur OKR express](/outils/generateur-okr)
