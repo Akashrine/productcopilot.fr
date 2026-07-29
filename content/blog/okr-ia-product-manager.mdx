@@ -1,0 +1,152 @@
+---
+title: "OKRs produit avec l'IA : des Key Results qui tiennent"
+description: "Comment utiliser Claude ou ChatGPT pour écrire des OKRs produit utiles. Méthode en 3 prompts concrets avec le filtre TARS pour des Key Results qui mesurent l'impact."
+slug: "okr-ia-product-manager"
+date: "2026-07-29"
+readingTime: "9 min"
+cluster: "okrs"
+keywords: ["OKR IA product manager", "générer OKR avec Claude", "OKR produit intelligence artificielle", "Key Results product manager", "OKR méthode PM"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "IA"]
+---
+
+L'IA peut t'aider à écrire des OKRs en 15 minutes. Elle peut aussi te générer des OKRs tellement vagues qu'ils ne servent à rien.
+
+La différence ne tient pas à l'outil. Elle tient à comment tu l'alimentes.
+
+## Ce que l'IA fait mal par défaut avec les OKRs
+
+Pose la question suivante à Claude ou ChatGPT : "génère-moi des OKRs pour mon équipe produit". Tu obtiens quelque chose comme ça :
+
+Objectif : Améliorer l'expérience utilisateur
+
+- KR1 : Augmenter le NPS de 30 à 45
+- KR2 : Réduire le taux de churn de 5 %
+- KR3 : Lancer 3 nouvelles features avant la fin du trimestre
+
+Le troisième KR est une tâche déguisée. Le premier est correct mais sans baseline vérifiable. Le deuxième est vague sans contexte de départ. Et tous les trois sortent d'un contexte produit inventé par le modèle.
+
+Le problème n'est pas l'IA. C'est que tu lui as posé une question trop générale. Sans contexte, elle produit des exemples génériques. Les exemples génériques sont inutiles dans un OKR réel, parce qu'un OKR réel vit dans un contexte précis : un produit, une phase, des métriques existantes, des contraintes d'équipe.
+
+Comme on l'a vu dans [OKRs produit : comment mesurer l'impact, pas le travail](/blog/okr-produit-impact), la distinction entre résultat et tâche est le premier filtre à appliquer. L'IA ne fait pas ce filtre automatiquement. Tu dois lui donner les instructions.
+
+## Ce dont l'IA a besoin pour générer des OKRs utiles
+
+Avant de lancer un prompt, rassemble quatre éléments :
+
+**Le contexte produit.** Une phrase sur ce que fait ton produit, pour qui, et dans quelle phase tu es (acquisition, activation, rétention, monétisation).
+
+**La priorité du trimestre.** Pas une liste de projets. Une phrase sur ce que tu cherches à changer dans le comportement des utilisateurs ou dans les résultats business.
+
+**Les données de la période précédente.** Les métriques que tu surveilles déjà, avec leur valeur actuelle. Sans baseline, l'IA invente des cibles.
+
+**Le périmètre de ton équipe.** Ce que vous contrôlez directement, et ce qui dépend d'autres équipes. Un bon OKR ne repose pas sur des dépendances externes hors de ton contrôle.
+
+Voici un exemple concret pour la suite. Tu travailles sur un outil B2B de gestion de projets. Au Q2, l'activation a chuté : 40 % des nouveaux inscrits seulement ont créé un premier projet dans les 7 jours. Au Q3, la priorité est de redresser l'activation des nouveaux comptes. Ton équipe contrôle le produit et les communications in-app, pas le pricing ni l'acquisition.
+
+Ce contexte, tu le fournis à l'IA avant de lui demander quoi que ce soit. Pas après.
+
+## Prompt 1 : challenger ton Objective
+
+Ton Objective, c'est la direction. Il doit décrire un changement d'état, pas une livraison. "Améliorer l'onboarding" n'est pas un Objective. C'est un chantier.
+
+Voici un prompt pour passer du brouillon à l'Objective utilisable :
+
+---
+
+Tu es un product manager senior. Je travaille sur [nom du produit : outil B2B de gestion de projets, phase d'activation]. La priorité du trimestre est : [faire passer le taux d'activation J7 de 40 % à 65 %]. La principale friction observée est : [40 % des nouveaux inscrits ne créent pas de premier projet dans les 7 jours]. Je veux définir un Objective pour mon équipe. Voici ma première formulation : "[Améliorer l'onboarding des nouveaux utilisateurs]". Évalue cette formulation sur 3 critères : 1) Est-ce que ça décrit un changement d'état ou une livraison ? 2) Est-ce que l'équipe peut l'influencer directement ? 3) Est-ce que c'est mémorable ? Propose 3 reformulations alternatives.
+
+---
+
+Exemple de résultat pour ce contexte B2B :
+
+Reformulations proposées :
+
+1. "Faire en sorte que chaque nouvel inscrit vive son premier succès produit dans les 7 jours"
+2. "Transformer les essais gratuits en utilisateurs actifs avant la fin du mois 1"
+3. "Faire en sorte que l'onboarding cesse d'être la cause principale du churn précoce"
+
+La deuxième reformulation mélange objectif et timeframe. La troisième est pertinente mais difficile à mesurer. La première est la meilleure : elle décrit un changement d'état observable ("premier succès produit"), situé dans le temps (J7), et centré sur l'utilisateur.
+
+Ce prompt applique le principe FRAME, plus précisément le F (Focus) : forcer l'équipe à nommer exactement ce qu'elle cherche à changer, pas ce qu'elle va faire.
+
+## Prompt 2 : générer des Key Results avec le filtre TARS
+
+Les Key Results prouvent que ton Objective est atteint. L'erreur classique : les confondre avec des livrables ou des étapes de roadmap.
+
+Pour qualifier tes KR avant de les finaliser, utilise le filtre TARS :
+
+- **Targeted** : le KR vise un segment ou un moment précis, pas "tous les utilisateurs en général"
+- **Adopted** : le comportement mesuré prouve l'adoption réelle, pas juste l'exposition à une feature
+- **Retained** : le KR mesure quelque chose dans la durée, pas juste au lancement
+- **Satisfied** : le KR capture la qualité perçue ou l'expérience, pas uniquement le volume
+
+Voici le prompt pour générer des KR candidats :
+
+---
+
+Mon Objective est : "Faire en sorte que chaque nouvel inscrit vive son premier succès produit dans les 7 jours". Mes données actuelles : taux d'activation J7 : 40 %, nombre de projets créés par nouveau compte à J7 : 0,4, taux de complétion du checklist d'onboarding : 30 %, score CSAT post-onboarding : 3,2 sur 5. Mon périmètre : produit et communications in-app, pas le pricing ni l'acquisition. Génère 5 Key Results candidats pour cet Objective. Pour chaque KR, indique : la métrique exacte, la valeur de départ, la valeur cible, la source de données, et si ce KR mesure un comportement (adoption) ou une livraison. Signale les KR qui mesurent des livraisons plutôt que des résultats.
+
+---
+
+Exemple de résultat :
+
+| KR | Baseline | Cible | Type |
+|---|---|---|---|
+| Taux d'activation J7 | 40 % | 65 % | Comportement |
+| Projets créés par compte à J7 | 0,4 | 1,2 | Comportement |
+| Complétion du checklist d'onboarding | 30 % | 55 % | Comportement |
+| CSAT post-onboarding | 3,2/5 | 4,1/5 | Perception |
+| Livrer le nouveau flow d'onboarding en juillet | - | - | Livraison (à écarter) |
+
+Le cinquième KR est signalé comme livraison et écarté automatiquement. Les quatre premiers sont des KR valides. Tu en choisis 2 ou 3 parmi les plus impactants, selon ce que ton équipe contrôle le mieux.
+
+En croisant les KR avec le filtre TARS : le KR1 et KR2 sont Adopted (comportement à J7). Le KR3 est Targeted (mesure un segment du parcours). Le KR4 est Satisfied. Tous sont Retained implicitement, puisque le comportement à J7 prédit la rétention à 30 jours dans la plupart des produits SaaS (selon les benchmarks Amplitude, 2025).
+
+## Prompt 3 : challenger tes OKRs à mi-cycle
+
+Un OKR qui dort pendant 3 mois n'est plus un OKR. C'est une archive.
+
+À mi-trimestre, l'IA peut t'aider à faire un check-in structuré. Pas juste "où en est-on", mais : est-ce que la direction est encore valide ?
+
+Voici le prompt de check-in :
+
+---
+
+Voici mes OKRs du trimestre : Objectif : "Faire en sorte que chaque nouvel inscrit vive son premier succès produit dans les 7 jours". KR1 : taux d'activation J7 de 40 % à 65 %. KR2 : projets créés par compte à J7 de 0,4 à 1,2. KR3 : CSAT post-onboarding de 3,2 à 4,1. Voici où j'en suis à mi-parcours : KR1 : 48 % (avancement : 26 %). KR2 : 0,7 (avancement : 43 %). KR3 : 3,6 (avancement : 44 %). Voici ce qui a changé depuis le début du trimestre : on a découvert que la friction principale n'est pas le parcours d'onboarding mais la compréhension du premier cas d'usage. On a lancé un wizard de démarrage guidé mi-trimestre. Analyse : 1) Est-ce que l'Objective est encore pertinent ? 2) Quels KR sont off-track et pourquoi ? 3) Est-ce qu'il faut ajuster les cibles ou le focus ? Propose une recommandation en 3 points.
+
+---
+
+Ce prompt applique deux principes FRAME : le R (Risques) pour identifier ce qui met les OKRs en danger, et le M (Mesure) pour forcer une lecture critique des données réelles par rapport aux intentions initiales.
+
+Tu peux lancer ce prompt en réunion de check-in directement dans Claude. La réponse structure la discussion, plutôt qu'un document préparé la veille.
+
+## Intégrer l'IA dans ton cycle OKR sans perdre le contrôle
+
+L'IA accélère la mise en forme et le challenger. Elle ne remplace pas le jugement produit.
+
+Les moments où l'IA est utile dans le cycle OKR :
+
+- Formulation : passer d'un brouillon à un Objective clair en 10 minutes
+- Génération de KR : sortir 5 candidats depuis tes métriques, puis choisir
+- Check-in : structurer la revue à mi-cycle avec un cadre répétable
+- Scoring final : analyser les causes d'atteinte ou d'échec en fin de cycle
+
+Les moments où l'IA ne peut pas t'aider :
+
+- Définir la priorité stratégique (ça vient de la vision produit, pas d'un prompt)
+- Choisir les métriques qui comptent pour ton business (ça demande la connaissance du contexte)
+- Décider si un OKR est abandonné ou ajusté (ça demande un jugement sur le trade-off entre apprentissage et ambition)
+
+La règle simple : tu pilotes la direction, l'IA structure l'expression.
+
+Pour les équipes qui démarrent avec les OKRs, la plus grande erreur est de chercher des OKRs "parfaits" dès le premier cycle. Un OKR imparfait suivi et challengé chaque semaine vaut dix fois mieux qu'un OKR parfait oublié dans un Google Doc. L'IA t'aide à aller vite sur la forme pour que tu puisses te concentrer sur le fond.
+
+## Le Générateur OKR express (bientôt disponible)
+
+Le Générateur OKR express applique ce processus directement dans l'outil. Tu renseignes ton contexte produit, ta priorité trimestrielle et tes métriques actuelles. Tu obtiens des Key Results candidats avec le filtre TARS pré-appliqué, et un check-in structuré pour le milieu de cycle.
+
+L'outil est en cours de développement. Pour être notifié à sa sortie et recevoir en avant-première les prompts OKR complets, inscris-toi à la newsletter sur la page d'accueil.
+
+Si tu veux approfondir la distinction entre KR et tâche, lis [OKRs produit : comment mesurer l'impact, pas le travail](/blog/okr-produit-impact).
