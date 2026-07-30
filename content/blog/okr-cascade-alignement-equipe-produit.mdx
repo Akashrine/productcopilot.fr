@@ -1,0 +1,140 @@
+---
+title: "OKRs en cascade : pourquoi ça bloque l'équipe produit"
+description: "La cascade d'OKRs est un anti-pattern. Pourquoi les équipes produit qui l'utilisent se retrouvent avec des KRs copiés et zéro alignement réel."
+slug: "okr-cascade-alignement-equipe-produit"
+date: "2026-07-30"
+readingTime: "7 min"
+cluster: "okrs"
+keywords: ["cascader OKRs", "OKR alignement équipe produit", "OKR product manager méthode", "aligner OKRs stratégie"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Stratégie produit"]
+---
+
+La cascade d'OKRs ressemble à de l'alignement. Ce n'en est pas.
+
+Tu as probablement vécu ça : le comité de direction pose ses OKRs d'entreprise. Chaque VP prend ces OKRs et décline les siens. Chaque PM prend les OKRs du VP et décline les siens à son tour. Résultat : quatre niveaux d'OKRs qui se ressemblent tous, avec des formulations légèrement différentes.
+
+C'est ça, la cascade. Et c'est précisément ce qui empêche une équipe produit d'être autonome, claire, et réellement alignée.
+
+## Ce que la cascade fait réellement
+
+La cascade part d'une bonne intention : que tout le monde travaille dans la même direction. Le problème vient du mécanisme.
+
+Quand un PM reçoit les OKRs du VP Product, deux choses se passent.
+
+Soit il reformule les OKRs du VP en plus petit. "Augmenter la rétention des utilisateurs" au niveau company devient "Améliorer la rétention dans le flow onboarding" au niveau squad. C'est une reformulation, pas une réflexion.
+
+Soit il invente ses propres OKRs sans vraiment comprendre ce qu'on attend de lui, par peur de "mal cascader". Il les envoie pour validation. Le VP modifie. Les OKRs reviennent amputés ou dilués.
+
+Dans les deux cas, l'équipe n'a pas choisi ses OKRs. Elle les a hérités ou bricolés.
+
+Le résultat : des OKRs que personne ne s'approprie, des KRs qui copient les métriques d'entreprise sans les adapter au contexte de l'équipe, et une organisation où les PMs passent deux semaines par trimestre à "aligner les OKRs" sans qu'aucune vraie conversation stratégique n'ait lieu.
+
+Weekdone, qui analyse les pratiques OKR de milliers d'équipes, le documente explicitement en 2026 : la cascade crée de la bureaucratie, pas de l'alignement. Les équipes qui l'adoptent produisent des OKRs interchangeables d'un niveau à l'autre, et personne n'est propriétaire des résultats.
+
+## La différence entre cascade et alignement
+
+L'alignement n'est pas reproduire les OKRs du niveau au-dessus. C'est comprendre ce que l'organisation cherche à accomplir et choisir, pour son périmètre, les objectifs qui contribuent le mieux à cet accomplissement.
+
+La distinction est importante.
+
+Dans un modèle de cascade :
+
+- Les OKRs descendent du haut vers le bas
+- Chaque niveau décline le niveau au-dessus
+- La liberté d'interprétation est faible
+- La contribution se prouve en montrant que ses KRs ressemblent aux KRs du dessus
+
+Dans un modèle d'alignement :
+
+- Les orientations stratégiques descendent du haut, pas les OKRs
+- Chaque équipe construit ses propres OKRs en cohérence avec ces orientations
+- La liberté d'interprétation est forte
+- La contribution se prouve en montrant que ses OKRs, même différents dans leur forme, servent les mêmes ambitions
+
+Une orientation stratégique n'est pas "augmenter le NPS de 20 à 35". C'est "devenir le produit le plus recommandé dans notre segment" ou "rendre notre onboarding autonome pour 90 % des clients". C'est une direction, pas une mesure.
+
+La direction, ça descend. Les mesures, l'équipe les choisit.
+
+## La règle des 60/40
+
+Il n'y a pas de formule parfaite, mais une heuristique fonctionne bien dans la majorité des contextes B2B SaaS.
+
+60 % des OKRs de l'équipe produit soutiennent directement les priorités de l'organisation. Ils répondent à la question : "Qu'est-ce que l'entreprise attend de nous ce trimestre ?"
+
+40 % des OKRs sont choisis par l'équipe. Ils répondent à la question : "Qu'est-ce qu'on sait, nous, qu'il faut faire ?" Il s'agit de dette technique qui affecte la vélocité, d'une opportunité produit identifiée en discovery, ou d'une expérimentation que l'équipe veut valider.
+
+Cette règle change la dynamique. L'équipe n'est plus un simple exécutant. Elle contribue à la stratégie en choisissant elle-même 40 % de son agenda trimestriel. Et elle reste alignée sur les priorités de l'organisation pour les 60 % restants.
+
+Dans la pratique, cette règle exige de la clarté de la part du leadership : les orientations stratégiques doivent être communiquées assez tôt pour que l'équipe puisse les intégrer dans ses OKRs. Ce n'est pas toujours le cas. Si tu ne sais pas ce que l'organisation attend de toi avant la fin de la première semaine d'un nouveau trimestre, c'est un problème de process, pas un problème d'équipe.
+
+## L'alignement horizontal que tout le monde ignore
+
+La cascade est verticale, par définition. CEO, VP, PM, squad. Mais les vrais problèmes d'alignement dans une organisation produit sont souvent horizontaux.
+
+L'équipe acquisition qui lance une campagne sans savoir que l'équipe onboarding est en refonte. L'équipe data qui change le schéma d'une table dont dépend l'équipe analytics produit. L'équipe pricing qui ajuste les plans sans que l'équipe activation ne soit au courant.
+
+Aucune cascade n'adresse ces problèmes. Parce que la cascade parle de haut en bas, pas de côté à côté.
+
+L'alignement horizontal se construit différemment. Avant de finaliser ses OKRs pour un cycle, un PM doit faire un tour des équipes avec lesquelles il est en dépendance. Trois questions suffisent :
+
+- Quelles sont leurs priorités ce trimestre ?
+- Y a-t-il des sujets sur lesquels nos roadmaps se croisent ?
+- Y a-t-il des ressources partagées ou des zones de friction potentielles ?
+
+Ce tour prend deux à trois heures. Il évite des semaines de friction pendant l'exécution.
+
+C'est ici qu'un framework comme FRAME devient utile. Avant de valider ses OKRs, on passe chaque objectif par cinq filtres :
+
+Focus : est-ce que cet objectif concentre l'équipe sur une seule chose ou est-ce qu'il saupoudre les efforts ?
+
+Risques : qu'est-ce qui peut empêcher d'y arriver ? Ces risques sont-ils identifiés et gérés ?
+
+Alignement : est-ce qu'on a parlé aux équipes dépendantes ? Est-ce que cet OKR entre en conflit avec un autre ?
+
+Mesure : est-ce que les Key Results sont mesurables avec les outils en place ? La baseline est-elle connue ?
+
+Experimentation : comment va-t-on tester le chemin vers cet objectif ?
+
+La dimension Alignement dans FRAME n'est pas une case à cocher. C'est une conversation à avoir avant que les OKRs soient finalisés, pas après.
+
+## OKRs et performance individuelle : le mélange qui détruit tout
+
+Il y a un mécanisme qui sabote l'efficacité des OKRs dans beaucoup d'équipes produit francophones : les confondre avec l'évaluation individuelle.
+
+Dans certaines organisations, les OKRs d'équipe finissent dans les entretiens annuels. "Tu n'as atteint que 60 % de tes OKRs ce trimestre" devient une donnée RH. Le message est clair : atteindre ses OKRs, c'est bien pour ta carrière. Ne pas les atteindre, c'est risqué.
+
+Ce mécanisme détruit l'utilité des OKRs.
+
+Un OKR bien calibré a environ 50 % de probabilité d'être atteint. C'est le niveau d'ambition recommandé, et c'est ce que Christina Wodtke, qui enseigne les OKRs à Stanford, documente dans ses travaux sur le sujet (Lenny's Newsletter, "The ultimate guide to OKRs").
+
+Si les OKRs sont liés à l'évaluation individuelle, les équipes vont rationner leur ambition. Elles vont écrire des OKRs qu'elles sont sûres d'atteindre à 90 %. Elles vont éviter les objectifs risqués. Elles vont optimiser pour "finir vert" plutôt que pour prendre les bons risques produit.
+
+C'est l'opposé de ce pour quoi les OKRs ont été conçus.
+
+La règle est simple : les OKRs d'équipe ne doivent pas servir à évaluer la performance individuelle. L'évaluation individuelle porte sur les comportements, les compétences, et la façon dont quelqu'un contribue à l'équipe. Pas sur si l'équipe a atteint un taux de rétention cible.
+
+Ramp, dont la culture produit est analysée dans Lenny's Newsletter, applique ce principe explicitement : les OKRs mesurent la direction et le progrès de l'équipe, pas la valeur des individus.
+
+## Ce que la revue trimestrielle devrait produire
+
+La revue trimestrielle d'OKRs est souvent une présentation de slides où chaque PM affiche son score. 80 % vert, 20 % orange. Applaudissements. Passage au prochain cycle.
+
+Ce n'est pas une revue. C'est un reporting.
+
+Une vraie revue d'OKRs pose trois questions.
+
+Qu'est-ce qu'on a appris ? Si un KR n'a pas été atteint, pourquoi ? Était-ce un mauvais objectif, une mauvaise exécution, ou un contexte qui a changé ? Si on l'a atteint, était-il assez ambitieux ?
+
+Qu'est-ce qu'on change pour le prochain cycle ? Les leçons du cycle passé alimentent les OKRs suivants. Si la même friction revient trimestre après trimestre, c'est un signal.
+
+Quelles décisions découlent de cette revue ? Une revue sans décision est un exercice de bureaucratie. Elle doit se terminer avec des choix clairs : on arrête X, on continue Y avec plus d'ambition, on reporte Z.
+
+Ces trois questions transforment une revue de statuts en une conversation stratégique.
+
+Pour construire des Key Results qui mesurent l'impact plutôt que la livraison : [OKRs produit : comment mesurer l'impact, pas le travail](/blog/okr-produit-impact).
+
+## Le Pack OKRs
+
+Le Pack OKRs est en préparation. Il regroupe des templates et des prompts IA pour écrire des OKRs d'équipe produit, animer les rituels trimestriels, et aligner sans cascader. Pour être prévenu de sa sortie, tu peux t'inscrire à la newsletter sur le site.
