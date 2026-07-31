@@ -1,0 +1,139 @@
+---
+title: "Utiliser Claude pour écrire ses OKRs : la méthode en 3 rounds"
+description: "Comment passer d'un objectif vague à des OKRs mesurables avec Claude. Méthode en 3 rounds : contexte, génération TARS, challenger prompt."
+slug: "okr-ia-claude-product-manager"
+date: "2026-07-31"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["OKR product manager IA", "générer OKRs avec Claude", "OKR intelligence artificielle", "écrire OKRs IA", "OKR PM 2026"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "IA"]
+---
+
+La plupart des PMs qui utilisent l'IA pour leurs OKRs obtiennent des résultats décevants. Pas parce que Claude ou ChatGPT sont mauvais pour ce type de tâche. Parce que la qualité d'un OKR dépend d'un contexte très précis que les PMs ne transmettent pas.
+
+Un prompt comme "Génère-moi des OKRs pour améliorer l'onboarding" ne donne rien d'utile. Tu obtiens quatre Key Results génériques avec des chiffres inventés et une ambition calibrée à zéro.
+
+La méthode qui fonctionne se déroule en trois rounds. Chaque round a un objectif précis. Ensemble, ils transforment un objectif flou en OKRs que ton équipe peut réellement piloter.
+
+## Ce que l'IA fait mal avec les OKRs sans ta supervision
+
+Un LLM optimise pour la plausibilité. Quand tu lui demandes des OKRs, il produit des Key Results qui ressemblent à de bons OKRs sans l'être.
+
+Le problème central : l'IA ne connaît pas ta baseline. Elle ne sait pas que ton taux d'activation est à 23 % ou à 78 %. Elle ne sait pas si "passer à 50 %" est ambitieux ou confortable. Elle ne connaît pas non plus la contrainte réelle de ton équipe.
+
+Sans ce contexte, elle génère des Key Results standard. Des cibles arbitraires. Des formulations qui sonnent bien mais ne mesurent rien de réel.
+
+L'autre erreur classique : utiliser l'IA pour habiller une liste de tâches en OKRs. "Livrer le nouveau parcours onboarding en Q3" reste un livrable même si tu demandes à Claude de le reformuler en Key Result. L'IA ne challengera pas le fond si tu ne lui poses pas la question explicitement.
+
+Si tu n'es pas encore familier avec la distinction entre OKRs de livraison et OKRs d'impact, commence par [cet article sur les OKRs produit et le framework TARS](/blog/okr-produit-impact) avant de lire la suite.
+
+## Round 1 : poser le contexte avant toute génération
+
+Le premier round ne produit aucun OKR. Il construit le brief que tu vas donner à Claude.
+
+Ce brief contient cinq éléments.
+
+Le problème précis que cet objectif cherche à résoudre. Pas l'objectif en lui-même : le problème derrière. "Les nouveaux utilisateurs abandonnent avant de comprendre la valeur du produit" est un problème. "Améliorer l'onboarding" est une réponse au problème, pas le problème lui-même.
+
+La baseline chiffrée. Pour chaque métrique que cet objectif pourrait mesurer, tu dois connaître la valeur actuelle : taux de complétion de l'onboarding, rétention J7, J30, CSAT. Sans baseline, n'importe quelle cible est arbitraire. C'est l'étape que les équipes sautent parce qu'elle est fastidieuse. C'est aussi celle qui rend tout le reste possible.
+
+Le périmètre de l'équipe et les contraintes. Nombre de personnes dans la squad, dépendances externes, projets en parallèle sur le trimestre. Un OKR à 50 % de confiance pour une squad de deux est très différent du même OKR pour une squad de six.
+
+Les initiatives déjà envisagées ou exclues. Ce n'est pas pour que l'IA valide tes idées. C'est pour qu'elle ne te suggère pas des Key Results qui supposent des initiatives hors de portée.
+
+Le cycle. Trimestriel ou semestriel ? La cadence change l'ambition raisonnable. La plupart des équipes fonctionnent au trimestre. Certaines, comme Ramp selon Lenny Rachitsky, sont passées aux OKRs bi-annuels pour des objectifs plus structurants. C'est un choix à documenter dans ton brief.
+
+Ce brief s'écrit en 10 à 15 minutes. Copie-le dans Claude en lui indiquant que le round suivant sera la génération des Key Results. Il ne doit pas encore générer quoi que ce soit.
+
+## Round 2 : générer les Key Results avec le framework TARS
+
+Une fois le contexte posé, tu demandes à Claude de générer des Key Results en utilisant le framework TARS comme filtre.
+
+TARS couvre quatre dimensions d'impact : Targeted (les bons utilisateurs arrivent et s'activent), Adopted (ils utilisent le produit ou la feature cible), Retained (ils reviennent et s'engagent dans le temps), Satisfied (ils perçoivent l'expérience comme bonne). Chaque dimension correspond à un type de métrique différent.
+
+Le prompt de génération :
+
+"Sur la base du contexte que je viens de te donner, génère entre 3 et 4 Key Results pour cet objectif. Contraintes :
+
+- Chaque Key Result doit être mesurable avec un chiffre précis
+- Chaque Key Result doit inclure la valeur actuelle (baseline) et la cible
+- Aucun Key Result ne doit mesurer une livraison ou une activité : uniquement un résultat observable dans le comportement des utilisateurs
+- Utilise le framework TARS pour couvrir les dimensions pertinentes parmi : Targeted, Adopted, Retained, Satisfied
+- Pour les dimensions non couvertes, explique en une phrase pourquoi elles ne sont pas pertinentes ici"
+
+Ce prompt force trois comportements utiles. Claude s'appuie sur ta baseline plutôt que d'inventer des chiffres. Il justifie les dimensions TARS absentes plutôt que de les ignorer. Il produit des Key Results centrés sur le comportement utilisateur.
+
+Le premier output sera correct à 60-70 %. C'est le round 3 qui fait la différence.
+
+## Round 3 : le prompt challenger
+
+C'est la partie que la plupart des PMs ne font pas. C'est là que l'IA apporte le plus de valeur.
+
+Le challenger prompt demande à Claude de critiquer les OKRs qu'il vient de générer. Il joue l'avocat du diable.
+
+"Pour chacun des Key Results que tu viens de générer, réponds à ces quatre questions :
+
+1. Est-ce vraiment un résultat ou une livraison déguisée en résultat ? Justifie ta réponse.
+2. Le niveau d'ambition correspond-il à un seuil de confiance d'environ 50 % ? Trop bas ou trop haut ? Sur quoi tu bases cette estimation ?
+3. Quelle dimension TARS ce Key Result ne couvre pas et pourrait couvrir ?
+4. Ce Key Result peut-il être atteint sans que le vrai problème sous-jacent soit résolu ? Si oui, reformule-le de manière à fermer cette faille."
+
+La quatrième question est la plus importante. Un OKR bien rédigé mais mal calibré peut être atteint par un chemin qui contourne le problème réel.
+
+Exemple : "Augmenter le taux de complétion de l'onboarding de 30 % à 55 %" semble solide. Mais si tu permets aux utilisateurs de passer les étapes pour gonfler le taux, tu atteins le chiffre sans résoudre la compréhension du produit. Un OKR qui peut être "atteint" par un chemin court est un OKR fragile.
+
+Claude, quand on lui pose la question directement, va identifier ces failles et proposer des formulations plus robustes. Cette étape produit en général deux ou trois OKRs révisés qui tiennent vraiment. Et souvent une réalisation : un des Key Results initiaux était un livrable en camouflage.
+
+Marty Cagan (SVPG) pose un prérequis à tout ça : les OKRs ne fonctionnent que si l'équipe est réellement autonome sur les moyens. Si chaque décision remonte au management, les OKRs deviennent un reporting. Le challenger prompt ne corrige pas ce problème organisationnel. Il corrige la formulation.
+
+## L'exemple complet : d'un objectif flou à des OKRs en 25 minutes
+
+Contexte fourni à Claude au Round 1 :
+
+"Notre produit est une plateforme SaaS B2B pour les équipes de design. Problème : les nouveaux comptes activent leur compte mais n'utilisent pas les fonctionnalités collaboratives dans les 30 premiers jours. Seulement 22 % des comptes créent leur premier projet collaboratif avant J14. Baseline actuelle : taux de complétion de l'onboarding 34 %, activation J7 41 %, rétention J30 56 %, CSAT fin d'onboarding 3,1 sur 5. Équipe : 1 PM, 2 devs, 1 designer. Cycle : trimestriel. Initiatives exclues : refonte complète de l'onboarding (délai trop long), intégration vidéo interactive (budget nul)."
+
+Output Claude Round 2 :
+
+- KR1 (Targeted) : Le taux de complétion de l'onboarding passe de 34 % à 52 %
+- KR2 (Adopted) : Le taux de création d'un premier projet collaboratif avant J14 passe de 22 % à 40 %
+- KR3 (Retained) : La rétention J30 passe de 56 % à 68 %
+- KR4 (Satisfied) : Le CSAT fin d'onboarding passe de 3,1 à 3,8
+
+Critique Claude Round 3 sur KR1 : "Ce Key Result mesure la progression dans le flow d'onboarding, pas la compréhension du produit. Un utilisateur peut compléter les étapes sans avoir initié une seule collaboration. Ce KR peut être atteint en rendant les étapes plus courtes, sans changer l'usage. Recommandation : ajouter une condition sur la première action collaborative créée avant la fin du flow."
+
+Critique sur KR3 : "La cible de 68 % suppose que l'amélioration de l'onboarding réduit directement le churn J30. C'est plausible mais l'écart est large. Confiance estimée : 40 %, légèrement en dessous du seuil. Envisager de ramener la cible à 65 % pour rester crédible avec une squad de trois personnes."
+
+Version finale après Round 3 :
+
+- KR1 (Targeted) : Le taux de complétion de l'onboarding passe de 34 % à 52 %, avec au moins une action collaborative créée avant la fin du flow
+- KR2 (Adopted) : Le taux de création d'un premier projet collaboratif avant J14 passe de 22 % à 40 %
+- KR3 (Retained) : La rétention J30 passe de 56 % à 65 %
+- KR4 (Satisfied) : Le CSAT fin d'onboarding passe de 3,1 à 3,7
+
+25 minutes de travail. Trois rounds. Quatre Key Results qui mesurent ce qu'ils prétendent mesurer.
+
+## Ce que l'IA ne peut pas faire à ta place
+
+L'IA génère et critique des formulations. Elle ne valide pas ta stratégie.
+
+Si ton objectif est mal choisi, Claude produit des OKRs parfaitement formés pour le mauvais problème. Si ta baseline est fausse, les cibles seront calibrées sur de mauvaises données. Si ton équipe n'a pas la capacité d'atteindre ces résultats sur un trimestre, la méthode en 3 rounds ne change rien.
+
+L'IA produit aussi ses propres biais. Elle a tendance à valider le cadre qu'on lui donne plutôt qu'à le remettre en question. Si ton objectif trimestriel ne s'articule pas à un enjeu stratégique plus large, Claude ne te le dira pas. Elle optimisera l'OKR tel qu'il est posé.
+
+La méthode en 3 rounds accélère la rédaction et améliore la qualité de formulation. Elle ne remplace pas le travail de définition stratégique ni la collecte des données de baseline. Elle fonctionne mieux quand tu arrives avec un problème réel, des données mesurées, et une intention claire sur ce que tu veux changer dans le comportement de tes utilisateurs.
+
+Le reste, comme toujours, appartient à l'équipe.
+
+---
+
+## Le Générateur OKR express
+
+Un outil en cours de construction pour automatiser les 3 rounds décrits dans cet article.
+
+Tu colles ton contexte (problème, baseline, contraintes d'équipe, cycle). L'outil génère tes Key Results avec le framework TARS, puis les challenge automatiquement sur les quatre critères du Round 3.
+
+Le résultat : des OKRs mesurables en moins de 10 minutes, prêts pour ta prochaine session de planification trimestrielle.
+
+Il arrive bientôt sur [/outils/generateur-okr](/outils/generateur-okr).
