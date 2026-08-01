@@ -1,0 +1,124 @@
+---
+title: "OKR et roadmap : comment les faire travailler ensemble"
+description: "Tes OKRs fixent le cap, ta roadmap décrit le chemin. Si les deux se contredisent, tu construis dans le mauvais ordre. Méthode SOC pour les aligner."
+slug: "okr-produit-roadmap-alignment"
+date: "2026-08-01"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["OKR roadmap produit", "aligner OKR roadmap", "OKR planification produit", "roadmap par outcomes", "OKR et initiatives produit"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Roadmap"]
+---
+
+Quand tes OKRs et ta roadmap se contredisent, ça se voit aux réunions de planning. Tu présentes des OKRs axés sur la rétention. Tu ouvres la roadmap. La majorité des sujets n'a aucun lien avec la rétention.
+
+Ce n'est pas un problème d'outils. C'est un problème d'ordre.
+
+## Quand tes OKRs et ta roadmap vivent en parallèle
+
+Le scénario classique.
+
+Semaine 1 du trimestre. L'équipe produit se retrouve en atelier. On définit des OKRs ambitieux, centrés sur les outcomes. "Réduire le churn à J30 de 22 % à 10 %. Augmenter le taux d'activation des comptes enterprise de 35 % à 55 %."
+
+Semaine 2. La roadmap du trimestre, déjà prête depuis quinze jours, n'a pas bougé. Les sujets planifiés viennent des demandes clients accumulées, du backlog historique, des promesses faites en copil. Aucun d'eux n'a été choisi pour son impact probable sur le churn ou l'activation.
+
+Résultat : les OKRs sont affichés sur le board Notion. La roadmap suit son cours. Les deux coexistent sans jamais se toucher.
+
+À la revue de fin de trimestre, les OKRs sont "partiellement atteints". L'équipe a livré tout ce qui était prévu. Mais les métriques n'ont pas bougé. Et personne n'est surpris.
+
+## Pourquoi ce découplage arrive presque partout
+
+La cause principale n'est pas le manque de méthode. C'est la séquence.
+
+Dans la plupart des équipes, la roadmap se construit d'abord. Le product discovery, les demandes clients, les dettes tech, les engagements pris avec les sales : tout ça précède les OKRs. Les OKRs sont définis après. On les "attache" aux sujets déjà planifiés.
+
+C'est l'inverse du bon sens.
+
+Un OKR répond à la question : "Qu'est-ce qu'on cherche à changer comme comportement utilisateur ce trimestre ?" Une roadmap répond à : "Comment on va y arriver ?" Si tu construis la roadmap avant de répondre à la première question, tu produis du travail sans cap.
+
+Il y a aussi une pression structurelle. Les stakeholders demandent des features, pas des métriques. Les directs reports veulent savoir "ce qu'ils vont construire". Le sprint planning porte sur les tickets, pas sur les outcomes. Toutes ces forces tirent vers la roadmap de livraison, pas vers la roadmap d'impact.
+
+Dernière raison : les cadences ne sont pas synchronisées. Les OKRs sont définis pour le trimestre. La roadmap est révisée en continu. La revue hebdo porte sur les tickets en cours. Il n'existe souvent aucun moment dédié à vérifier si ce qui se construit va dans le bon sens au regard des OKRs.
+
+Un glissement fréquent s'ajoute à tout ça : les équipes "cascadent" les OKRs du haut vers le bas, en traduisant mécaniquement les objectifs de la direction en features pour les squads. C'est une erreur de conception. Les OKRs ne cascadent pas, ils s'alignent. Chaque squad doit comprendre les objectifs de l'entreprise et construire ses propres OKRs en fonction de ce qu'elle peut réellement influencer. Sinon, les OKRs du terrain ressemblent à des sous-tâches du plan de la direction, pas à des objectifs d'équipe.
+
+## Le framework SOC pour relier stratégie et exécution
+
+Le framework SOC structure les responsabilités sur trois niveaux.
+
+Strategy : où va-t-on ce trimestre ? C'est le niveau des OKRs. Les objectifs et Key Results définissent la direction et les critères de succès. Ce niveau répond à : "Que veut-on changer dans les comportements utilisateurs ou les indicateurs métier ?"
+
+Operations : comment y va-t-on ? C'est le niveau de la roadmap. Les initiatives, les projets, les sprints. Ce niveau répond à : "Quelles actions allons-nous mener pour atteindre les objectifs ?"
+
+Communication : qui a besoin de savoir quoi ? C'est le niveau des updates stakeholders, des reviews, des synchros. Ce niveau répond à : "Comment partage-t-on l'état d'avancement et aligne-t-on les décisions ?"
+
+Le problème des équipes qui "font des OKRs" sans que ça change grand-chose est au niveau S-O : la stratégie n'est pas traduite en opérations. Les OKRs restent au mur pendant que la roadmap vit sa vie.
+
+Le SOC n'est pas un outil. C'est une grille pour vérifier si les trois niveaux sont connectés. Si tu peux expliquer comment chaque initiative de ta roadmap (O) se rattache à un OKR précis (S), et comment tu en rends compte chaque semaine (C), la connexion existe. Sinon, elle ne fait que paraître.
+
+## De l'OKR à l'initiative : le processus en 3 étapes
+
+Voilà comment construire une roadmap à partir des OKRs, et non l'inverse.
+
+Étape 1 : partir du Key Result, pas de la solution.
+
+Prends un Key Result précis. Par exemple : "Le churn à J30 des comptes enterprise passe de 22 % à 10 %."
+
+La première question n'est pas "Qu'est-ce qu'on va construire ?" C'est : "Pourquoi les comptes churne-t-ils à J30 ?" Est-ce un problème d'onboarding ? De valeur perçue insuffisante ? D'adoption des modules clés ? D'absence d'interlocuteur dédié en customer success ?
+
+Tu as besoin de données pour répondre. Entretiens clients, analyse des comportements des churners, tickets support, cohortes dans Mixpanel. Si tu n'as pas cette base, le premier projet de ta roadmap est de la constituer. Pas de construire une feature.
+
+Étape 2 : générer des hypothèses, pas des solutions.
+
+À partir du diagnostic, tu génères des hypothèses causales. Format simple : "Si on fait X, alors Y changera parce que Z."
+
+Exemples concrets sur le cas churn enterprise :
+
+- "Si on réduit le délai pour atteindre le premier succès à moins de 30 minutes, alors le churn à J30 baissera, parce que les comptes qui voient la valeur vite restent."
+- "Si on active un call de vérification à J7, alors le churn baissera, parce que les comptes en difficulté ont un interlocuteur avant d'abandonner."
+- "Si on personnalise l'onboarding par segment (PME vs ETI), alors l'activation des modules clés augmentera, parce que les parcours ne sont pas les mêmes."
+
+Chaque hypothèse est une candidate pour la roadmap. Pas encore un projet. Une hypothèse à valider.
+
+Étape 3 : sélectionner les initiatives par impact probable et effort.
+
+Parmi les hypothèses, lesquelles mettre dans la roadmap du trimestre ?
+
+Deux critères simples. Premier : impact probable sur le Key Result. Quelle hypothèse a le plus de chances de déplacer le chiffre ? Deuxième : effort d'implémentation. En combien de semaines tu peux tester ça sérieusement ?
+
+Aucune matrice nécessaire. Quelques Post-its suffisent. Ce qui compte : avoir une réponse claire à "Si on ne fait qu'une seule chose ce trimestre pour ce Key Result, c'est quoi ?"
+
+Ce projet entre dans la roadmap avec un intitulé d'hypothèse, pas de feature. "Réduire le time-to-first-value à moins de 30 minutes" plutôt que "Refonte de l'onboarding". L'équipe sait ce qu'elle cherche à prouver, pas juste ce qu'elle va livrer.
+
+## La revue OKR qui maintient la connexion
+
+Définir les OKRs et la roadmap ensemble ne suffit pas. La connexion se maintient en cours de trimestre.
+
+Une revue OKR hebdomadaire prend 15 minutes. La question centrale : est-ce que ce qu'on a livré cette semaine a déplacé le Key Result dans le bon sens ? Pas : "avons-nous livré ce qui était prévu ?"
+
+Cette distinction semble minime. Elle change les conversations.
+
+Si le Key Result sur le churn ne bouge pas après six semaines de livraisons, c'est un signal. Soit les hypothèses étaient fausses. Soit le produit n'est pas le bon levier. Soit le problème est ailleurs : pricing, support, sales. Une review hebdo centrée sur les métriques, pas sur les tickets, détecte ça à la semaine 6, pas à la revue de fin de trimestre.
+
+À mi-trimestre, une revue de 30 minutes avec l'équipe et les stakeholders. Où en sont les Key Results ? Les hypothèses en cours de validation semblent-elles prometteuses ? Faut-il réallouer du temps sur un autre axe ?
+
+La roadmap n'est pas gravée dans le marbre. C'est un plan révisable. Si les données de la semaine 6 montrent qu'une hypothèse ne fonctionne pas, tu la remplaces par la suivante sur ta liste. C'est pour ça que tu as généré plusieurs hypothèses en étape 2.
+
+Cette agilité n'est pas du chaos. C'est exactement ce pour quoi les OKRs ont été conçus : garder l'équipe orientée vers le résultat, pas vers le plan.
+
+## Ce que ce changement de séquence produit concrètement
+
+Les conversations avec les stakeholders changent. Quand un stakeholder demande "pourquoi vous ne faites pas la feature X", tu as une réponse basée sur les OKRs, pas sur le manque de bande passante. "La feature X n'est pas dans nos initiatives ce trimestre parce qu'on ne voit pas de lien direct avec notre Key Result sur la rétention. Si tu penses qu'il y en a un, voilà comment le construire."
+
+Les priorisations deviennent plus rapides. Chaque nouvelle demande s'évalue par rapport aux OKRs en cours. La question "est-ce qu'on le fait ?" devient "est-ce que ça contribue à l'OKR du trimestre ?" La réponse est souvent non, et c'est visible immédiatement.
+
+Les retrospectives deviennent honnêtes. "On a tout livré mais le churn n'a pas bougé" n'est plus une réussite. C'est un signal que les hypothèses étaient fausses ou que les initiatives n'étaient pas les bonnes. Cette honnêteté, inconfortable au début, permet d'apprendre et d'ajuster le trimestre suivant.
+
+Pour aller plus loin sur la construction des Key Results eux-mêmes, lis [OKRs produit : comment mesurer l'impact, pas le travail](/blog/okr-produit-impact). L'article couvre le framework TARS et la question des baselines, deux prérequis pour que les étapes décrites ici fonctionnent.
+
+## Commence par le Générateur OKR express
+
+Le Générateur OKR express est l'outil gratuit du cluster OKRs sur productcopilot.fr. Il génère des Key Results mesurables à partir de ton Objectif et de ton contexte produit. Il arrive prochainement.
+
+En attendant, retrouve tout le système OKRs, les templates et les prompts IA pour piloter tes trimestres sur [le Pack OKRs](/packs/okrs), en préparation.
