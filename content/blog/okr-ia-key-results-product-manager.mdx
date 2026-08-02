@@ -1,0 +1,181 @@
+---
+title: "OKRs et IA : générer des Key Results qui tiennent la route"
+description: "L'IA te sort des OKRs génériques si tu ne lui donnes pas le bon contexte. Méthode complète pour utiliser Claude ou ChatGPT sur tes OKRs produit."
+slug: "okr-ia-key-results-product-manager"
+date: "2026-08-02"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["OKR IA product manager", "écrire OKRs avec IA", "prompt OKR PM", "key results mesurables"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "IA"]
+---
+
+Chaque début de trimestre, c'est la même séquence. Réunion de planification. Tableau blanc. Quelqu'un propose un objectif vague. L'équipe ajoute des Key Results. La session dure deux heures. Les OKRs ressemblent à ceux du trimestre dernier.
+
+L'IA était censée simplifier ça. En pratique, sans méthode, elle amplifie le problème. Tu lui demandes de générer des OKRs pour "améliorer l'onboarding" et elle te sort : "Augmenter le taux d'activation de 20 %. Réduire le délai de premier succès de 15 %. Améliorer le NPS de 10 points." Chiffres arbitraires. Pas de baseline. Aucune pertinence.
+
+Le problème n'est pas l'IA. C'est le contexte que tu lui donnes.
+
+## Ce que l'IA ne peut pas faire à ta place
+
+Avant de parler de prompts, une mise au point.
+
+L'IA ne connaît pas ta stratégie. Elle ne sait pas ce que tu as essayé le trimestre dernier, ni pourquoi ça n'a pas fonctionné. Elle ignore ton taux de churn actuel, le contexte concurrentiel de ton marché, et les contraintes de ton équipe de trois personnes avec une dette technique conséquente.
+
+Sans ces informations, elle génère des OKRs plausibles, pas des OKRs pertinents. La distinction est importante. Plausible, ça ressemble à un vrai OKR. Pertinent, ça traduit un vrai choix stratégique pour ton contexte.
+
+Ce que l'IA peut faire, en revanche, c'est accélérer le travail de formulation une fois que tu as fait le vrai boulot : choisir tes enjeux, connaître tes données, assumer tes contraintes. Elle transforme une intention stratégique en Key Results calibrés. Pas l'inverse.
+
+## La préparation : le travail que tu dois faire avant d'ouvrir Claude
+
+Pour que l'IA génère des Key Results utilisables, tu dois lui donner quatre types d'informations.
+
+La situation actuelle. Les métriques qui te préoccupent et leur valeur d'aujourd'hui. Pas des estimations. Des chiffres. Taux d'activation : 34 %. Rétention J30 : 41 %. Temps moyen avant première action clé : 6,2 jours. Sans baseline, tout chiffre cible est arbitraire.
+
+L'enjeu stratégique du trimestre. Pourquoi ce trimestre, et pas un autre ? Qu'est-ce qui a changé : un concurrent, un signal utilisateur fort, une décision business ? L'IA a besoin de comprendre pourquoi c'est urgent maintenant.
+
+Les contraintes réelles. Taille de l'équipe, timeline, dépendances techniques. Un OKR ambitieux dans un contexte de squad de deux personnes avec une migration en cours n'a pas la même forme qu'avec une équipe de huit en terrain dégagé.
+
+L'hypothèse centrale. Ce que tu crois être vrai sur le problème. "On pense que les utilisateurs abandonnent l'onboarding parce qu'ils ne comprennent pas la valeur avant d'avoir configuré leur premier projet." Cette hypothèse oriente les Key Results vers ce qu'il faut valider ou invalider.
+
+Avec ces quatre éléments, tu peux construire un contexte qui rend l'IA réellement utile.
+
+## Le prompt : comment structurer ta demande
+
+Voici une structure qui fonctionne. Elle donne à Claude ou ChatGPT assez de contexte pour sortir des Key Results fondés sur tes données, pas sur des templates génériques.
+
+```
+Tu es un PM senior. Je prépare mes OKRs pour le prochain trimestre.
+
+Contexte produit :
+- Produit : [nom et description courte]
+- Équipe : [taille et composition]
+- Trimestre : [date]
+
+Données actuelles :
+- [métrique 1] : [valeur actuelle]
+- [métrique 2] : [valeur actuelle]
+- [métrique 3] : [valeur actuelle]
+
+Enjeu stratégique : [ce qui justifie l'objectif ce trimestre]
+
+Contraintes : [timeline, dépendances, capacité équipe]
+
+Hypothèse centrale : [ce qu'on croit être vrai sur le problème]
+
+Objectif : [l'objectif qualitatif en une phrase]
+
+Génère 3 à 4 Key Results pour cet objectif. Chaque Key Result doit :
+- Mesurer un résultat, pas une livraison
+- S'appuyer sur les données actuelles comme baseline
+- Couvrir au moins une dimension parmi : acquisition/activation, adoption, rétention, satisfaction
+- Être atteignable à 50-70 % de probabilité, pas à 95 %
+```
+
+La dernière instruction, sur la probabilité d'atteinte, est importante. Elle force l'IA à calibrer l'ambition correctement plutôt que de sortir des cibles confortables ou irréalistes.
+
+## Exemple concret : avant et après le bon contexte
+
+Un PM travaille sur une plateforme SaaS B2B ciblant les PME. Le problème : les comptes s'activent mais un tiers abandonne avant J30.
+
+Sans contexte, la demande ressemble à ça : "Génère des OKRs pour améliorer l'onboarding."
+
+L'IA sort : "KR1 : Augmenter le taux d'activation de 20 %. KR2 : Améliorer le NPS de 10 points. KR3 : Réduire le temps d'onboarding de 30 %." Trois chiffres dans le vide. Aucun ne s'appuie sur une baseline réelle.
+
+Avec le bon contexte, le prompt devient :
+
+```
+Produit : plateforme SaaS B2B, gestion de projets pour PME
+Équipe : 3 développeurs, 1 designer, moi
+Trimestre : Q3 2026
+
+Données actuelles :
+- Taux de complétion onboarding : 34 %
+- Utilisation de 3 modules clés à J14 : 28 % des comptes activés
+- Churn J30 nouveaux comptes : 22 %
+- CSAT fin d'onboarding : 3,1/5
+
+Enjeu : on perd un tiers des comptes avant qu'ils voient la valeur. 
+Le problème est identifié : ils ne complètent pas l'onboarding 
+et n'activent pas les modules qui créent de la rétention.
+
+Contraintes : pas de refonte technique lourde avant Q4, 
+équipe réduite, migration Stripe en cours sur septembre.
+
+Hypothèse : si les comptes complètent l'onboarding et utilisent 
+au moins 3 modules dans les 14 premiers jours, le churn J30 baisse.
+
+Objectif : rendre l'onboarding suffisamment clair pour que les PME 
+voient la valeur avant J30.
+```
+
+L'IA génère alors :
+
+- KR1 : Le taux de complétion de l'onboarding passe de 34 % à 55 % en 90 jours
+- KR2 : 60 % des comptes ayant terminé l'onboarding utilisent au moins 3 modules clés à J14 (vs 28 % aujourd'hui)
+- KR3 : Le churn J30 des nouveaux comptes passe de 22 % à 13 %
+- KR4 : Le CSAT fin d'onboarding passe de 3,1 à 3,8 sur 5
+
+Quatre Key Results. Quatre baselines réelles. Aucun livrable. L'équipe peut choisir le chemin qu'elle veut : refonte des emails, personnalisation selon le profil, session live, réduction des étapes. Ce qui compte, c'est le chiffre de sortie.
+
+## TARS comme filtre de validation
+
+Une fois que l'IA a généré des Key Results, passe-les au filtre TARS détaillé dans [l'article sur les OKRs qui mesurent l'impact](/blog/okr-produit-impact).
+
+Targeted : les bons utilisateurs arrivent et réalisent les bons premiers gestes. Adopted : ils utilisent le produit au quotidien. Retained : ils reviennent. Satisfied : ils en sont contents.
+
+Ce filtre sert à repérer les angles morts. Si tous tes Key Results tombent dans "Adopted" et qu'aucun ne mesure la rétention, c'est soit un choix assumé, soit un oubli. Le filtre force la question.
+
+Si l'IA a produit des Key Results dans une seule dimension, relance-la avec : "Ces Key Results couvrent uniquement l'adoption. Génère un Key Result supplémentaire sur la dimension rétention, en gardant les mêmes contraintes de contexte."
+
+## Trois questions pour valider chaque Key Result
+
+Avant de valider un Key Result, pose-lui trois questions.
+
+Est-ce que je connais ma baseline ? Si tu ne sais pas où tu en es aujourd'hui, le chiffre cible est vide. "Le taux de complétion de l'onboarding passe à 60 %" ne dit rien si tu n'as pas la valeur actuelle. Cherche la donnée ou retire le Key Result.
+
+Est-ce un résultat ou une livraison ? Un résultat se produit dans le comportement des utilisateurs ou dans les métriques produit. Une livraison est quelque chose que tu fais. "Lancer la refonte du flow d'onboarding" est une livraison. "Le taux de complétion de l'onboarding passe de 38 % à 60 %" est un résultat. Si ton Key Result commence par un verbe d'action, reformule-le.
+
+A quel niveau de confiance est-il ? Si tu es à 90 % sûr de l'atteindre, l'objectif n'est pas assez ambitieux. Si tu es à 10 %, il n'est pas réaliste. Le sweet spot est autour de 50 % : l'équipe pense que c'est atteignable, mais ce n'est pas acquis d'avance.
+
+## L'IA pour piloter tes OKRs en cours de trimestre
+
+L'utilité de l'IA ne s'arrête pas à l'écriture des OKRs. Elle peut aussi t'aider à piloter en cours de trimestre.
+
+À mi-cycle, compile tes métriques actuelles et demande à l'IA de repérer les écarts critiques :
+
+```
+Voici l'état de mes OKRs à mi-trimestre :
+
+Objectif : rendre l'onboarding clair avant J30
+
+- KR1 : cible 55 %, valeur actuelle 42 %
+- KR2 : cible 60 %, valeur actuelle 31 %
+- KR3 : cible 13 %, valeur actuelle 19 %
+- KR4 : cible 3,8, valeur actuelle 3,3
+
+Identifie les Key Results en retard critique. Pour chacun, 
+propose deux actions concrètes à prendre dans les deux 
+prochaines semaines pour rattraper le retard. Si un Key Result 
+est hors d'atteinte, dis-le clairement et propose comment 
+recalibrer la cible pour la fin de trimestre.
+```
+
+Ce prompt transforme un check-in OKR en séance de travail, pas en cérémonie de reporting. Tu repères ce qui part mal tôt, quand tu peux encore corriger le tir.
+
+La fréquence idéale pour ces check-ins est toutes les deux semaines. Pas toutes les semaines, ce qui crée de la friction sans donner assez de recul. Pas toutes les six semaines, ce qui est trop tard pour réagir sur un trimestre de 13 semaines.
+
+## Ce que l'IA ne remplace pas
+
+L'IA génère des Key Results fondés sur les informations que tu lui donnes. Elle ne choisit pas ton enjeu stratégique à ta place. Elle ne décide pas quel signal utilisateur mérite d'être adressé ce trimestre. Elle ne sait pas quelle dépendance technique va bloquer ta squad en semaine 8.
+
+Ces décisions restent les tiennes. L'IA accélère la formulation une fois que tu as fait ces choix. Si tu lui délègues le choix lui-même, tu obtiens des OKRs plausibles qui ne traduisent aucun engagement réel.
+
+Le combo qui fonctionne : toi sur la stratégie et le contexte, l'IA sur la formulation et la validation des dimensions.
+
+Un OKR produit n'est pas un exercice administratif. C'est un contrat d'équipe sur ce qui compte ce trimestre. L'IA peut t'aider à l'écrire mieux. Elle ne peut pas décider ce qui compte à ta place.
+
+---
+
+Le Générateur OKR express est en cours de construction sur productcopilot.fr. Il te guidera étape par étape pour construire le contexte stratégique, générer des Key Results calibrés avec TARS, et exporter tes OKRs dans un format prêt à partager avec ton équipe. En attendant, le prompt de cet article te donne déjà une base solide pour ton prochain cycle.
