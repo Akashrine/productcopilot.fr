@@ -1,0 +1,140 @@
+---
+title: "OKRs et roadmap produit : les faire marcher ensemble"
+description: "OKRs et roadmap se contredisent dans la majorité des équipes produit. Voici comment les aligner en partant des résultats, pas des features."
+slug: "okr-roadmap-produit"
+date: "2026-08-04"
+readingTime: "7 min"
+cluster: "okrs"
+keywords: ["OKR roadmap produit", "aligner OKR roadmap", "roadmap produit méthode", "OKR équipe produit", "FRAME framework produit"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Roadmap"]
+---
+
+Le trimestre se termine. L'équipe a livré 95 % de sa roadmap. Et pourtant, seulement 3 OKRs sur 9 sont atteints.
+
+Comment c'est possible ?
+
+Parce que la roadmap et les OKRs vivaient dans deux documents différents. Chacun avait sa propre logique. Personne n'avait formalisé le lien entre les deux. Les features sont parties en production. L'impact n'a pas suivi.
+
+C'est le scénario le plus courant dans les équipes produit. Ce n'est pas un problème de volonté. C'est un problème de structure.
+
+## La roadmap n'est pas la stratégie. Les OKRs non plus.
+
+Les OKRs définissent où tu veux aller : un objectif, des Key Results mesurables, trimestre par trimestre.
+
+La roadmap dit comment tu vas y aller : les initiatives, les chantiers, les features que tu vas lancer pour atteindre ces résultats.
+
+Dans cette logique, la roadmap doit dériver des OKRs. Pas l'inverse.
+
+Mais dans la pratique, ça se passe souvent à l'envers. La roadmap existe déjà, chargée d'items négociés avec les stakeholders, hérités du trimestre précédent, ou ajoutés lors d'une réunion de triage. Les OKRs arrivent ensuite. Et on essaie de les "matcher" avec ce qu'on avait déjà prévu.
+
+C'est le "backfill OKR". Tu n'écris pas les OKRs pour orienter la roadmap. Tu les écris pour justifier la roadmap que tu aurais construite de toute façon.
+
+Résultat : deux documents qui coexistent sans vraiment se parler. Et un trimestre de plus où les livraisons sont au vert, mais l'impact reste introuvable.
+
+## Le sens dans lequel ça doit fonctionner
+
+La séquence correcte est celle-ci :
+
+OKR entreprise → OKR produit → Initiatives roadmap → Features → Stories
+
+Chaque niveau dérive du précédent. Chaque décision a une raison d'être qui remonte jusqu'à la stratégie.
+
+Exemple concret. L'entreprise fixe un OKR sur la rétention client :
+
+Objectif : "Réduire l'attrition sur le segment PME"
+
+Key Result entreprise : "Le churn mensuel PME passe de 4,2 % à 2,5 % d'ici fin Q3"
+
+L'équipe produit hérite de cet enjeu. Elle ne copie pas l'OKR entreprise. Elle traduit : sur quoi peut-on agir directement ?
+
+OKR produit : "Améliorer la valeur perçue dans les 30 premiers jours"
+
+Key Result produit 1 : "70 % des comptes PME utilisent au moins 3 modules clés dans les J30 suivant l'activation"
+
+Key Result produit 2 : "Le score CSAT en sortie d'onboarding passe de 3,1 à 4,0 sur 5"
+
+Maintenant, la roadmap a du sens. Chaque initiative proposée est une hypothèse sur comment atteindre ces Key Results. Refonte du flow d'onboarding. Séquence email d'activation. Personnalisation par profil. Template de quick-win par secteur.
+
+Si quelqu'un propose "ajouter une page FAQ dans les paramètres", la question à poser est simple : comment est-ce que ça contribue à ces deux Key Results ? Si la réponse est floue, la feature attend.
+
+C'est là que les équipes produit gagnent du temps. Pas en refusant des demandes. En ayant un filtre partagé, connu de tous, qui permet de décider vite.
+
+## Le filtre FRAME sur chaque initiative
+
+Avant de valider une initiative sur la roadmap, fais-la passer par FRAME.
+
+FRAME est un framework de validation produit en 5 dimensions : Focus, Risques, Alignement, Mesure, Experimentation.
+
+Appliqué à une initiative roadmap, ça donne cinq questions directes :
+
+Focus : quel OKR cette initiative sert-elle ? Si tu ne peux pas nommer un Key Result précis, c'est un signal d'alerte.
+
+Risques : si tu ne livres pas cette initiative, quel OKR est en danger ? Et si l'initiative ne produit pas l'effet attendu, quel est le risque sur le cycle ?
+
+Alignement : qui est d'accord que c'est la bonne initiative pour ce Key Result ? L'équipe engineering valide-t-elle la faisabilité ? Le leadership a-t-il confirmé la priorité ?
+
+Mesure : comment tu sais que l'initiative a contribué au Key Result ? Quelle métrique va bouger, dans quel sens, sur quelle période ?
+
+Experimentation : quelle hypothèse tu testes avec cette initiative ? "Si on refond l'onboarding, le taux d'usage des modules clés à J30 augmente" : c'est une hypothèse. Est-ce que tu peux la valider sans construire toute la fonctionnalité d'abord ?
+
+Une initiative qui échoue à 3 des 5 dimensions FRAME n'a probablement pas sa place sur la roadmap ce trimestre. Soit elle manque de clarté (retour en discovery), soit elle n'est pas liée aux OKRs (backlog au prochain cycle).
+
+FRAME n'est pas un formulaire bureaucratique à remplir pour chaque ticket. C'est un test rapide que tu passes sur les grosses initiatives, celles qui vont mobiliser 3 sprints ou plus.
+
+## La revue trimestrielle en 5 étapes
+
+Au début de chaque trimestre, avant de bloquer des slots d'engineering, passe 2 heures à aligner roadmap et OKRs. Pas plus.
+
+Étape 1 : pose les OKRs du cycle. Ils doivent être définis avant cette session. Si tu ne les as pas encore, commence par là. Si tu ne sais pas comment les écrire, l'article sur [comment mesurer l'impact avec le framework TARS](/blog/okr-produit-impact) couvre ça en détail.
+
+Étape 2 : liste les initiatives candidates. Ce sont les projets, chantiers, ou blocs de travail que l'équipe envisage pour le trimestre. Pas les features individuelles : les initiatives. "Refonte onboarding", "Outil de reporting avancé", "Intégration Slack". Vingt lignes maximum.
+
+Étape 3 : cartographie les liens. Pour chaque initiative, note l'OKR qu'elle sert. Une matrice simple suffit : initiatives en lignes, OKRs en colonnes, une croix à l'intersection quand le lien est direct.
+
+Étape 4 : identifie les trous et les orphelins. Un trou, c'est un OKR sans aucune initiative qui le sert. Un orphelin, c'est une initiative sans lien avec un OKR. Les deux sont des problèmes. Un OKR sans initiative ne bougera pas ce cycle. Une initiative orpheline consomme du bandwidth sans contribuer aux objectifs.
+
+Étape 5 : arbitre. Garde ce qui est lié. Examine les orphelins : certains sont des opérations nécessaires (dette technique, obligation légale). D'autres sont des habitudes ou des demandes qu'on n'a jamais remises en question. Ferme ce qui ne sert rien ce cycle.
+
+Ce processus prend 2 heures avec une équipe de 3 à 5 personnes. Il t'évite 3 mois de travail mal orienté.
+
+Figma fait cet exercice dans FigJam et est allé plus loin : ils ont renommé leurs OKRs en "commitments" (source : Lenny Rachitsky, août 2026). Le mot change quelque chose dans la perception. Un commitment est plus difficile à ignorer en milieu de cycle qu'un OKR théorique posé au fond d'un Notion.
+
+## Ce que ça change dans les conversations avec les stakeholders
+
+Quand la roadmap est construite à partir des OKRs, tu as un argument structurel contre les demandes mal alignées.
+
+"On peut ajouter ce module de reporting avancé ?"
+
+"Quel OKR ça sert ? Notre focus ce trimestre est sur la rétention J30. Comment un reporting avancé réduit le churn ?"
+
+Si la réponse est convaincante, la demande mérite un slot. Sinon, elle va en backlog avec une note : "à réévaluer au prochain cycle si les priorités changent."
+
+Ce n'est pas du refus. C'est de la priorisation transparente.
+
+La différence : un refus sans argument génère de la frustration. Une décision liée aux OKRs génère de la confiance, même quand la réponse est "pas maintenant".
+
+Ramp applique cette logique avec une règle explicite : les OKRs ne sont pas utilisés pour la performance individuelle. Ils servent l'alignement collectif. Une feature qui n'est liée à aucun OKR n'est pas refusée parce que l'équipe n'a pas voulu la faire. C'est une décision trimestrielle, pas un jugement de valeur sur la demande.
+
+Coda va encore plus loin : ils distinguent explicitement la stratégie des OKRs. La stratégie se planifie séparément. Les OKRs opérationnalisent la stratégie pour le trimestre. Les deux ne sont pas la même chose, et les confondre est une source fréquente de frustration lors des revues de planning.
+
+## Ce qu'une roadmap alignée sur les OKRs ne résout pas
+
+Une roadmap liée aux OKRs t'aide à choisir quoi construire. Elle ne t'aide pas à construire bien.
+
+L'estimation reste difficile. Le scope creep existe toujours. Les surprises techniques ne disparaissent pas.
+
+Ce qui change : tu sais pourquoi tu construis ce que tu construis. Et si tu dois couper quelque chose à mi-cycle, tu coupes en fonction de l'impact sur les OKRs. Pas en fonction de qui a crié le plus fort lors de la dernière réunion de triage.
+
+Ce n'est pas un système parfait. C'est un système honnête.
+
+Les équipes qui font cet alignement dès le début du cycle rapportent moins de conflits en planification. Pas parce que les stakeholders demandent moins, mais parce que les règles du jeu sont claires. On construit ce qui sert les OKRs du cycle. Le reste attend. Tout le monde le sait avant de commencer.
+
+Si tu travailles sur la [priorisation de ton backlog](/blog/prioriser-backlog-ia) en parallèle de tes OKRs, les deux processus se renforcent. Les OKRs donnent le cap. La priorisation aligne l'exécution sur ce cap, item par item.
+
+---
+
+Le Pack OKRs couvre la méthode complète : écrire des Key Results qui mesurent l'impact, cascader depuis la stratégie d'entreprise, et piloter le cycle sans réunion de suivi superflue. Il arrive prochainement sur productcopilot.fr.
+
+[Découvrir le Pack OKRs](/packs/okrs)
