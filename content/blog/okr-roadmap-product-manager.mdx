@@ -1,0 +1,150 @@
+---
+title: "OKR et roadmap : comment aligner les deux en équipe produit"
+description: "OKRs et roadmap vivent en parallèle dans la plupart des équipes. Comment les connecter avec FRAME pour que chaque item serve un résultat mesurable."
+slug: "okr-roadmap-product-manager"
+date: "2026-08-05"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["OKR roadmap product manager", "aligner OKR roadmap", "cascader OKR squad", "FRAME framework produit", "OKR équipe produit"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Stratégie produit"]
+---
+
+Tu poses les OKRs en janvier. Tu construis la roadmap en février. En mars, les deux documents n'ont plus rien à voir.
+
+L'OKR dit "réduire le churn de 18 % à 10 %". La roadmap montre un dark mode, une refonte du dashboard, et trois features demandées par des gros clients. Personne ne sait comment ces livraisons déplacent le churn.
+
+Ce scénario n'est pas exceptionnel. C'est la norme dans la plupart des équipes produit.
+
+Le problème ne vient pas d'un manque d'outil ni de volonté. Il vient d'un problème de séquençage. Les équipes construisent la roadmap à partir des demandes qu'elles reçoivent. Elles connectent les OKRs après coup, quand elles peuvent.
+
+Pour inverser ce mécanisme, il faut changer l'ordre. Partir de l'OKR. Dériver la roadmap de lui.
+
+## L'OKR et la roadmap parlent deux langues différentes
+
+Les OKRs sont écrits en termes de résultats : "le taux d'activation passe de 32 % à 55 %". Les roadmaps sont écrites en termes de livraisons : "refonte de l'onboarding", "flow de bienvenue personnalisé", "ajout de tooltips en-app".
+
+Ces deux langages ne se traduisent pas mécaniquement l'un dans l'autre. C'est là que le désalignement commence.
+
+Un item de roadmap peut être livré sans faire bouger le Key Result. La refonte de l'onboarding peut prendre six semaines, être bien exécutée, et ne rien changer au taux d'activation si le problème vient d'ailleurs. Le KR ne bouge pas. L'OKR est "raté". La team a pourtant livré tout ce qui était prévu.
+
+À l'inverse, un OKR ambitieux peut être atteint sans les items prévus sur la roadmap. Une campagne email ciblée ou un tutoriel in-app peut faire passer l'activation de 32 % à 52 % sans toucher à la refonte planifiée.
+
+La déconnexion vient aussi des rythmes. Les OKRs sont trimestriels et top-down. Les roadmaps sont continues et bottom-up. Elles absorbent les demandes des clients, les urgences techniques, les requêtes des commerciaux, les bugs en production.
+
+Résultat : la roadmap devient une liste de livraisons. Les OKRs deviennent un tableau de bord que personne ne regarde. En fin de trimestre, on explique pourquoi les Key Results ne sont pas atteints alors que la roadmap a été exécutée à 100 %.
+
+## La question à poser avant tout item de roadmap
+
+Pour chaque item que tu envisages de mettre sur ta roadmap, pose une seule question : "quel Key Result est-ce que ça déplace ?"
+
+Si tu ne peux pas répondre en une phrase, l'item n'a pas sa place sur ta roadmap ce trimestre. Pas parce qu'il est inutile. Parce qu'il ne sert pas l'objectif du moment.
+
+Exemple concret. Ton OKR ce trimestre : "Rendre l'onboarding suffisamment clair pour que les nouveaux comptes voient la valeur avant J30."
+
+Tes Key Results, formulés avec le framework TARS (voir l'article [OKRs produit : comment mesurer l'impact, pas le travail](/blog/okr-produit-impact)) :
+
+- Le taux de complétion du flow d'onboarding passe de 34 % à 55 %.
+- 70 % des comptes ayant terminé l'onboarding utilisent au moins 3 modules clés dans les 14 premiers jours.
+- Le churn J30 passe de 22 % à 12 %.
+
+Quatre items sont en discussion pour ta roadmap :
+
+1. Refonte complète du flow d'onboarding (6 semaines)
+2. Ajout de tooltips contextuels dans les modules clés (2 semaines)
+3. Email de relance automatique à J7 pour les comptes inactifs (1 semaine)
+4. Intégration d'un chat support dans l'interface (4 semaines)
+
+Quel item déplace le plus les KRs, pour le moins d'effort ? L'analyse rapide donne les tooltips et l'email de relance. La refonte complète est risquée et lente. Le chat support peut améliorer la satisfaction, mais ne s'adresse pas directement à la complétion ni à l'adoption des modules.
+
+La refonte peut être importante pour la dette UX. Mais si elle ne déplace pas tes KRs ce trimestre, elle appartient au backlog ou au prochain cycle.
+
+Ce raisonnement force des conversations inconfortables avec les stakeholders. C'est exactement son intérêt.
+
+## FRAME pour valider la roadmap avant de l'engager
+
+Le framework FRAME donne une structure pour vérifier que les items de ta roadmap sont connectés à ta stratégie avant de les engager.
+
+FRAME signifie :
+
+- Focus : quel problème central adresses-tu ce trimestre ?
+- Risques : quels risques (utilisateur, business, technique) cet item adresse-t-il ? Lesquels ignore-t-il ?
+- Alignement : est-ce aligné avec les OKRs de l'entreprise ce cycle ?
+- Mesure : comment sauras-tu que ça a fonctionné ? Quel signal dans le produit ou la métrique ?
+- Experimentation : peut-on tester à petite échelle avant de construire en full ?
+
+Appliqué à la roadmap, FRAME fonctionne comme un filtre. Tu ne l'appliques pas à chaque ticket. Tu l'appliques aux items qui consomment le plus de temps ou qui font débat.
+
+Reprenons l'exemple. Ta squad hésite entre la refonte complète de l'onboarding et les tooltips.
+
+Pour la refonte complète :
+
+- Focus : résout le problème de compréhension initiale du produit.
+- Risques : risque élevé d'exécution sur 6 semaines. Risque que le problème ne vienne pas du flow, mais du positionnement ou de l'expectation des nouveaux comptes.
+- Alignement : aligné avec l'OKR général.
+- Mesure : taux de complétion. Signal visible au plus tôt à J+40.
+- Experimentation : difficile à tester à petite échelle sans refaire le même travail.
+
+Pour les tooltips contextuels :
+
+- Focus : résout le problème d'adoption des modules clés.
+- Risques : risque faible d'exécution. Si ça ne marche pas, ça se désactive.
+- Alignement : directement aligné avec les KRs 1 et 2.
+- Mesure : taux d'utilisation des modules dans les 14 jours post-onboarding. Signal visible en 2 semaines.
+- Experimentation : déployable à 20 % des nouveaux comptes en test A/B.
+
+Le choix devient plus facile à faire. Et surtout, plus facile à expliquer à l'équipe et aux stakeholders. FRAME ne décide pas à ta place. Il rend l'argumentation visible.
+
+## Comment cascader de l'OKR entreprise à ta squad
+
+Le désalignement OKR-roadmap a souvent une deuxième couche : l'écart entre les OKRs de l'entreprise et ceux de la squad.
+
+L'OKR de l'entreprise dit : "Augmenter le NRR de 95 % à 115 %."
+
+Ton OKR produit ne doit pas copier cet objectif. Il doit traduire la causalité. La question à poser : "Qu'est-ce que le produit peut faire pour augmenter le NRR ?"
+
+Si la réponse est "augmenter l'adoption des features avancées, parce que les comptes qui les utilisent ont un NRR 40 % plus élevé", alors ton OKR produit est : "augmenter l'adoption des features avancées de X % à Y % chez les comptes mid-market."
+
+Ensuite, la squad fait la même chose. "Quelle feature avancée sous-adoptée a le plus d'impact sur le NRR ?" Si la réponse est la feature d'automatisation, utilisée par 12 % des comptes mais associée à un NRR 60 % plus élevé, ton OKR squad est : "augmenter l'adoption de l'automatisation de 12 % à 30 % chez les comptes mid-market."
+
+Ce que ça donne en cascade :
+
+- Entreprise : NRR de 95 % à 115 %
+- Produit : adoption des features avancées de X % à Y %
+- Squad : adoption de l'automatisation de 12 % à 30 %
+- Roadmap squad : items qui réduisent les frictions à l'adoption de l'automatisation
+
+Chaque niveau traduit. Il ne copie pas. La causalité est explicite à chaque étape.
+
+L'erreur classique est l'inverse : la squad prend l'OKR de l'entreprise mot pour mot, l'attribue à son propre périmètre sans se demander comment elle y contribue, et construit une roadmap sans connexion réelle. En fin de trimestre, le NRR n'a pas bougé, mais la squad a livré.
+
+Ce qu'on appelle le cascade contributif exige de documenter la causalité, pas de répliquer les mots. Si tu n'arrives pas à expliquer pourquoi ton OKR squad contribue à l'OKR produit, c'est que le lien n'existe pas encore.
+
+Le POP (Product One Page) est utile ici : pour chaque initiative majeure, une page qui trace la ligne du KR squad au KR entreprise. Ce n'est pas un document lourd. C'est une vérification : si tu ne peux pas écrire cette ligne en trois lignes, la connexion n'est pas encore claire.
+
+## Maintenir l'alignement pendant le trimestre
+
+Le désalignement OKR-roadmap ne se crée pas seulement à la planification. Il se crée pendant le trimestre, quand on ajoute des items en urgence, quand une hypothèse s'avère fausse, quand les priorités de l'entreprise changent.
+
+Un check bi-hebdomadaire de 20 minutes évite que l'écart ne devienne irrémédiable.
+
+Les trois questions à poser :
+
+1. Les KRs bougent-ils dans la bonne direction ? Pas de discours qualitatif : chiffre d'aujourd'hui vs chiffre de départ.
+2. Les items livrés ces deux semaines ont-ils généré des apprentissages sur les KRs ? Pas forcément déplacé le chiffre, mais appris quelque chose sur la causalité.
+3. Y a-t-il des items sur la roadmap qui ne contribuent à aucun KR en particulier ? Est-ce un choix assumé ou un oubli ?
+
+Si au bout de six semaines, les KRs ne bougent pas, il faut questionner les items sur la roadmap. Pas les OKRs. Les OKRs décrivent où tu vas. La roadmap décrit comment. Si "comment" ne fonctionne pas, tu changes "comment".
+
+L'erreur classique est l'inverse : changer les OKRs quand la roadmap ne livre pas les résultats attendus. C'est confondre l'objectif avec le chemin.
+
+Un signal d'alerte supplémentaire : si chaque check bi-hebdomadaire donne lieu à des ajouts de nouveaux items sur la roadmap, l'OKR n'est pas assez ancré. Les stakeholders reviennent avec des demandes parce qu'ils ne voient pas la connexion entre ce qui est construit et ce qui est attendu. La réponse n'est pas d'ajouter : c'est de rendre le lien visible.
+
+Afficher publiquement tes OKRs squad avec leurs Key Results et le pourcentage de progression actuel réduit ce phénomène de moitié. Pas parce que ça calme les stakeholders. Parce que ça les force à formuler leur demande en termes de contribution au KR plutôt qu'en termes de feature à livrer.
+
+## Le Générateur OKR express
+
+Le Générateur OKR express est l'outil gratuit du cluster OKRs sur Product Copilot. Il te permet de traduire un objectif entreprise en OKRs squad avec un prompt structuré : tu remplis le contexte (secteur, type de produit, OKR entreprise, métriques actuelles), l'outil génère une cascade complète à valider et ajuster.
+
+Il est en cours de construction. Pour être notifié quand il sera disponible, inscris-toi à la newsletter Product Copilot depuis la page d'accueil. Tu recevras aussi les ressources sur la méthode OKR directement applicables en équipe produit.
