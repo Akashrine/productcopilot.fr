@@ -1,0 +1,151 @@
+---
+title: "Écrire ses OKRs produit avec l'IA : méthode et prompts"
+description: "Comment utiliser Claude pour écrire des OKRs calibrés et ambitieux. Méthode en 3 étapes, prompts concrets et erreurs à éviter pour les PMs."
+slug: "okr-produit-ia-prompts-claude"
+date: "2026-08-06"
+readingTime: "9 min"
+cluster: "okrs"
+keywords: ["OKR avec IA", "générer OKR product manager", "prompts OKR Claude", "OKR IA produit", "écrire OKR avec Claude"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "IA"]
+---
+
+Utiliser Claude pour générer ses OKRs ne veut pas dire déléguer la stratégie. Ça veut dire forcer la structuration de ta pensée avant d'arriver en planning.
+
+Un OKR écrit sous la dictée d'un LLM sans contexte solide donne ce qu'on y met : du vague, des métriques génériques, des objectifs interchangeables avec ceux de n'importe quelle autre équipe SaaS.
+
+Ce qui change avec la bonne méthode : l'IA devient un miroir. Elle te force à articuler ce que tu n'as pas encore verbalisé.
+
+## Le problème d'une page blanche face à ses OKRs
+
+La plupart des équipes produit arrivent en planning OKR avec trois problèmes simultanés.
+
+Trop d'inputs. Une roadmap avec 25 items, des feedbacks clients non triés, une stratégie qui a évolué, des dépendances avec quatre autres squads. Tout semble urgent.
+
+Trop peu de données. Personne n'a le taux d'activation du dernier trimestre sous la main. Le NPS a été mesuré une fois il y a six mois. Les chiffres de rétention sont dans un dashboard que personne ne consulte.
+
+La pression de cohérence vers le haut. Les OKRs doivent s'aligner sur ceux du CPO, eux-mêmes alignés sur les objectifs du board. La liberté du PM sur le "comment" est théorique si le "quoi" arrive déjà orienté.
+
+Claude ne résout pas ces problèmes. Mais utilisé correctement, il aide à les poser clairement avant d'essayer de les résoudre.
+
+## Ce dont Claude a besoin pour être utile
+
+Un LLM est aussi précis que le contexte qu'on lui donne. La plupart des PMs testent l'IA sur leurs OKRs avec un prompt du type : "génère-moi des OKRs pour mon équipe produit". Résultat : trois objectifs passe-partout, neuf Key Results qui ressemblent à des to-do lists repackagées.
+
+Pour générer des OKRs pertinents, Claude a besoin de quatre éléments.
+
+Le contexte produit. Qui sont tes utilisateurs, quel problème ils ont, ce que ton produit résout et pour qui. Ce qui a fonctionné ou pas ce trimestre.
+
+La stratégie de référence. L'objectif prioritaire de ton organisation ce cycle. Ce que ton CPO ou le board a posé comme cap. Sans ça, Claude ne peut pas aligner tes OKRs sur ce qu'attend ta hiérarchie.
+
+Les données brutes. Ton taux d'activation actuel. Le churn. Le NPS. Le taux d'adoption des features récentes. Les baselines, même imparfaites. Claude peut travailler avec "environ 30 %, données non vérifiées" et marquer le KR comme à calibrer.
+
+Les contraintes opérationnelles. La taille de l'équipe, les dépendances bloquantes, les sujets sur lesquels le PM n'a pas de levier. Ces contraintes évitent les OKRs irréalistes qui ne survivent pas au premier sprint review.
+
+## Étape 1 : générer les objectifs stratégiques
+
+Avant d'aller aux Key Results, commence par les Objectifs. Un objectif, c'est une direction qualitative ambitieuse. Une réponse à : "qu'est-ce qu'on veut changer d'ici fin de trimestre ?"
+
+Voici un prompt de départ :
+
+```
+Contexte produit : [décris en 3-4 phrases ton produit, tes utilisateurs, le problème que tu résous]
+
+Contexte trimestre : [la priorité business ou stratégique principale du trimestre selon ta direction]
+
+Résultats du trimestre passé : [ce qui a fonctionné, ce qui n'a pas marché, 2-3 éléments clés]
+
+Génère 4 Objectifs OKR possibles pour mon équipe ce trimestre.
+Chaque objectif doit :
+- Être qualitatif et directionnel (pas une métrique, pas un livrable)
+- Être ambitieux mais crédible sur 3 mois
+- Répondre à la question "pourquoi c'est important ce trimestre ?"
+- Être spécifique à mon contexte (pas générique)
+
+Format : liste numérotée, chaque objectif en une phrase.
+```
+
+Le résultat donne 4 options entre lesquelles choisir. Claude ne décide pas : il formule. La décision de prendre l'option 2 plutôt que l'option 3 reste la tienne.
+
+Ce premier prompt sert aussi à débloquer les réunions de planning OKR qui s'embourbent. Quand tout le monde propose des objectifs de nature différente — output, outcome, financier, opérationnel — avoir 4 formulations cohérentes à discuter change la dynamique du collectif.
+
+## Étape 2 : calibrer les Key Results sur tes baselines
+
+Une fois l'objectif choisi, vient l'étape technique : les Key Results. C'est là que la plupart des équipes déraillent. Soit elles restent trop vagues ("améliorer la rétention"), soit elles glissent vers des livrables ("livrer la feature d'onboarding").
+
+Le prompt de calibration :
+
+```
+Objectif choisi : [colle l'objectif retenu]
+
+Métriques actuelles :
+- [métrique 1] : [valeur actuelle, même approximative]
+- [métrique 2] : [valeur actuelle]
+- [métrique 3] : [valeur actuelle ou "non mesurée"]
+
+Pour chaque métrique, propose :
+1. Un Key Result bien formulé (format : "passer de X à Y en 90 jours")
+2. Ce que représenterait une progression de +20 % (confortable), +40 % (ambitieux), +60 % (étirable)
+3. Une note si la baseline est imprécise et doit être confirmée avant de valider le KR
+
+Génère aussi 1 ou 2 Key Results supplémentaires basés sur le framework TARS
+(Targeted, Adopted, Retained, Satisfied) pour couvrir des angles que je n'aurais
+pas pensé à mesurer.
+```
+
+La référence au framework TARS dans le prompt pousse Claude à sortir des métriques habituelles. Si ton équipe mesure toujours les mêmes indicateurs (activation, conversion), TARS comme filtre fait apparaître des angles oubliés, notamment la satisfaction perçue et la rétention à long terme.
+
+Le TARS est décrit en détail dans l'article sur la [mesure d'impact OKR](/blog/okr-produit-impact). L'utiliser ici comme instruction de prompt, sans le réexpliquer à Claude, suffit : le LLM connaît le framework.
+
+## Étape 3 : challenger tes OKRs avant de les soumettre
+
+C'est l'étape la plus souvent oubliée. Avant de soumettre tes OKRs à ton CPO ou à l'équipe, demande à Claude de les critiquer.
+
+```
+Voici mes OKRs pour ce trimestre :
+
+Objectif 1 : [...]
+KR1 : [...]
+KR2 : [...]
+KR3 : [...]
+
+Joue le rôle d'un CPO exigeant. Pour chaque élément :
+1. Identifie si l'objectif est vraiment qualitatif ou s'il cache un livrable déguisé
+2. Identifie si les KRs mesurent des résultats ou des outputs
+3. Identifie les angles morts : métriques importantes que l'équipe n'a pas prises en compte
+4. Identifie les dépendances implicites non mentionnées
+5. Donne un niveau de confiance estimé (0-100 %) pour chaque KR avec une justification courte
+```
+
+Ce prompt inverse le rôle de Claude. Au lieu de générer, il critique. Un LLM en mode challenger est souvent plus utile qu'un humain bienveillant qui valide par confort social.
+
+Le résultat fait apparaître deux ou trois problèmes que l'équipe avait laissés implicites : un KR qui dépend d'une autre squad sans que ce soit écrit, un objectif formulé comme un livrable habillé, une métrique-phare oubliée parce qu'elle est difficile à mesurer.
+
+Si tu travailles tes OKRs en parallèle d'une phase de discovery active, les deux processus s'alimentent mutuellement. La discovery révèle ce qui mérite d'être mesuré ; les OKRs donnent un cadre pour décider ce qui sera priorisé ce trimestre. Le lien entre les deux est couvert dans le guide sur l'[IA pour la product discovery](/blog/ia-product-discovery-guide).
+
+## Ce que l'IA ne peut pas faire à ta place
+
+Deux dimensions restent hors de portée de Claude.
+
+La négociation organisationnelle. Tes OKRs ne s'écrivent pas dans le vide. Ils s'écrivent dans un contexte politique, avec des agendas et des contraintes implicites. Claude ne sait pas que la décision de prioriser l'acquisition plutôt que la rétention ce trimestre est liée à un objectif de financement. Il ne sait pas que ton lead tech bloque sur une dette technique depuis six semaines. Ces données ne sont pas dans le prompt.
+
+La décision d'arrêter. Un OKR bien écrit inclut souvent la décision implicite de laisser tomber quelque chose. Abandonner un projet qu'on a défendu pendant deux trimestres ne peut pas être confié à un LLM. C'est le travail le plus difficile du PM, et l'IA n'y contribue pas.
+
+Sur ces deux points, Claude est un outil de structuration, pas un substitut au jugement.
+
+## Trois erreurs fréquentes
+
+Copier-coller sans adapter. Le prompt génère un objectif. Le PM le colle tel quel dans son outil de tracking. Deux semaines plus tard, l'objectif ne correspond plus à ce que l'équipe fait vraiment. L'IA génère des hypothèses, pas des décisions. Chaque output doit passer par un filtre : "est-ce que ça reflète vraiment ce qu'on veut ce trimestre ?"
+
+Donner un contexte incomplet. Un prompt sans données de rétention donne des KRs sans angle rétention. Un prompt sans contexte concurrentiel donne des OKRs qui ignorent la pression du marché. Claude ne va pas chercher l'information que tu n'as pas fournie. La qualité de l'output est directement proportionnelle à la qualité du contexte.
+
+S'arrêter à la génération. Les PMs qui utilisent l'IA pour générer mais pas pour challenger obtiennent des OKRs polis mais mous. L'étape 3, le prompt de critique, est presque toujours plus utile que l'étape 1.
+
+## L'outil pour mettre ça en pratique
+
+Le Générateur OKR express est l'outil gratuit du cluster OKRs sur productcopilot.fr. Il guide dans la structuration du contexte produit, génère des OKRs calibrés sur tes données, et les soumet automatiquement à un challenger.
+
+Pas besoin de construire les prompts manuellement. L'outil les enchaîne pour toi.
+
+[Utiliser le Générateur OKR express](/outils/generateur-okr)
