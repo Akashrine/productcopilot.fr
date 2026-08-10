@@ -1,0 +1,100 @@
+---
+title: "OKR et roadmap produit : comment passer des objectifs au plan"
+description: "Beaucoup de PMs construisent leur roadmap avant leurs OKRs. Comment inverser le flux et aligner ton plan de livraison sur tes objectifs."
+slug: "okr-roadmap-produit"
+date: "2026-08-10"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["OKR roadmap produit", "aligner roadmap OKR", "OKR product manager", "roadmap par outcomes"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Roadmap"]
+---
+
+Un OKR et une roadmap ne font pas le même travail. Pourtant, la majorité des équipes produit les confondent. Résultat : une roadmap construite sur des intuitions, habillée en OKRs pour faire bonne figure. Et un trimestre entier à livrer des features qui ne bougent aucun chiffre.
+
+Le problème n'est pas l'outil. C'est l'ordre dans lequel on les utilise.
+
+## La confusion la plus répandue : OKR et roadmap ne sont pas synonymes
+
+Un OKR dit ce que tu veux changer : "L'activation de nos nouveaux comptes passe de 34 % à 55 % d'ici fin de trimestre."
+
+Une roadmap dit comment tu comptes y arriver : "On refait le flow d'onboarding. On ajoute une checklist J1. On teste un email d'activation à J3."
+
+Les deux sont nécessaires. Mais ils opèrent à des niveaux différents. L'OKR fixe la cible. La roadmap trace le chemin. Confondre les deux revient à mettre "construire une maison" comme Key Result, alors que c'est une initiative, pas un outcome.
+
+Le piège classique : l'équipe commence par remplir sa roadmap avec les features qu'elle a envie de livrer, puis cherche des OKRs qui légitiment ce plan. Les OKRs deviennent un vernis stratégique plaqué sur des décisions déjà prises. Ils ne guident rien. Ils valident ce qui est déjà décidé.
+
+Cas concret. Une squad SaaS B2B définit cet OKR en début de trimestre : "Améliorer l'expérience onboarding." Elle liste ensuite ses Key Results : "Livrer le nouveau flow en production" et "Intégrer les tutoriels vidéo." Ces KRs sont des livrables, pas des résultats. L'équipe peut les cocher sans que l'onboarding ne s'améliore d'un iota. Taux de complétion identique. Churn identique. OKR techniquement atteint, problème toujours entier.
+
+## Pourquoi construire la roadmap avant les OKRs est une erreur
+
+Si tu commences par la roadmap, tu commences par les solutions. Tu optimises l'exécution sans avoir défini ce que tu optimises vers.
+
+La conséquence directe : au bilan de trimestre, l'équipe a livré ce qu'elle a promis. Mais les métriques n'ont pas bougé. Le churn est au même niveau. L'activation aussi. On repart pour un trimestre avec la même logique. Et après deux ou trois cycles, un sentiment d'impasse s'installe. L'équipe travaille bien. Elle livre vite. Mais elle n'avance pas.
+
+Ce n'est pas un problème de capacité. C'est un problème de direction.
+
+La question que pose un bon OKR avant toute roadmap : "Si on réussissait parfaitement ce trimestre, qu'est-ce qui aurait changé dans l'expérience utilisateur ou dans les métriques ?" La réponse à cette question, c'est ton OKR. La roadmap vient après.
+
+Une autre façon de formuler : l'OKR définit le succès. La roadmap liste des paris sur les moyens d'y arriver. Ces paris peuvent être bons ou mauvais. C'est la revue de mi-trimestre qui le révèle. Mais si tu n'as pas défini ce que tu appelles succès avant de construire ta roadmap, tu n'as aucun moyen de savoir si tu avances.
+
+## Le flux correct : OKR d'abord, initiatives ensuite
+
+Une fois tes OKRs définis, la construction de la roadmap suit trois niveaux.
+
+Niveau 1 : les Key Results comme cibles. Chaque KR pointe vers un changement de comportement utilisateur mesurable. "Le taux d'activation des nouveaux comptes passe de 34 % à 55 %." "Le NPS mesuré à J30 passe de 28 à 40."
+
+Niveau 2 : les hypothèses. Pour chaque KR, tu te demandes quelles sont les raisons pour lesquelles ce chiffre ne bouge pas aujourd'hui. Et quelles initiatives pourraient l'adresser. Tu génères des hypothèses, pas des features. Une hypothèse ressemble à : "Les utilisateurs ne terminent pas l'onboarding parce qu'il est trop long. Raccourcir le flow à 3 étapes pourrait augmenter le taux de complétion de 15 points." La feature (refonte du flow) découle de l'hypothèse. Pas l'inverse.
+
+Niveau 3 : les initiatives. Pour chaque hypothèse solide (validée par de la data ou un test rapide), une initiative entre dans la roadmap. Elle est directement rattachée au KR qu'elle cible. Si tu ne peux pas répondre à "quel KR cette initiative adresse-t-elle ?", elle n'a pas sa place dans ce cycle.
+
+Le framework FRAME sert de filtre avant d'engager une initiative. Focus : est-ce la priorité ce cycle ? Risques : quels sont les risques d'exécution ? Alignement : est-ce aligné sur les OKRs définis ? Mesure : comment saura-t-on si ça marche ? Experimentation : peut-on valider plus vite avec un test réduit ? Une initiative qui ne passe pas ce filtre attend le prochain cycle ou est abandonnée.
+
+Ce processus est plus long au départ. Il demande de poser des questions inconfortables : "Pourquoi sommes-nous persuadés que cette feature va bouger le KR ?" Mais il évite les trimestres entiers à construire des choses qui ne servent personne.
+
+## Gérer les tensions quand un stakeholder pousse une feature hors OKR
+
+Le cas arrive régulièrement. Un stakeholder, le CEO ou le commercial, demande une feature urgente qui ne correspond à aucun de tes OKRs du trimestre.
+
+Deux situations possibles.
+
+La feature est vraiment hors sujet ce trimestre. La réponse directe : "Ce n'est pas dans nos OKRs actuels. On peut l'intégrer dans le prochain cycle ou la traiter comme un one-shot hors backlog, avec une estimation de coût et d'impact." Les OKRs donnent un mandat clair pour dire non, ou pour négocier ouvertement. Sans OKRs, chaque demande urgente est aussi légitime qu'une autre. Avec des OKRs, tu as un filtre.
+
+La feature est en fait alignée sur un OKR, mais la connexion n'est pas visible pour le stakeholder. Dans ce cas, le travail est de rendre visible ce lien. "Tu me demandes de livrer X. Je comprends pourquoi c'est important pour toi. X adresse notre KR sur l'activation — voilà comment." Cette transparence évite les perceptions de "vous ne livrez jamais ce qu'on demande."
+
+Le cadre SOC (Stratégie, Opérations, Communication) aide à ne pas mélanger les niveaux dans ces conversations. Stratégie, ce sont les OKRs et leur logique. Opérations, c'est la roadmap et son exécution. Communication, c'est comment tu parles de tout ça selon l'interlocuteur. Un CEO n'a pas besoin de voir le détail des initiatives. Il a besoin de comprendre que le trimestre va dans la bonne direction et pourquoi. Un tech lead a besoin du détail des initiatives et de leurs dépendances. Pas des OKRs en abstract. Ces deux conversations ne se ressemblent pas.
+
+## La revue de mi-trimestre : ajuster la roadmap, pas les OKRs
+
+La revue mid-quarter est le moment où la plupart des équipes font une erreur critique. Elles ajustent les OKRs pour les aligner sur ce qu'elles ont livré, plutôt que d'ajuster la roadmap pour aller vers les OKRs.
+
+La logique correcte : si un KR ne bouge pas à mi-parcours, c'est la roadmap qui a un problème. Soit les initiatives ne sont pas les bonnes. Soit elles sont bonnes mais l'exécution est en retard. Soit les hypothèses de départ étaient fausses.
+
+Dans chaque cas, on change le plan d'action. Pas les objectifs. Les OKRs ne changent pas en cours de trimestre sauf événement externe exceptionnel (retournement de marché, crise produit, acquisition). Les modifier à mi-chemin pour atteindre "facilement" la cible, c'est une fraude douce envers ton organisation. Tu te donnes l'apparence du succès sans en avoir les effets.
+
+La revue mid-quarter répond à trois questions pour chaque KR. Où en est-on par rapport à la cible ? Les initiatives en cours ont-elles l'impact attendu ? Que change-t-on dans la roadmap pour les 6 prochaines semaines ?
+
+C'est un diagnostic, pas un bilan. L'objectif est d'ajuster, pas de célébrer.
+
+Exemple : une squad B2B SaaS est à J45 sur un trimestre de 90 jours. Son KR cible est "le taux d'activation passe de 34 % à 55 %". Elle est à 38 %. L'initiative principale (refonte du flow) est livrée depuis 3 semaines. L'impact est là, mais insuffisant. Deux options : renforcer la même hypothèse (améliorer davantage le flow) ou tester une hypothèse complémentaire (par exemple un email d'activation à J2 qui manquait dans le premier plan). La mi-trimestre sert à faire ce choix, pas à réécrire le KR à 42 % pour que l'équipe se sente mieux.
+
+## Ce que la fin de trimestre apprend
+
+La revue finale est le moment de tirer les enseignements, pas de scorer les OKRs.
+
+Un KR non atteint peut signifier trois choses différentes. L'hypothèse initiale était fausse : l'initiative ne pouvait pas bouger ce KR, quelle que soit la qualité de l'exécution. L'objectif était irréaliste : le chiffre était trop ambitieux pour ce cycle. L'exécution a manqué de ressources ou de focus : les initiatives étaient bonnes mais n'ont pas eu le temps de produire leur effet.
+
+Identifier laquelle s'applique change le trimestre suivant. Si l'hypothèse était fausse, on explore d'autres leviers. Si l'objectif était irréaliste, on recalibre l'ambition avec plus de data. Si c'est une question d'exécution, on protège mieux le focus de l'équipe ce cycle.
+
+Ce travail d'analyse distingue une équipe qui s'améliore d'une équipe qui livre sans apprendre. La même squad SaaS qui a raté son KR d'activation de 15 points sait maintenant que la refonte du flow seul ne suffit pas. Qu'un programme d'activation multi-touchpoints est nécessaire. Et elle aborde le trimestre suivant avec une vraie conviction sur ce qui peut marcher.
+
+Ce n'est pas un échec. C'est de la discovery opérationnelle.
+
+Si tu veux approfondir la dimension "comment écrire des Key Results qui mesurent vraiment l'impact", l'article sur le [framework TARS et les OKRs produit](/blog/okr-produit-impact) couvre ce point en détail. C'est le point de départ avant d'attaquer l'alignement roadmap.
+
+## Le générateur OKR express : à venir sur productcopilot.fr
+
+Écrire des OKRs corrects est simple en théorie. Difficile en pratique, surtout sous la pression du planning trimestriel. Le générateur OKR express arrive prochainement sur productcopilot.fr. Il te permet de partir d'un problème produit ou d'un contexte business vague, et de générer des OKRs avec leurs hypothèses d'initiatives prêts à présenter. En moins de 10 minutes.
+
+En attendant, le [Pack OKRs](/packs/okrs) couvre l'ensemble du système : définition, revue, cascade et communication aux stakeholders. Il sera disponible prochainement.
