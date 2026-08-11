@@ -1,0 +1,123 @@
+---
+title: "Vision produit : comment la construire en 2h avec l'IA"
+description: "La vision produit reste floue dans la plupart des équipes. Méthode concrète en 3 étapes pour en écrire une utile avec Claude, ancrée dans le framework SOC."
+slug: "vision-produit-ia-methode"
+date: "2026-08-11"
+readingTime: "9 min"
+cluster: "alignement"
+keywords: ["vision produit product manager", "comment écrire vision produit", "vision produit IA Claude", "SOC product management", "alignement équipe produit"]
+relatedTool: "clarity-map"
+relatedPack: "alignement"
+tags: ["Product Management", "Alignement", "IA"]
+---
+
+La vision produit est l'un des concepts les plus cités en product management. Et l'un des moins bien exécutés.
+
+Demande à n'importe quel PM de te montrer la vision de son produit. Tu obtiendras soit un document de 40 slides que personne ne lit, soit une phrase générique du type "rendre le travail plus efficace pour les équipes modernes", soit un haussement d'épaules.
+
+Ce n'est pas un problème de conviction. C'est un problème de méthode.
+
+## Pourquoi la plupart des visions produit ne servent à rien
+
+Une vision mal construite a deux défauts symétriques.
+
+Trop vague : "Devenir la référence de la collaboration pour les PME." Ça ne dit rien sur ce que tu construis, pour qui, et comment ça se différencie. N'importe quel produit peut se revendiquer de cette vision. Elle ne force aucun choix.
+
+Trop précise : "Une application mobile de gestion de tâches avec IA pour les managers de PME de 10 à 50 collaborateurs dans le secteur BTP." C'est une description de produit, pas une vision. Elle sert à la vente, pas à l'alignement.
+
+Une vision utile opère entre les deux. Elle doit être assez précise pour exclure des choses, et assez ambitieuse pour guider au-delà de la prochaine version.
+
+Le test pratique : montre ta vision à un ingénieur de ton équipe et demande-lui si elle l'aurait aidé à prendre une décision technique la semaine dernière. Si la réponse est non, ta vision n'est pas opérationnelle.
+
+La deuxième erreur est de croire que la vision vient du CEO ou de la stratégie d'entreprise, et que le PM n'a qu'à la relayer. Dans la réalité, personne ne te donne une vision clé en main. Tu dois la construire, la tester, la raffiner. Même quand l'entreprise en a une, la vision produit en est une déclinaison qui doit faire sens pour ton périmètre.
+
+## Ce qu'une vision utile fait vraiment
+
+Une vision produit qui fonctionne fait trois choses concrètes.
+
+Elle dit non à ta place. Quand une demande stakeholder arrive, quand un bug urgent détourne l'attention de la squad, quand un concurrent sort une feature, la vision doit te permettre de décider en quelques secondes si tu intègres ça ou tu laisses passer. Si ta vision ne t'aide pas à trancher, elle ne fonctionne pas.
+
+Elle regroupe des décisions disparates dans une logique cohérente. Le design d'une page d'onboarding, le choix d'un modèle de pricing, la priorité donnée à un segment d'utilisateurs : des décisions prises à des moments différents, par des personnes différentes, doivent converger. La vision est le fil qui les relie.
+
+Elle donne un horizon à une équipe qui exécute dans le court terme. Les sprints bimensuels, les bugs urgents, les revues de sprint : tout ça crée une pression vers l'immédiat. La vision est le seul artefact qui tire vers l'horizon à 12-24 mois. Sans elle, une équipe produit passe de fonctionnalité en fonctionnalité sans comprendre ce qu'elle construit réellement.
+
+## Construire ta vision en 2h avec Claude : la méthode en 3 étapes
+
+L'IA ne va pas te donner ta vision. Elle va t'aider à la formuler. Nuance importante : si tu demandes à Claude "écris la vision de mon produit", tu obtiens une phrase générique qui ne vaut rien. La méthode, c'est de t'utiliser toi comme matière première.
+
+Étape 1 : Rassembler les inputs bruts (30 minutes)
+
+Avant d'ouvrir Claude, note en vrac :
+- Les 3 problèmes utilisateurs que ton produit résout mieux que quiconque
+- Les 2-3 segments d'utilisateurs qui ont le plus de valeur pour toi
+- La principale raison pour laquelle un utilisateur choisirait ton produit plutôt qu'une alternative
+- Ce que ton produit ne sera jamais (les périmètres hors scope)
+- L'état du monde dans 3 ans si ton produit a pleinement réussi
+
+Ne cherche pas la formulation parfaite. Ce sont des notes brutes. 10 à 15 lignes suffisent.
+
+Étape 2 : Utiliser Claude pour synthétiser et challenger (45 minutes)
+
+Prompt de départ :
+
+"Je vais te donner mes notes brutes sur la vision de mon produit. Ton rôle est d'en extraire une vision en une ou deux phrases, assez précise pour guider des décisions quotidiennes et assez ambitieuse pour motiver une équipe sur 18 mois. Ensuite, challenge-moi : quels choix cette vision exclut-elle ? Quels segments d'utilisateurs elle abandonne ? Quelle décision récente de notre roadmap elle contredit ?"
+
+Partage tes notes brutes. Laisse Claude produire deux ou trois formulations. Ne garde pas la première. Demande-lui de te montrer comment chaque formulation se comporterait face à une situation concrète : "si un stakeholder demande d'ajouter une feature de reporting avancé, est-ce que cette vision aide à décider ?"
+
+Ce que Claude fait bien à cette étape : reformuler, identifier les contradictions dans tes notes, générer des variantes à partir d'angles différents (centré utilisateur, centré business, centré impact).
+
+Ce que Claude ne peut pas faire : savoir si la vision est vraie pour ton marché. C'est ton boulot.
+
+Étape 3 : Tester avec l'équipe (45 minutes)
+
+Présente les deux ou trois formulations en atelier court avec l'équipe. Pose une question simple : "Est-ce que cette phrase vous aurait aidés à prendre une décision la semaine dernière ?" Écoute les réponses. Si personne ne peut citer une décision concrète que la vision aurait éclairée, reformule.
+
+La version finale doit pouvoir être récitée de mémoire par n'importe qui dans l'équipe. Si elle nécessite un document de contexte pour être comprise, elle est trop longue ou trop abstraite.
+
+## La grille SOC pour ancrer ta vision dans l'exécution
+
+Une vision bien rédigée ne suffit pas si elle ne descend pas dans les outils du quotidien. Le framework SOC (Strategy, Operations, Communication) donne une structure pour que la vision devienne opérationnelle à chaque niveau de l'organisation produit.
+
+Niveau Strategy : la vision se traduit en OKRs trimestriels. Si tes OKRs ne découlent pas directement de ta vision, il y a un problème d'alignement. Prends ton OKR du trimestre et demande-toi : "Est-ce qu'atteindre ce KR nous rapproche de la vision, et comment ?"
+
+Si tu ne peux pas répondre en deux phrases, l'OKR est déconnecté. Ce n'est pas forcément mauvais — certains travaux sont nécessaires sans être liés directement à la vision — mais c'est un signal à traiter explicitement plutôt que de l'ignorer.
+
+Niveau Operations : la vision filtre la roadmap. Chaque initiative majeure devrait pouvoir se justifier par rapport à la vision. Pas une justification artificielle ("on fait ça parce que ça correspond à notre vision de...") mais une vraie : l'initiative accélère-t-elle ou non la direction que la vision indique ?
+
+Niveau Communication : la vision est le fil conducteur de toutes tes communications stakeholders. Le slide de présentation du planning Q4, le bilan de fin d'année, le message aux équipes après un pivot : tous partent de la vision et montrent comment ce qu'on fait s'y inscrit. Sans ce fil, chaque communication réinvente le contexte depuis zéro.
+
+Le SOC ne remplace pas d'autres outils. Il organise comment la vision se diffuse à travers eux. La vision est l'entrée du système. Les OKRs, la roadmap, les communications : les sorties.
+
+## Rendre la vision vivante : les 3 rituels qui évitent qu'elle prenne la poussière
+
+Une vision produit n'est pas un document qu'on écrit une fois. C'est un artefact vivant qui doit être questionné et mis à jour.
+
+Rituel 1 : la revue vision tous les 6 mois. Pas tous les trimestres — trop fréquent, ça crée de l'instabilité. Pas tous les ans — trop rare, la vision peut devenir obsolète sans que personne ne le remarque. À chaque revue : est-ce que le marché a évolué de façon à remettre en cause notre vision ? Est-ce que les données d'usage montrent qu'on s'est trompé sur le segment ou le problème prioritaire ?
+
+Rituel 2 : le test vision en kick-off de roadmap. Au début de chaque cycle de planification, avant de prioriser les initiatives, 15 minutes pour relire la vision en équipe et valider que les priorités candidates s'y raccordent. Ce n'est pas un audit, c'est un ancrage rapide.
+
+Rituel 3 : la question vision dans les designs reviews. À chaque revue de design ou spec technique, une question standard : "est-ce que ce choix va dans la direction de notre vision ?" Pas pour bloquer les décisions, mais pour créer l'habitude de connecter les choix micro à la direction macro.
+
+Ces trois rituels ne prennent pas beaucoup de temps. Mais sans eux, la vision reste un artefact de slide deck que personne ne consulte au moment qui compte.
+
+## Les signaux qui montrent que ta vision fonctionne
+
+Tu n'as pas besoin d'attendre 18 mois pour savoir si ta vision est opérationnelle.
+
+Signal positif : quand un membre de l'équipe cite la vision spontanément pour justifier une décision qu'il a prise seul. Ce n'est pas le PM qui applique la vision : c'est l'équipe qui l'a internalisée.
+
+Signal positif : quand un stakeholder reformule sa demande après avoir entendu la vision. "Ah, si vous allez dans cette direction, alors ce que j'avais en tête ne s'y intègre pas. Voici ce qui s'y intègrerait mieux." La vision a créé un contexte commun.
+
+Signal négatif : quand la vision génère du silence dans une room. Les gens hochent la tête mais personne ne rebondit dessus. La vision n'est pas assez précise ou pas assez crédible pour susciter de la réaction.
+
+Signal négatif : quand tu as besoin d'expliquer la vision chaque fois que tu la cites. Si tu dois ajouter "ce que ça veut dire, c'est..." après chaque mention, la formulation est trop abstraite.
+
+Le FRAME framework est utile comme check-list de validation : ta vision a-t-elle un Focus suffisamment précis ? Intègre-t-elle la dimension Risque (ce que tu évites autant que ce que tu cherches) ? Crée-t-elle de l'Alignement ou de la confusion ? Est-elle Mesurable à travers les OKRs qu'elle génère ? Ouvre-t-elle la porte à de l'Expérimentation plutôt que de figer un chemin unique ?
+
+Une vision qui passe le test FRAME est une vision avec laquelle tu peux travailler.
+
+---
+
+La Clarity Map express est un outil de diagnostic qui t'aide à identifier les zones de désalignement dans ton organisation produit : entre la vision, les OKRs, la roadmap, et les équipes. Il arrive prochainement.
+
+En attendant, si tu veux travailler sur l'alignement de ton produit, tu peux commencer par le [Template PRD IA](/outils/template-prd-ia) pour structurer tes initiatives produit et t'assurer que chaque spec est ancrée dans un objectif clair.
