@@ -1,0 +1,119 @@
+---
+title: "OKR et roadmap produit : connecter stratégie et exécution"
+description: "Ta roadmap et tes OKRs ne se parlent pas. Voici comment les connecter dès le premier sprint avec le cadre SOC."
+slug: "okr-roadmap-produit"
+date: "2026-08-12"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["OKR roadmap produit", "aligner OKR roadmap", "cadre SOC product manager", "connecter stratégie exécution produit", "roadmap trimestrielle OKRs"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Stratégie produit"]
+---
+
+En janvier, ton CPO présente les OKRs du trimestre. L'équipe hoche la tête. Tout le monde comprend la direction. Puis la réunion se termine, et chacun retourne à sa roadmap.
+
+Six semaines plus tard, tu regardes ce que l'équipe a construit. Trois features livrées. Deux bugs critiques fixés. Un refactoring démarré. Les OKRs ? Tu y reviendras en fin de cycle.
+
+Ce scénario n'est pas une exception. C'est la règle. Les OKRs existent en parallèle de la roadmap, pas dedans.
+
+Le résultat est prévisible. En fin de trimestre, tu reconstruis à rebours pourquoi ce que tu as livré est censé avoir impacté les KRs posés en début de cycle. C'est de la narration, pas de la mesure.
+
+## La question qui révèle le problème en cinq minutes
+
+Prends ta roadmap du trimestre en cours. Pour chaque initiative, pose la question : quel Key Result elle fait bouger ?
+
+Si tu peux répondre en trente secondes pour chacune, ta roadmap est alignée sur tes OKRs. C'est rare.
+
+Si tu formules des réponses du type "ça améliore l'expérience utilisateur en général", tu as le problème.
+
+Une initiative qui ne peut pas être rattachée à un Key Result spécifique n'a pas forcément tort d'exister. La dette technique, les bugs critiques, les obligations réglementaires : tout ça doit vivre quelque part. Mais si une fonctionnalité nouvellement développée ne fait bouger aucun KR, elle aurait dû être questionnée avant d'entrer en développement.
+
+L'exercice "quel KR ça fait bouger" prend rarement plus de quelques minutes par initiative. Mais s'il révèle que la réponse est souvent "aucun", c'est une information sur comment les décisions se prennent dans ton équipe.
+
+## Le cadre SOC pour voir les deux niveaux sans les confondre
+
+Le cadre SOC (Strategy, Operations, Communication) donne une structure pour penser la relation entre OKRs et roadmap.
+
+Le niveau Strategy, c'est là où vivent les OKRs. Tu y poses la direction du trimestre : ce que tu cherches à changer dans le comportement des utilisateurs, dans tes métriques, dans ta position. Les OKRs ne disent pas comment. Ils disent quoi et pourquoi.
+
+Le niveau Operations, c'est là où vit la roadmap. Les initiatives, les epics, les sprints. Le comment. La roadmap dit "on construit X et Y pour faire bouger le KR Z".
+
+Le niveau Communication, c'est comment tu rends visible le lien entre les deux, vers les stakeholders, l'équipe engineering et le management.
+
+Le problème classique : les équipes gèrent Strategy et Operations comme deux processus séparés. Les OKRs ont leur slide trimestriel. La roadmap a son outil dédié. Personne ne fait le pont.
+
+Appliqué comme cadre mental, SOC change la question de "quoi mettre dans la roadmap ?" en "qu'est-ce qui fait avancer nos OKRs ?". Ce n'est pas un logiciel ni un template. C'est une façon de relier les décisions quotidiennes à la direction stratégique.
+
+Exemple concret. Une squad travaille sur un produit SaaS B2B. Les OKRs du trimestre portent sur l'activation (KR1 : taux d'activation de 34 % à 55 %) et la rétention (KR2 : churn J30 de 22 % à 12 %). La roadmap prévue inclut une refonte de l'onboarding, une intégration Slack, et un nouveau module de reporting.
+
+En SOC :
+- Strategy : KR1 et KR2 sont les cibles.
+- Operations : la refonte onboarding est directement liée à KR1. L'intégration Slack peut affecter KR2 (les utilisateurs qui intègrent Slack restent plus longtemps). Le nouveau module de reporting, lui, ne fait bouger aucun des deux KRs. C'est pour qui ? Pour quoi ce trimestre ?
+- Communication : ce questionnement doit être explicite et partagé avant de coder.
+
+## L'exercice trimestriel : 90 minutes pour connecter OKR et roadmap
+
+Cet exercice se fait en début de trimestre, après que les OKRs sont fixés et avant que la roadmap soit figée.
+
+Etape 1 : liste tous tes Key Results du trimestre sur une colonne. Pas les Objectives, les KRs. Ceux avec une baseline et une cible chiffrée. Si tu n'as pas encore de baseline, c'est ton premier travail, comme expliqué dans l'article [OKRs produit : comment mesurer l'impact, pas le travail](/blog/okr-produit-impact).
+
+Etape 2 : liste toutes les initiatives de ta roadmap sur une autre colonne. Pas les stories ou les tâches. Les epics de la taille d'une à trois semaines de travail.
+
+Etape 3 : relie chaque initiative à un KR. Un trait entre l'initiative et le Key Result qu'elle fait bouger.
+
+Ce que tu vas voir à la fin :
+
+Des initiatives sans KR. Deux options : soit c'est de la dette technique ou du support, et c'est assumé comme tel ; soit c'est une feature qu'on a mise en roadmap par habitude ou pression stakeholder, et ça mérite d'être questionnée avant d'être démarrée.
+
+Des KRs sans initiative. C'est un angle mort dans ton plan. Tu as fixé un objectif de changer un chiffre, mais tu n'as planifié aucun travail pour y arriver. Soit tu ajoutes une initiative, soit tu revois ce KR.
+
+Des KRs qui concentrent la majorité des initiatives. C'est ton vrai focus du trimestre, qu'il soit explicite ou non. Vérifie que c'est délibéré et que les autres KRs ne sont pas orphelins.
+
+L'exercice prend 90 minutes la première fois. Après deux ou trois cycles, il devient naturel et beaucoup plus rapide, parce que les questions sont posées avant la roadmap.
+
+## La revue mi-trimestre : un réajustement, pas un rapport
+
+Le check-in de milieu de cycle est l'étape que la plupart des équipes ratent. Quand elles le font, c'est souvent un rapport d'avancement : "on a livré 4 des 7 initiatives prévues, les KRs sont à 40 % de la cible." L'information est là. Mais la décision est absente.
+
+La revue mi-trimestre sert à réajuster la roadmap en fonction du signal OKR.
+
+A la semaine 6-7 d'un cycle de 12 semaines, deux questions :
+
+Quels KRs sont en bonne voie ? Ceux-là, on continue le plan prévu.
+
+Quels KRs sont en retard ? Et la question qui suit : qu'est-ce qu'on change dans la roadmap pour les faire avancer ?
+
+C'est là que SOC prend tout son sens. Si un KR est en retard, le niveau Operations doit réagir. Tu ne changes pas l'OKR à mi-parcours, sauf contexte exceptionnel. Tu changes ce que tu vas construire d'ici la fin du cycle.
+
+En pratique : déprioriser une initiative prévue qui n'est pas urgente, accélérer sur quelque chose qui a plus d'impact sur le KR en difficulté. Ou admettre que la cible était trop ambitieuse et recadrer avec le management.
+
+Ce que la revue mi-trimestre ne doit pas être : un exercice où on cherche à montrer qu'on a bien travaillé. L'audience principale, c'est l'équipe elle-même. Le management peut être présent, mais le contenu est une décision, pas une justification.
+
+## Ce que ça change dans les décisions quotidiennes
+
+Quand un stakeholder vient avec une demande urgente, la question n'est plus "est-ce une bonne idée ?" ni "tu as du bandwidth ?". La question est "quel KR ça fait avancer ?".
+
+Si la réponse est "aucun de ceux du trimestre", la conversation change. Ce n'est pas forcément un refus. C'est un choix explicite : on fait ça, et on déprioritise quelque chose qui faisait avancer un KR. Le stakeholder doit accepter ce compromis.
+
+Cette dynamique déplace la négociation du "tu veux faire quoi ?" au "qu'est-ce qu'on est prêt à sacrifier pour ça ?". Ce n'est pas confortable. Mais c'est plus honnête et plus rapide à trancher.
+
+Le piège inverse existe : des équipes qui refusent tout ce qui ne rentre pas dans un KR du trimestre, au point de créer de la rigidité et de la frustration. Les OKRs sont un cadre de décision, pas une cage. La règle n'est pas "aucun travail hors OKR". La règle est "tout travail hors OKR est explicitement choisi et tracé comme tel".
+
+Un signe que l'alignement fonctionne : ton équipe engineering commence à poser elle-même la question "ça fait avancer quel OKR ?" avant d'estimer une feature. Quand c'est l'équipe qui pose la question, pas seulement le PM, le cadre est intégré.
+
+## Les pièges à éviter dans les premières semaines
+
+Trois erreurs reviennent systématiquement quand une équipe commence à aligner roadmap et OKRs.
+
+Rattacher une initiative à un OKR par obligation. Si tu ne trouves pas de lien honnête entre une initiative et un KR, ne force pas la connexion. Un faux lien est pire qu'un aveu d'absence de lien.
+
+Créer trop de KRs pour que toutes les initiatives rentrent. Si tu as quinze initiatives et cinq KRs, la tentation est d'ajouter des KRs pour "couvrir" toutes les initiatives. C'est l'inverse de la logique OKR. Trois à quatre KRs par cycle maximum, comme posé dans l'article sur [le framework TARS et la mesure d'impact](/blog/okr-produit-impact).
+
+Faire l'exercice une seule fois en début de trimestre. L'alignement doit être actif, pas statique. Chaque fois qu'une nouvelle demande entre ou qu'une initiative est priorisée, la question du KR doit être posée. Pas seulement lors de la revue trimestrielle.
+
+## Pour construire des OKRs qui méritent une roadmap
+
+Si tu n'as pas encore de Key Results bien formulés, le problème est en amont de la roadmap. Des OKRs flous produisent une roadmap flottante.
+
+Le Générateur OKR express te permet de partir d'une situation produit concrète et de formuler des OKRs avec des Key Results dans la logique TARS : Targeted, Adopted, Retained, Satisfied. [Essaie le générateur ici](/outils/generateur-okr).
