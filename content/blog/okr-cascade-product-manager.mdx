@@ -1,0 +1,119 @@
+---
+title: "OKRs en cascade : décliner la stratégie en résultats produit"
+description: "La cascade OKR est là où ça coince. Comment traduire les objectifs stratégiques en Key Results actionnables pour ton équipe produit, avec FRAME et l'IA."
+slug: "okr-cascade-product-manager"
+date: "2026-08-14"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["OKR cascade product manager", "décliner OKR produit", "aligner OKR stratégie produit", "OKR équipe produit méthode"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "IA"]
+---
+
+La direction annonce ses OKRs en début de trimestre. Une slide. Trois objectifs ambitieux. Des Key Results chiffrés.
+
+Et là, le PM fait ce que tout le monde fait : il redescend les mêmes objectifs un niveau plus bas, en remplaçant "entreprise" par "produit". Il appelle ça une cascade. Ce n'en est pas une.
+
+## Pourquoi la cascade OKR échoue presque toujours
+
+Le problème du copy-paste vertical : les OKRs company sont pensés à l'échelle de l'organisation entière. L'équipe produit ne pilote qu'une partie du système.
+
+Si ton OKR company dit "augmenter le NPS de 20 points", l'équipe produit peut contribuer. Mais elle ne contrôle pas le support client, pas les prix, pas les délais de livraison. Mettre le même chiffre dans ton OKR produit, c'est te fixer un objectif dont tu ne maîtrises pas les leviers.
+
+La conséquence : soit tu atteins l'OKR pour des raisons qui n'ont rien à voir avec ce que ton équipe a fait. Soit tu ne l'atteins pas pour des raisons qui t'échappent. Dans les deux cas, l'OKR ne t'a pas aidé à piloter.
+
+## La différence entre décliner et traduire
+
+"Décliner" un OKR, c'est le répliquer vers le bas. "Traduire" un OKR, c'est identifier la contribution de ton périmètre à cet objectif supérieur.
+
+La question n'est pas "comment mes OKRs reflètent-ils les OKRs company ?" La question est "qu'est-ce que mon équipe peut mesurer et influencer qui contribue à l'objectif company ?"
+
+Exemple concret. OKR company : "Devenir la référence SaaS sur notre marché cible" avec comme Key Results : taux de renouvellement à 95 %, NPS à 55, part de marché PME à 20 %.
+
+Ce que l'équipe produit peut traduire depuis cet objectif :
+
+Sur le renouvellement : "Réduire le churn par manque de valeur perçue." Ton périmètre = l'expérience produit. Tes leviers = rétention, adoption des features clés, clarté de la proposition de valeur dans le produit.
+
+Sur le NPS : "Supprimer les frictions dans les parcours critiques." Ton périmètre = les flows qui génèrent le plus de tickets support et les plus mauvais scores CSAT.
+
+Sur la part de marché PME : "Réduire le time-to-value pour les nouveaux comptes." Ton périmètre = l'onboarding, l'activation, les premiers 30 jours.
+
+Tu n'as pas trois OKRs produit identiques aux OKRs company. Tu as trois OKRs produit qui adressent chacun un levier actionnable par ton équipe pour contribuer à un objectif supérieur.
+
+## FRAME comme boussole pour construire la cascade
+
+Une fois que tu as identifié la contribution de ton périmètre, il faut choisir. Tu ne peux pas tout attaquer en même temps.
+
+FRAME donne une structure pour évaluer si un OKR produit est stratégiquement cohérent.
+
+Focus : est-ce que cet OKR est assez précis pour orienter les décisions quotidiennes ? "Améliorer l'expérience utilisateur" n'est pas focalisé. "Réduire de 40 % le temps de complétion du flow d'onboarding pour les comptes PME" l'est.
+
+Risques : qu'est-ce qui peut empêcher d'atteindre ce résultat indépendamment de ce que l'équipe fait ? Si tu vises un NPS à 50 mais que le support est débordé et génère de la mauvaise expérience, tu ne contrôles pas assez le levier. Soit tu acceptes ce risque, soit tu reformules.
+
+Alignement : est-ce que chaque squad peut voir le lien entre son travail et cet OKR ? Un OKR produit trop haut garde la tête dans les nuages. Trop bas, il perd le sens stratégique.
+
+Mesure : as-tu la donnée pour suivre ce Key Result aujourd'hui, à la baseline ? Pas "on pourra mesurer ça avec Mixpanel" mais "voilà le chiffre d'aujourd'hui". Sans baseline, le Key Result ne mesure rien.
+
+Expérimentation : est-ce que cet OKR permet de faire des choix ? Un bon OKR te force à prioriser des expériences, des features, des hypothèses. S'il peut être atteint par n'importe quelle initiative sans distinction, il n'est pas assez précis.
+
+FRAME est une checklist, pas une formule magique. Certains OKRs passeront 4 critères sur 5 et c'est suffisant. L'utilité est de repérer les angles morts avant de commencer le trimestre.
+
+En travaillant sur la [structure de tes Key Results](/blog/okr-produit-impact), tu t'assures que ce que tu mesures est bien de l'impact et pas de l'output. Les deux exercices se complètent.
+
+## Le travail de la cascade en pratique
+
+Voilà comment le faire concrètement, en moins d'une matinée.
+
+Étape 1 : liste les OKRs company du trimestre. Trois colonnes : objectif, Key Results, périmètre de l'équipe produit sur chaque KR.
+
+Étape 2 : pour chaque KR company, identifie le levier produit le plus direct. Pose cette question : "Si mon équipe résolvait un problème produit précis ce trimestre, lequel contribuerait le plus à ce KR ?" Tu n'as pas à trouver tous les leviers. Tu dois trouver le plus direct.
+
+Étape 3 : formule ton OKR produit autour de ce levier, avec une baseline chiffrée. C'est là que la plupart s'arrêtent avant de finir l'exercice. Aller chercher la baseline dans Mixpanel, Amplitude, ou directement en SQL prend parfois deux heures. C'est incontournable.
+
+Étape 4 : passe tes OKRs produit au crible FRAME. Ajuste ce qui coince.
+
+Étape 5 : partage avec tes squads. La cascade n'est pas une communication descendante. C'est un dialogue. Si une squad ne voit pas comment ses priorités du trimestre contribuent à un OKR produit, soit l'OKR est mal formulé, soit la squad travaille sur quelque chose qui n'est pas aligné.
+
+## Comment l'IA accélère ce travail
+
+La partie où les équipes perdent le plus de temps : générer les hypothèses de contribution. "Est-ce que mon équipe peut vraiment influencer ce KR ? Par quel levier ?"
+
+L'IA est utile ici, pas pour décider à ta place, mais pour générer rapidement les angles auxquels tu n'avais pas pensé. En 2026, on estime que 60 à 70 % du temps opérationnel des PMs peut être assisté par l'IA sur des tâches de synthèse et de structuration, dont la formulation des OKRs. (Asana, "Rédiger et piloter vos OKR avec l'IA", 2026)
+
+Voici un prompt concret à utiliser dans Claude :
+
+Contexte : je suis PM dans une startup SaaS B2B ciblant les PME. Mon équipe gère l'expérience post-activation : onboarding, adoption, rétention.
+
+OKR company ce trimestre : "Devenir la solution préférée des PME françaises". Key Results : NPS à 55 (vs 38 aujourd'hui), churn mensuel à 2 % (vs 4,5 % aujourd'hui), taux de renouvellement annuel à 92 % (vs 85 % aujourd'hui).
+
+Pour chaque Key Result company :
+1. Identifie les leviers produit que mon équipe peut activer directement.
+2. Propose un OKR produit formulé autour du levier le plus impactant.
+3. Indique les métriques à instrumenter si elles ne sont pas encore disponibles.
+
+Ce que l'IA va sortir est rarement parfait. Mais elle va te proposer des angles de contribution que tu n'aurais pas générés seul en 20 minutes. Tu filtres, tu ajustes, tu valides avec FRAME. Le travail intellectuel reste le tien. La génération des hypothèses est accélérée.
+
+Pour aller plus vite encore, tu peux itérer en 3 aller-retours plutôt qu'en un seul prompt :
+
+Premier prompt : génère les hypothèses de contribution.
+Deuxième prompt : formule les Key Results avec une baseline précise et un niveau d'ambition réaliste.
+Troisième prompt : passe chaque KR au crible FRAME, identifie les risques et les angles morts.
+
+Trois échanges, 30 minutes, et tu as un brouillon d'OKRs produit solide à valider en équipe.
+
+## Ce que tu ne peux pas déléguer à l'IA
+
+L'IA génère les hypothèses. Toi, tu fais les choix.
+
+Choisir quels leviers adresser en priorité, c'est une décision qui dépend du contexte de ton produit, des capacités de ton équipe, de la dette technique, et des signaux utilisateurs que tu as collectés en discovery. L'IA n'a pas accès à tout ça.
+
+De même, la négociation de tes OKRs avec ta direction ou les autres squads ne se délègue pas. Un OKR qui crée de la tension inter-équipes doit être résolu dans une conversation, pas dans un prompt.
+
+La cascade OKR efficace reste un exercice humain. L'IA est un accélérateur de formulation, pas un remplaçant du jugement produit.
+
+Un signal que ta cascade est mal construite : tes squads ne savent pas, en cours de trimestre, si leurs décisions de la semaine contribuent à l'OKR ou pas. Si c'est le cas, l'OKR est soit trop vague, soit trop déconnecté du travail quotidien. Retourne à FRAME et reformule.
+
+## Pour aller plus loin
+
+Tu veux générer ton premier brouillon d'OKRs produit en moins de 15 minutes ? Le Générateur OKR express te permet de rentrer tes OKRs company et ton périmètre, et d'obtenir des hypothèses de Key Results produit à valider. Disponible bientôt sur [/outils/generateur-okr](/outils/generateur-okr).
