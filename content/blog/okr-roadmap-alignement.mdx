@@ -1,0 +1,141 @@
+---
+title: "OKR et roadmap produit : comment aligner les deux"
+description: "La roadmap liste ce qu'on construit. Les OKRs fixent ce qu'on cherche à atteindre. Méthode pour les faire fonctionner ensemble."
+slug: "okr-roadmap-alignement"
+date: "2026-08-15"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["aligner OKR roadmap produit", "OKR roadmap product manager", "OKR et roadmap", "roadmap par objectifs"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Roadmap"]
+---
+
+La plupart des équipes produit ont une roadmap et des OKRs. Peu ont les deux qui fonctionnent ensemble.
+
+La roadmap liste ce qu'on construit : features, migrations, corrections, améliorations. Les OKRs fixent ce qu'on cherche à atteindre : métriques, comportements, résultats business. Sans connexion explicite entre les deux, les OKRs restent des slides de présentation et la roadmap reste une liste de tâches habillée en stratégie.
+
+## Le problème classique
+
+Beaucoup d'équipes votent leurs OKRs en début de trimestre. La roadmap, elle, ressemble souvent à une liste construite entre la dette technique, les demandes commerciales et les promesses de la dernière all-hands.
+
+Résultat : les OKRs sont affichés dans Notion. La roadmap avance dans Jira. Les deux coexistent sans vraiment se parler.
+
+À la fin du trimestre, l'équipe a livré beaucoup de choses. Les Key Results, eux, n'ont pas bougé. Et personne ne sait exactement pourquoi.
+
+Ce n'est pas un problème d'effort. C'est un problème de connexion : chaque item de la roadmap devrait répondre à la question "quel Key Result est-ce que ça sert, et comment ?".
+
+## Ce que chaque item de roadmap devrait justifier
+
+Une roadmap n'est pas une liste de features. C'est une hypothèse sur la façon dont tu vas changer une métrique.
+
+Pour chaque item, deux questions :
+
+Premièrement, quel Key Result est-ce que ça sert ? Si la réponse est floue, l'item n'est pas prêt pour ce trimestre.
+
+Deuxièmement, de combien est-ce que ça peut le faire bouger, selon quelle logique ? Pas un chiffre précis au dixième. Une direction et une hypothèse causale. "Si on refait le flow d'onboarding, on pense que le taux de complétion va passer de 34 % à 50 % parce que le blocage actuel est au step 3, et on a des données qualitatives qui confirment ça."
+
+Si tu n'as pas de réponse claire à ces deux questions pour un item donné, il y a trois cas possibles.
+
+L'item sert un OKR que tu n'as pas encore formulé. Solution : formule-le, ou accepte que c'est hors périmètre ce trimestre.
+
+L'item est là par inertie : une vieille promesse, une feature qui traîne depuis deux sprints. Solution : archive-le, ou planifie-le explicitement pour un prochain cycle.
+
+Tu n'as pas encore réfléchi à comment mesurer l'impact. Solution : c'est le travail à faire avant de confirmer l'item.
+
+La roadmap qui fonctionne n'est pas plus courte. Elle est plus honnête sur ce que chaque initiative cherche à produire comme résultat.
+
+## De l'OKR vers la roadmap : l'approche top-down
+
+La direction la plus naturelle est de partir des OKRs et de travailler vers l'exécution.
+
+Exemple. Ton OKR pour Q3 :
+
+Objectif : augmenter l'engagement des utilisateurs actifs sur la fonctionnalité de collaboration.
+
+Key Results :
+- Le nombre moyen de sessions collaboratives par compte passe de 3 à 9 par mois.
+- Le taux de comptes avec au moins 2 membres actifs passe de 22 % à 45 %.
+- Le churn des comptes avec collaboration active reste sous les 6 %.
+
+Maintenant tu travailles ta roadmap comme un entonnoir d'hypothèses. Pour chaque KR, tu te demandes : qu'est-ce qui pourrait changer cette métrique ?
+
+Pour le premier KR (sessions collaboratives par compte) :
+
+Hypothèse A : les invitations sont trop peu visibles, donc peu de membres sont invités. Solution candidate : refonte du flow d'invitation.
+
+Hypothèse B : les utilisateurs ne comprennent pas la valeur de la collaboration dans le produit. Solution candidate : tutoriel contextuel à la première session.
+
+Hypothèse C : la collaboration est trop lente sur mobile. Solution candidate : optimisation mobile.
+
+Tu ne peux pas tester les trois en même temps. Tu choisis une hypothèse par cycle court, tu la places dans la roadmap, et tu mesures.
+
+C'est ça, une roadmap alignée sur des OKRs : une séquence d'hypothèses ordonnées par probabilité d'impact sur les Key Results, pas une liste de features plébiscitées en réunion.
+
+## De la roadmap vers l'OKR : l'approche bottom-up
+
+L'autre direction est utile quand tu hérites d'une roadmap existante ou quand des items s'ajoutent en cours de trimestre.
+
+Pour chaque item déjà présent dans la roadmap, applique le filtre en deux questions mentionné plus haut. Si l'item ne sert aucun KR actif, tu as deux options.
+
+Première option : le déprioriser pour ce trimestre et l'expliquer explicitement à l'équipe.
+
+Deuxième option : choisir d'y travailler malgré tout, en acceptant que le temps passé ne servira pas les OKRs du trimestre. Ce choix est valide, à condition qu'il soit conscient et documenté, pas subi.
+
+Cette discipline est inconfortable. Elle force à refuser des demandes qui "semblent importantes" sans que personne ne sache pourquoi. Elle force à admettre que certains items sont là parce qu'un VP les a mentionnés en réunion, pas parce qu'ils servent un OKR.
+
+C'est exactement la valeur d'un OKR bien construit : il te donne un critère objectif pour arbitrer les demandes entrantes. Si l'item sert les OKRs, il entre. Sinon, il attend.
+
+## Le framework FRAME pour valider chaque initiative
+
+Avant de confirmer qu'une initiative entre dans la roadmap du trimestre, passe-la par le filtre FRAME.
+
+FRAME structure la validation stratégique d'une initiative en cinq dimensions : Focus, Risques, Alignement, Mesure, Expérimentation.
+
+Focus : l'initiative est-elle dans le périmètre de tes OKRs actuels ? Si elle sert un problème réel mais hors focus, elle attend le prochain cycle. "Important mais pas maintenant" est une réponse valide.
+
+Risques : quels sont les risques qui pourraient empêcher l'initiative d'atteindre le KR ? Risque d'adoption (les utilisateurs ne vont pas changer de comportement), risque technique (ça prend deux fois plus de temps que prévu), risque de marché (la priorité change). Si les risques sont élevés, c'est un signal pour commencer par quelque chose de plus petit.
+
+Alignement : l'initiative est-elle cohérente avec les OKRs de l'équipe, de la direction, et de l'entreprise ? Si elle sert ton KR mais contredit une priorité business annoncée, il y a un conflit à résoudre avant de partir en construction. Mieux vaut l'adresser en semaine 1 qu'en semaine 8.
+
+Mesure : comment tu vas savoir que l'initiative a fonctionné ? Quelle métrique, mesurée comment, avec quelle fréquence ? Sans plan de mesure avant de commencer, tu ne sauras pas interpréter les résultats. Et tu ne sauras pas si l'hypothèse était bonne ou mauvaise, ce qui rend le trimestre suivant aussi flou.
+
+Expérimentation : est-ce qu'il y a une façon de tester l'hypothèse plus rapidement, avec moins de ressources ? Un test A/B, une feature flag sur 10 % des comptes, une page mockup, une session de test utilisateur. L'expérimentation réduit le coût d'une hypothèse fausse.
+
+Passer une initiative par FRAME prend vingt minutes. Cela évite de passer six semaines à construire quelque chose qui ne déplace pas la métrique.
+
+## Le cycle trimestriel qui maintient l'alignement
+
+L'alignement entre OKRs et roadmap n'est pas un état stable. C'est un travail continu sur le cycle trimestriel.
+
+Semaine 1, kick-off OKR. Les OKRs du trimestre sont posés et partagés avec toute la squad. Chaque item de la roadmap est mappé sur un Key Result. Les items sans mapping sont soit retirés, soit marqués "hors OKR" avec une justification explicite.
+
+Semaines 2 à 9, tracker hebdo. Une colonne par Key Result dans le dashboard de suivi. À chaque sprint review, tu notes où en est chaque KR. Pas un long rapport : les chiffres, et une ligne d'interprétation. Si un KR ne bouge pas après deux sprints, c'est un signal d'alerte à adresser.
+
+Semaine 6, mid-quarter check. Tu t'arrêtes une demi-journée avec l'équipe. Où en sont les KRs ? Est-ce que les hypothèses de départ tiennent ? Si un KR est à zéro de progression, tu changes d'hypothèse, pas d'OKR. L'objectif reste. La stratégie pour l'atteindre, elle, évolue.
+
+Semaines 10 à 12, rétrospective. OKR par OKR, Key Result par Key Result. Qu'est-ce qu'on a atteint ? Qu'est-ce qu'on n'a pas atteint ? Pourquoi ? La rétrospective n'est pas un exercice de communication interne. C'est le moment d'apprendre pour le cycle suivant, de valider ou d'invalider les hypothèses qui ont guidé la roadmap.
+
+## Deux cas limites fréquents
+
+Premier cas : une demande commerciale urgente arrive en milieu de trimestre. Un gros compte menace de churner si une feature n'est pas livrée dans les 30 jours.
+
+Le mauvais réflexe : plonger dans l'exécution sans se poser la question de l'alignement.
+
+Le bon réflexe : est-ce que cette feature sert un KR actif ? Si oui, intègre-la dans la roadmap comme prioritaire. Si non, le coût de cette demande est clair : elle retarde l'atteinte de tes OKRs. C'est un choix que tu peux faire, à condition qu'il soit conscient et documenté. "On accepte de ne pas atteindre KR2 ce trimestre pour garder ce compte" est une décision valide.
+
+Deuxième cas : les OKRs ont été fixés sans que l'équipe ne soit consultée. Les métriques cibles sont irréalistes. Les KRs ne correspondent pas aux leviers que l'équipe contrôle.
+
+C'est un problème à remonter, et pas en fin de trimestre. C'est en semaine 1, quand tu mappes ta roadmap dessus et que tu vois que rien ne peut servir ces métriques. La réunion de kick-off est le bon moment pour ouvrir la conversation, avec des arguments factuels : "voilà ce qu'on contrôle, voilà ce qu'on ne contrôle pas, voilà ce qui est atteignable."
+
+Si tu travailles dans une organisation où les OKRs tombent d'en haut sans dialogue, l'article sur les [OKRs qui mesurent l'impact](/blog/okr-produit-impact) donne une méthode pour reformuler les Key Results avec ton équipe, sans remettre en question les objectifs stratégiques.
+
+Et si la priorisation de ce qui entre dans la roadmap reste floue, la [méthode pour prioriser son backlog avec l'IA](/blog/prioriser-backlog-ia) complète bien ce cadre : les OKRs donnent le cap, la priorisation aligne l'exécution sprint par sprint.
+
+## Le Générateur OKR express arrive
+
+Écrire des OKRs bien formés en partant d'une page blanche prend du temps. Trouver la bonne formulation pour les Key Results, les bonnes métriques, les bons niveaux de cible, les hypothèses de baseline.
+
+Le Générateur OKR express est en cours de construction sur productcopilot.fr. Il prend ton contexte produit en entrée : objectif business, public cible, phase du produit, métriques disponibles. Il génère des OKRs structurés avec les bonnes dimensions, avec des baselines à compléter et des niveaux de cible calibrés.
+
+Pour être notifié à la sortie, inscris-toi à la newsletter. Tu seras parmi les premiers à accéder à l'outil.
