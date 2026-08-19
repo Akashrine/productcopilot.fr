@@ -1,0 +1,130 @@
+---
+title: "Roadmap et OKRs : aligner les deux sans perdre le nord"
+description: "Ta roadmap et tes OKRs vivent dans des silos ? Voici comment passer d'une roadmap de features à une roadmap d'outcomes avec le framework FRAME."
+slug: "okr-roadmap-produit-alignement"
+date: "2026-08-19"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["roadmap OKR produit", "aligner roadmap OKR", "OKR équipe produit", "roadmap outcome", "product manager OKR"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Roadmap"]
+---
+
+Demande à n'importe quel PM de te montrer ses OKRs, puis sa roadmap. Dans la majorité des cas, les deux ne se lisent pas ensemble.
+
+Les OKRs parlent d'impact. La roadmap parle de features. Les OKRs disent "réduire le churn à J30 de 18 % à 10 %". La roadmap dit "livrer la refonte de l'onboarding en Q3". Ce sont deux langages différents, et la traduction entre les deux est presque toujours implicite.
+
+Le problème : cette traduction implicite, c'est là que tout se perd.
+
+## Le symptôme le plus courant : deux artefacts qui coexistent sans se parler
+
+Voici comment ça se passe dans la plupart des équipes produit.
+
+Le cycle OKR démarre. L'équipe passe deux heures à écrire des objectifs, valide avec le management, colle les KRs dans Notion. Ensuite, le PM retourne sur sa roadmap et planifie les sprints comme avant. La roadmap est décidée par l'inertie du backlog, les demandes commerciales et les dettes techniques. Les OKRs restent dans Notion, consultés lors de la review trimestrielle.
+
+À la fin du cycle, l'équipe regarde les KRs. Certains sont atteints par chance. D'autres non, sans que personne comprenne pourquoi. Pourtant, tout le monde a été occupé. La roadmap a été livrée à 90 %. Et les OKRs n'ont presque rien guidé.
+
+Ce n'est pas un problème d'effort. C'est un problème de connexion.
+
+## Ce que ça coûte de ne pas connecter les deux
+
+Une roadmap non connectée à des OKRs fait trois choses systématiquement.
+
+Elle optimise la vitesse de livraison au détriment de l'impact. L'équipe livre vite, mais ce qui est livré ne bouge pas les métriques qui comptent. Les sprints sont pleins. Les KRs stagnent.
+
+Elle dilue le focus. Sans OKRs comme filtre, le backlog accepte tout : les demandes sales, les suggestions d'ingénierie, les idées de la direction. Chaque item a une justification locale. Mais l'ensemble ne construit rien.
+
+Elle rend le trimestre illisible. À mi-chemin, le PM ne sait pas s'il est sur la bonne trajectoire. Il a des points d'avancement sur les features livrées. Il n'a pas de signal sur les KRs.
+
+## Passer de la roadmap de features à la roadmap d'outcomes
+
+Le changement de paradigme n'est pas complexe à énoncer, mais il demande une vraie discipline d'exécution.
+
+Une roadmap de features liste ce qu'on va construire. Une roadmap d'outcomes liste les changements de comportement ou de métrique qu'on cherche à provoquer, avec les initiatives qui les sous-tendent.
+
+En pratique, ça ressemble à ça. Au lieu de :
+
+> Q3 : refonte de l'onboarding, intégration Slack, amélioration des exports CSV
+
+Tu as :
+
+> OKR : le taux de complétion de l'onboarding passe de 34 % à 55 %
+>
+> Initiatives en cours de test :
+> - Réduction des étapes d'onboarding de 7 à 4
+> - Email J+1 avec tutoriel vidéo ciblé par persona
+> - Pop-in contextuelle au moment du premier blocage
+
+La différence ? Dans la deuxième version, chaque initiative est hypothétique. Elle est là parce qu'on pense qu'elle va faire bouger le KR, pas parce qu'on s'est engagé à la livrer. Si un test plus simple produit le même résultat, on s'arrête là.
+
+Ce n'est pas une roadmap moins précise. C'est une roadmap qui assume l'incertitude au lieu de la cacher sous des dates.
+
+## Dériver tes initiatives des OKRs avec FRAME
+
+FRAME est un framework qui structure l'analyse d'une initiative ou d'un problème produit avant de le mettre en roadmap. Il force à répondre à cinq questions : Focus, Risques, Alignement, Mesure, Experimentation.
+
+Appliqué à la connexion roadmap-OKR, FRAME donne un filtre pratique pour décider si une initiative mérite sa place dans le trimestre.
+
+**Focus** : cette initiative répond à quel OKR, précisément ? Si la réponse prend plus d'une phrase, l'initiative est soit trop large, soit mal posée. Un bon focus, c'est "cette initiative vise à améliorer le KR 'churn J30'". Pas "cette initiative améliore l'expérience utilisateur globale".
+
+**Risques** : qu'est-ce qui pourrait empêcher cette initiative de faire bouger le KR ? Les risques les plus courants : dépendance à une autre squad, lacune de données (on ne peut pas mesurer l'impact), hypothèse utilisateur non validée. Lister les risques avant de démarrer, c'est décider si l'initiative mérite d'aller en découverte d'abord.
+
+**Alignement** : qui d'autre dans l'organisation est impacté par cette initiative ? Engineering, data, design, commercial. Est-ce que tout le monde a les mêmes attentes sur ce que l'initiative va produire ? L'alignement n'est pas une réunion. C'est une vérification que les parties prenantes utilisent le même langage pour parler du même résultat.
+
+**Mesure** : comment tu sauras, à mi-cycle, si l'initiative est sur la bonne trajectoire ? Un KR trimestriel est utile pour la fin du cycle. Mais tu as besoin de leading indicators pour savoir si tu vas dans la bonne direction en semaine 4. Pour l'onboarding, le leading indicator pourrait être le taux de complétion de la première étape clé. Si ça monte, la suite est probablement sur le bon chemin.
+
+**Experimentation** : quelle est la version la plus petite de cette initiative qui te permettrait de valider ou d'infirmer l'hypothèse centrale ? La plupart des roadmaps surestiment la taille des initiatives parce qu'elles partent d'un scope complet plutôt que d'un test minimal. FRAME force à répondre à cette question avant de chiffrer l'effort.
+
+Le résultat concret : tu as une liste d'initiatives scorées sur ces cinq dimensions. Celles qui ont un Focus clair, un Alignement fort et une Experimentation définie passent en priorité. Les autres attendent ou retournent en découverte.
+
+## Construire la connexion en pratique : le mapping OKR-initiatives
+
+Une fois les OKRs écrits, l'exercice concret est le suivant.
+
+Prends chaque KR. Pose la question : quels sont les comportements utilisateurs ou les dynamiques produit qui, s'ils changeaient, feraient bouger ce chiffre ?
+
+Pour un KR "le taux de complétion de l'onboarding passe de 34 % à 55 %", les leviers possibles sont :
+
+- Les utilisateurs abandonnent trop tôt parce que les étapes sont trop nombreuses
+- Ils ne comprennent pas la valeur du produit assez vite
+- Ils sont bloqués sur une étape technique spécifique
+- Ils ne reçoivent pas de rappel au bon moment
+
+Chacun de ces leviers devient une hypothèse. Chaque hypothèse devient une initiative candidate. Tu n'as pas besoin de toutes les tester. Tu as besoin de choisir les deux ou trois les plus probables et les moins risquées à valider rapidement.
+
+Ce mapping OKR-initiatives est l'artefact manquant entre les deux documents. Il n'est pas dans la roadmap. Il n'est pas dans les OKRs. Il vit dans la tête du PM, implicitement. L'expliciter prend deux heures. Il économise des mois de travail non aligné.
+
+Si tu veux aller plus loin sur la construction des Key Results en eux-mêmes, l'article sur les [OKRs produit et le framework TARS](/blog/okr-produit-impact) couvre la mécanique de rédaction des KRs à partir des quatre dimensions d'impact.
+
+## Les signaux qui montrent que ta roadmap et tes OKRs ont divergé
+
+Tu n'as pas besoin d'attendre la review trimestrielle pour détecter le problème. Il y a des signaux plus tôt.
+
+Premier signal : tes sprints sont pleins mais tu n'as aucun signal sur les KRs. Tu livres, mais tu n'as aucune idée si ce que tu livres fait bouger les métriques qui comptent. La livraison n'est pas le signe que tu vas dans la bonne direction.
+
+Deuxième signal : chaque item de ta roadmap a une justification différente. Une feature est là parce que l'équipe sales l'a demandée. Une autre parce qu'un concurrent vient de la lancer. Une autre parce qu'un ingénieur a identifié une opportunité technique. Aucune ne se connecte à un KR spécifique. La roadmap reflète l'inertie, pas une stratégie.
+
+Troisième signal : tu ne peux pas expliquer en une phrase pourquoi tu travailles sur ce sujet ce trimestre. Si la réponse honnête est "parce que c'était prévu" ou "parce qu'on avait du temps", l'OKR n'a pas guidé la décision.
+
+Quatrième signal : tes OKRs changent à mi-cycle sans que la roadmap change. Un OKR réajusté en cours de trimestre devrait déclencher un réexamen des initiatives en cours. Si ce n'est pas le cas, les deux restent dans des silos.
+
+## Recalibrer en cours de cycle sans tout casser
+
+Un alignement parfait en début de trimestre se dégradera au fil du temps. C'est normal. Les hypothèses ne se confirment pas toutes. Les priorités évoluent. Un concurrent sort une feature qui change le marché.
+
+La question n'est pas "comment maintenir un alignement parfait" mais "comment recalibrer rapidement quand on détecte une divergence".
+
+Concrètement, ça passe par une vérification bimensuelle simple. Deux questions suffisent.
+
+Est-ce que les initiatives en cours sont toujours les meilleurs leviers pour atteindre les KRs ? Sinon, qu'est-ce qu'on remplace ou qu'on arrête ?
+
+Est-ce que les KRs sont toujours les bons objectifs compte tenu de ce qu'on a appris depuis le début du cycle ? Si non, qu'est-ce qu'on ajuste et comment on documente le changement ?
+
+La réponse à ces deux questions prend une heure. Elle évite de continuer à construire des choses qui ne vont nulle part pendant six semaines.
+
+## Aller plus loin avec le Générateur OKR express
+
+Si tu pars de zéro sur tes OKRs ce trimestre, le Générateur OKR express te donne un point de départ structuré. Il produit des objectifs et des Key Results à partir de ton contexte produit, que tu peux ensuite affiner avec les filtres FRAME et TARS.
+
+Teste le [Générateur OKR express](/outils/generateur-okr) pour poser les bases de ton prochain cycle en moins de dix minutes.
