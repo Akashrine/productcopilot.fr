@@ -1,0 +1,179 @@
+---
+title: "Rédiger ses OKRs avec l'IA : méthode et prompts"
+description: "Méthode en 3 prompts pour rédiger des OKRs produit solides avec Claude. Contexte, draft, critique : comment passer de la page blanche à des Key Results mesurables."
+slug: "okr-redaction-ia-prompts"
+date: "2026-08-20"
+readingTime: "9 min"
+cluster: "okrs"
+keywords: ["rédiger OKRs avec IA", "OKR product manager prompts", "écrire OKRs Claude", "OKR IA méthode PM"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "IA"]
+---
+
+Début de trimestre. Le template OKR est ouvert. La cellule "Objectif Q3" attend. Et tu fixes l'écran.
+
+Ce n'est pas un problème de méthode. Tu sais ce que c'est qu'un bon OKR. Tu connais la différence entre un livrable et un résultat. Tu as lu l'article sur les [OKRs qui mesurent l'impact, pas le travail](/blog/okr-produit-impact).
+
+Le problème, c'est la page blanche. Et le fait que tu as trois réunions dans une heure.
+
+L'IA ne remplace pas ton jugement sur ce qui compte vraiment ce trimestre. Mais elle peut t'aider à passer du flou à un draft structuré en moins de vingt minutes. À condition de savoir comment la briefer.
+
+## Le problème de la page blanche (et pourquoi l'IA seule ne le résout pas)
+
+La première erreur : ouvrir Claude et écrire "génère-moi des OKRs pour mon équipe produit".
+
+Le résultat sera générique. Des Key Results comme "améliorer la satisfaction client de 20 %" sans contexte sur ta baseline. Des objectifs passe-partout copiés-collés de templates LinkedIn.
+
+L'IA produit ce qu'on lui donne. Si tu lui donnes du vide, tu obtiens du vide bien formulé.
+
+La bonne approche inverse l'ordre. Tu construis le contexte d'abord. Tu rédiges ensuite. Tu critiques en dernier. Trois prompts distincts, dans cet ordre.
+
+## Etape 1 : construire le contexte avec FRAME
+
+FRAME est un framework de cadrage stratégique. Il couvre cinq dimensions : Focus (sur quoi tu paries ce trimestre), Risques (ce qui pourrait bloquer), Alignement (ce qui est validé avec les autres équipes), Mesure (tes métriques actuelles et leurs baselines) et Expérimentation (ce que tu veux tester).
+
+Avant d'écrire un seul OKR, tu dois avoir répondu à ces cinq questions. Pas pour l'IA. Pour toi. L'IA t'aide à les structurer, pas à les inventer.
+
+Voici le premier prompt à envoyer à Claude :
+
+---
+
+Je suis Product Manager sur [nom du produit / contexte]. Aide-moi à cadrer mes OKRs Q[X] avant de les rédiger.
+
+Pose-moi les questions nécessaires pour comprendre :
+- ce sur quoi je mise ce trimestre (focus)
+- les risques principaux (blocages, dépendances, incertitudes)
+- les engagements pris avec les autres équipes (alignement)
+- mes métriques actuelles et leurs baselines (mesure)
+- les hypothèses que je veux valider (expérimentation)
+
+Ne génère pas les OKRs tout de suite. Aide-moi d'abord à clarifier mon contexte.
+
+---
+
+Laisse Claude te poser ses questions. Réponds-y honnêtement. Ce dialogue de cinq à dix minutes est le travail réel. Il te force à préciser ce que tu sais, ce que tu ne sais pas encore, et ce qui est flou.
+
+Exemple de sortie utile de cette étape : tu réalises que tu n'as pas de baseline pour ton taux de rétention à J30. Tu sais maintenant que tu dois aller chercher ce chiffre avant d'écrire le Key Result correspondant.
+
+## Etape 2 : générer le draft avec le bon format
+
+Une fois le contexte construit, tu peux demander le draft. Donne à Claude tout ce que tu viens d'articuler dans l'étape 1.
+
+---
+
+Voici mon contexte pour Q[X] :
+
+Produit : [description courte]
+Focus du trimestre : [ce sur quoi tu mises]
+Risques identifiés : [liste]
+Engagements avec les autres équipes : [liste]
+Métriques actuelles avec baselines :
+- [métrique 1] : actuellement à [valeur]
+- [métrique 2] : actuellement à [valeur]
+Hypothèses à valider : [liste]
+
+Génère 2 à 3 Objectifs avec 3 Key Results chacun. Chaque Key Result doit :
+- être quantitatif (un chiffre, une baseline, une cible)
+- mesurer un résultat utilisateur ou business, pas une livraison
+- avoir un niveau de confiance d'environ 50 % (ambitieux mais pas irréaliste)
+
+Format souhaité :
+Objectif : [formulation]
+- KR1 : [baseline] → [cible] d'ici fin Q[X]
+- KR2 : [baseline] → [cible] d'ici fin Q[X]
+- KR3 : [baseline] → [cible] d'ici fin Q[X]
+
+---
+
+Le format "baseline → cible" est important. Il force Claude à utiliser les chiffres réels que tu lui as donnés. Si tu n'as pas de baseline, il va te l'indiquer, ce qui est utile : ça te signale les métriques à instrumenter avant le lancement du trimestre.
+
+Un détail pratique : si tu as plusieurs squads avec des focuses différents, génère un draft par squad dans des sessions séparées. Mélanger plusieurs contextes dans un seul prompt produit des OKRs trop larges qui n'appartiennent à personne.
+
+## Etape 3 : challenger le draft avec TARS
+
+Tu as un draft. Il est lisible. Les formulations sont propres. Mais est-ce qu'il mesure vraiment ce qui compte ?
+
+Le framework TARS sert de grille de relecture. Il couvre quatre dimensions : Targeted (les bons utilisateurs arrivent et s'activent correctement), Adopted (ils intègrent le produit dans leur usage), Retained (ils reviennent dans le temps), Satisfied (ils en ont une bonne perception).
+
+Envoie le draft à Claude avec ce prompt de critique :
+
+---
+
+Voici mes OKRs draft pour Q[X] :
+
+[colle tes OKRs ici]
+
+Analyse-les avec le framework TARS (Targeted, Adopted, Retained, Satisfied).
+
+Pour chaque Key Result :
+1. Indique quelle dimension TARS il mesure
+2. Signale les dimensions absentes ou sous-représentées
+3. Identifie les Key Results qui mesurent des livrables plutôt que des résultats
+4. Propose une reformulation pour les KRs problématiques
+
+Sois direct et critique. Ne valide pas par défaut.
+
+---
+
+Ce que tu obtiens en retour est une analyse structurée. Claude va repérer que tu as trois KRs en dimension "Adopted" et aucun en "Retained". Ou que ton KR3 est en réalité un livrable habillé en métrique : "publier le nouveau flow d'onboarding et atteindre 90 % de déploiement" mesure l'exécution, pas l'impact.
+
+Le prompt "sois direct et critique, ne valide pas par défaut" est essentiel. Les LLMs ont tendance à valider ce qu'on leur soumet. L'instruction explicite de critique change le ton de la réponse.
+
+## Ce que l'IA ne décide pas à ta place
+
+La méthode en trois étapes te donne un draft solide en vingt minutes. Elle ne remplace pas deux choses que toi seul peux faire.
+
+La première : choisir le focus. Le prompt FRAME t'aide à structurer ton contexte, mais il ne peut pas décider ce qui compte ce trimestre. Lancer sur la rétention ou parier sur l'acquisition ? Aller chercher les PME ou consolider les grands comptes ? C'est un choix stratégique qui vient de ta connaissance du produit, des utilisateurs, et des conversations avec ton équipe et tes stakeholders. L'IA ne peut pas substituer ce jugement.
+
+La deuxième : calibrer l'ambition. Claude va te produire des Key Results avec des chiffres plausibles. Mais il ne sait pas si passer ton taux d'activation de 34 % à 55 % en 90 jours, c'est "ambitieux mais atteignable" ou "irréaliste étant donné le bandwidth de la squad". Toi, tu le sais. Le niveau de confiance de 50 % que tu indiques dans le prompt est une contrainte, pas une garantie.
+
+Une façon de vérifier l'ambition : demande à chaque développeur de la squad si l'OKR lui paraît trop facile ou irréaliste. Si tout le monde répond "facile", le chiffre est trop bas. Si la moitié répond "impossible", il est trop haut. Le sweet spot est l'inconfort partagé.
+
+## Un angle souvent oublié : les OKRs de discovery
+
+La plupart des guides OKR couvrent les OKRs d'exécution : activation, rétention, conversion. Mais qu'est-ce qu'on met en OKR quand on est en phase de discovery, qu'on ne sait pas encore quoi construire, et que le vrai output de ce trimestre c'est la compréhension du problème ?
+
+Les OKRs de discovery mesurent l'avancement dans la réduction d'incertitude, pas la livraison de features.
+
+Exemple pour une squad en discovery sur un nouveau segment :
+
+Objectif : "Comprendre les blocages à l'adoption chez les équipes de plus de 50 personnes"
+
+- KR1 : Conduire 12 interviews avec des entreprises de 50 à 200 salariés ayant churné dans les 6 derniers mois
+- KR2 : Identifier et documenter au moins 3 patterns récurrents de blocage validés sur plus de 60 % des interviews
+- KR3 : Tester 2 hypothèses de valeur avec des prototypes papier et obtenir un score d'intérêt supérieur à 4/5 sur au moins 8 participants
+
+Ces KRs mesurent des comportements de l'équipe (interviews, tests) et des outputs cognitifs (patterns validés, scores d'intérêt), pas des features livrées. C'est assumé. La livraison de ce trimestre, c'est la connaissance.
+
+Pour générer ce type d'OKRs avec Claude, adapte le prompt de l'étape 2 :
+
+---
+
+Mon équipe est en phase de discovery ce trimestre. L'output n'est pas une feature mais une compréhension validée du problème. Génère des OKRs qui mesurent l'avancement dans la réduction d'incertitude, pas des livrables de développement.
+
+---
+
+## Erreurs courantes dans les OKRs générés par IA
+
+Trois patterns reviennent souvent quand on utilise l'IA sans cadrage rigoureux.
+
+Premier pattern : les KRs sans baseline. Claude génère "le taux de complétion passe à 60 %" sans savoir où tu en es. Résultat : un OKR qui semble ambitieux mais qui peut être trop facile ou impossible selon ta situation réelle. Toujours fournir les chiffres actuels dans le prompt de l'étape 2.
+
+Deuxième pattern : les objectifs trop larges. "Améliorer l'expérience utilisateur" est un objectif d'entreprise, pas un objectif de squad. Plus tu es spécifique dans le prompt (segment, moment du parcours, métrique cible), plus l'objectif sera actionnable.
+
+Troisième pattern : les KRs dépendants d'autres équipes. Claude ne sait pas que la migration vers la nouvelle infrastructure prend trois mois ou que le CRM ne sera pas disponible avant mi-trimestre. Intègre tes dépendances explicitement dans le prompt de contexte. Sinon tu te retrouves avec des OKRs qui supposent des conditions qui n'existent pas.
+
+## Le cycle de revision : ne valide pas en solo
+
+Un OKR rédigé seul avec l'IA reste un draft d'une seule perspective. Le cycle de validation est court mais nécessaire.
+
+Partage le draft avec deux personnes : un développeur ou tech lead de la squad (pour la faisabilité des chiffres), et ton manager ou un pair PM (pour l'alignement stratégique). Quinze minutes chacun. Pas une réunion de deux heures.
+
+Reviens à Claude avec les feedbacks et demande-lui d'ajuster le draft en tenant compte des contraintes remontées. Le troisième prompt peut aussi inclure une instruction du type "ce KR a été jugé irréaliste car [raison]. Propose une cible révisée qui reste ambitieuse."
+
+L'IA est un bon sparring partner pour cette phase de revision. Elle garde le contexte en mémoire et reformule vite.
+
+---
+
+Si tu veux passer encore moins de temps sur cette étape de cadrage, le Générateur OKR express de Product Copilot automatise le brief de contexte et te sort un premier draft formaté directement. Il sera disponible à l'adresse [/outils/generateur-okr](/outils/generateur-okr) dès sa sortie - tu peux t'inscrire pour être notifié.
