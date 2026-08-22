@@ -1,0 +1,153 @@
+---
+title: "OKRs et roadmap produit : comment connecter les deux"
+description: "OKRs et roadmap vivent dans des silos séparés. Comment les connecter avec le framework FRAME pour que chaque initiative serve un impact mesurable."
+slug: "okr-roadmap-produit"
+date: "2026-08-22"
+readingTime: "7 min"
+cluster: "okrs"
+keywords: ["OKR roadmap produit", "aligner OKR roadmap", "roadmap outcome based", "product manager OKR stratégie"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Stratégie"]
+---
+
+Tu as des OKRs pour le trimestre. Tu as une roadmap pour le trimestre. Et les deux ne se parlent pas vraiment.
+
+Les OKRs vivent dans Notion ou Confluence. La roadmap vit dans Linear ou Jira. L'un est un document de direction, l'autre est un planning d'exécution. Chacun suit sa propre logique.
+
+Le problème : personne ne sait exactement quelle initiative sert quel Key Result.
+
+## Pourquoi tes OKRs et ta roadmap se contredisent
+
+Ce n'est pas un problème d'outils. C'est un problème de séquence.
+
+La plupart des équipes produit construisent leur roadmap avant leurs OKRs, ou en parallèle. Les OKRs arrivent comme une couche de sens rajoutée après coup. Chaque feature trouve alors son OKR à la rétro, par association libre.
+
+"La refonte onboarding contribue à KR1 sur l'activation." Peut-être. Comment on le sait ?
+
+Le résultat : des OKRs qui semblent couverts mais ne le sont pas. Des features qui sortent sans lien explicite à un impact mesurable. Et en fin de trimestre, un bilan OKR qui ressemble à du story-telling.
+
+La cause profonde : la roadmap part des initiatives, pas des problèmes.
+
+Si tu veux comprendre comment formuler des Key Results qui mesurent un vrai changement de comportement, lire [OKRs produit : comment mesurer l'impact, pas le travail](/blog/okr-produit-impact).
+
+## Le piège de la roadmap-first
+
+Une roadmap construite en mode "voilà ce qu'on va livrer" part d'un catalogue d'idées. L'équipe priorise des features, des projets, des refactos. Elle les place dans un planning. Ensuite, elle cherche comment ces items se rattachent à la stratégie.
+
+C'est l'approche Output-first. Elle pose trois problèmes concrets.
+
+Premier problème : tu optimises pour la livraison. Le critère de succès devient "est-ce qu'on a sorti la feature ?" et non "est-ce que ça a changé quelque chose ?".
+
+Deuxième problème : tu construis des choses dont tu ne mesures pas l'impact en temps réel. Tu découvres après coup si ça a marché.
+
+Troisième problème : tes OKRs deviennent des to-do lists avec des noms différents. KR1 : "Lancer la feature X". KR2 : "Déployer le module Y". KR3 : "Migrer vers la v2 de Z". C'est un plan de charge, pas un objectif de résultat.
+
+La solution n'est pas de chercher une meilleure façon de connecter roadmap et OKRs après coup. C'est de les construire dans le bon ordre.
+
+## Construire dans le bon ordre avec FRAME
+
+Le framework FRAME structure la réflexion stratégique produit en cinq dimensions : Focus, Risques, Alignement, Mesure, Experimentation.
+
+Appliqué à la relation OKR-roadmap, il donne une séquence claire.
+
+Focus : quel comportement utilisateur ou résultat business cherches-tu à changer ce trimestre ? C'est ton Objective. Il doit être qualitatif, ancré sur un vrai problème. "Rendre l'activation PME autonome en moins de 20 minutes" est un Focus. "Améliorer la rétention" sans plus de précision n'en est pas un.
+
+Mesure : comment tu sais que tu as réussi ? Ce sont tes Key Results. Ils doivent être quantitatifs et mesurables en cours de trimestre, pas seulement à la fin. "Taux d'activation J+7 passe de 34 % à 50 %" est une Mesure. "Les utilisateurs sont satisfaits de l'onboarding" n'en est pas une.
+
+Risques : qu'est-ce qui pourrait empêcher d'atteindre ces résultats ? Pas les risques techniques, les risques sur l'impact. Les utilisateurs ne voient pas la valeur ? L'onboarding est trop long ? Le support freine les nouveaux comptes ? Ce sont les hypothèses à invalider en priorité.
+
+Experimentation : comment tu testes ces hypothèses sans tout construire d'un coup ? C'est là que ta roadmap commence. Les initiatives à mettre en roadmap sont d'abord des réponses à tes risques, pas des features que tu veux livrer.
+
+Alignement : est-ce que l'équipe comprend la séquence ? Est-ce que tech, design et data savent pourquoi chaque item est dans la roadmap et quel Key Result il vise ?
+
+La roadmap construite avec FRAME part des Key Results, pas des features.
+
+## Theme, Outcome, Output : la structure de chaque trimestre
+
+Une fois que tu as tes OKRs, tu structures ta roadmap avec trois couches.
+
+Theme : c'est ton Objective. Il donne le nom et la direction du trimestre. "Accélération de l'activation PME" est un Theme.
+
+Outcome : ce sont tes Key Results. Ils mesurent le changement dans le comportement des utilisateurs ou dans les métriques business. "Taux d'activation J+7 à 50 %" est un Outcome.
+
+Output : ce sont tes initiatives et features. Elles servent les Outcomes. "Nouveau flow d'onboarding étape par étape", "Tooltips contextuels à l'activation", "Email de relance J+3" sont des Outputs au service de l'Outcome.
+
+Chaque Output doit être associé à exactement un Outcome dans ta roadmap. Si tu ne peux pas faire ce lien, la feature n'est pas prioritaire ce trimestre.
+
+Cette structure te permet de répondre à trois questions en permanence :
+- Quelle proportion de la roadmap sert quel Key Result ?
+- Si tu dois couper une initiative, laquelle a le moins d'impact sur tes Outcomes ?
+- En fin de trimestre, quelle initiative a contribué à quelle mesure de succès ?
+
+## Exemple : un trimestre d'activation sur un SaaS B2B
+
+Contexte : équipe produit d'un SaaS B2B. L'activation est faible sur les nouveaux comptes PME. L'onboarding prend 45 minutes en moyenne.
+
+Objective : rendre l'activation PME autonome en moins de 20 minutes.
+
+Key Results :
+- KR1 : taux d'activation J+7 de 34 % à 52 %
+- KR2 : temps moyen d'onboarding de 45 min à 18 min
+- KR3 : taux de tickets support à J+1 de 28 % à 12 %
+
+Risques identifiés avec FRAME :
+- R1 : les utilisateurs ne savent pas quelle étape vient après la connexion
+- R2 : le compte est vide au départ, aucune donnée de démonstration
+- R3 : l'email de bienvenue ne donne pas de guidance claire
+
+Roadmap Outputs associés :
+- Nouveau flow d'onboarding guidé en 5 étapes (vise KR2, répond à R1)
+- Données de démonstration pré-chargées pour les nouveaux comptes (vise KR2, répond à R2)
+- Refonte de l'email de bienvenue avec un seul CTA (vise KR3, répond à R3)
+- Tooltips contextuels sur les 3 premières actions clés (vise KR1, répond à R1)
+
+Ce que tu as évité : une refonte totale de l'onboarding qui aurait duré 6 semaines sans lien clair à un résultat mesurable.
+
+Ce que tu as : 4 items ciblés, chacun associé à un KR et à une hypothèse de risque.
+
+## Changer ton process trimestriel
+
+Pour que ça fonctionne, il faut changer la séquence dans ton cycle trimestriel.
+
+L'ancienne séquence :
+1. Roadmap review : qu'est-ce qu'on livre ce trimestre ?
+2. Définition des OKRs : comment on rationnalise ça ?
+3. Exécution
+
+La nouvelle séquence :
+1. Bilan du trimestre passé : qu'est-ce qu'on a appris sur nos Outcomes ?
+2. Définition des OKRs pour le prochain trimestre : quel impact on cherche ?
+3. Identification des risques avec FRAME
+4. Construction de la roadmap : quelles initiatives répondent à ces risques ?
+5. Exécution avec des check-ins hebdomadaires sur les Outcomes
+
+Le changement le plus important : mettre la roadmap review après la définition des OKRs, pas avant.
+
+En pratique, ça ressemble à un atelier de 2 heures en début de trimestre :
+- 30 min sur le bilan Outcomes du trimestre passé
+- 30 min pour définir le Theme et les Key Results du prochain trimestre
+- 30 min pour identifier les risques avec FRAME
+- 30 min pour associer des Outputs aux Outcomes et aux risques
+
+Le résultat : une roadmap de 8 à 12 items, chacun clairement rattaché à un Key Result.
+
+## Ce que ça change dans les conversations avec tes stakeholders
+
+La connexion OKR-roadmap change aussi la façon dont tu parles de ta roadmap.
+
+Sans cette connexion, la conversation avec les stakeholders tourne autour des features : "Quand est-ce que la feature X est livrée ?" Tu es en mode planning.
+
+Avec cette connexion, la conversation tourne autour des Outcomes : "Notre activation J+7 était à 34 %, on vise 52 %, voilà les 4 initiatives qu'on teste ce trimestre." Tu es en mode résultats.
+
+C'est la même roadmap. Ce ne sont pas les mêmes conversations.
+
+Les stakeholders qui veulent ajouter une feature peuvent la prioriser avec une question simple : à quel Key Result est-ce que ça contribue, et quel risque est-ce que ça adresse ? Si la réponse n'est pas claire, la feature attend le prochain trimestre.
+
+Cette structure protège ton équipe. Elle ne dit pas non aux stakeholders. Elle dit : "Ça ne sert pas nos Outcomes de ce trimestre. Mettons-le dans le backlog pour Q suivant."
+
+---
+
+Le Générateur OKR express t'aide à formuler tes OKRs selon la méthode Outcome-first. Tu renseignes ton contexte produit, le comportement utilisateur que tu veux changer, et les risques que tu as identifiés. Tu ressors avec des OKRs prêts à nourrir ta roadmap.
+
+Accède au [Générateur OKR express](/outils/generateur-okr).
