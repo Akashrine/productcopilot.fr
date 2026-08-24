@@ -1,0 +1,116 @@
+---
+title: "Cascade OKRs : aligner company, produit et squad en 2026"
+description: "65 % des équipes portent des OKRs déconnectés de la stratégie. La méthode pour cascader company, produit et squad avec FRAME."
+slug: "cascade-okr-company-produit-squad"
+date: "2026-08-24"
+readingTime: "10 min"
+cluster: "okrs"
+keywords: ["cascade OKR", "OKR product manager", "OKR company squad", "aligner OKRs stratégie", "OKR produit alignement"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Alignement"]
+---
+
+Le PM reçoit les OKRs company le vendredi à 17 h. La leadership demande les OKRs squad pour lundi matin. Il ouvre Notion, colle les KRs company dans un doc squad, change deux chiffres, envoie. Cascade faite.
+
+Trois mois plus tard, personne ne comprend pourquoi ces OKRs n'ont rien changé au produit.
+
+Le rapport 2026 OKR Benchmark l'a chiffré : 65 % des équipes portent des OKRs déconnectés de la stratégie company (source : monday.com, 2026 OKR Benchmark Report). La cascade est censée résoudre ça. Mal faite, elle empire le problème.
+
+## Le vrai coût d'une cascade OKR mal faite
+
+Quand la traduction verticale rate, chaque niveau paie un prix différent.
+
+Au niveau company, la leadership pense que la stratégie est déployée. Elle voit des OKRs squad qui reprennent les mots clés du plan annuel. La revue trimestrielle confirme que "l'alignement est fait". Personne ne remonte le fait que trois squads travaillent sur le même KR sans se coordonner.
+
+Au niveau produit, le PM devient une courroie de transmission. Il traduit sans arbitrer. Sa roadmap ressemble à une liste de projets tous "prioritaires" parce que chacun sert un KR company. La discussion sur ce qu'on n'attaquera pas ce trimestre n'a jamais lieu.
+
+Au niveau squad, les engineers voient des OKRs qui pilotent des livrables sans logique commune. Un sprint sur le paiement, un sprint sur l'onboarding, un sprint sur l'export CSV. Trois initiatives qui existent parce qu'elles cochent trois KRs différents.
+
+Le résultat : tout le monde bouge, rien ne change en profondeur. Les OKRs deviennent un rituel administratif. Les équipes en parlent une fois par trimestre. Le reste du temps, elles travaillent sur autre chose.
+
+Une cascade utile fait l'inverse. Elle contraint les trois niveaux à formuler une chaîne causale claire : si le squad atteint son KR, alors le PM voit bouger son KR produit, alors la leadership voit bouger le KR company. Sans cette chaîne, tu n'as pas une cascade. Tu as trois listes indépendantes qui se ressemblent.
+
+## Trois niveaux, trois questions différentes
+
+Le premier réflexe raté : poser la même question aux trois étages.
+
+La question à laquelle répond un OKR company n'est pas celle à laquelle répond un OKR squad. Traiter les trois niveaux comme des variations d'échelle du même exercice reste la première source de dérive.
+
+Au niveau company, la question est : quel changement de trajectoire cherche-t-on cette année ? Passer d'un mix revenus 70 % SMB / 30 % mid-market à 50/50. Ouvrir un nouveau marché géographique. Réduire de moitié le coût d'acquisition. Ces objectifs se pilotent à l'échelle de plusieurs trimestres.
+
+Au niveau produit, la question devient : sur quel comportement utilisateur ce changement se joue-t-il ? Si la company veut basculer vers le mid-market, le produit doit répondre à "quel comportement d'utilisateur mid-market manque aujourd'hui ?". La réponse guide les Key Results produit : temps d'onboarding pour une équipe de 20+ users, taux d'adoption des features admin, satisfaction des acheteurs IT.
+
+Au niveau squad, la question rétrécit encore : quel levier concret cette squad, avec sa stack et son périmètre, peut-elle actionner ? Une squad Onboarding ne pilote pas la satisfaction de l'acheteur IT. Elle pilote le time-to-value pour un nouvel espace de travail. Une squad Admin pilote le déploiement SSO pour les clients 50+ users.
+
+Un exemple concret. OKR company : "Nos revenus mid-market passent de 30 % à 45 % du MRR d'ici décembre." OKR produit dérivé : "Les équipes de 20 à 100 users atteignent le temps de valeur en moins de 5 jours." OKR squad Onboarding : "Le taux de complétion du setup admin passe de 42 % à 65 % pour les espaces de 20+ users."
+
+La chaîne causale est visible. Le KR squad, s'il bouge, remonte au KR produit, puis au KR company. Si un des maillons ne suit pas, la revue trimestrielle sait où creuser.
+
+## FRAME pour aligner les trois couches
+
+Face à cette exigence de traçabilité, le framework FRAME donne une checklist utilisable à chaque niveau : Focus, Risques, Alignement, Mesure, Experimentation.
+
+Focus. Combien d'OKRs par niveau ? Trois au maximum, avec trois à quatre Key Results chacun. Au niveau company. Au niveau produit. Au niveau squad. La contrainte tient à tous les étages. Une squad avec sept OKRs n'exécute rien de sérieux. Une company avec douze OKRs stratégiques ne dirige plus, elle suit.
+
+Risques. Chaque niveau doit formuler ce qu'il assume de ne pas faire. Au niveau company : cette année, on ne pousse pas l'internationalisation. Au niveau produit : ce trimestre, on ne travaille pas sur les intégrations tierces. Au niveau squad : ce cycle, la refonte du dashboard attend. Un OKR sans renoncement explicite reste un plan de charge.
+
+Alignement. Chaque OKR d'un niveau inférieur pointe vers un OKR du niveau supérieur. Pas de KR orphelin. Si une squad porte un KR qui ne remonte à aucun KR produit, deux options : soit ce KR relève d'un besoin d'engineering interne à traiter hors OKR, soit il révèle un OKR produit manquant. Dans les deux cas, le désalignement se traite avant le début du trimestre, pas au milieu.
+
+Mesure. Chaque KR a une baseline connue et une source de mesure identifiée. "On veut monter la conversion" n'est pas un KR mesurable. "La conversion signup passe de 12 % à 18 %, mesurée via l'événement signup_completed dans Amplitude" en est un. Cette rigueur reste souvent négligée au niveau squad, où les KRs se rédigent sans data zéro.
+
+Experimentation. Le KR fixe la cible, pas le chemin. Une squad choisit ses expérimentations. Un OKR bien écrit laisse ouvertes trois à cinq approches possibles. Un OKR mal écrit ("livrer la nouvelle page pricing") ne laisse aucun degré de liberté.
+
+Passer chaque OKR au filtre FRAME prend vingt minutes par équipe. Repérer les faiblesses avant le début du trimestre évite deux mois de flou d'exécution.
+
+## Le vrai piège : la traduction littérale
+
+L'erreur la plus fréquente dans une cascade OKR : recopier verbatim un KR company dans une squad. Le PM prend le KR "augmenter la conversion signup de 15 %" et le colle tel quel dans chaque squad de sa tribu.
+
+Ce réflexe casse le sens de la cascade.
+
+Chaque squad n'a pas les mêmes leviers. Une squad Growth pilote la homepage et l'A/B testing du signup. Une squad Onboarding pilote ce qui se passe après le signup. Une squad Data pilote la qualité des événements de tracking. Toutes contribuent à la conversion, mais aucune n'a la main sur la totalité.
+
+Copier le KR company dans les trois squads produit un effet pervers : chacune se sent responsable d'un chiffre qu'aucune ne pilote directement. Personne ne prend le lead. La cascade devient un partage de responsabilité diffuse.
+
+La traduction correcte casse le KR company en sous-KRs qui reflètent les leviers propres à chaque squad. La squad Growth prend la partie visibilité et acquisition. La squad Onboarding prend la partie activation. La squad Data prend la partie mesurabilité de tout ça. Les trois KRs squad, additionnés, doivent mécaniquement faire bouger le KR company.
+
+Second réflexe raté : imposer 100 % des OKRs squad depuis le haut. Le benchmark 2026 sur les OKRs situe le mix efficace à environ 60 % bottom-up et 40 % top-down (source : monday.com, 2026 OKR Benchmark Report). Autrement dit, quatre KRs sur dix cascadent depuis le KR produit ; six émergent d'un besoin identifié par la squad elle-même (dette technique bloquante, capacité manquante, remédiation d'un signal utilisateur).
+
+Ce ratio n'a rien de magique. Il traduit une conviction : une squad qui n'écrit aucun de ses propres OKRs perd son ownership. Elle exécute des ordres. Et quand l'exécution devient mécanique, le KR ambitieux à 50 % de confiance se transforme en livrable à 100 %. La cascade a détruit ce qu'elle prétendait construire.
+
+## Le rituel qui rend la cascade vivante
+
+Une cascade OKR ne vit pas dans un doc Notion. Elle vit dans les rituels qui la traversent.
+
+Kick-off trimestre. Cinq jours ouvrés au maximum. Jour 1 : la leadership finalise les OKRs company préparés en amont. Jour 2 : les PMs draftent les OKRs produit en fonction des OKRs company reçus. Jour 3 : chaque PM anime un workshop OKR squad avec son tech lead et un ou deux ICs de la squad, en s'appuyant sur les KRs produit. Jour 4 : arbitrages et alignement horizontal entre squads qui touchent aux mêmes KRs. Jour 5 : validation et publication. Aucun brouillon ne reste en négociation au-delà de cette semaine.
+
+Check-in hebdomadaire. Trente minutes par squad. Trois questions : où en est chaque KR (score estimé), quelles décisions bloquent, quelles expérimentations lancer cette semaine. Un check-in qui déborde envoie un signal : soit les OKRs sont mal formulés, soit ils recouvrent trop d'items pour être suivis.
+
+Revue mensuelle produit. Le PM aligne les PMs adjacents. Est-ce que les squads qui partagent un KR produit coordonnent leurs expérimentations ? Est-ce qu'un KR produit est en risque parce qu'aucun KR squad ne le porte réellement ? Ces questions se traitent au mois, pas au trimestre.
+
+Retro trimestre. Notation de chaque KR sur 0.0 à 1.0, avec la cible à 0.7 pour les OKRs ambitieux. Un score de 1.0 systématique signale des OKRs trop confortables. Un score sous 0.4 signale soit une erreur d'estimation, soit un blocage non remonté. Ce que la retro documente vraiment : les apprentissages sur les leviers, pas la performance des équipes. La cascade se réajuste au trimestre suivant en fonction de ce qu'on a appris, pas de ce qu'on a livré.
+
+Ces rituels, mis bout à bout, prennent moins de trois heures par squad et par mois. C'est le prix d'une cascade OKR qui reste connectée à la stratégie.
+
+## Comment démarrer sans tout casser
+
+Dernier piège : vouloir déployer OKRs company, produit et squad simultanément dès le Q1 sur toute la boîte. Ce déploiement big-bang produit trois symptômes prévisibles. Les leaders négocient des OKRs politiques plutôt que stratégiques. Les PMs perdent trois semaines à traduire. Les squads exécutent des KRs qu'elles n'ont pas eu le temps de digérer.
+
+L'entrée progressive fonctionne mieux.
+
+Pilote sur une squad. Un trimestre. Trois OKRs squad, un OKR produit qui les chapeaute, un lien clair vers un OKR company existant (même s'il n'est pas encore formalisé). Cette squad devient la référence. Elle documente ses arbitrages, ses check-ins, ses scores de fin de trimestre.
+
+Le signal de réussite reste simple : la squad refuse au moins une fois une demande urgente en citant son OKR. Si aucun refus n'a été formulé, la cascade n'a pas réellement contraint l'exécution.
+
+Deuxième trimestre. Élargir à toutes les squads du même PM. Le PM formalise ses OKRs produit. Le lien vers l'OKR company reste à ce stade encore informel (la leadership n'est pas embarquée). Ce trimestre teste la cohérence horizontale entre squads d'une même tribu.
+
+Troisième trimestre. Impliquer la leadership. Les OKRs company sont formalisés, les OKRs produit s'y rattachent, les OKRs squad entrent dans leur troisième cycle. La cascade fonctionne parce qu'elle a été construite de bas en haut, pas parachutée de haut en bas.
+
+Cette progression coûte un an. Elle produit une cascade qui tient. La version big-bang produit une cascade qui existe sur le papier et que personne ne suit dans les faits.
+
+Si tu travailles sur ta [priorisation de backlog en parallèle](/blog/prioriser-backlog-ia), la cascade OKR devient un filtre naturel. Ce qui remonte au KR reste. Le reste attend. Pour la partie mesure d'impact au niveau squad, l'article [OKRs produit : mesurer l'impact, pas le travail](/blog/okr-produit-impact) détaille le framework TARS en complément de FRAME.
+
+## Pour aller plus loin
+
+Le Pack OKRs (bientôt) réunira les templates FRAME et TARS, les canevas de cascade company/produit/squad, la fiche de scoring 0.0-1.0, et les rituels prêts à copier dans Notion. En attendant, tu peux commencer par systématiser ta discovery avec le [Pack Discovery](/pack-discovery) : les OKRs produit tiennent la route uniquement si les problèmes utilisateurs qu'ils adressent ont été correctement identifiés en amont.
