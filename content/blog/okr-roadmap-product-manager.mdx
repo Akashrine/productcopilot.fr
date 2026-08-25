@@ -1,0 +1,122 @@
+---
+title: "OKR et roadmap : arrête de livrer des features dans le vide"
+description: "Ta roadmap et tes OKRs sont dans deux docs séparés. Résultat : tu livres, tu rates tes objectifs. La méthode pour connecter les deux."
+slug: "okr-roadmap-product-manager"
+date: "2026-08-25"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["OKR roadmap produit", "aligner roadmap OKRs", "roadmap product manager OKR", "connexion OKR features", "FRAME framework produit"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Roadmap"]
+---
+
+Tu définis tes OKRs en début de trimestre. Tu remplis le template Notion. Tu valides avec ton manager. Tu envoies le lien dans Slack.
+
+Une semaine plus tard, tu ouvres ta roadmap pour planifier le sprint. Tu regardes la liste de features en attente. Tu prends les plus importantes selon les demandes des stakeholders. Tu commences à planifier.
+
+Trois mois plus tard : tu as livré 8 features. Tes OKRs sont à 40%.
+
+Ce scénario est tellement commun qu'il a un nom dans certaines équipes : livrer dans le vide. Tu travailles, tu livres, et pourtant les indicateurs ne bougent pas.
+
+## Pourquoi le lien casse toujours au même endroit
+
+Le problème n'est pas que tu travailles mal. Il est structurel.
+
+Tu as deux documents qui fonctionnent dans des logiques différentes. Les OKRs pensent en termes d'impact : "augmenter la rétention à 30 jours de 45% à 60%." La roadmap pense en termes de delivery : "construire la feature de rappels hebdomadaires."
+
+Ces deux logiques ne se connectent pas naturellement. Personne ne t'a forcé à prouver que la feature de rappels allait impacter la rétention à 30 jours. Tu as pris pour acquis que oui.
+
+Et souvent, tu as tort. Ou tu as raison sur la direction, mais tort sur l'amplitude. La feature livre, l'impact ne suit pas.
+
+L'autre source de déconnexion : le timing. Les OKRs se définissent en début de trimestre. La roadmap, elle, reçoit des inputs constants. Demandes clients, bugs critiques, dette technique, idées du CEO. Au bout de six semaines, ta roadmap a intégré des items qui n'existaient pas quand tu as défini tes OKRs. Et personne n'a vérifié l'alignement en cours de route.
+
+Le résultat : des équipes qui livrent à rythme soutenu mais qui ratent leurs objectifs trimestre après trimestre.
+
+## La méthode Thème-Outcome-Output
+
+La solution n'est pas de travailler plus. C'est de changer l'ordre dans lequel tu construis ta roadmap.
+
+La plupart des PMs construisent dans cet ordre : features demandées (output) puis alignement supposé sur les OKRs (outcome). Le lien entre les deux est implicite, souvent faux.
+
+L'ordre efficace est l'inverse :
+
+**Thèmes** : 3 à 4 thèmes stratégiques alignés sur tes OKRs du trimestre. Un thème n'est pas une feature. C'est une direction. "Simplifier l'onboarding" est un thème. "Ajouter une barre de progression" est une feature.
+
+**Outcomes** : pour chaque thème, quel changement mesurable tu vises. Pas ce que tu vas livrer, mais ce que tu veux voir changer dans le comportement des utilisateurs ou dans les métriques business. "60% des nouveaux inscrits terminent l'onboarding en moins de 7 jours, contre 46% aujourd'hui."
+
+**Outputs** : quelles features contribuent à cet outcome. Tu ne listes les features qu'ici, une fois que le lien avec l'impact est explicite.
+
+Un exemple complet. OKR du trimestre : augmenter l'activation de 30%.
+
+Thème : simplifier l'onboarding.
+Outcome : 60% des nouveaux inscrits terminent l'onboarding en moins de 7 jours.
+Outputs possibles :
+- Réduire l'onboarding de 8 étapes à 4
+- Ajouter un indicateur de progression visible
+- Supprimer les champs optionnels du setup initial
+- Envoyer un rappel à J+2 si l'onboarding est incomplet
+
+Tu vois la différence. Chaque feature existe pour servir l'outcome. Tu n'as pas besoin de deviner si elles contribuent aux OKRs : le lien est explicite dès la conception.
+
+## FRAME pour vérifier chaque item avant de l'engager
+
+Construire ta roadmap dans l'ordre Thème-Outcome-Output règle le problème de structure. Il reste le problème des items qui s'infiltrent en cours de route.
+
+Pour chaque item que tu envisages d'ajouter à la roadmap, passe-le au crible du framework FRAME. Cinq questions, 10 minutes par item.
+
+**Focus** : est-ce que cet item aide à avancer sur un OKR précis de ce trimestre ? Pas "sur le long terme", pas "sur la stratégie globale". Sur un OKR que tu as validé pour ce trimestre. Si tu dois choisir entre deux OKRs pour répondre, l'item est trop vague ou mal défini.
+
+**Risques** : quelles hypothèses tu fais en supposant que cet item aura l'impact attendu ? Liste les deux ou trois hypothèses principales. "La feature de rappels suppose que les utilisateurs consultent leurs emails. Est-ce qu'on a des données là-dessus ?" Identifier l'hypothèse ne signifie pas que tu abandonnes l'item. Ça signifie que tu sais ce que tu dois surveiller.
+
+**Alignement** : est-ce que cet item est aligné avec la priorité de l'équipe en ce moment ? Pas juste avec le trimestre. Avec ce que le CTO, le designer et le dev lead considèrent comme prioritaire cette semaine. Un item parfaitement aligné sur les OKRs mais mal timé dans le sprint devient une source de friction.
+
+**Mesure** : est-ce que tu peux mesurer l'impact de cet item indépendamment des autres features que tu livres en même temps ? Si tu lances cinq features d'un coup et que la rétention monte, tu ne sais pas laquelle a fonctionné. C'est un problème d'attribution. Pense à l'isolation avant de lancer.
+
+**Experimentation** : est-ce que tu peux tester une version allégée pour valider l'hypothèse avant d'investir le sprint complet ? Une version à 20% de l'effort peut te donner 80% de la réponse sur la valeur réelle de l'item.
+
+FRAME ne te prend pas deux heures. En pratique, 10 à 15 minutes par item si tu l'appliques avec discipline. Et il t'évite de livrer des features qui ont coûté trois semaines pour rien.
+
+## Les trois types d'items qui polluent ta roadmap
+
+Quand tu appliques Thème-Outcome-Output et FRAME, tu identifies rapidement trois catégories d'items qui n'auraient pas dû être dans ta roadmap ce trimestre.
+
+**Les items "parce qu'on nous l'a demandé".** Un client important veut la feature X. Le sales l'a remontée. Tu l'as mise dans la roadmap. Mais la feature X ne contribue à aucun de tes OKRs du trimestre. Elle contribue peut-être à la satisfaction client long terme, à la rétention d'un compte. C'est un objectif réel, mais si ce n'est pas dans ta liste d'OKRs ce trimestre, soit tu renégocies tes OKRs, soit tu repousse l'item. Tu ne fais pas les deux à la fois sans le dire explicitement.
+
+**Les items de dette technique mal positionnés.** La dette technique a une valeur réelle. Mais elle ne contribue directement à un OKR business que si tu fais le lien explicite. "Refactoriser le module d'authentification" ne connecte à rien. "Refactoriser le module d'authentification pour réduire le temps de chargement de l'onboarding de 4 secondes à moins d'une seconde" connecte à l'OKR d'activation. Ce n'est pas le même item.
+
+**Les items opportunistes.** Le CEO a vu une tendance sur LinkedIn. Quelqu'un a eu une idée en réunion de roadmap. Ces items entrent dans la liste par la porte de côté. Ils ne passent pas le filtre Focus de FRAME parce qu'ils n'ont pas d'OKR de rattachement défini. Certains sont de bonnes idées. Mets-les dans un backlog daté, pas dans ta roadmap active.
+
+Aucun de ces items n'est forcément mauvais. Mais s'ils rentrent dans ta roadmap sans passer par le filtre, ils diluent ta capacité à faire bouger tes OKRs.
+
+## La revue mensuelle d'alignement
+
+Un seul moment de cadrage en début de trimestre ne suffit pas. Ta roadmap dérive. Les priorités changent. De nouveaux bugs apparaissent. Un concurrent lance une feature.
+
+Il te faut un rituel mensuel d'alignement. Trente minutes, pas plus, une fois par mois.
+
+Le format :
+
+Reprends tes OKRs du trimestre. Regarde ce qui a été livré le mois passé. Pour chaque item livré, demande : est-ce qu'on observe un mouvement sur la métrique cible ? Pas forcément une preuve de causalité, mais un signal.
+
+Regarde ce qui est planifié pour le mois qui vient. Pour chaque item planifié, demande : quel outcome est-ce qu'il vise ? Si tu ne peux pas répondre en une phrase, l'item n'est pas prêt pour la roadmap.
+
+Si tu n'arrives pas à répondre à la question de l'outcome pour un item planifié, retire-le. Remets-le dans le backlog ou dans un trimestre où il sera mieux cadré.
+
+Cette revue n'est pas une réunion de statut. Ce n'est pas un comité de pilotage. C'est un check de cohérence entre ce que tu livres et ce que tu essaies d'accomplir.
+
+Le faire seul ne suffit pas. Implique ton CTO (ou tech lead) et ton designer. Pas pour valider par consensus, mais pour confronter. L'équipe technique a souvent des informations sur pourquoi un item n'a pas l'impact attendu. Le designer peut identifier des frictions d'usage qui expliquent pourquoi la feature ne convertit pas. Ces perspectives n'arrivent pas dans ta roadmap si tu construis seul.
+
+## Ce que ça change dans la durée
+
+Connecter ta roadmap à tes OKRs de façon explicite change la nature de tes conversations avec les stakeholders.
+
+Aujourd'hui, quand un stakeholder demande "pourquoi tu n'as pas mis la feature X dans le sprint ?", tu dois défendre un choix de priorisation. Souvent subjectif.
+
+Avec Thème-Outcome-Output et FRAME, ta réponse devient : "la feature X n'est pas dans ce sprint parce qu'elle ne contribue pas aux OKRs de ce trimestre. Elle est planifiée pour Q3, où elle s'aligne sur l'objectif de rétention long terme." Factuel. Traçable.
+
+La roadmap n'est plus une liste de souhaits gérée à la négociation. C'est une série de paris explicites sur ce qui va faire bouger les métriques.
+
+---
+
+Le Générateur OKR express arrive bientôt sur productcopilot.fr. Il te permettra de construire tes OKRs produit avec l'IA en partant d'un problème flou, et d'obtenir des Key Results mesurables en moins de 10 minutes. En attendant, les [10 prompts Discovery IA](/pack-discovery) te donnent la même rigueur sur la phase amont : de l'interview utilisateur à la formulation d'opportunités priorisées.
