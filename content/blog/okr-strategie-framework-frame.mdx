@@ -1,0 +1,155 @@
+---
+title: "OKR stratégie produit : le framework FRAME pour écrire des OKRs qui tiennent"
+description: "La plupart des OKRs ignorent la stratégie. Voici comment utiliser FRAME pour connecter ambitions trimestrielles et Key Results concrets."
+slug: "okr-strategie-framework-frame"
+date: "2026-08-27"
+readingTime: "8 min"
+cluster: "okrs"
+keywords: ["OKR stratégie produit", "écrire des OKRs", "framework FRAME OKR", "OKR product manager méthode"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Stratégie produit"]
+---
+
+Un OKR produit peut sembler parfaitement rédigé et rater sa cible stratégique. Pas parce que le PM ne comprend pas les OKRs. Parce que l'OKR a été écrit en silo, dans un doc Notion, trois jours avant le planning trimestriel, sans jamais vérifier s'il résout le bon problème.
+
+Le résultat : des Key Results techniquement corrects, qui mesurent des choses mesurables, mais qui n'avancent pas la stratégie d'un centimètre.
+
+Le framework FRAME est conçu pour éviter ça.
+
+## Le piège des OKRs correctement écrits mais stratégiquement vides
+
+Un OKR bien rédigé, c'est un Objective ambitieux et 3-4 Key Results chiffrés. Ça ressemble à ça :
+
+Objectif : "Accélérer l'activation des comptes entreprise"
+
+- KR1 : Le temps médian entre la création de compte et le premier usage actif passe de 12 jours à 4 jours
+- KR2 : 65 % des comptes signés ce trimestre atteignent le statut "activé" dans les 30 premiers jours
+- KR3 : Le NPS mesuré à l'activation passe de 32 à 45
+
+Formellement, c'est un bon OKR. Les Key Results sont mesurables, orientés résultat, ambitieux sans être irréalistes.
+
+Mais si la stratégie de l'entreprise ce trimestre, c'est de pivoter vers les PME plutôt que les entreprises enterprise, cet OKR optimise la mauvaise cible. L'équipe travaille bien, dans la mauvaise direction.
+
+Ce problème n'est pas un problème de rédaction. C'est un problème de processus. L'OKR a été écrit avant, ou sans, poser la question de l'alignement stratégique.
+
+FRAME résout ça en imposant cette question en premier.
+
+## FRAME : cinq angles pour construire un OKR qui tient
+
+FRAME est un framework de stratégie produit en cinq dimensions :
+
+- F (Focus) : quel est l'enjeu central ce trimestre, parmi tout ce qu'on pourrait faire ?
+- R (Risques) : quelles hypothèses peuvent invalider la stratégie ou bloquer l'exécution ?
+- A (Alignement) : est-ce que l'Objective sert la stratégie de l'entreprise et des autres équipes ?
+- M (Mesure) : comment on sait qu'on a réussi, avant la fin du trimestre ?
+- E (Expérimentation) : quelles hypothèses va-t-on tester pour atteindre l'objectif ?
+
+Appliqué aux OKRs, FRAME change l'ordre du processus. Plutôt que de commencer par "qu'est-ce qu'on veut accomplir", on commence par "qu'est-ce qui compte vraiment, et pour qui ?"
+
+Le résultat : l'Objective n'est plus un vœu pieux habillé en ambition. C'est une réponse à une question stratégique réelle.
+
+## F et A : ancrer l'objectif dans la stratégie avant de l'écrire
+
+Le F de FRAME pose une question simple : si tu ne pouvais faire qu'une seule chose ce trimestre pour ton produit, ce serait quoi ?
+
+La réponse honnête à cette question n'est pas "tout ce qui est dans la roadmap". C'est un problème précis, une opportunité précise, ou un risque précis.
+
+Exemple concret : une squad sur une plateforme SaaS B2B. La stratégie de l'entreprise ce trimestre, annoncée lors du kick-off : augmenter l'expansion revenue sur la base existante, plutôt que d'acquérir de nouveaux clients. Le CFO a mis l'upsell en KPI corporate.
+
+Le Focus de la squad, aligné avec cette stratégie : "Augmenter l'usage des modules avancés par les comptes déjà actifs."
+
+Vient ensuite le A. Avant d'écrire un seul Key Result, vérifier trois choses :
+
+Est-ce que cet Objective sert la stratégie de l'entreprise ? Oui : l'expansion revenue passe par un usage plus profond.
+
+Est-ce que cet Objective entre en conflit avec l'OKR d'une autre squad ? Vérifier si une squad acquisition ne va pas cannibaliser les mêmes ressources ou créer des frictions dans le parcours utilisateur.
+
+Est-ce que l'équipe engineering et design partagent cet objectif ? Si la squad design est déjà sur un autre projet tout le trimestre, l'Objective est irréaliste indépendamment de sa pertinence stratégique.
+
+Ce check d'alignement prend une heure. Il évite trois mois de travail bien fait dans la mauvaise direction.
+
+Une fois l'Objective validé par le F et le A, il peut être écrit :
+
+"Augmenter l'usage des fonctionnalités avancées par les comptes actifs pour maximiser l'expansion revenue."
+
+C'est plus long qu'un objectif typique. C'est voulu : la formulation contient la logique stratégique. Quand un membre de l'équipe relit ça en semaine 8, il comprend encore pourquoi cet objectif existe.
+
+## M : des Key Results calibrés sur les bons signaux
+
+Le M de FRAME pose la question de la mesure : comment tu sais que tu as réussi ?
+
+La réponse évidente est "quand le KR est atteint". Mais le vrai travail est de choisir les bons Key Results. Un KR qui mesure le mauvais signal peut indiquer du succès là où il y a de l'échec, et inversement.
+
+Pour l'Objective "Augmenter l'usage des fonctionnalités avancées", plusieurs KRs sont possibles :
+
+Option A : "Lancer 3 nouvelles fonctionnalités avancées"
+Option B : "Le taux d'adoption des fonctionnalités avancées par les comptes actifs passe de 18 % à 40 %"
+
+Option A est un KR de livraison. Tu peux livrer 3 features que personne n'utilise et l'atteindre. Option B force à mesurer ce qui compte : est-ce que les gens utilisent ce qu'on a construit ?
+
+Calibrer un Key Result, c'est aussi fixer la bonne baseline. Avant d'écrire "passe de 18 % à 40 %", tu dois savoir que 18 % est le chiffre actuel. C'est la data 0 : le travail que les équipes font le moins et qui invalide tous les KRs sans baseline. Si tu ne sais pas où tu en es aujourd'hui, tu ne peux pas savoir si tu progresses.
+
+Sur cet Objective, un set de Key Results bien calibrés :
+
+- KR1 : Le taux d'adoption des fonctionnalités avancées (au moins 2 modules sur les 5 disponibles) par les comptes actifs passe de 18 % à 40 % en 90 jours
+- KR2 : Le revenu expansion (upsell et cross-sell) généré sur la base existante augmente de 12 % sur le trimestre
+- KR3 : Le score d'usage moyen par compte actif (nombre de modules utilisés par mois) passe de 1,4 à 2,8
+
+Trois KRs. Trois angles différents sur le même Objective. Si KR1 monte mais KR3 reste plat, quelque chose cloche : les utilisateurs essaient les modules mais n'en font pas un usage régulier. Ce type de divergence est un signal d'investigation, pas une raison de requalifier le trimestre.
+
+Ce travail de calibrage se combine naturellement avec la définition du périmètre de tes OKRs. Si tu veux approfondir comment construire des [OKRs centrés sur l'impact plutôt que sur le travail](/blog/okr-produit-impact), c'est le même principe : les KRs mesurent des comportements, jamais des livrables.
+
+## R et E : anticiper les blocages avant qu'ils ne se produisent
+
+Les R et E de FRAME sont souvent ignorés dans un processus OKR. Ils relèvent plus de la gestion des risques que de la définition des objectifs. C'est précisément pour ça qu'ils manquent.
+
+Le R pose la question : qu'est-ce qui pourrait invalider cet OKR avant la fin du trimestre ?
+
+Pour l'Objective sur l'usage des modules avancés, les risques typiques :
+
+Risque 1 : les données d'usage ne sont pas trackées correctement. Si l'outil analytics ne capture pas l'adoption des modules avancés avec la granularité nécessaire, les KRs sont impossibles à mesurer honnêtement. Ce risque doit être identifié et résolu avant le début du trimestre, pas en semaine 6.
+
+Risque 2 : les comptes actifs n'ont pas accès aux fonctionnalités avancées dans leur forfait actuel. Tout le travail produit peut être annulé par un blocage commercial que le PM ne contrôle pas.
+
+Risque 3 : une autre squad sort une fonctionnalité concurrente qui capte l'attention des utilisateurs sur une autre partie du produit.
+
+Chaque risque identifié doit avoir une réponse : soit un plan de mitigation clair, soit une hypothèse à tester rapidement pour le qualifier.
+
+C'est là qu'entre le E. Un OKR n'est pas un plan d'action : c'est une cible. Le E demande : quelles hypothèses vas-tu tester pour atteindre cette cible ?
+
+Pour cet Objective, les hypothèses à tester :
+
+- Hypothèse 1 : un email de nudge ciblé sur les comptes actifs qui n'ont jamais ouvert les modules avancés augmente les premières utilisations de 20 %
+- Hypothèse 2 : une session d'onboarding live de 30 minutes sur les modules avancés convertit à 60 % vers un usage régulier
+- Hypothèse 3 : un prompt contextuel dans le produit, déclenché à J7, augmente la découverte des modules avancés sans intervention humaine
+
+Ce ne sont pas des livrables à intégrer dans les KRs. Ce sont des paris. Si l'hypothèse 1 déplace le KR, tant mieux. Si aucune des trois ne produit d'effet, c'est que le problème est ailleurs, et l'équipe doit en tirer une leçon, pas masquer l'échec dans la rétrospective.
+
+## La vérification FRAME avant de valider l'OKR
+
+FRAME donne une checklist de validation en cinq questions. Pose-les dans cet ordre, avant de finaliser un OKR et de le committer à toute l'équipe.
+
+Focus : si je ne devais faire qu'une chose ce trimestre, est-ce que c'est cette chose-là ? Est-ce que l'Objective répond à la question "pourquoi ce trimestre ?"
+
+Risques : est-ce que j'ai identifié les 2-3 risques principaux qui peuvent faire dérailler cet OKR ? Ai-je un plan de mitigation pour chacun, ou au moins une hypothèse à tester ?
+
+Alignement : est-ce que cet Objective sert la stratégie de l'entreprise ? Est-ce que les équipes adjacentes (engineering, design, commercial) partagent cet objectif, ou au moins ne le contredisent pas ?
+
+Mesure : est-ce que je connais ma baseline pour chaque Key Result ? Est-ce que mes KRs mesurent des comportements ou des résultats, pas des livrables ?
+
+Expérimentation : est-ce que j'ai 2-3 hypothèses concrètes sur comment atteindre cet Objective ? Est-ce que je laisse de la place dans le cycle pour apprendre de ces paris, sans que l'équipe ne soit pénalisée si les premières hypothèses ne fonctionnent pas ?
+
+Si une réponse est "non" ou "je ne sais pas", ce n'est pas un OKR prêt. C'est un OKR qui va générer une rétrospective difficile dans trois mois.
+
+La force de cette vérification : elle prend 30 minutes. Pas un jour de planning supplémentaire. Pas un atelier de 4 heures. Une demi-heure pour passer les cinq questions honnêtement, avant de committer tout le trimestre sur un objectif qui tient.
+
+La différence entre un OKR qu'on oublie en semaine 4 et un OKR qui structure les décisions de l'équipe pendant trois mois, c'est souvent ce travail de 30 minutes qu'on ne fait pas.
+
+## Génère tes OKRs avec l'IA en moins de 5 minutes
+
+Le Générateur OKR Express applique ces principes automatiquement. Tu entres le contexte stratégique de ton trimestre, les enjeux du produit, et l'IA propose des Objectives et Key Results calibrés selon TARS et FRAME.
+
+Gratuit, sans inscription.
+
+[Utiliser le Générateur OKR Express](/outils/generateur-okr)
