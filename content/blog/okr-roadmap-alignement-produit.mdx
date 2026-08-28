@@ -1,0 +1,136 @@
+---
+title: "OKR et roadmap produit : comment aligner les deux"
+description: "Beaucoup d'équipes ont des OKRs d'un côté et une roadmap de l'autre, sans lien entre les deux. Comment connecter les deux avec le framework FRAME."
+slug: "okr-roadmap-alignement-produit"
+date: "2026-08-28"
+readingTime: "7 min"
+cluster: "okrs"
+keywords: ["OKR roadmap produit", "aligner OKR stratégie", "OKR product manager", "roadmap pilotée par les OKRs"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Stratégie"]
+---
+
+La plupart des équipes produit ont deux documents séparés : les OKRs trimestriels et la roadmap. Le problème, c'est qu'ils ne se parlent pas.
+
+Les OKRs sont écrits en début de trimestre lors d'un atelier stratégique. La roadmap est alimentée par le backlog, les demandes clients, les urgences techniques, et les inévitables "on avait dit qu'on ferait ça". En fin de trimestre, l'OKR est "partiellement atteint" et la roadmap a suivi son propre chemin.
+
+Ce n'est pas un problème d'exécution. C'est un problème de connexion.
+
+## Pourquoi les OKRs et la roadmap vivent en silos
+
+Le scénario classique : le leadership écrit les OKRs au niveau company. Le PM adapte ces OKRs pour son produit. Puis il revient à son backlog, à ses sprints, à ses stakeholders, et reprend là où il en était.
+
+Résultat : deux réalités parallèles. L'OKR dit "augmenter le taux d'activation de 35 % à 60 %". La roadmap montre l'intégration avec un ERP partenaire, le redesign du dashboard, et la migration de l'infrastructure. Aucun de ces items ne mesure l'activation.
+
+Ce décalage a trois causes principales.
+
+Première cause : les OKRs sont écrits top-down, sans inventaire du réel. On fixe une cible sans vérifier si les projets en cours peuvent y contribuer.
+
+Deuxième cause : la roadmap est construite bottom-up, depuis le backlog. Elle répond aux demandes. Elle ne part pas d'un objectif à atteindre.
+
+Troisième cause : personne ne fait le lien explicitement. Ce n'est pas dans le template de la roadmap. Ce n'est pas dans le check hebdomadaire. Alors les deux documents existent en parallèle, et la convergence est accidentelle.
+
+## Partir de l'objectif, pas du backlog
+
+La logique doit s'inverser. La roadmap ne doit pas alimenter les OKRs. Les OKRs doivent piloter la roadmap.
+
+Pour y arriver, le point de départ est de définir les OKRs avant de toucher la roadmap. Pas simultanément. Pas après. Avant.
+
+Voici la question à poser pour chaque item de roadmap : "si on livre ça, quel Key Result ça fait bouger ?" Si la réponse est "aucun", tu as deux options. Soit tu retires l'item du trimestre. Soit tu acceptes qu'il s'agit de dette technique ou de maintenance, et tu le traites comme telle, hors OKRs.
+
+Un item de roadmap sans lien avec un OKR n'est pas forcément inutile. Mais il doit être visible, assumé, et budgeté séparément. Pas camouflé derrière un OKR vague.
+
+## Le framework FRAME pour ancrer les OKRs dans la réalité
+
+Avant d'écrire les OKRs de ton produit, tu dois clarifier le contexte dans lequel ils s'inscrivent. FRAME donne une structure pour ça.
+
+FRAME se déploie en cinq dimensions : Focus, Risques, Alignement, Mesure, Experimentation.
+
+Focus : quel est le problème central du trimestre ? Pas cinq problèmes. Un. C'est le filtre de tout le reste. Si tu ne peux pas répondre à cette question en une phrase, tu n'as pas encore de focus.
+
+Risques : qu'est-ce qui peut empêcher d'atteindre cet objectif ? Pas les risques génériques. Les risques spécifiques au focus du trimestre : adoption lente, données insuffisantes, dépendance externe bloquante.
+
+Alignement : est-ce que cet objectif produit est aligné avec les OKRs company ? Aligné, c'est : tu peux tracer une ligne directe entre ton Key Result et l'objectif stratégique du dessus.
+
+Mesure : as-tu une baseline ? Sais-tu exactement où tu en es aujourd'hui ? Sans baseline, ton Key Result est un voeu, pas une cible.
+
+Experimentation : comment vas-tu apprendre en cours de route ? Un OKR n'est pas statique. Si les premiers signaux montrent que tu prends le mauvais chemin, comment tu ajustes ?
+
+Passer par FRAME avant d'écrire les OKRs prend 30 à 60 minutes. Ça évite d'arriver à mi-trimestre avec des OKRs qui ne tiennent plus la route.
+
+Un exemple concret. Un PM sur une plateforme de facturation SaaS B2B. L'OKR company : "devenir la référence pour les TPE françaises". Son focus produit pour le trimestre : l'onboarding des nouveaux comptes TPE, qui est le goulot d'étranglement.
+
+Avec FRAME :
+
+- Focus : améliorer la complétion de l'onboarding pour les comptes TPE
+- Risques : les TPE ne reviennent pas en cas de blocage ; le support n'est pas scalable
+- Alignement : lien direct avec l'OKR company "référence TPE"
+- Mesure : taux de complétion actuel à 29 %, churn J30 à 24 %
+- Experimentation : test A/B sur le premier écran vs email de relance vs appel support
+
+Résultat : des OKRs clairs, ancrés dans la réalité, traçables jusqu'à la stratégie.
+
+## La cascade : company, produit, squad
+
+Un OKR produit ne vit pas seul. Il s'inscrit dans une cascade à trois niveaux.
+
+Niveau 1 : company OKRs. Ils fixent la direction globale. Ils sont souvent ambitieux, parfois flous. C'est le travail du leadership.
+
+Niveau 2 : product OKRs. Le PM prend un ou deux company OKRs et définit comment son produit contribue. Ce n'est pas une traduction mot à mot. C'est une décision sur ce que le produit peut bouger ce trimestre pour aller dans cette direction.
+
+Niveau 3 : squad OKRs. Chaque squad peut avoir ses propres Key Results qui alimentent les OKRs produit. Même logique de cascade.
+
+L'erreur courante à chaque niveau : recopier l'OKR du niveau supérieur en changeant les chiffres. Ça donne l'illusion de l'alignement. Ce n'est pas de l'alignement.
+
+L'alignement réel se teste avec une question simple : si l'OKR produit est atteint, est-ce que ça contribue directement à l'OKR company ? Si la réponse est "probablement" ou "indirectement", tu as un problème de cascade.
+
+Un exemple de mauvaise cascade :
+
+- Company OKR : "Augmenter le NPS de 22 à 40"
+- Product OKR : "Améliorer le NPS de 22 à 40" (copie directe, aucune valeur ajoutée)
+
+Un exemple de bonne cascade :
+
+- Company OKR : "Augmenter le NPS de 22 à 40"
+- Product OKR : "Réduire les tickets support liés à la facturation de 40 % en 90 jours" (contribution identifiable, mesurable, actionnable par le produit)
+
+La distinction est importante. Dans le premier cas, le PM s'approprie un objectif qu'il ne pilote pas seul. Dans le second, il identifie sa contribution spécifique, et il peut en rendre compte.
+
+## Utiliser les OKRs comme filtre de décision
+
+Un OKR ne sert pas seulement à fixer des objectifs. Il sert à décider en cours de route.
+
+Chaque fois qu'une demande entre dans le pipeline en cours de trimestre, la première question est : quel Key Result est-ce que ça fait bouger ? Si c'est clairement un OKR du trimestre, ça a de la valeur. Si c'est une urgence réelle (bug critique, incident client), ça s'impose.
+
+Tout le reste attend le prochain cycle.
+
+Cette discipline est difficile à tenir, parce que les demandes arrivent rarement en disant "je suis hors scope". Elles arrivent avec un contexte qui les rend urgentes. "Le client X va churner si on ne fait pas ça." "Le partenaire Y a besoin de ça pour le lancement." "Le CEO a demandé ça hier."
+
+L'OKR est ton alibi pour négocier. "Notre OKR ce trimestre porte sur l'activation des nouveaux comptes. Cette demande touche la gestion des droits d'accès. Si on la priorise, quel Key Result est-ce que ça protège ?" La question remet la décision dans un cadre.
+
+Le check mensuel des OKRs suit la même logique. Pas un rapport de statut. Une séance de décision. Où en est-on ? Qu'est-ce qui a bougé ? Qu'est-ce qu'on ajuste ?
+
+Si un Key Result est clairement hors d'atteinte à mi-trimestre, il vaut mieux le fermer proprement et en tirer la leçon que de le laisser traîner. Une cible manquée documentée vaut mieux que trois cibles vagues "partiellement atteintes".
+
+## Ce que ça change dans la façon de construire la roadmap
+
+Quand les OKRs pilotent la roadmap, deux choses changent.
+
+Première : la roadmap devient une hypothèse, pas un plan. Chaque item est une réponse à la question "qu'est-ce qui pourrait faire bouger ce Key Result ?" Certains fonctionneront. D'autres non. Ce qui n'est pas acceptable, c'est de livrer sans mesurer.
+
+Deuxième : la roadmap devient plus courte. Quand chaque item doit justifier sa contribution à un OKR, les items "sympas mais pas urgents" tombent naturellement. La contrainte des OKRs est un filtre de priorisation.
+
+Ce glissement change aussi la conversation avec les stakeholders. On ne négocie plus sur des features. On négocie sur des outcomes. "Cette feature va-t-elle aider à atteindre ce KR ?" C'est une conversation plus utile et plus honnête.
+
+Pour les équipes qui travaillent sur la [construction de PRDs](/blog/prd-et-ia-guide-pratique) en parallèle, le lien avec les OKRs est direct : un PRD bien construit part d'un problem statement ancré dans un Key Result. L'OKR donne le pourquoi. Le PRD donne le comment.
+
+Pour aller plus loin sur la priorisation, l'article sur [prioriser son backlog avec l'IA](/blog/prioriser-backlog-ia) complète bien cette approche : les OKRs fixent le cap, la priorisation aligne l'exécution.
+
+## L'outil gratuit pour construire tes OKRs
+
+Si tu veux construire tes OKRs produit sans partir d'une page blanche, le Générateur OKR express est disponible gratuitement sur Product Copilot.
+
+Il te guide étape par étape : clarification du focus, formulation des Key Results, vérification de l'alignement avec la stratégie. En 15 à 20 minutes, tu as des OKRs formulés, mesurables, et traçables jusqu'à la stratégie company.
+
+[Accéder au Générateur OKR express](/outils/generateur-okr)
