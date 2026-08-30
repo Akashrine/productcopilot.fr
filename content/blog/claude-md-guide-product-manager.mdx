@@ -1,0 +1,227 @@
+---
+title: "CLAUDE.md : le fichier pivot pour ton projet vibe coding"
+description: "Comment créer un CLAUDE.md efficace pour que Claude Code comprenne ton projet dès la première ligne, sans répéter le contexte à chaque session."
+slug: "claude-md-guide-product-manager"
+date: "2026-08-30"
+readingTime: "8 min"
+cluster: "vibe-coding"
+keywords: ["CLAUDE.md template", "CLAUDE.md product manager", "CLAUDE.md guide vibe coding"]
+relatedTool: "template-prd-ia"
+relatedPack: "vibe-coding-pm"
+tags: ["Product Management", "Vibe Coding", "IA"]
+---
+
+## Le problème que tout PM vibe coder connaît
+
+Tu ouvres Claude Code. Tu décris ton projet. Claude génère du code. Tu fermes la session.
+
+Le lendemain, tu rouvres Claude Code. Tu dois tout réexpliquer. L'architecture. Les conventions de nommage. Le fait que tu utilises Supabase et pas Postgres directement. Que le bouton principal s'appelle CTAPrimary, pas Button.
+
+Ce rituel quotidien est une perte de temps. Et c'est évitable.
+
+Le CLAUDE.md est la solution. C'est un fichier texte à la racine de ton projet que Claude lit automatiquement au démarrage de chaque session. Tout ce qu'il contient devient du contexte permanent.
+
+En 2026, 63 % des utilisateurs actifs du vibe coding ne sont pas développeurs (analyse Solveo sur 1 000 utilisateurs Reddit, 2026). Pour un PM sans background technique, le CLAUDE.md n'est pas un détail. C'est la différence entre un assistant qui comprend ton produit et un assistant qui invente des solutions au hasard.
+
+## Ce qu'est (et ce que n'est pas) le CLAUDE.md
+
+Le CLAUDE.md n'est pas une documentation technique. Ce n'est pas un README pour tes futurs collaborateurs. Ce n'est pas un fichier de configuration.
+
+C'est un brief permanent pour Claude Code. Comme le brief que tu donnerais à un développeur qui arrive dans l'équipe. Sauf que lui, il le lit à chaque fois qu'il ouvre son IDE.
+
+Le fichier se place à la racine du projet :
+
+```
+/mon-projet
+  CLAUDE.md
+  src/
+  package.json
+  ...
+```
+
+Claude le lit automatiquement. Tu n'as rien à faire de spécial pour l'activer.
+
+Ce que le CLAUDE.md permet concrètement :
+
+- Claude connaît l'architecture du projet sans que tu l'expliques
+- Claude respecte tes conventions de nommage dès le premier fichier généré
+- Claude sait quelles librairies utiliser (et lesquelles éviter)
+- Claude comprend le contexte métier : qui sont les utilisateurs, quel est le problème résolu
+
+Ce qu'il ne permet pas :
+
+- Partager du contexte entre projets différents
+- Remplacer les spécifications fonctionnelles
+- Compenser un PRD flou
+
+## Les 5 blocs indispensables d'un CLAUDE.md pour PM
+
+Voici la structure que j'utilise sur tous mes projets vibe coding. Elle s'inscrit dans la phase "Construire" du [système en 4 phases vibe coding](/blog/vibe-coding-methode-4-phases) : Clarifier, Designer, Construire, Vérifier.
+
+### 1. Contexte produit (3-5 lignes)
+
+```markdown
+## Produit
+Outil de suivi OKRs pour équipes produit de 5 à 20 personnes.
+Utilisateurs principaux : CPOs et PMs seniors.
+Problème résolu : les OKRs sont mis à jour une fois par trimestre, pas en continu.
+Résultat attendu : l'équipe met à jour ses OKRs en moins de 5 minutes par semaine.
+```
+
+Ce bloc donne à Claude une boussole. Quand il hésite entre deux approches, il peut revenir ici pour choisir celle qui sert le mieux l'utilisateur cible.
+
+### 2. Stack technique
+
+```markdown
+## Stack
+- Framework : Next.js 15, App Router
+- Base de données : Supabase (PostgreSQL)
+- Auth : Supabase Auth
+- Style : Tailwind CSS v4
+- Déploiement : Vercel
+- Pas de Redux. Pas de GraphQL. Pas de tests Cypress.
+```
+
+La partie "Pas de X" est aussi importante que "utilise Y". Claude a tendance à proposer des solutions complexes. Lui dire explicitement ce qu'on n'utilise pas évite les allers-retours inutiles.
+
+### 3. Conventions de nommage et d'architecture
+
+```markdown
+## Conventions
+- Composants : PascalCase (ex: OKRCard, TeamSelector)
+- Fonctions utilitaires : camelCase (ex: formatQuarter, calculateProgress)
+- Variables côté serveur : en anglais
+- Contenu utilisateur : en français
+- Un composant = un fichier. Pas de fichiers de plus de 200 lignes.
+- API routes dans /app/api/[resource]/route.ts
+```
+
+Ce bloc sauve un temps considérable. Sans lui, Claude alterne entre des styles de nommage différents selon le contexte de la requête.
+
+### 4. Ce que Claude doit toujours faire (et ne jamais faire)
+
+```markdown
+## Règles
+- Toujours commenter le POURQUOI, pas le QUOI
+- Ne jamais utiliser `any` en TypeScript
+- Toujours vérifier si un composant similaire existe avant d'en créer un nouveau
+- Ne jamais modifier la structure de la base de données sans montrer la migration d'abord
+- Proposer des alternatives si une approche semble trop complexe
+```
+
+Ce bloc formalise tes préférences de travail. Claude les applique sans que tu aies besoin de les rappeler à chaque prompt.
+
+### 5. État du projet et prochaines priorités
+
+```markdown
+## État actuel (mis à jour le 30 août 2026)
+- Auth : terminée
+- Dashboard OKRs : en cours (la visualisation des tendances reste à faire)
+- Module équipes : pas commencé
+
+## Prochaine session
+Finir la visualisation des tendances (graphe linéaire avec Recharts).
+```
+
+Ce bloc est le seul qui change régulièrement. Il te permet de reprendre une session là où tu l'as laissée, sans re-contextualiser.
+
+## CLAUDE.md projet vs CLAUDE.md global
+
+Claude Code supporte deux niveaux de contexte permanent.
+
+Le CLAUDE.md projet (à la racine du dépôt) contient les informations spécifiques à ce projet : stack, conventions, contexte métier. C'est celui qu'on vient de voir.
+
+Le CLAUDE.md global (dans `~/.claude/CLAUDE.md`) contient tes préférences personnelles transversales à tous les projets : ta façon de travailler, les frameworks que tu maîtrises, ton niveau technique, les règles que tu appliques partout.
+
+Un exemple de CLAUDE.md global pour un PM vibe coder :
+
+```markdown
+## Profil
+PM senior, pas développeur. Je comprends les concepts techniques mais j'ai besoin d'explications claires sur les choix d'implémentation.
+
+## Règles globales
+- Toujours expliquer le raisonnement derrière une décision technique importante
+- Ne jamais supposer que je connais un concept sans l'expliquer brièvement
+- Préférer les solutions simples aux solutions élégantes
+
+## Mes stacks habituelles
+Next.js, Supabase, Tailwind, Vercel. Je connais ces outils. Pour les autres, expliquer les analogies.
+```
+
+Les deux fichiers se combinent. Claude applique le global en permanence, le projet pour le contexte spécifique.
+
+## Du PRD au CLAUDE.md : le lien entre spec et code
+
+Le CLAUDE.md ne se construit pas ex nihilo. Il se dérive depuis ton PRD.
+
+C'est là qu'entre en jeu le framework POP (Product One Page) : un document synthétique qui capture le problème, l'opportunité, les hypothèses, les métriques et les dépendances. Le POP sert à aligner l'équipe. Le CLAUDE.md sert à aligner Claude Code.
+
+Le passage de l'un à l'autre est direct.
+
+Depuis ton PRD ou ton POP, tu extrais :
+- Le problème résolu et l'utilisateur cible (bloc "Contexte produit")
+- Les contraintes techniques déjà décidées (bloc "Stack")
+- Les décisions d'architecture déjà prises (bloc "Conventions")
+- Les règles de qualité de l'équipe (bloc "Règles")
+
+L'article [PRD et vibe coding : éviter la boucle de bugs](/blog/prd-vibe-coding-anti-bug-loop) explique pourquoi un PRD structuré en amont réduit drastiquement le temps de debug en phase de construction.
+
+Sur le [Pack Vibe Coding for PMs](/packs/vibe-coding-pm), il y a un prompt dédié à cette conversion : le CLAUDE.md Generator. Tu colles ton PRD, le prompt génère un CLAUDE.md structuré que tu ajustes en 10 minutes. Ça évite de partir d'une page blanche.
+
+## Les 3 erreurs classiques sur le CLAUDE.md
+
+### Erreur 1 : le CLAUDE.md trop long
+
+Un CLAUDE.md de 500 lignes dilue l'information. Claude lit tout, mais l'essentiel se noie dans les détails.
+
+Règle : le CLAUDE.md doit tenir en une page. Si tu dois aller au-delà, crée des fichiers annexes (`ARCHITECTURE.md`, `DECISIONS.md`) et référence-les depuis le CLAUDE.md avec un lien.
+
+### Erreur 2 : ne jamais le mettre à jour
+
+Le CLAUDE.md qui date du premier jour du projet est un CLAUDE.md inutile au troisième mois.
+
+Chaque fois que tu prends une décision d'architecture importante, tu la consignes dans le CLAUDE.md dans la même session. Pas après. Dans la même session.
+
+Les décisions oubliées finissent par être contredites. Claude propose une approche. Tu acceptes. Six sessions plus tard, une autre approche contradictoire s'installe. Le projet se fragmente.
+
+### Erreur 3 : copier un CLAUDE.md générique
+
+Les templates CLAUDE.md qui circulent en ligne sont des points de départ, pas des arrivées. Un CLAUDE.md efficace reflète ton projet spécifique : ton stack, ton contexte métier, tes contraintes.
+
+Passer 30 minutes à écrire un bon CLAUDE.md au démarrage d'un projet te fait économiser des heures de re-contextualisation sur la durée. Le coût de construction d'un produit SaaS complet est passé de 200 000 $ à moins de 5 000 $ (2026). La majeure partie du gain vient de l'efficacité des sessions de code. Le CLAUDE.md est un levier direct de cette efficacité.
+
+## Un CLAUDE.md minimal pour commencer aujourd'hui
+
+Si tu débutes et que tu veux quelque chose d'opérationnel en 15 minutes :
+
+```markdown
+# [Nom du projet]
+
+## Contexte produit
+[2-3 lignes : ce que fait le produit, pour qui, quel problème résolu]
+
+## Stack
+[Liste des technos utilisées + ce qu'on n'utilise pas]
+
+## Conventions
+[Tes règles de nommage essentielles]
+
+## Règles
+- Ne jamais modifier les fichiers de configuration sans me prévenir
+- Toujours proposer une solution simple avant une solution complexe
+
+## État du projet
+[Ce qui est fait, ce qui est en cours, ce qui reste à faire]
+```
+
+Remplis-le honnêtement. Ne cherche pas la perfection. Claude préfère un contexte imparfait mais honnête à un contexte vide.
+
+Mets-le à jour à la fin de chaque session. Deux lignes suffisent. C'est cette habitude qui fait la différence sur la durée.
+
+## Aller plus loin avec le Pack Vibe Coding for PMs
+
+Le CLAUDE.md fait partie de la phase "Construire" de la méthode vibe coding. Il s'appuie sur un PRD clair et prépare le terrain pour les phases de debug et d'audit technique.
+
+Si tu veux un point de départ solide pour ton PRD avant de créer ton CLAUDE.md, le Template PRD IA de productcopilot.fr génère un PRD structuré en 10 minutes depuis un formulaire en 7 champs. Résultat prêt à coller dans Claude Code ou à transformer en CLAUDE.md.
+
+[Accède au Template PRD IA](/outils/template-prd-ia) : gratuit, sans inscription, résultat immédiat.
