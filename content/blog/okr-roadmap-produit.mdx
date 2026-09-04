@@ -1,0 +1,143 @@
+---
+title: "OKRs et roadmap produit : du KR à la feature sans se perdre"
+description: "Comment passer de tes Key Results à des décisions roadmap concrètes ? Méthode pas à pas pour lier OKRs et priorisation sans les dissocier."
+slug: "okr-roadmap-produit"
+date: "2026-09-04"
+readingTime: "7 min"
+cluster: "okrs"
+keywords: ["OKR roadmap produit", "lier OKR priorisation", "OKR product manager features", "priorisation OKR", "OKR stratégie roadmap"]
+relatedTool: "generateur-okr"
+relatedPack: "okrs"
+tags: ["Product Management", "OKRs", "Roadmap"]
+---
+
+La plupart des équipes produit ont deux artefacts séparés : les OKRs d'un côté, la roadmap de l'autre. En théorie, ils s'alimentent. En pratique, ils vivent sur des planètes différentes.
+
+Les OKRs sont écrits en janvier lors du séminaire stratégique. La roadmap est planifiée en sprint review. Personne ne fait vraiment le lien. Résultat : le PM jongle entre les deux sans qu'ils se parlent vraiment.
+
+Voici comment sortir de cette situation.
+
+## Le problème : OKRs et roadmap ne se parlent pas
+
+Observe ce qui se passe dans la majorité des équipes. Les OKRs sont définis en top-down lors du kick-off trimestriel. La roadmap, elle, grandit à partir des demandes backlog, des bugs remontés, des feature requests clients, et de la dette technique.
+
+Les deux coexistent. Ils ne s'alimentent pas.
+
+À la fin du trimestre, la revue OKR révèle que le KR "augmenter le taux d'activation à 45%" stagne à 31%. Personne ne comprend vraiment pourquoi, parce que personne n'a tracé de ligne claire entre les features livrées et ce KR.
+
+C'est le signe que ton OKR n'a pas piloté ta roadmap. Il l'a accompagnée.
+
+Environ 70% des entreprises souffrent d'une mauvaise définition de leurs objectifs. Mais le problème est rarement dans l'écriture des OKRs. Il est dans la disconnexion entre l'objectif et les décisions quotidiennes du PM.
+
+## Un KR n'est pas une feature, mais il en justifie certaines
+
+La distinction est centrale. Un Key Result mesure un changement de comportement utilisateur. Une feature est une hypothèse sur la façon de produire ce changement.
+
+Exemple :
+
+KR : "Atteindre 45% d'utilisateurs actifs en semaine 1 (contre 28% actuellement)"
+
+Ce KR ne dit rien sur ce que tu dois construire. Il dit ce que tu cherches à changer. La feature, c'est ta réponse à la question : "Qu'est-ce qui explique que 72% des utilisateurs ne passent pas la semaine 1 ?"
+
+Si tu réponds "ils ne comprennent pas la valeur du produit dès le premier écran", alors une feature d'onboarding guidé est une hypothèse. Pas une certitude.
+
+Le problème classique : le PM saute directement de l'OKR à la feature, sans passer par la question du comportement utilisateur à changer. La roadmap devient un catalogue d'initiatives déconnectées du KR.
+
+## FRAME : un filtre pour lier KR et initiatives
+
+Le framework FRAME (Focus, Risques, Alignement, Mesure, Experimentation) sert habituellement à cadrer la stratégie produit. Il s'applique très bien pour évaluer si une initiative roadmap sert réellement un KR.
+
+Appliqué à une initiative candidate :
+
+**Focus** : Cette feature cible-t-elle précisément le comportement mesuré par le KR ? Si le KR mesure l'activation en semaine 1, une feature de gestion avancée des exports n'est pas focalisée.
+
+**Risques** : Quelles hypothèses sous-tendent cette initiative ? Qu'est-ce qui pourrait être faux ? L'onboarding guidé suppose que le problème est la compréhension, pas la motivation ou le contexte d'usage.
+
+**Alignement** : L'équipe est-elle d'accord sur le fait que cette initiative peut bouger ce KR ? L'alignement évite les features construites sur des intuitions individuelles non questionnées.
+
+**Mesure** : Comment sauras-tu dans 2 semaines que cette feature contribue au KR ? Si tu n'as pas de signal rapide intermédiaire, tu navigueras à l'aveugle jusqu'à la revue trimestrielle.
+
+**Experimentation** : Peut-on tester une version plus petite d'abord ? Un email avant le wizard, un tooltip avant le module complet.
+
+Passe chaque initiative candidate à travers ces 5 questions. Celles qui ne répondent pas clairement à la majorité d'entre elles ne pilotent pas ton KR. Elles le diluent.
+
+## Un exemple concret : de l'objectif à la feature
+
+Prenons un cas réel. Une équipe produit SaaS B2B en growth phase.
+
+**Objectif** : Devenir la référence pour l'onboarding des nouveaux PMs dans notre segment.
+
+**KR** : Atteindre 45% d'utilisateurs actifs en semaine 1 (baseline : 28%).
+
+Le PM brainstorme une liste d'initiatives :
+- Wizard d'onboarding étape par étape
+- Séquence email d'activation J+0 à J+7
+- Checklist in-app avec gamification
+- Vidéos tutoriels intégrées au produit
+- Template de premier projet pré-rempli
+
+Maintenant, le filtre FRAME sur chacune :
+
+La séquence email passe bien : focalisée sur l'activation, testable en une semaine, mesurable par taux d'ouverture et connexion J+3, risque principal bien identifié (l'email n'atteint pas la bonne personne si l'inscription s'est faite avec un email générique).
+
+Les vidéos tutoriels passent moins bien : elles supposent que le problème est le manque de compréhension du produit. Mais si le problème est le manque de contexte "dans mon projet réel", elles ne bougeront pas le KR.
+
+Résultat : la séquence email et la checklist in-app passent le filtre. Elles rejoignent la roadmap du trimestre avec un lien explicite au KR. Les autres passent en backlog validé, pas abandonné, avec la raison documentée.
+
+Ce travail prend 45 minutes en atelier avec l'équipe. Il évite des semaines de développement sur des features qui n'auraient pas bougé le KR.
+
+## La revue mensuelle comme correction de trajectoire
+
+La plupart des équipes font une revue OKR en fin de trimestre. C'est trop tard.
+
+Si ton KR stagne à 30% en semaine 8 alors qu'il devrait être à 38%, tu as encore 4 semaines pour ajuster. Mais si tu découvres ça en semaine 12, c'est une post-mortem, pas une correction.
+
+La revue mensuelle répond à 3 questions :
+
+1. Où en est le KR par rapport à la trajectoire attendue ?
+2. Quelle feature a le plus contribué à ce mouvement ?
+3. Qu'est-ce qu'on ajuste dans la roadmap des 4 prochaines semaines ?
+
+Les équipes Spotify qui ont adopté des revues mensuelles plutôt que trimestrielles ont réduit leur taux d'échec sur les OKRs à 15%, contre une moyenne sectorielle autour de 40-50%. La cadence crée la correction.
+
+Cette revue ne dure pas 2 heures. Elle dure 30 minutes avec les bonnes métriques en main. L'objectif n'est pas de commenter l'échec, c'est de prendre une décision : continuer, pivoter ou accélérer.
+
+## Les 3 erreurs qui cassent le lien OKR-roadmap
+
+**Erreur 1 : l'équipe engineering crée des tickets sans lien explicite au KR.**
+
+Chaque ticket devrait porter la référence du KR qu'il cherche à bouger. Pas comme un champ de formulaire inutile, mais comme une question réelle : "Si cette feature est en prod en 3 semaines, comment va-t-elle bouger ce chiffre ?"
+
+Si personne ne peut répondre, le ticket n'est pas prêt.
+
+**Erreur 2 : traiter les OKRs comme immuables.**
+
+Un OKR fixé en janvier peut devenir obsolète en mars si le contexte change : un concurrent majeur qui sort une feature clé, une info terrain qui change ton hypothèse de valeur, un pivot stratégique de la direction. L'ajustement mid-cycle n'est pas un aveu d'échec. C'est du bon management.
+
+La règle pratique : on peut ajuster la méthode pour atteindre le KR, pas le KR lui-même à la baisse pour "ne pas rater l'objectif".
+
+**Erreur 3 : avoir une roadmap sur 4 trimestres et des OKRs sur 1.**
+
+Si ta roadmap projette des features jusqu'en Q4 mais que tes OKRs ne couvrent que Q1, les features Q3 et Q4 ne sont pas pilotées par des objectifs. Elles sont pilotées par l'intuition ou la pression stakeholder.
+
+Soit tu aligns la roadmap sur la granularité des OKRs. Soit tu acceptes que tout ce qui dépasse le prochain cycle est une direction, pas un engagement.
+
+## L'articulation qui manque souvent : de l'OKR à la discovery
+
+Un cas fréquent : le PM reçoit un OKR qu'il ne sait pas comment attaquer parce qu'il ne comprend pas encore le problème sous-jacent.
+
+"Réduire le churn mensuel de 8% à 5%." Comment ?
+
+La réponse est dans la discovery, pas dans la roadmap. Avant de planifier des features, il faut comprendre pourquoi les utilisateurs partent. La discovery vient nourrir la roadmap, qui vient bouger le KR.
+
+C'est la séquence correcte : OKR - Discovery - Hypothèses - Features - Mesure - Revue.
+
+La plupart des équipes sautent la discovery et passent directement à "quelles features on fait pour réduire le churn ?". Le résultat : des features qui ne ciblent pas les vraies causes.
+
+L'OKR n'est pas une liste de features déguisée. C'est une invitation à comprendre avant de construire.
+
+---
+
+Le générateur OKR express arrive bientôt sur productcopilot.fr. Il te permettra de transformer tes objectifs stratégiques en Key Results mesurables en moins de 10 minutes.
+
+En attendant, si tu veux poser les bases, commence par lire [OKRs produit : comment mesurer l'impact, pas le travail](/blog/okr-produit-impact). C'est le premier article du cluster, centré sur l'écriture des KRs eux-mêmes.
