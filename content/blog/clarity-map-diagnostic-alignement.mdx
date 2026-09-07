@@ -1,0 +1,100 @@
+---
+title: "Clarity Map : diagnostiquer un problème d'alignement en 30 min"
+description: "Quand l'équipe tourne en rond sans avancer, le problème est rarement technique. Voici comment diagnostiquer ce qui bloque l'alignement produit avec la Clarity Map."
+slug: "clarity-map-diagnostic-alignement"
+date: "2026-09-07"
+readingTime: "8 min"
+cluster: "alignement"
+keywords: ["diagnostic alignement produit", "clarity map produit", "alignement équipe produit", "problème alignement PM", "SOC produit"]
+relatedTool: "clarity-map"
+relatedPack: "alignement"
+tags: ["Product Management", "Alignement", "Diagnostic"]
+---
+
+L'équipe livre. Le backlog avance. Les sprints se terminent à l'heure. Et pourtant, un sentiment persistant s'installe : on n'avance pas vraiment.
+
+Les réunions d'alignement se répètent sans résultat. La direction change de priorité tous les mois. Les engineers attendent les specs que le PM n'a pas encore finalisées. Le commercial promet des features qui ne sont pas prévues. Le PM fait la navette entre tout le monde sans que ça converge.
+
+Ce n'est pas un problème de process. C'est un problème d'alignement. Et avant de le résoudre, il faut le diagnostiquer.
+
+## Les signaux d'un problème d'alignement
+
+Un problème d'alignement ne ressemble pas toujours à un conflit ouvert. Il ressemble souvent à de la lenteur, de la confusion, ou de la frustration diffuse.
+
+Voici les signaux concrets. Les mêmes questions reviennent en réunion sans être résolues. Des décisions prises en comité de direction arrivent sans contexte à l'équipe produit. Des features livrées ne sont pas adoptées parce que la commercialisation n'était pas prête. Des membres de l'équipe engineering comprennent différemment le problème qu'on cherche à résoudre. Le PM passe plus de temps à expliquer qu'à produire.
+
+Si tu reconnais au moins trois de ces signaux, l'alignement est cassé quelque part. La question est : à quel niveau ?
+
+C'est la distinction importante. Un problème d'alignement peut venir de trois couches différentes, et chaque couche appelle une réponse différente. Agir sur la mauvaise couche aggrave le problème. Une réunion de plus ne résout pas un manque de clarté stratégique. Un document de spec ne résout pas un problème de confiance.
+
+## Pourquoi le diagnostic vient avant la solution
+
+L'erreur classique du PM face à un problème d'alignement : ajouter un artefact. Un nouveau template de roadmap. Une cérémonie de synchronisation hebdomadaire. Un document de vision partagé.
+
+Ces artefacts ne sont pas inutiles. Mais ils traitent les symptômes, pas les causes. Et si la cause n'est pas identifiée, l'artefact supplémentaire crée du travail sans créer de l'alignement.
+
+L'exemple fréquent en B2B : une squad est à la fois sous pression pour livrer vite (demandes du commercial) et sous pression pour ne pas créer de dette technique (demandes de l'engineering lead). Le PM ajoute une réunion hebdomadaire de priorisation avec les deux. La réunion tourne en conflit ritualisé. Le PM est épuisé. Le problème vient d'un manque de décision stratégique sur le trade-off vitesse vs qualité. Aucune réunion ne peut résoudre ça. C'est une décision que la direction doit prendre et communiquer.
+
+Diagnostiquer, c'est répondre à : à quelle couche le problème existe-t-il vraiment ?
+
+## La Clarity Map : le cadre SOC appliqué au diagnostic
+
+La Clarity Map est un outil de diagnostic structuré autour du cadre SOC : Stratégie, Opérations, Communication.
+
+Ces trois couches couvrent la totalité de ce qui peut mal fonctionner dans une organisation produit.
+
+La couche Stratégie concerne la direction. La vision est-elle claire ? Les priorités sont-elles stables ? L'équipe comprend-elle pourquoi elle travaille sur ce qu'elle travaille ? Un problème à ce niveau se manifeste par des changements fréquents de direction, des OKRs qui ne guident pas les décisions quotidiennes, ou un PM qui ne sait pas quoi répondre quand on lui demande "quelle est la priorité numéro 1 ce trimestre ?"
+
+La couche Opérations concerne l'exécution. Les processus de décision sont-ils clairs ? Qui valide quoi ? Les dépendances entre équipes sont-elles visibles ? Un problème à ce niveau se manifeste par des blocages récurrents au même endroit, des specs qui restent en attente de validation sans délai défini, ou des features livrées sans que les équipes concernées (support, marketing, sales) soient prêtes à les absorber.
+
+La couche Communication concerne le flux d'information. Les bonnes informations atteignent-elles les bonnes personnes au bon moment ? Un problème à ce niveau se manifeste par des surprises : une livraison que le commercial découvre en prod, une décision de direction que l'équipe apprend en réunion d'équipe hebdomadaire, ou des retours utilisateurs qui restent dans les notes d'interview sans jamais remonter à la direction.
+
+## Comment mener le diagnostic en 30 minutes
+
+La Clarity Map se déroule en deux temps : une phase solo (20 minutes) et une validation en équipe (10 minutes si possible).
+
+Phase solo : pour chaque couche SOC, tu réponds à une question directrice.
+
+Stratégie : "Si je devais expliquer la priorité numéro 1 de l'équipe ce trimestre à quelqu'un qui arrive demain, est-ce que je pourrais le faire en 2 phrases, sans hésiter ?"
+
+Si la réponse est non, ou si la réponse change selon à qui tu le demandes dans l'équipe, le problème est à la couche Stratégie.
+
+Opérations : "La dernière fois qu'on a été bloqués sur une décision ou une livraison, où était le blocage, et est-ce que c'est un endroit récurrent ?"
+
+Si tu identifies le même point de blocage pour la troisième fois, le problème est à la couche Opérations. Ce n'est pas un problème de personnes. C'est un problème de processus.
+
+Communication : "La dernière mauvaise surprise qu'on a eue (interne ou externe), est-ce qu'elle aurait pu être anticipée si quelqu'un avait partagé une information qu'il avait déjà ?"
+
+Si la réponse est oui, le problème est à la couche Communication. L'information existait. Elle n'a pas circulé.
+
+Phase de validation : tu partages tes 3 réponses avec un ou deux membres de l'équipe, idéalement avec des rôles différents (un engineer, un designer, ou ton manager). Si leurs réponses pointent vers la même couche que les tiennes, la cause est identifiée avec une bonne fiabilité. Si elles divergent, c'est une information en soi : le problème n'est peut-être pas le même selon le rôle.
+
+## Ce que le diagnostic révèle concrètement
+
+Voici trois cas réels et ce que la Clarity Map a permis d'identifier.
+
+Premier cas : une squad SaaS B2B en friction permanente entre PM et engineering lead. Le PM pense que l'engineer "résiste aux priorités." L'engineer pense que le PM "change d'avis trop souvent." Clarity Map sur les deux : la couche Stratégie révèle que les OKRs du trimestre n'ont jamais été expliqués à l'équipe technique. L'engineer optimise pour la stabilité parce que personne ne lui a dit que la vitesse de livraison était la priorité ce cycle. Résolution : une session de 45 minutes avec le PM et l'engineering lead pour lire ensemble les OKRs et leurs implications sur les arbitrages. Le conflit disparaît.
+
+Deuxième cas : une startup qui "ne sait jamais ce que le commercial promet." Le PM est en réactif permanent. Clarity Map : couche Communication. Le commercial n'a pas accès à la roadmap en temps réel, donc il promet sur des timelines qui ne correspondent à rien. Résolution : accès lecture à la roadmap pour le commercial, avec une règle explicite sur ce qui peut être promis et ce qui ne peut pas l'être.
+
+Troisième cas : un PM qui a l'impression que "personne ne prend de décision." Les réunions d'arbitrage se terminent sans conclusion. Clarity Map : couche Opérations. Il n'existe pas de RACI explicite sur qui décide quoi. Tout le monde pense que c'est la responsabilité de quelqu'un d'autre. Résolution : une matrice de décision simple (2 pages) qui liste les 10 décisions récurrentes et leur propriétaire.
+
+Dans les trois cas, la résolution prend moins de temps que le diagnostic ne le laissait craindre. C'est le diagnostic qui était absent, pas la solution.
+
+## La Clarity Map comme outil récurrent, pas ponctuel
+
+Le diagnostic est utile en crise. Il est encore plus utile en prévention.
+
+La Clarity Map utilisée toutes les 6 semaines comme check-in prend 20 minutes. Elle permet d'identifier les problèmes qui commencent à s'installer avant qu'ils deviennent des blocages.
+
+La question pratique : qui anime ce check-in ? Dans les équipes matures, le PM l'anime seul et partage le résultat avec son manager et l'engineering lead. Dans les équipes moins autonomes, le check-in se fait en groupe.
+
+La règle simple : si le même problème revient au même endroit d'un check-in à l'autre sans avoir bougé, ce n'est pas un problème à résoudre. C'est une contrainte à accepter ou à escalader. La différence entre les deux change radicalement ce qu'on en fait.
+
+Si tu [présentes régulièrement ta roadmap à des stakeholders](/blog/presenter-roadmap-produit), la Clarity Map aide à identifier en amont pourquoi certaines présentations ne produisent pas d'alignement — souvent, ce n'est pas la présentation le problème, c'est la couche Stratégie qui n'est pas stable derrière elle.
+
+## La Clarity Map express : à venir sur productcopilot.fr
+
+La Clarity Map express est un outil interactif en cours de développement sur productcopilot.fr. Il te guide à travers le diagnostic SOC en 3 questions, génère une synthèse du problème identifié, et propose des actions concrètes selon la couche concernée.
+
+En attendant sa sortie, le [Pack Alignement](/packs/alignement) couvre le système complet : diagnostic, résolution par couche, et cadres de communication pour les stakeholders. Il sera disponible prochainement.
