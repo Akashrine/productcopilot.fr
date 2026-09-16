@@ -1,0 +1,141 @@
+---
+title: "Auditer son app vibe codée avant le lancement"
+description: "Logique, sécurité, performance : comment auditer son app vibe codée avec Claude avant de la lancer. Méthode 4 phases, prompts inclus."
+slug: "audit-app-vibe-codee-lancement"
+date: "2026-09-16"
+readingTime: "8 min"
+cluster: "vibe-coding"
+keywords: ["audit technique vibe coding", "vérifier app IA", "tester application vibe codée", "audit pm vibe coding", "review sécurité app ia"]
+relatedTool: "template-prd-ia"
+relatedPack: "vibe-coding-pm"
+tags: ["Vibe Coding", "AI for PM", "Claude Code"]
+---
+
+Tu as buildé en trois jours. L'app tourne. Les features principales marchent. Tu montres à quelques utilisateurs, ils sourient. Alors tu lances.
+
+Une semaine plus tard : les données de deux utilisateurs sont mélangées sur une même page. Les requêtes lentes font planter l'interface au pic de charge. Ton formulaire d'inscription accepte n'importe quelle chaîne de caractères comme email, sans validation côté serveur.
+
+Rien de catastrophique. Mais tout est visible par tes utilisateurs.
+
+C'est le scénario classique du vibe coding qui saute l'étape finale. La plupart des guides s'arrêtent là où le vrai travail commence : avant le lancement.
+
+## La phase Vérifier dans le système 4 phases
+
+Si tu suis la [méthode en 4 phases](/blog/vibe-coding-methode-4-phases) (Clarifier, Designer, Construire, Vérifier), tu sais que la phase Vérifier n'est pas optionnelle. C'est la condition pour passer de "prototype qui tourne" à "produit qui mérite d'être lancé".
+
+Cette phase couvre trois dimensions : la logique métier, la sécurité, et la performance. Elle se termine par un test manuel des flux critiques, que seul un humain peut faire correctement.
+
+En septembre 2026, Pawel Huryn (Product Compass) a publié une série en trois parties intitulée "Product Engineering for PMs". Il y décrit la construction complète d'un SaaS de A à Z, sans coder. Sa conclusion est nette : "Le codage est résolu. Il peut être entièrement délégué aux agents. Ce qui reste, c'est décider quoi construire et vérifier ce que les agents produisent." (Product Compass Newsletter, 14 septembre 2026)
+
+L'audit avant lancement, c'est exactement ce qui reste.
+
+## L'audit logique : est-ce que les règles métier sont là ?
+
+La logique métier, c'est ce qui différencie ton app d'un prototype. C'est l'ensemble des règles qui font que le produit se comporte comme promis.
+
+Exemples concrets de règles souvent oubliées :
+
+Un utilisateur en plan Free ouvre 3 salles maximum. La limite est-elle vérifiée côté serveur, ou seulement dans le front ? Si seulement dans le front, un appel API direct la contourne.
+
+Un utilisateur supprime son compte. Ses données sont effacées définitivement. L'action est-elle irréversible dans la base, ou l'enregistrement est-il simplement marqué comme "deleted" ?
+
+Une invitation expire après 48h. Est-ce que l'expiration est vérifiée au moment du clic sur le lien, pas seulement à la création ?
+
+L'agent ne connaît pas tes règles implicites. Il a construit ce que tu lui as demandé. Les règles non formulées passent à travers les mailles.
+
+Prompt pour lancer l'audit logique avec Claude :
+
+```
+Aide-moi à comprendre la qualité de la documentation de l'app.
+- Identifie les flux utilisateurs critiques : inscription, action principale, paiement, suppression de compte
+- Pour chaque flux, vérifie si les règles métier documentées correspondent à l'implémentation dans le code
+- Signale les écarts et propose une liste priorisée des prochaines étapes
+```
+
+L'agent inspecte la codebase et croise avec la documentation. Mais c'est toi qui valides si les règles correspondent à ce que tu voulais construire. C'est une lecture de diff, pas une délégation complète.
+
+Si tu n'as pas de documentation formelle, commence par demander à l'agent de décrire les flux qu'il a implémentés. Ce qu'il te dira sera révélateur des règles qu'il a ou n'a pas appliquées.
+
+## L'audit sécurité : les failles que l'agent ne voit pas tout seul
+
+Une app vibe codée génère du code qui fonctionne. Pas nécessairement du code qui résiste à un utilisateur malveillant ou à un script automatisé.
+
+Trois failles sont fréquentes dans les apps vibe codées.
+
+L'isolation des données entre utilisateurs. Si ton app gère plusieurs comptes, un utilisateur A peut-il accéder aux données de l'utilisateur B en changeant un ID dans l'URL ? Ce type de faille (appelé IDOR, Insecure Direct Object Reference) passe souvent à travers les tests normaux, parce qu'on teste toujours avec son propre compte.
+
+L'absence de rate limiting. Un script externe peut appeler ton API 10 000 fois en une minute. Sans limitation de débit, ton serveur sature ou ton quota LLM se vide. Netlify propose du rate limiting gratuit configurable directement dans le code pour deux règles par projet.
+
+La validation des entrées côté client seulement. Ton formulaire valide le format email en JavaScript. Mais si quelqu'un appelle directement l'endpoint API, la validation est-elle aussi présente côté serveur ?
+
+Prompt pour l'audit sécurité :
+
+```
+Effectue un audit sécurité de l'application.
+Présente un rapport des findings groupés par priorité (High, Medium, Low) et catégorie (Sécurité, Performance, Bug logique, Question).
+Concentre-toi sur : isolation des données multi-utilisateur, validation des entrées côté serveur, rate limiting, gestion des sessions et tokens.
+```
+
+Ce prompt est adapté de la méthode utilisée par Pawel Huryn dans sa série Product Engineering for PMs. Il l'applique systématiquement avant chaque mise en production.
+
+Un rapport de ce type prend 5 à 10 minutes à générer. Il te donne une liste d'items classés par priorité. Tu corriges ce qui est High avant de lancer. Le reste va dans ton backlog.
+
+## L'audit performance : le code qui ralentit sous la charge
+
+Les agents génèrent du code fonctionnel. Rarement du code optimisé pour la charge.
+
+Trois patterns méritent une attention particulière.
+
+Les requêtes N+1. Pour afficher 20 cartes, l'app fait 20 requêtes séparées à la base au lieu d'une seule requête groupée. Invisible à 3 utilisateurs simultanés. Problématique à 200.
+
+Les assets non optimisés. Images PNG à 3 Mo, pas de lazy loading, JavaScript chargé de façon bloquante. Un audit Lighthouse révèle ces problèmes en 30 secondes.
+
+Les appels API synchrones. L'app attend la réponse d'un service externe avant d'afficher la page. Si ce service est lent, ta page est lente. Si ce service est indisponible, ta page ne charge pas.
+
+Prompt pour l'audit performance :
+
+```
+Analyse les performances de l'application.
+Identifie les requêtes N+1, les assets non optimisés, et les appels synchrones inutiles.
+Propose une liste priorisée des améliorations, avec l'impact estimé pour chaque item.
+```
+
+Keyhole Software rapporte dans son étude sur les tendances vibe coding 2026 que 63% des utilisateurs de vibe coding s'identifient comme non-développeurs : PMs, marketeurs, fondateurs. Ces utilisateurs livrent des apps sans avoir les réflexes de performance qu'un développeur expérimenté a construits en dix ans. L'audit automatisé comble en partie ce gap.
+
+## Ce que seul un humain peut faire
+
+L'agent analyse le code. Il ne ressent pas l'expérience utilisateur.
+
+Pawel Huryn est explicite sur ce point dans sa série : "Les agents automatisent beaucoup de choses, mais une chose nécessite encore un regard humain : l'UX/UI. Même les agents qui prennent des screenshots ratent les éléments dynamiques et les éléments visibles pendant un court instant." (Product Compass, 14 septembre 2026)
+
+Sa recommandation : passe manuellement dans les flux utilisateurs critiques. Pour une app simple, ça prend 15 à 20 minutes. C'est non négociable.
+
+Flux à tester manuellement, dans cet ordre :
+
+Inscription et première connexion. Le wording guide-t-il bien l'utilisateur ? Les erreurs de validation sont-elles compréhensibles ?
+
+Action principale. Ce que ton utilisateur vient faire sur ton app : crée, modifie, supprime, partage. Fais-le comme si c'était la première fois.
+
+Paiement et changement de plan, si applicable. Ce flux génère tes revenus. Teste-le en entier, avec une carte test.
+
+Suppression de compte. Tes utilisateurs doivent pouvoir partir facilement. Si ce flux est cassé, tu as un problème de conformité.
+
+Ce test te révèle ce que le code ne te montrera pas : est-ce que l'app est agréable à utiliser ? Est-ce que le wording est clair ? Est-ce que les erreurs sont compréhensibles ?
+
+La boucle anti-bug pendant la construction ([décrite ici](/blog/prd-vibe-coding-anti-bug-loop)) couvre les régressions au fil du développement. L'audit de la phase Vérifier, lui, est une lecture transversale de tout ce qui a été livré.
+
+## Avant de cliquer sur Publish
+
+Un audit complet prend entre 2 et 4 heures avec Claude. Ce n'est pas du surplus de travail. C'est ce qui sépare un prototype d'un produit.
+
+Andrew Ng l'a formulé en avril 2026 : "Si tu es PM, apprends à construire." Ce qu'il n'a pas précisé, mais qui se comprend : apprends aussi à vérifier ce que tu construis.
+
+Le système en 4 phases existe précisément pour que tu ne skipes pas cette étape parce que "ça marche sur ton laptop". Ça marche sur ton laptop parce que tu es le seul utilisateur, que tu ne fais jamais d'erreur de saisie, et que ta connexion est rapide.
+
+Tes utilisateurs, eux, feront tout ça différemment.
+
+---
+
+Les 12 prompts du Pack Vibe Coding for PMs couvrent les 4 phases, dont les prompts Audit Technique et Audit SEO utilisés dans la phase Vérifier. Si tu builds avec Claude Code ou Cursor, c'est le kit qui structure tes sessions de vibe coding de la spec au lancement.
+
+[Accéder au Pack Vibe Coding for PMs — 29 €](/packs/vibe-coding-pm)
