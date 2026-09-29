@@ -1,0 +1,129 @@
+---
+title: "TARS : mesurer l'adoption réelle de tes fonctionnalités"
+description: "Activer une feature ne suffit pas. Le framework TARS mesure si ta fonctionnalité est vraiment utilisée, par qui, comment, et pour quelle valeur."
+slug: "tars-metriques-adoption-produit"
+date: "2026-09-29"
+readingTime: "8 min"
+cluster: "alignement"
+keywords: ["métriques adoption produit", "feature adoption product manager", "taux activation feature", "mesurer adoption fonctionnalité", "TARS framework PM"]
+relatedTool: "clarity-map"
+relatedPack: "alignement"
+tags: ["Product Management", "Alignement", "Métriques"]
+---
+
+## L'activation rate ne dit pas ce que tu crois
+
+Une équipe livre un assistant IA pour ses juristes. La démonstration est réussie. Les collègues trouvent ça intéressant. L'outil est déployé. Six semaines plus tard, les demandes arrivent toujours par mail.
+
+Taux d'activation technique : 80%. Taux d'adoption réel : proche de zéro.
+
+Ce type de situation est décrit dans un retour d'atelier sur les projets IA en direction juridique (Daria Décrypteia, newsletter sept. 2026) : l'outil répondait aux questions, orientait vers le bon interlocuteur, fonctionnait. Mais les utilisateurs continuaient à écrire au juriste qu'ils connaissaient. Pour eux, le chatbot ajoutait une étape ; le mail en supprimait une.
+
+L'activation rate mesure si un utilisateur a touché la feature une fois. L'adoption mesure si cette feature est devenue un comportement. Ce ne sont pas les mêmes choses.
+
+Si tu pilotes avec l'activation rate seul, tu peux déclencher une fête pour une feature que personne n'utilise vraiment.
+
+## TARS : quatre questions pour ne pas confondre les deux
+
+TARS est un cadre de mesure en quatre dimensions : Targeted, Adopted, Retained, Satisfied.
+
+Il ne remplace pas tes métriques actuelles. Il les organise pour que tu puisses diagnostiquer précisément où l'adoption bloque.
+
+**T — Targeted :** est-ce que les bonnes personnes utilisent la feature ?
+**A — Adopted :** est-ce que l'usage correspond à l'intention initiale ?
+**R — Retained :** est-ce que les utilisateurs reviennent ?
+**S — Satisfied :** est-ce que l'usage crée de la valeur réelle ?
+
+Chaque dimension pointe vers un problème différent. Un score faible sur T indique un problème de ciblage ou de discoverability. Un score faible sur A indique un problème d'UX ou de compréhension de la valeur. Un score faible sur R signale que la valeur perçue ne tient pas dans le temps. Un score faible sur S indique que tu mesures le mauvais output.
+
+TARS n'est pas un score composite à optimiser globalement. C'est un outil de diagnostic pour isoler la bonne variable.
+
+## T comme Targeted : est-ce que les bonnes personnes utilisent la feature ?
+
+Une feature avec un taux d'utilisation de 12% globalement peut être un succès complet.
+
+Si elle cible un segment de 15% de ta base, 12% de pénétration globale représente 80% du segment cible. C'est une adoption réussie. À l'inverse, une feature à 40% de taux global peut cacher un problème : si le segment cible n'est qu'à 20% d'adoption et que les 20% restants sont des utilisateurs qui cliquent par curiosité, la feature ne remplit pas son rôle.
+
+Le taux global masque la réalité du segment cible.
+
+Pour mesurer T :
+- Définis le segment cible avant la sortie (persona + critère comportemental précis)
+- Segmente le taux d'utilisation par persona dans ton outil d'analytics
+- Compare le taux du segment cible avec le taux global
+
+Si T est faible, les causes courantes sont : mauvaise discoverability pour le segment visé, problème de ciblage initial (le problème résolu ne correspond pas au vrai besoin du persona), ou onboarding qui n'adresse pas le bon utilisateur.
+
+Corriger T avant de travailler les autres dimensions est toujours la bonne séquence. Un ciblage incorrect rend les autres mesures illisibles.
+
+## A comme Adopted : est-ce que l'usage correspond à l'intention ?
+
+L'adoption ne se mesure pas au clic. Elle se mesure à la profondeur de l'usage.
+
+Exemple concret. Tu lances un outil de génération de brief de feature. Le taux d'ouverture est bon. Mais 80% des sessions durent moins de 30 secondes et se terminent sans export.
+
+Les utilisateurs ont "adopté" l'outil dans tes métriques. Ils ne l'utilisent pas pour ce pour quoi il a été conçu.
+
+Cette distinction est critique pour l'alignement produit. Si tu reportes un taux d'adoption de 30% en revue de direction, tu crées une fausse impression. La direction croit que le problème est résolu. En réalité, tu as un problème d'UX ou de proposition de valeur que tes chiffres masquent.
+
+Pour mesurer A :
+- Définis ce qu'est un usage "complet" de la feature (par exemple : session supérieure à X secondes + action clé réalisée)
+- Calcule le ratio sessions complètes sur sessions totales
+- Étudie les sessions avortées : à quel moment les utilisateurs abandonnent-ils ?
+
+L'écart entre le taux d'activation et le taux d'usage complet est ton gap d'adoption réel. C'est là que se cache la friction.
+
+## R comme Retained : est-ce que les utilisateurs reviennent ?
+
+Le deuxième moment de valeur est le vrai indicateur de rétention, plus fiable que le premier.
+
+Userpilot le confirme dans son analyse 2026 : en B2B, la corrélation entre l'activation initiale et la rétention à 90 jours est faible. La corrélation entre le deuxième et le troisième usage dans les deux premières semaines et la rétention à 90 jours est forte. Ce qui amène un utilisateur à revenir une deuxième fois est un meilleur prédicteur que ce qui l'a amené à essayer une fois (Userpilot, Product Adoption in 2026).
+
+Ce que ça implique pour toi : l'objectif ne doit pas être "faire utiliser la feature une fois". L'objectif doit être "créer les conditions pour que l'utilisateur revienne dans les 7 jours suivant l'activation".
+
+Pour mesurer R :
+- Définis une fenêtre de rétention courte par feature (D7 ou D14 selon la fréquence naturelle d'usage)
+- Calcule le taux de retour sur cette fenêtre
+- Compare la rétention D14 entre les features récentes de ta roadmap
+
+Une feature à faible rétention D14 a soit un problème de valeur réelle, soit un problème de friction au retour. Ce sont deux problèmes différents avec deux solutions différentes. La valeur réelle insuffisante se règle par le produit. La friction au retour se règle par l'onboarding ou les triggers.
+
+Note : certaines features sont naturellement occasionnelles. Ne les évalue pas avec les mêmes critères que les features de workflow quotidien. Un outil d'export de roadmap trimestrielle ne doit pas avoir un D7 élevé.
+
+## S comme Satisfied : est-ce que l'usage crée de la valeur réelle ?
+
+C'est la dimension la plus difficile à mesurer et la plus importante pour l'alignement stratégique.
+
+La distinction utile : différencie les métriques proxy des métriques de valeur réelle.
+
+Une métrique proxy : le nombre de sessions hebdomadaires. Une métrique de valeur réelle : le temps économisé sur la tâche que la feature remplace, le taux d'erreur évité, le chiffre d'affaires protégé ou généré.
+
+L'exemple de la newsletter de Daria Décrypteia est éclairant. Une direction juridique a simplement partagé les délais contractuels avec la comptabilité, sans IA, sans outil complexe. Résultat : plusieurs milliers d'euros économisés en évitant des paiements anticipés. Pas une métrique d'usage ; une valeur réelle dans la trésorerie de l'entreprise (Daria Décrypteia, sept. 2026).
+
+Ton outil peut avoir des sessions hebdomadaires en hausse et créer zéro valeur réelle. Il peut aussi avoir des sessions stables et un impact financier démontrable. Sans mesurer S, tu ne sais pas dans quel cas tu es.
+
+Pour mesurer S :
+- Identifie la valeur réelle que la feature est censée créer (temps, argent, risque évité, satisfaction client)
+- Construis une métrique directe sur cette valeur, même imparfaite et manuelle au début
+- Compare l'évolution de cette métrique avant et après le déploiement
+
+Si tu ne peux pas nommer la valeur réelle d'une feature, c'est un signal d'un problème d'alignement stratégique. Il faut régler ce point avant de piloter. L'article sur les [OKRs produit et leur lien avec l'impact réel](/blog/okr-produit-impact) donne un point d'entrée pour relier métriques et stratégie.
+
+## Diagnostiquer avec TARS : les quatre patterns
+
+Voici les configurations courantes et leur lecture :
+
+**T faible, A/R/S corrects :** tu as un problème de discoverability ou de ciblage. La feature fonctionne pour ceux qui l'ont trouvée, mais les bonnes personnes ne l'ont pas encore trouvée. Priorité : onboarding ciblé, guidance in-app pour le segment, ou communication directe.
+
+**T correct, A faible :** tu as un problème d'UX ou de valeur perçue. Les bonnes personnes essaient mais n'achèvent pas leur usage. Priorité : user testing sur le flow complet, comprendre le point de friction exact.
+
+**T et A corrects, R faible :** tu as une feature qui crée de la curiosité mais pas de l'habitude. Le premier usage satisfait, mais le déclencheur pour revenir n'est pas assez clair. Priorité : identifier le deuxième moment de valeur et créer les conditions pour y arriver.
+
+**T, A, R corrects, S faible :** tu mesures le mauvais output. Tout indique un succès mais tu n'arrives pas à démontrer l'impact réel. Priorité : revoir la métrique de valeur, interviewer des utilisateurs actifs, identifier ce qu'ils font différemment grâce à la feature.
+
+Si plusieurs dimensions sont faibles simultanément, commence toujours par T. Un ciblage incorrect rend les autres dimensions illisibles et te fait travailler sur le mauvais problème.
+
+TARS ne donne pas de réponses automatiques. Il force à poser les bonnes questions dans le bon ordre, ce qui est souvent ce qui manque dans une revue de métriques standard.
+
+---
+
+La [Clarity Map express](/outils/clarity-map) te permet de cartographier les zones de désalignement dans ton organisation en 30 minutes, structurée autour du framework SOC. Si TARS révèle un problème d'adoption, la Clarity Map aide à identifier d'où il vient : de la stratégie, des opérations, ou de la communication.
